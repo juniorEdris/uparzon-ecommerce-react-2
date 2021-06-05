@@ -1,0 +1,30 @@
+/* List Product Section css  */
+.home_product_list_wrapper{
+    border-bottom: 1px solid var(--dark-color);
+        padding: 0.325rem;
+    }
+    .list_product_image img{
+        width: 150px;
+        height: 75px;
+        object-fit: contain;
+    }
+    .list_product_name a p{
+        color: var(--dark-color);
+    }
+    .list_product_name a:hover p{
+        color: var(--theme-color);
+    }
+  .list_product_rating img{
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+    margin-right: 0.2rem;
+  }
+  .list_product_price p{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.65rem;
+    margin-bottom: 0.65rem;
+    color: var(--theme-color);
+  }
+  

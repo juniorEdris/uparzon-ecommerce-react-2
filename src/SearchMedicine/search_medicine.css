@@ -1,0 +1,129 @@
+.search_medicine_wrapper{
+    margin-top: var(--margin-top);
+    margin-bottom: var(--margin-bottom);
+}
+.search_sidebar .sidebar_header h5{
+    margin-bottom: var(--margin-bottom);
+    font-weight: 700;
+    font-size:1.6rem;
+}
+/* sidebar_list */
+.sidebar_list li {
+    margin-bottom: 1rem;
+}
+
+  .sidebar_list ul li a {
+    color: var(--dark-color);
+    padding-left: 1.6rem;
+    position: relative;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  
+  .sidebar_list ul li a::before {
+    content: '\f0c8';
+    font-family: 'Font Awesome 5 Free';
+    left: 0;
+    position: absolute;
+  }
+  
+  .sidebar_list ul li a::after {
+    content: '\f14a';
+    font-family: 'Font Awesome 5 Free';
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .sidebar_list ul li:hover a,
+  .sidebar_list ul li a.active {
+    color: var(--theme-color);
+  }
+  
+  .sidebar_list ul li:hover a::after {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+  .sidebar_list ul li a.active::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* sidebar_price_filter */
+  .sidebar_price_filter .input-range__track{
+      background: none;
+      border:1px solid var(--theme-color);
+    }
+    .sidebar_price_filter .input-range__slider{
+        border:3px solid var(--light-color);
+        background: var(--theme-color);
+    }
+    .sidebar_price_filter .input-range__track--active{
+        border: none;
+        background:var(--theme-color);
+    }
+    .input-range__label-container{
+        display: none;
+    }
+    .show_pice_range{
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    .show_price_range_span{
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--theme-color);
+    font-size: 0.6rem;
+    }
+    /* sidebar_review */
+    .sidebar_review_list li {
+        margin-bottom: 0.625rem;
+      }
+      
+      .sidebar_review_list ul li a {
+        color: var(--dark-color);
+        padding-left: 1.25rem;
+        position: relative;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+      }
+      
+      .sidebar_review_list ul li a::before {
+        content: '\f0c8';
+        font-family: 'Font Awesome 5 Free';
+        left: 0;
+        position: absolute;
+      }
+      
+      .sidebar_review_list ul li a::after {
+        content: '\f14a';
+        font-family: 'Font Awesome 5 Free';
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      .sidebar_review_list ul li:hover a,
+      .sidebar_review_list ul li a.active {
+        color: var(--theme-color);
+      }
+      
+      .sidebar_review_list ul li:hover a::after {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .sidebar_review_list ul li a.active::after {
+        opacity: 1;
+        visibility: visible;
+      }
+      .rating_star{
+          color: rgb(255, 217, 0);
+      }
+
+      /* Body  single_banner image width */
+      .search_banner .single_banner img{
+        width: 100%;
+      }

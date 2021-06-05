@@ -1,0 +1,45 @@
+/* primary css */
+.blog_heading h5{
+    padding: 0.725rem 0;
+    padding-left: 1rem ;
+    text-transform: capitalize;
+    color: var(--light-color);
+    background-color: var(--nav-bg);
+}
+.blog_wrapper {
+    padding: var(--top-whitespace) 0;
+}
+.blog_wrapper.bg-blog{
+    background-color: var(--gray-second-color);
+}
+
+/*========================================
+
+Sidebar css starts here
+
+==========================================*/
+.blog_list_heading{
+    background-color: var(--nav-bg);
+    color: var(--light-color);
+    padding: 1rem 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+/* latest blogs */
+.blog_list_wrapper{
+    padding: 0.6rem;
+    background:var(--light-color);
+    color: var(--dark-color);
+}
+.blog_list_details{
+    padding: 0.6rem !important;
+}
+/* blog categories */
+.blog_category_details{
+    padding: 0.6rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+.blog_category_details a {
+    color: var(--dark-color);
+}

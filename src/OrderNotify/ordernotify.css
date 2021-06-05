@@ -1,0 +1,58 @@
+.order_notification{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup_wrapper{
+    background-color: var(--muted-btn-color);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+.popup_header{
+    background-color: var(--light-color);
+    padding: 1rem 1.5rem;
+
+}
+.success_header{
+    border-bottom: 2px solid var(--brand-name-color);
+    margin-bottom: 1rem;
+}
+.success_header h3{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.popup_content p{
+    font-size: 1.3rem;
+}
+.popup_grettings{
+    font-size: 1.8rem;
+    margin: 2rem 0;
+}
+.order_notify_logo{
+    color: var(--theme-color);
+    font-weight: 700;
+}
+.back_btn a{
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.8rem 0;
+}
+/* Order Cancel  */
+.close_box{
+    width: 30px;
+    height: 30px;
+    padding-left: 0.1rem;
+    line-height: 27px;
+    background: var(--danger);
+    color: var(--light);
+    position: absolute;
+    top: -6px;
+    font-size: 1.7rem;
+    right: -7px;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.close_box:hover{
+    background: var(--dark-color) !important;
+}

@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------------
+                        All Product Cards starts
+--------------------------------------------------------------------*/
+.product_card_wrapper {
+    border: 1px solid var(--border-color-one);
+    border-radius: 0.35rem;
+}
+
+.product_card_footer {
+    padding: 0.85rem;
+}
+.product_image img{
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+.product_name {
+    height: 48px;
+padding:0.85rem;
+}
+.product_name a p{
+    color: var(--dark-color);
+}
+
+.product_name a:hover p{
+    color: var(--theme-color);
+}
+
+.product_name p {
+    color: var(--font-color-one);
+    margin: 0 !important;
+}
+
+.product_rates_price .product_rating img {
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+    margin-right: 0.2rem;
+}
+
+.product_rates_price .product_price p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+}
+
+.product_card_footer .addTocart_btn img {
+    height: 30px !important;
+    width: 30px !important;
+    object-fit: contain;
+}
+
+/*--------------------------------------------------------------------
+                        All Product Cards Ends
+--------------------------------------------------------------------*/

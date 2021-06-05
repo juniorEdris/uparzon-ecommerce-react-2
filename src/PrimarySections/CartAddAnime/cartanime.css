@@ -1,0 +1,29 @@
+.cart_added_animation {
+    position: fixed;
+    top: 80px;
+    right: -1000px;
+    z-index: 2000;
+    background: var(--theme-color);
+    color: var(--light-color);
+    padding: 0.6em 1.2em;
+    display: flex;
+    align-items: center;
+    -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+
+  }
+  .animation_active {
+    right: 20px;
+  }
+  .cart_added_animation .lnr {
+    margin-right: 0.6em;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .cart_added_animation h3 {
+    text-transform: capitalize;
+  }
+  

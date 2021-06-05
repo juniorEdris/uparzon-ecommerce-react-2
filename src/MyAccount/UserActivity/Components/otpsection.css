@@ -1,0 +1,55 @@
+.otp_section_wrapper{
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+/* .otp_section_wrapper .otp-login{
+} */
+.otp_section_wrapper .otp-form{
+    background-color: var(--light-color);
+    padding: 0px 50px 40px;
+    border: 1px solid var(--theme-color);
+    box-shadow: 2px 2px 8px 0 rgb(0 0 0 / 20%);
+}
+.otp_section_wrapper .otp-form input  {
+    border: none;
+    outline: none;
+    height: 50px;
+    border-bottom: 2px solid var(--theme-color);
+    border-radius: 0;
+}
+.otp_resend a{
+    color: var(--user-entry-btn);
+}
+.otp_resend a:hover{
+    color: var(--dark-color);
+}
+.otp-enrty-backdrop{
+    position: fixed;
+    top: 0 !important;
+    min-height: 100%;
+    width: 100%;
+    background: var(--dark-color);
+    opacity: 0.4;
+    z-index: 997;
+    left: 0;
+    top: 0px;
+}
+.otp_close_box{
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    padding-left: 0.1rem;
+    line-height: 30px;
+    background: var(--danger);
+    color: var(--light);
+    position: absolute;
+    top: -6px;
+    font-size: 1.7rem;
+    right: 6px;
+    border-radius: 3rem;
+    cursor: pointer;
+    text-align: center;
+}

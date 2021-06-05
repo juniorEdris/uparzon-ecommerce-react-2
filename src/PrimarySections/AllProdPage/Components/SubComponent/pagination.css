@@ -1,0 +1,17 @@
+.pagination {
+    justify-content: center;
+}
+.pagination ul li{
+    padding: 0.4rem;
+    border: 1px solid var(--gray-color);
+    margin-right: 1rem;
+    min-width: 30px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+}
+.pagination ul li:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}

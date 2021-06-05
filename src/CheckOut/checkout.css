@@ -1,0 +1,205 @@
+/* Primary class */
+.checkout_headings {
+    border-bottom: 1px solid var(--muted-color);
+    padding-bottom: 0.625rem;
+}
+.checkout_headings h4 {
+    font-weight: 600;
+}
+.border_top_section{
+    border-top: 2px solid var(--dark-color);
+    margin-top: 1.325rem;
+}
+.checkout_wrapper{
+    background: var(--myaccount-bg-color);
+    padding: var(--top-whitespace) 0;
+}
+.checkout_heading{
+    margin: var(--top-whitespace) 0;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    align-items: center;
+}
+.checkout_heading_left span,
+.checkout_heading_left a{
+    font-size: var(--primary-text-size);
+}
+.checkout_heading_left h3{color:var(--nav-bg)}
+.checkout_heading_left span{color:var(--muted-color)}
+.checkout_heading_left a{
+    color:var(--nav-bg)
+}
+.checkout_heading_right {
+    background: var(--nav-bg);
+    padding: 0.5rem;
+    color: var(--light-color);
+    box-shadow: var(--box-shadow-1);
+    border-radius: 0.3rem;
+    font-size: var(--primary-text-size);
+}
+.checkout_heading_right img{
+    max-width: 40px;
+}
+/* CHECKOUT BODY CSS STARTS HERE */
+.chekoutCard{
+    padding: 1.929rem;
+    border: 1px solid var(--nav-bg);
+    border-radius: 0.75rem;
+    background: var(--light-color);
+    margin-bottom: var(--margin-top);
+}
+.checkout_body form{
+    margin-top: var(--margin-top);
+}
+.checkout_body form label{
+    color: var(--muted-color);
+    margin-bottom: 0;
+}
+/* Price Details css here */
+.sub-Total{
+    margin: var(--top-whitespace) 0;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--primary-text-size);
+    color: var(--muted-color);
+}
+.coupon_anchore{
+    font-size: var(--primary-text-size);
+}
+.coupon_anchore img{
+    max-width: 30px;
+}
+.coupon_anchore a{
+    color:var(--user-entry-btn);
+    text-decoration: underline;
+}
+.coupon_anchore a:hover{
+    color: var(--dark-color);
+}
+.coupon_input button{
+    -webkit-box-shadow: var(--box-shadow-2);
+    box-shadow: var(--box-shadow-2);
+    background: var(--user-entry-btn);
+    color: var(--light-color);
+    font-weight: 500;
+}
+.coupon_input button:hover{
+    background: var(--dark-color);
+    color: var(--light-color);
+
+}
+.delivery_amount_hover{
+    cursor: pointer;
+}
+.delivery_charge{
+    color: var(--muted-color);
+    margin-top: 1rem;
+    font-size: var(--primary-text-size);
+}
+.discount_amount{
+    color: var(--muted-color);
+    margin-top: 0.5rem;
+    font-size: var(--primary-text-size);
+}
+.delivery_time{
+    font-weight: 300;
+}
+.grand_total{
+    justify-content: space-between;
+    font-size: 1.4rem;
+    margin-top: 0.625rem;
+    font-weight: 700;
+}
+.order_btn{
+    margin-top: 5rem;
+    text-align: center;
+}
+.order_btn button{
+    font-size: 1.3rem;
+    background-color: var(--user-entry-btn);
+    border: 1px solid var(--light-color);
+    box-shadow: var(--box-shadow-1);
+}
+.order_btn button:hover{
+    background-color: var(--dark-color);
+    border: 1px solid var(--light-color);
+}
+/* Payment Method */
+.payment_select{
+    padding: 1.071rem 1.714rem;
+}
+.payment_select img{
+    width: 8.714rem;
+}
+/* bootstrap radio css */
+.custom-control-inline{
+    margin-right: 0;
+}
+.select-payment div{
+    margin-right: 1rem;
+}
+.check-box-img{
+    cursor: pointer;
+}
+
+/* ORDER LOADING */
+.order_loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--heading-color);
+    width: 100%;
+    z-index: 2000;
+    opacity: 0.4;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--light-color);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--light-color) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

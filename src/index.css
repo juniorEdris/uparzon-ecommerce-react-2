@@ -1,0 +1,1418 @@
+/* @import "react-alice-carousel/lib/alice-carousel.css"; */
+:root {
+    --theme-color: #13A7B1;
+    --nav-bg: #00585E;
+    --primary-btn-color: rgba(164, 3, 78);
+    --best-seller-color: rgba(230, 122, 0);
+    --ratings-color: rgba(255, 216, 25);
+    --brand-name-color: rgba(123, 123, 123);
+    --muted-color: rgba(106, 106, 106);
+    --muted-btn-color: rgba(238, 238, 238);
+    --heading-color: rgba(0, 0, 0);
+    --light-color: rgba(255, 255, 255);
+    --footer-border-color: rgba(250, 250, 250, 35%);
+    --datalist-bg-color: rgba(243, 243, 243, 100%);
+    --myaccount-bg-color: rgba(249, 249, 249, 100%);
+    --delivery-details-bg: rgba(239, 239, 239, 100%);
+    --gray-color: rgba(0, 0, 0, 0.16);
+    /* repair the name*/
+    /* --dark-color: rgba(7, 7, 7); */
+    --shadow-color: rgba(0, 0, 0, 0.16);
+    --gray-second-color: rgba(241, 241, 241);
+    --user-entry-btn: rgba(5, 64, 122);
+    --margin-top: 1.25rem;
+    --margin-bottom: 1.25rem;
+    --top-whitespace: 2rem;
+    --box-shadow-1: 0px 7px 8px -1px rgba(0, 0, 0, 0.23);
+    --box-shadow-2: -3px 3px 5px rgba(0, 0, 0, 0.016);
+    --primary-text-size: 1.286rem;
+    /* uparzon */
+    /* primary colors */
+    /* --theme-color: #13a7b1; */
+    --breadcrumbs-color: #e9ecef;
+    --newsletter-bg-color: #19868D;
+    --light-color: #fff;
+    --search-btn-color: rgba(0, 88, 94, 100%);
+    --dark-color: rgb(91, 91, 91, 100%);
+    /* font colors */
+    --font-color-one: rgba(97, 97, 97, 100%);
+    /*product name color*/
+    /* background colors */
+    --bg-color-one: rgba(248, 248, 248, 100%);
+    /* border colors */
+    --border-color-one: rgb(19, 19, 19, 53%);
+    /* shadows */
+    --box-shadow-one: 0 0.125rem 0.25rem rgb(0 0 0 / 8%), 0 0.125rem 0.25rem rgb(0 0 0 / 15%) !important;
+    /* borders and radius */
+    --primary-radius: 0.25rem;
+    /* z-index */
+    --z-index-100: 100;
+    --z-index-200: 200;
+    --z-index-300: 300;
+    --z-index-400: 400;
+    --z-index-500: 500;
+    --z-index-600: 600;
+    --z-index-700: 700;
+    --z-index-800: 800;
+    --z-index-900: 900;
+    --z-index-1000: 1000;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -ms-overflow-style: none;
+    /* css for scrollbar hide IE and Edge*/
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'SF UI Display', sans-serif;
+    color: var(--dark-color);
+    position: relative;
+}
+
+a,
+a:hover,
+a:focus,
+input,
+button,
+textarea,
+button:hover,
+button:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+ul,
+ol,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------------
+                        Typhography Settings
+--------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+/*--------------------------------------------------------------------
+                        Primary css starts here
+--------------------------------------------------------------------*/
+.scroll-disabled{
+    overflow: hidden;
+}
+.box-shadow {
+    -webkit-box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+    box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+}
+
+.all-wide-banners img {
+    width: 100%;
+    /* max-height: 15.625rem; */
+    object-fit: contain;
+}
+.full_vh{
+    height: 100vh !important;
+}
+.error-handler {
+    color: rgb(211, 15, 15);
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+/* Dashboard table primary css */
+.primary_table table {
+    text-align: center;
+    -webkit-box-shadow: var(--box-shadow-1);
+    box-shadow: var(--box-shadow-1);
+    font-size: var(--primary-text-size);
+    font-weight: 300;
+}
+
+.table_link {
+    color: var(--light-color);
+    background: var(--nav-bg);
+    padding: 0.6rem;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    display: block;
+}
+
+.table_link img {
+    width: 2.857rem;
+}
+
+.table_link:hover {
+    color: var(--light-color);
+    background: var(--dark-color);
+}
+
+.pointer_disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.pointer_none {
+    pointer-events: none;
+}
+
+.null_result {
+    color: var(--theme-color);
+    height: 120px !important;
+}
+
+.container-md-fluid {
+    /* padding: 0 120px; */
+    padding: 0 70px;
+}
+
+.chilldren-gap-top {
+    margin-top: 1.1875rem;
+}
+
+.chilldren-gap-bottom {
+    margin-bottom: 1.1875rem;
+}
+
+.section-gap-top {
+    margin-top: 2.1875rem;
+}
+
+.section-gap-bottom {
+    margin-top: 2.1875rem;
+}
+
+/*--------------------------------------------------------------------
+ALL Section Heading css starts here
+--------------------------------------------------------------------*/
+/* Section heading one */
+.section_heading_one {
+    position: relative;
+    /* font-size: 1rem; */
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    color: var(--heading-color);
+    padding: 0 0.625rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+}
+
+.section_heading_one:before,
+.section_heading_one:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 0.063rem;
+    content: '\a0';
+    background-color: var(--heading-color);
+}
+
+.section_heading_one:before {
+    margin-left: -54%;
+    text-align: right;
+}
+
+.section_heading_one:after {
+    margin-left: 4%;
+}
+
+.section_heading_one span {
+    font-weight: 600;
+}
+
+/* Section header two */
+    .section_header_two {
+        border-bottom: 1px solid var(--theme-color);
+    }
+
+    .section_header_two .title {
+        border-bottom: 4px solid var(--theme-color);
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        /* padding-right: 3rem; */
+        padding-bottom: 0.4rem;
+        color: var(--theme-color);
+}
+
+
+/* Section heading three */
+.section_heading_three {
+    position: relative;
+    /* font-size: 1rem; */
+    z-index: 1;
+    overflow: hidden;
+    color: var(--heading-color);
+    padding: 0 0.625rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+}
+
+.section_heading_three:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 75%;
+    height: 0.063rem;
+    content: '\a0';
+    background-color: var(--heading-color);
+}
+
+.section_heading_three:before {
+    margin-left: -54%;
+    text-align: right;
+}
+
+.section_heading_three:after {
+    margin-left: 4%;
+}
+
+.section_heading_three span {
+    font-weight: 600;
+}
+
+/*--------------------------------------------------------------------
+                        Primary Slider css starts here
+--------------------------------------------------------------------*/
+/*Image slider starts here */
+.image_container {
+    border-radius: 2rem;
+    height: 180px;
+    border: 1px solid var(--shadow-color);
+    background: var(--light-color);
+    box-shadow: var(--box-shadow-1);
+    margin: 1rem 0;
+}
+
+.image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*Image nav button styles */
+.image-slider-one .owl-nav button {
+    background: none;
+    border: none !important;
+    cursor: pointer;
+    left: 5px;
+    background: none;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 9999;
+    visibility: visible;
+    width: auto;
+    height: auto;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    transition: 0.4s;
+    font-size: 0.5 !important;
+    color: var(--dark-color);
+}
+
+.image-slider-one button.owl-prev svg,
+.image-slider-one button.owl-next svg {
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.image-slider-one button.owl-prev,
+.image-slider-one button.owl-next {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px !important;
+    background-color: var(--light-color) !important;
+    color: var(--theme-color) !important;
+    font-size: 2rem;
+    -webkit-box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+    box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+}
+
+.image-slider-one button.owl-prev.disabled,
+.image-slider-one button.owl-next.disabled {
+    display: none;
+}
+
+.image-slider-one button.owl-prev {
+    border: none !important;
+    right: auto;
+    left: -20px;
+}
+
+.image-slider-one button.owl-next {
+    border: none !important;
+    left: auto;
+    right: -20px;
+}
+
+/*image slider css ends */
+
+/*product slider css starts */
+.product-item {
+    border: 1px solid var(--theme-color);
+    border-radius: 0.625rem;
+    padding: 0.313rem;
+    margin-bottom: 1.25rem;
+}
+
+.product-thumb {
+    position: relative;
+    height: 150px;
+}
+
+.product-thumb a {
+    position: relative;
+    display: block;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    height: 100%;
+}
+
+.product-thumb a img {
+    width: 100%;
+    height: 100%;
+    /* height: auto; */
+    object-fit: contain;
+}
+
+.product-caption {
+    color: var(--dark-color);
+    position: relative;
+    padding: 1.375rem 0.625rem 1rem;
+}
+
+.manufacture-product {
+    /* min-height: 42px; */
+    margin: 0.313rem 0;
+}
+
+.manufacture-product a {
+    color: var(--brand-name-color);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.product-name {
+    min-height: 40px;
+}
+
+.product-name h5 a {
+    font-weight: 400;
+    padding: 5px 0;
+    color: var(--dark-color);
+}
+
+.price-box>span {
+    margin-right: 0.626rem;
+}
+
+.price-box del {
+    color: var(--brand-name-color);
+}
+
+.regular-price {
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+
+.old-price {
+    font-size: 0.7rem;
+}
+
+/* .old-price::before {
+  content: '|';
+} */
+.product-name h4 a {
+    color: #111;
+}
+
+.product-item-btn {
+    padding: 0rem 0.625rem 0.625rem;
+}
+
+.btn-cart {
+    width: 100%;
+    background: var(--nav-bg);
+    border: medium none;
+    border-radius: 0.313rem;
+    color: var(--light-color);
+    cursor: pointer;
+    font-size: 0.6rem;
+    margin-top: 10px;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+}
+
+.btn-cart:hover {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+/*Image nav button styles */
+.slider-product-section {
+    width: 285px;
+}
+
+.product-section .owl-nav button {
+    background: none;
+    border: none !important;
+    cursor: pointer;
+    left: 5px;
+    background: none;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 9999;
+    visibility: visible;
+    width: auto;
+    height: auto;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    transition: 0.4s;
+    font-size: 0.5 !important;
+    color: var(--dark-color);
+}
+
+.product-section button.owl-prev svg,
+.product-section button.owl-next svg {
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.product-section button.owl-prev.disabled,
+.product-section button.owl-next.disabled {
+    display: none;
+}
+
+.product-section button.owl-prev,
+.product-section button.owl-next {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px !important;
+    background-color: var(--light-color) !important;
+    color: var(--theme-color) !important;
+    font-size: 2rem;
+    -webkit-box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+    box-shadow: 4px 8px 16px -5px rgba(0, 0, 0, 0.16);
+}
+
+.product-section button.owl-prev {
+    border: none !important;
+    right: auto;
+    left: -20px;
+}
+
+.product-section button.owl-next {
+    border: none !important;
+    left: auto;
+    right: -20px;
+}
+
+/*product slider css ends */
+/* Single Blog css here */
+.single_blog_wrapper {
+    margin: 1rem 0;
+}
+
+.single_blog {
+    padding: 1rem 0rem;
+    background: var(--light-color);
+    width: 100%;
+    margin: 1rem 0 !important;
+}
+
+.single_blog_title p {
+    font-size: 1.6rem;
+}
+
+.single_blog_middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.single_blog_image img {
+    min-height: 150px;
+    max-height: 200px;
+    /* vertical-align: middle; */
+}
+
+.single_blog_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.single_blog_text {
+    padding: 0.5rem 0;
+}
+
+.single_blog_text p {
+    font-size: 1;
+}
+
+.blog_read_btn a {
+    padding: 0.4rem;
+    background: var(--user-entry-btn);
+    color: var(--light);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    border-radius: 0;
+}
+
+.blog_read_btn a:hover {
+    color: var(--light-color);
+    background: var(--dark-color);
+}
+
+/*--------------------------------------------------------------------
+                        Main Elements css starts here
+--------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+                        Header_top css starts here
+--------------------------------------------------------------------*/
+.header_top_area {
+    background-color: var(--theme-color);
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 1rem;
+}
+
+.ham-burger {
+    display: block !important;
+    /* flex: 0 0 40px; */
+    margin-top: 10px;
+}
+
+.ham-burger a>span {
+    height: 3px;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-color);
+}
+
+.ham-burger:not(:last-child) a>span {
+    margin-bottom: 5px;
+}
+
+.header {
+    background-color: var(--theme-color);
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.header__logo {
+    height: 5rem;
+    padding: 10px 2rem 10px 1.429rem;
+    width: 15.929rem;
+}
+
+.header__search_container {
+    width: 60%
+}
+
+.header__search {
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+.data-list-back-drop {
+    position: fixed;
+    min-height: calc(100vh - 102px);
+    width: 100%;
+    background: var(--dark-color);
+    opacity: 0.4;
+    z-index: 999;
+    left: 0;
+    top: 102px;
+    cursor: pointer;
+}
+
+.data-list {
+    position: absolute;
+    background: var(--datalist-bg-color);
+    padding: 0.625rem;
+    font-size: 1.2rem;
+    z-index: 1000;
+    width: 98%;
+    min-height: 100%;
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+.data-list div {
+    padding: 0.625rem 1rem;
+}
+
+.data-list div:hover {
+    background-color: var(--dark-color);
+}
+.data-list .header_search_list_loader{
+    background-color: var(--light-color) !important;
+    text-transform:capitalize !important;
+    text-align:center !important;
+}
+.data-list div:hover a {
+    color: var(--light-color);
+}
+
+.header__search_inner {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    /* background-color: var(--light-color); */
+    /* border-radius: 0.425rem; */
+}
+
+.header__search .selectDiv select {
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    padding-right: 32px;
+    border: none;
+    background: var(--light-color);
+    color: var(--nav-bg);
+    cursor: pointer;
+    -ms-word-break: normal;
+    word-break: normal;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.selectDiv {
+    position: relative;
+}
+
+.selectDiv::after {
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: var(--nav-bg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 8px;
+    /*Adjust for position however you want*/
+
+    top: 10px;
+    padding: 0 0 2px;
+    /*left line */
+
+    position: absolute;
+    pointer-events: none;
+}
+
+.header__searchInput {
+    height: 40px;
+    padding: 5px 15px !important;
+    border: none;
+    border-radius: 5rem 0 0 5rem;
+    width: 100%;
+}
+
+.header__searchIcon {
+    padding: 8px 25px 0px 25px;
+    font-size: 17px;
+    color: var(--light-color);
+    border-radius: 0 5rem 5rem 0;
+    background: var(--nav-bg);
+}
+
+.header__searchIcon svg {
+    color: var(--light-color) !important;
+}
+
+.header__searchIcon:hover {
+    background: var(--dark-color);
+}
+
+.header__right {
+    padding-right: 10px;
+}
+
+.header__mobile_searchIcon {
+    padding-right: 20px;
+    font-size: 22px;
+}
+
+.header__mobile_searchIcon svg {
+    color: var(--light-color) !important;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+.header__nav div:not(:first-child){
+    margin-left: 20px;
+}
+
+/* .header__link {
+  margin-right: 20px;
+} */
+.header__link,
+a.header__option__lineTwo.header_logout {
+    color: var(--light-color) !important;
+    text-decoration: none;
+    display: none;
+}
+
+.header__link .header_my_account,
+a.header__option__lineTwo.header_logout {
+    color: var(--light-color);
+}
+
+.header__link .header_my_account:hover,
+a.header__option__lineTwo.header_logout:hover {
+    color: var(--light-color);
+    opacity: 0.7;
+}
+
+/* .header__option:hover {
+} */
+.header__option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header__option__lineOne,
+a.header__option__lineTwo.header_logout {
+    font-size: 13px;
+}
+
+.header__option__lineOne:hover,
+.header__option__lineOne:hover a {
+    opacity: 0.7;
+    color: var(--light-color);
+}
+
+.header__option__lineTwo {
+    /* font-size: 16px; */
+    font-weight: 700;
+}
+
+.header__option__basket {
+    display: flex;
+    color: var(--light-color);
+    align-items: center;
+    margin: 16px 0px;
+}
+
+.header__link2:hover .header__option__basket {
+    opacity: 0.7;
+}
+
+.header__link2 .header__option__basket .icon_name {
+    display: none;
+}
+
+.header__link2 .header__option__basket .icon {
+    height: 100%;
+    width: 1.7rem;
+    object-fit: contain;
+    /* margin-right: 5px; */
+    font-size: 22px;
+    margin-top: -7px;
+}
+
+/*--------------------------------------------------------------------
+                        Header nav css starts here
+--------------------------------------------------------------------*/
+.header_nav {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+}
+
+.nav_links {
+    display: none;
+}
+
+.more_link {
+    padding: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--theme-color);
+    font-weight: 300;
+}
+
+.more_link a img {
+    height: 20px;
+    width: 20px;
+    margin-right: 0.7rem;
+}
+.more_link a span {
+    /* margin-right: 0.2rem; */
+    color: var(--theme-color);
+    font-weight: 600;
+
+}
+
+.more_link .divider {
+    margin: 0 0.4rem;
+}
+
+.nav_links ul li a:hover,
+.more_link a:hover span {
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------------
+Back to top button css starts here
+--------------------------------------------------------------------*/
+
+.back_to_top span.flat-btn {
+    background: var(--primary-btn-color);
+    padding: 0.5rem;
+    text-align: center;
+    display: none;
+    color: var(--light-color);
+    height: 100%;
+    cursor: pointer;
+    color: var(--light-color);
+}
+
+.back_to_top span.flat-btn:hover {
+    color: var(--dark-color);
+}
+
+/*-------scroll to top-------*/
+.scroll-top {
+    background: var(--theme-color);
+    border-radius: 50%;
+    bottom: 50px;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    height: 50px;
+    position: fixed;
+    right: 15px;
+    text-align: center;
+    width: 50px;
+    z-index: 9;
+    color: var(--light-color);
+    line-height: 50px;
+    border: 2px solid #ddd;
+}
+
+.scroll-top span.lnr.lnr-arrow-up {
+    font-weight: bolder;
+}
+
+.not-visible {
+    visibility: hidden;
+    -webkit-opacity: 0;
+    opacity: 0;
+}
+
+/*--------------------------------------------------------------------
+Footer css starts here
+--------------------------------------------------------------------*/
+
+.footer {
+    background: var(--light-color);
+}
+
+/* Footer Top css */
+.footer_links {
+    padding: 1.7rem 0 1rem 0;
+    /* border-bottom: 1px solid var(--footer-border-color); */
+}
+
+.links_container {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.links_container h5 {
+    margin-bottom: 1rem;
+}
+
+.links li {
+    margin-bottom: 0.1rem;
+}
+
+.links li a {
+    color: var(--theme-color);
+    text-transform: capitalize;
+}
+
+.links li a:hover {
+    opacity: 0.4;
+}
+
+/* Footer bottom css */
+
+.footer_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/*-----------------------------------------------------------------------------------------
+                                          Home css starts here
+                  -------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+                        HomeSlider css starts here
+--------------------------------------------------------------------*/
+.slider-area {
+    width: 100%;
+    position: relative;
+}
+
+.single-slider {
+    width: 100%;
+}
+
+.single-slider .slider-image {
+    width: 100%;
+    object-fit: contain;
+}
+
+/* -----------------------------
+  Owl Carousel CSS (Header Slider) All breakpoints
+--------------------------------*/
+
+.home_slider .owl-carousel.owl-theme .owl-dots {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 14px;
+    line-height: 14px;
+    background: var(--light-color);
+    border-radius: 1.25rem;
+}
+
+.home_slider .owl-carousel.owl-theme .owl-dots .owl-dot span {
+    margin: 4px 5px;
+    width: 6px;
+    height: 6px;
+}
+
+.home_slider .owl-carousel.owl-theme .owl-dots .owl-dot.active span,
+.home_slider .owl-carousel.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: var(--theme-color);
+    border: none;
+}
+
+/* owl-carousel nav button styles */
+.home_slider .owl-nav button {
+    background: none;
+    border: none !important;
+    cursor: pointer;
+    left: 5px;
+    background: none;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 9999;
+    visibility: visible;
+    width: auto;
+    height: auto;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    transition: 0.4s;
+    font-size: 0.5 !important;
+}
+
+.home_slider button.owl-prev {
+    border: none !important;
+    right: auto;
+    left: 15px;
+    background: none !important;
+}
+
+.home_slider button.owl-next {
+    border: none !important;
+    left: auto;
+    right: 15px;
+    background: none !important;
+}
+
+/*--------------------------------------------------------------------
+                        Home Feature Area css starts here
+--------------------------------------------------------------------*/
+.home_feature_area img {
+    width: -webkit-fill-available;
+    width: 100%;
+    max-width: 100%;
+    object-fit: fill;
+}
+.feature_border{
+    border: 1px solid var(--theme-color);
+    border-radius: 0.25rem;
+}
+.feature_shadow{
+    box-shadow: -4px 7px 12px -6px rgb(0 0 0 / 23%);
+}
+
+/*--------------------------------------------------------------------
+Home Online Pharmacy Area css starts here
+--------------------------------------------------------------------*/
+
+/* Pharmacy Body css */
+
+.home_online_pharmacy {
+    text-align: center;
+    color: var(--heading-color);
+    text-transform: capitalize;
+    margin-bottom: 3rem;
+}
+
+.home_online_pharmacy h2 {
+    font-weight: bold;
+}
+
+.home_online_pharmacy .btn_container .row>div {
+    margin-top: 2rem;
+}
+
+.home_online_pharmacy .btn_container .text>p {
+    margin-bottom: 0.4rem !important;
+    /* font-size: 1.3rem; */
+}
+
+.home_online_pharmacy .btn_container .buttons a {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem 0;
+    color: var(--dark-color);
+}
+
+.home_online_pharmacy .btn_container .section-one .buttons a,
+.home_online_pharmacy .btn_container .section-three .buttons a {
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+}
+
+.home_online_pharmacy .btn_container .section-one .buttons a:hover,
+.home_online_pharmacy .btn_container .section-three .buttons a:hover {
+    color: var(--light-color);
+    border: 1px solid var(--theme-color);
+    background: var(--theme-color);
+}
+
+.home_online_pharmacy .btn_container .section-two .buttons a {
+    color: var(--light-color);
+    background-color: var(--user-entry-btn);
+}
+
+.home_online_pharmacy .btn_container .section-two .buttons a:hover {
+    background-color: var(--dark-color);
+}
+
+/* Pharmacy Body css */
+.home_online_pharmacy .pharmacy_body {
+    background: url('./assets/images/pharmacy_images/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+/* .home_online_pharmacy .pharmacy_body .pharmacy_left {
+  margin-bottom: 3rem;
+} */
+.home_online_pharmacy .pharmacy_body .pharmacy_right iframe {
+    width: 100%;
+    height: 20rem;
+}
+
+.home_online_pharmacy .pharmacy_body .list>li {
+    margin-bottom: 2.3rem;
+    font-size: 1.4rem;
+}
+
+.home_online_pharmacy .pharmacy_body .list .sub_list li {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    line-height: 30px;
+    color: var(--muted-color);
+}
+
+.home_online_pharmacy .pharmacy_body .list .sub_list li img {
+    width: 30px;
+    height: 30px;
+    padding: 0.3rem;
+    margin-right: 0.635rem;
+}
+
+/*--------------------------------------------------------------------
+Feature Brands css starts here
+--------------------------------------------------------------------*/
+.feature_brands {
+    margin-bottom: 0.625rem;
+}
+
+.feature_slider {
+    margin-top: 0.625rem;
+    padding: 1.5rem 0;
+    background: var(--gray-second-color);
+}
+
+/* slider css starts*/
+.brand_section {
+    padding: 0 1rem;
+}
+
+/*  */
+
+/*--------------------------------------------------------------------
+Banner Section css starts here
+--------------------------------------------------------------------*/
+.wide_banner img {
+    width: 100%;
+    object-fit: contain;
+}
+
+/*--------------------------------------------------------------------
+Healthcare Banner Section css starts here
+--------------------------------------------------------------------*/
+.health_banner_image {
+    margin-bottom: 0.625rem;
+}
+
+.health_banner_image img {
+    width: 100%;
+}
+
+/*--------------------------------------------------------------------
+Neccesary Popular Products css starts here
+--------------------------------------------------------------------*/
+.btn-more {
+    width: 100%;
+    display: block;
+    background: var(--muted-btn-color);
+    border: medium none;
+    color: var(--user-entry-btn);
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 0.625rem 0.313rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.btn-more:hover {
+    color: var(--dark-color);
+    background: var(--gray-color);
+}
+
+/*--------------------------------------------------------------------
+Article css starts here
+--------------------------------------------------------------------*/
+
+.article {
+    width: 100%;
+    color: var(--dark-color);
+    /* border: 1px solid var(--dark-color); */
+}
+
+.article_image {
+    height: 230px;
+}
+
+.article_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.article_post_body div {
+    margin-bottom: 00.313rem;
+}
+
+.article_post_body {
+    padding: 0.625rem;
+    text-align: left;
+}
+
+.article_details {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.article_post_body a {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.article_post_body a::after {
+    content: '>';
+    margin-left: 0.2rem;
+}
+
+/*--------------------------------------------------------------------
+              Home css ends here
+              --------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------
+            Product Details wrapper css starts here
+            --------------------------------------------------------------------*/
+/* .product_details_wrapper .details_buttons{
+  padding: 0.1rem;
+} */
+/*--------------------------------------------------------------------
+            User entry css starts here
+            --------------------------------------------------------------------*/
+.user_entry {
+    color: var(--dark-color);
+    padding: 5% 0;
+    position: relative;
+}
+
+.user_entry .login-form {
+    padding: 0px 50px 40px;
+    border: 1px solid var(--theme-color);
+    -webkit-box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user_entry .login-form .input {
+    border: 1px solid var(--theme-color);
+    height: 50px;
+}
+
+.user_entry_heading {
+    padding: 2.5rem 0 0rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.user_msg_text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.login-box button,.login-box a {
+    background: var(--user-entry-btn);
+    color: var(--light-color);
+    border-radius: 0.1rem !important;
+    height: 50px;
+    font-size: 1.3rem;
+}
+
+.login-box button:hover {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.resend_otp_button a:hover,
+.otp_msg,
+.resend_otp_button {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.resend_otp_button a {
+    color: var(--light-color);
+    padding: 0.4rem;
+    background: var(--user-entry-btn);
+    border-radius: 0.25rem;
+}
+
+.resend_otp_button a:hover {
+    color: var(--light-color);
+    background: var(--dark-color);
+}

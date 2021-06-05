@@ -1,0 +1,266 @@
+/* PRIMARY CLASSES */
+.dashboard_wrapper {
+    margin-top: var(--top-whitespace);
+}
+
+/* Dashboard Sidebar */
+/* My Account */
+.account_nav,
+.browse_nav {
+    margin-bottom: var(--margin-bottom);
+}
+
+.acc_heading {
+    background: var(--theme-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 0.75rem 0;
+    text-transform: uppercase;
+}
+
+.dash_nav_list ul {
+    border: 1px solid var(--theme-color);
+    padding: 0.325rem 0.625rem;
+}
+
+.dash_nav_list ul li {
+    text-transform: capitalize;
+    padding: 0.325rem 0 0 0;
+    font-size: var(--primary-text-size);
+}
+
+.dash_nav_list ul li a.active::before {
+    content: '';
+    border-color: var(--user-entry-btn);
+    border-style: solid;
+    border-width: 0.1rem 0.3em 0 0;
+    height: 1em;
+    width: 0.5em;
+    margin-right: 0.4em;
+}
+
+.dash_nav_list ul li a {
+    color: var(--muted-color);
+    font-weight: 300;
+    display: block;
+}
+
+.dash_nav_list ul li a.active {
+    color: var(--user-entry-btn);
+}
+
+.dash_nav_list ul li a:hover {
+    color: var(--user-entry-btn);
+    font-weight: 300;
+}
+
+.dash_nav_list ul li.logout a {
+    font-weight: 400;
+    color: var(--light-color);
+    background-color: var(--theme-color);
+    text-align: center;
+
+}
+
+.dash_nav_list ul li.logout a:hover {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+.browse_nav_list ul li a {
+    font-weight: 500 !important;
+}
+
+.browse_nav_list ul li a:hover {
+    background-color: var(--muted-btn-color);
+}
+
+/* MY DASHBOARD CSS STARTS HERE (DASHBOARD BODY) */
+/* Account Dashboard */
+.account_msg {
+    margin-bottom: 2.7rem;
+}
+
+.account_dashboard {
+    background: var(--myaccount-bg-color);
+}
+
+.acc_dash_heading h5 {
+    text-align: center;
+    padding: 0.725rem 0;
+    text-transform: capitalize;
+    color: var(--light-color);
+    background-color: var(--nav-bg);
+}
+
+.account_msg {
+    position: relative;
+    margin-top: 2rem;
+    font-size: var(--primary-text-size);
+    font-weight: 300;
+}
+
+.account_msg img {
+    position: absolute;
+    width: 1.571rem;
+    top: -10px;
+    left: 14px;
+}
+
+.account_msg p {
+    padding: 1rem;
+    -webkit-box-shadow: var(--box-shadow-1);
+    box-shadow: var(--box-shadow-1);
+    background: var(--light-color);
+}
+
+/* Order History */
+.order_lists,
+.my_orders,
+.primary_table {
+    margin-bottom: 2.7rem;
+    overflow-x: scroll;
+    height: 350px;
+    overflow: auto;
+}
+
+.order_lists,
+.my_orders,
+.primary_table th,
+.order_lists,
+.my_orders,
+.primary_table td {
+    vertical-align: middle !important;
+}
+
+.order_header {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    align-items: center;
+}
+
+.order_header span,
+.order_header a {
+    color: var(--dark-color);
+    font-size: var(--primary-text-size);
+    text-transform: capitalize;
+}
+
+.order_header a {
+    color: var(--user-entry-btn);
+}
+
+.order_header a:hover {
+    color: var(--dark-color);
+}
+
+.thead-primary {
+    background: var(--nav-bg);
+    color: var(--light-color);
+}
+
+.trow-light {
+    background: var(--light-color);
+    /* border-bottom: 1px solid var(--nav-bg) !important; */
+    border-top: none;
+}
+
+/* Account information start here */
+.account_information h5 {
+    background: var(--nav-bg);
+    padding: 0.725rem 0;
+    text-transform: capitalize;
+    color: var(--light-color);
+}
+
+.account_details {
+    padding: 0.7rem;
+    font-size: var(--primary-text-size);
+    font-weight: 300;
+    background: var(--light-color);
+    border: 1px solid var(--nav-bg);
+    box-shadow: var(--box-shadow-1);
+    -webkit-box-shadow: var(--box-shadow-1);
+    margin-bottom: 2.7rem;
+}
+
+.account_details .user_name {
+    text-transform: capitalize;
+}
+
+/* EDIT INFORMATION CSS STARTS HERE */
+.info_heading h3 {
+    border-bottom: 1px solid var(--dark-color);
+    margin-bottom: var(--top-whitespace);
+}
+
+.acc_info_inputs form label {
+    font-size: var(--primary-text-size);
+}
+
+.acc_info_inputs form input {
+    font-size: var(--primary-text-size);
+    height: 50px;
+}
+
+.form-check {
+    display: flex !important;
+    align-items: center;
+}
+
+.account_submit_btn {
+    text-align: center;
+}
+
+.account_submit_btn a {
+    padding: 0.4rem 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--light-color);
+    background-color: var(--user-entry-btn);
+}
+.account_submit_btn a:hover {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+.account_submit_btn button {
+    font-size: var(--primary-text-size);
+
+}
+
+.check-label {
+    border-radius: 0px;
+}
+
+.order-table-id {
+    width: 100%;
+}
+
+.order-table-date {
+    width: 350px;
+
+}
+
+.order-table-price {
+    width: 100%;
+}
+
+.order-table-btn {
+    width: 130px;
+}
+.order_price_card .order_price_section{
+    text-align:right;
+    border-right: 1px solid var(--theme-color);
+    font-weight: 500;
+}

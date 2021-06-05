@@ -1,0 +1,71 @@
+/* Category Row Section Css here */
+.single_category_wrapper a:hover{
+    text-decoration: none;
+  }
+  .single_category_box{
+    min-height: 138px;
+    background-color: var(--bg-color-one); 
+    padding: 0.325rem;
+    box-shadow: var(--box-shadow-one);
+  }
+  .category_image img{
+    min-height: 100%;
+      min-width: 120px;
+      width: 50%;
+      object-fit: contain;
+      max-height: 100%;
+      max-width: 100%;
+  }
+  .category_details{
+    padding-left: 0.625rem;
+  }
+  .category_name span{
+    font-size: 1.2rem;
+    font-weight:400;
+    text-transform: capitalize;
+    color:var(--dark-color) ;
+  }
+  .single_category_wrapper a:hover .category_name span{
+    color: var(--theme-color);
+  }
+  .category_btn {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .category_btn a{
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-right: 0.3rem;
+    padding: 0.4rem 0;
+  }
+  .category_btn a:hover{
+      color: var(--theme-color);
+  }
+  .category_btn a:after{
+      content: "\f054";
+      font-family: "Font Awesome 5 Free"; font-weight: 900; 
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      margin-left: 0.325rem;
+  }
+  .category_discount{
+    color: var(--light-color);
+    margin-top: 1rem;
+  }
+  .category_discount .discount_text{
+    color: var(--dark-color);
+    font-size: 1rem;
+    
+  }
+  .category_discount .discount_text span:not(:last-child){
+    margin-bottom: -13px;
+  }
+  .category_discount .discount_number{
+    font-size: 1.5rem;
+    color: var(--theme-color);
+  }
+  
+  

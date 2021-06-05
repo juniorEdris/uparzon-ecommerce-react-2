@@ -1,0 +1,56 @@
+.wishlist_wrapper{
+    background-color: var(--muted-btn-color);
+    padding-top: var(--top-whitespace);
+    padding-bottom: 3rem;
+    min-height: 100vh;
+}
+.wrapper_body{
+    background-color: var(--light-color);
+}
+.wishlist_header{
+    text-align: center;
+    padding: var(--margin-top) 0;
+}
+.wishlist_page_icon img{
+    width: 4rem;
+}
+.wishlist_header{
+    /* font-size: ; */
+    text-transform: capitalize;
+}
+
+/* ==============================================
+        wishlist_table css starts here 
+==================================================*/
+.wishlist_body{
+    overflow-x: scroll;
+}
+.wishlist_table td, .wishlist_table th{
+    text-align: center;
+    vertical-align: baseline !important;
+}
+.wishlist_table td,.wishlist_table button{
+    text-transform: capitalize;
+}
+.wishlist_table .wish_item_delete{
+    cursor:pointer;
+    width: 25px;
+    font-size: 1.2rem;
+    object-fit: contain;
+}
+.wishlist_table .wish_item_delete i{
+    font-size: 1.2rem;
+}
+.wishlist_table .btn-addcart{
+    border-radius: 3rem;
+    background: var(--theme-color);
+}
+.wishlist_table .btn-addcart:hover{
+    background: var(--dark-color);
+}
+
+.wish_item_image img{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}

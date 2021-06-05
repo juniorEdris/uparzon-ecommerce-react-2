@@ -1,0 +1,22 @@
+/* .video-js[tabindex="-1"]{
+    width:100%;
+}
+.vjs-big-play-button{
+    background-color: #dc3545!important;
+} */
+.home_online_pharmacy .pharmacy_body .list li b{
+    font-size: 1.7rem !important;
+}
+.home_online_pharmacy .pharmacy_body .list .sub_list li {
+    font-size: 1.7rem;
+    margin-top: 0.5rem;
+    line-height: 30px;
+    color: var(--muted-color);
+    display: flex;
+    align-items: center;
+}
+
+/* iframe css */
+.pharmacy_right .plyr__video-embed{
+    height: 320px;
+}

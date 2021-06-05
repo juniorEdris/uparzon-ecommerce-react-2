@@ -1,0 +1,151 @@
+.header_sticky{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 996;
+    width: 100%;
+    -webkit-box-shadow: 0 2px 8px rgb(0 0 0 / 27%);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 27%);
+    -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.sidebar{
+    height: 100%;
+}
+.sidebar_route{
+    width: 70%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+.sidebar_route_list{
+    padding: 1rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+.top-0{
+    top: 0 !important;
+}
+.sidebar_route_list li{
+    width: 100%;
+    padding: 0.7rem;
+    background-color: var(--theme-color);
+    margin-bottom: 0.4rem;
+}
+.sidebar_route_list li:hover{
+    background-color: #111;
+}
+.sidebar_route_list li a{
+    display: block;
+    color: #fff;
+    text-transform: capitalize;
+}
+.cross .lnr {
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    /* float: right; */
+    background-color: #fff;
+    /* border-radius: 3rem; */
+    padding: 0.6rem;
+    /* margin-top: 0.3rem; */
+    /* margin-right: 0.3rem; */
+    position: absolute;
+    right: -35px;
+}
+.cross .lnr:hover{
+    color: #fff;
+    background-color: #111;
+}
+.hamburger_icon{
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+/* Search Component Css */
+.search_list a{
+    color: var(--user-entry-btn);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: capitalize;
+    display: block;
+}
+/* .search_list a:hover{
+    background:var(--dark-color);
+    color:var(--light-color);
+} */
+
+/* User Drop Down css */
+
+.dropdown{
+    position: absolute;
+    right: 15px;
+    top: 57px;
+    width: 140px;
+    background: var(--light);
+    text-align: center;
+    z-index: 999;
+}
+.dropdown ul li{
+    padding: 0.3rem 0;
+    
+}
+.dropdown ul li:hover{
+    background-color: var(--theme-color);
+    
+}
+.dropdown ul li:hover a{
+    color: var(--light-color);
+
+}
+.dropdown ul li a{
+    display: block;
+    color: var(--dark);
+    text-transform: capitalize;
+}
+/* CATEGORY SIDEBAR CSS */
+.category_sidebar{
+    /* Useable from app.js */
+    min-height: 100% !important;
+    top: 0 !important;
+}
+.category_sidebar_list{
+    /* Useable from app.js */
+    height: 100% !important;
+}
+.category_sidebar_backdrop{
+    height: 100% !important;
+    top: 0 !important;
+}
+.category_sidebar_list_active{
+    background-color: #111 !important;
+}
+/* header Icons */
+.header_my_account img,
+.header_wishlist img{
+height: 20px;
+width: 20px;
+margin-right: 0.2rem;
+}
+@keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }

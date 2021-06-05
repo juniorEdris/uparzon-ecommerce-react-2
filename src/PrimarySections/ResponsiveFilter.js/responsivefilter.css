@@ -1,0 +1,20 @@
+.responsive_filter {
+    position: absolute;
+    top: 56px;
+    left: 0px;
+    z-index: 999;
+}
+.responsive_select{
+    width: 100%;
+    padding: 0 0.625rem;
+    margin: 0.625rem 0;
+    border-radius: 0.25rem;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    font-size: 1.2rem;
+    line-height: 50px;
+    border: none;
+    background: var(--nav-bg);
+    color: var(--light-color);
+}

@@ -1,0 +1,26 @@
+	MEDIPATHY REACT APP
+npm libraries:
+"react-owl-carousel": "^2.3.1",
+"react-redux": "^7.2.2",
+"react-router-dom": "^5.2.0",
+"redux": "^4.0.5",
+"redux-thunk": "^2.3.0",
+"web-vitals": "^1.1.0"
+
+
+
+https://react-bones.com/
+https://reactjsexample.com/a-loading-skeleton-component-built-on-react/
+https://reactjsexample.com/dead-simple-loading-components-for-react-and-react-native/
+
+CSS==================
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+
+  html::-webkit-scrollbar {
+  display: none; /* css for scrollbar hide*/
+}

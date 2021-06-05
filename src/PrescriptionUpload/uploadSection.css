@@ -1,0 +1,163 @@
+/* PrescriptionUpload css here */
+.prescription_body{
+    min-height: 100vh;
+}
+.prescription_upload{
+    padding: 1.2rem 0;
+    text-transform: capitalize;
+    margin-bottom: var(--margin-bottom);
+    margin-top: var(--margin-top);
+}
+/* Upload Sections css here */
+.upload_section{
+    padding: 1rem;
+    border: 1px solid var(--muted-color);
+    margin-bottom: var(--margin-bottom);
+}
+.upload_section_top {
+    font-size: 0.7rem;
+    margin-bottom: var(--margin-bottom);
+}
+.upload_section_middle span{
+    font-size: 1.7rem;
+}
+.file_upload_btn{
+    text-align: center;
+}
+.file_upload_btn span{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.image_preview{
+    padding:0.5rem ;
+    justify-content: center;
+}
+.image_preview img{
+    height: 230px;
+    width: 100%;
+    max-width: 230px;
+    object-fit: contain;
+}
+.image_preview .remove_picture{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--light-color);
+    color: var(--theme-color);
+    padding: 0.2rem;
+    font-weight: 900;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.image_preview .remove_picture:hover{
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+.file-input-img{
+    margin-bottom: var(--margin-bottom);
+}
+.file-input {
+    display: none;
+}
+label.gallery-btn{
+    background-color: var(--theme-color);
+    color: var(--light-color);
+    border-radius: 4rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+label.gallery-btn:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+label.gallery-btn .gallery-btn-img{
+    width: 1.1rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.2rem;
+}
+.submit_button button{
+    border-radius: 0;
+    background-color: var(--user-entry-btn);
+    color: var(--light-color);
+    font-size: 1.7rem;
+    border-radius: 4rem;
+}
+.submit_button button:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+/* Preview Section css here */
+.preview_section{
+    text-align: center;
+}
+.preview_footer_heading{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.preview_footer_btns{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+}
+.steps{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.steps_count{
+    border:1px solid var(--theme-color);    
+    height: 50px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:50px;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    justify-content: center;
+    margin: 0 1.7rem;
+    margin-bottom: var(--margin-bottom);
+    font-size: 1.7rem;
+}
+
+.steps p{
+    color: var(--user-entry-btn);
+    text-align: center;
+    padding: 0 1rem;
+    text-transform: none;
+
+}
+/* Name Input Css Here */
+.name_nput_wrapper .prescription_name{
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+.name_nput_wrapper .prescription_name_label{
+    font-size: 1.2rem;
+    
+}
+/* Prescription loading */
+.prescription_loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--heading-color);
+    width: 100%;
+    z-index: 2000;
+    opacity: 0.4;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

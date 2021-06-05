@@ -1,0 +1,9 @@
+.copyright {
+    text-align: center;
+    background-color: var(--theme-color);
+    color: var(--light-color);
+}
+.copyright p{
+    margin: 0;
+    padding: 0.5rem 0;
+}

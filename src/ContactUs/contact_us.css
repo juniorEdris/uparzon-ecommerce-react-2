@@ -1,0 +1,61 @@
+.map_wrapper{
+    text-align: center;
+}
+.contact_box{
+    text-align: center;
+    padding: 1rem;
+    border-top: none;
+    border-left: 1px solid var(--dark-color);
+    border-bottom: 1px solid var(--dark-color);
+    border-right: 1px solid var(--dark-color);
+}
+.contact_box_header img{
+    width: 40px;
+    margin-bottom: 0.7rem;
+}
+.contact_box_header h4{
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+.contact_box_body{
+    font-size: 1.2rem;
+}
+.contact_box_body div{
+    margin-bottom: 0.4rem;
+}
+/* Contact Form css starts */
+.contact_form h1{
+    text-align: center;
+    margin: 2rem 0;
+}
+.contact_form input{
+    height: 4rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--theme-color);
+    padding: 0 1.4rem;
+}
+.contact_form input,.contact_form textarea{
+    font-size: 1.2rem;
+}
+.contact_form input::-webkit-input-placeholder,.contact_form textarea::-webkit-input-placeholder{
+    font-size: 1.2rem;
+}
+.contact_form textarea{
+    resize: none;
+    border-radius: 0.75rem;
+    border: 1px solid var(--theme-color);
+    padding: 1.4rem;
+}
+.contact_form .button{
+    display: block;
+    background-color: var(--user-entry-btn);
+    color: var(--light-color);
+    width: 100%;
+    border-radius: 2rem;
+    padding: 0.625rem 0;
+    font-size: 1.2rem;
+}
+.contact_form .button:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}

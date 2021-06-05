@@ -1,0 +1,75 @@
+.primary_popup_wrapper{
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+}
+.inner_popup_wrapper{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 100%;
+    z-index: 999;
+    padding: 2rem 0;
+    background: var(--light-color);
+    transform: translate(-50%, 50%);
+}
+.primary_popup_backdrop{
+    position: fixed;
+    top: 0 !important;
+    min-height: 100%;
+    width: 100%;
+    background: var(--dark-color);
+    opacity: 0.4;
+    z-index: 997;
+    left: 0;
+    top: 76px;
+    cursor: pointer;
+}
+.primary_back_btn{
+    text-align: center;
+    background: var(--light-color);
+}
+.primary_close_box{
+    width: 30px;
+    height: 30px;
+    padding-left: 0.1rem;
+    line-height: 30px;
+    background: var(--danger);
+    color: var(--light);
+    position: absolute;
+    top: -6px;
+    font-size: 1.7rem;
+    right: -7px;
+    border-radius: 3rem;
+    cursor: pointer;
+    text-align: center;
+}
+.primary_close_box:hover{
+    background: var(--dark-color) !important;
+}
+/* SpinLoder css */
+.spin_loader{
+    opacity: 0.4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+}
+.spin_loader_backdrop{
+    background: var(--dark-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1999;
+    width: 100%;
+    opacity: 0.4;
+}
+/* no_products css */
+.no_products{
+    height: 230px;
+}
