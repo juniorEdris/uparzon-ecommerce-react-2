@@ -25,6 +25,14 @@
     font-size:1rem ;
   }
 }
+@media (min-width: 1024px){
+  .category_image {
+    min-width: 77px;
+}
+  .category_image img {
+    min-width: 77px;
+}
+}
 
 /* ===================================== */
 /* LG Device :992px. */
@@ -111,6 +119,10 @@
   }
 }
 @media (min-width: 768px) {
+  .col-features{
+    flex: 0 0 19.97777%;
+    max-width: 19.97777%;
+}
   .header__nav {
     width: 185px;
   }
@@ -186,10 +198,32 @@
     position: unset;
   }
 
+  /* Home Categories */
+  .category_name span{
+    font-size: 1rem;
+  }
 }
 
-@media (min-width: 480px) and (max-width: 575px) {
+@media (min-width:576px) {
+
+  /* Section Header One */
+  .sectionHeaderOne {
+      font-size: 1.5rem;
+  }
+
+  .sectionHeaderOne ul {
+      padding-bottom: 0.9rem !important;
+  }
+
+  .sectionHeaderOne ul li {
+      margin-right: 1.8rem;
+  }
+
+  .sectionHeaderOne ul li a.active {
+      border-bottom: 5px solid var(--theme-color);
+  }
 }
+
 
 /* x-SM Small Device */
 @media (max-width: 360px) {

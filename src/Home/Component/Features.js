@@ -22,12 +22,12 @@ export const Features = (props) => {
       name: '100% Money Back',
       small: 'You have 30 days to Return',
     },
-    // {
-    //   id: 4,
-    //   image: 'shipping-fast.svg',
-    //   name: '90 Days Return',
-    //   small: 'If goods have problems',
-    // },
+    {
+      id: 4,
+      image: 'shipping-fast.svg',
+      name: '90 Days Return',
+      small: 'If goods have problems',
+    },
     {
       id: 5,
       image: 'simple-f-secure.svg',
@@ -36,21 +36,23 @@ export const Features = (props) => {
     },
   ];
   return (
-    <div className="home_feature_area mb-5 mb-md-2 ">
+    <div className="home_feature_area mb-5 mb-md-2 d-none d-md-block">
       <div className="container-md-fluid">
         <div className="features_body">
           <div className="row align-tems-center">
             {images.map((image) => (
-              <div className="single_feature col-md-3 mb-3" key={image.id}>
-                <div className="d-flex align-items-center feature_border feature_shadow">
+              <div className="single_feature col-features mb-3" key={image.id}>
+                <div className="d-flex align-items-center feature_border feature_shadow flex-wrap justify-content-center">
                   <div className="image">
                     <img
                       src={`./uparzonassets/svg/icons/features/${image.image}`}
                       alt={'feature images'}
                     />
                   </div>
-                  <div className="text">{image.name}</div>
-                  {/* <div className="">{image.small}</div> */}
+                  <div className="text mb-2">
+                    <p className="p-0 m-0">{image.name}</p>
+                    <small>{image.small}</small>
+                  </div>
                 </div>
               </div>
             ))}

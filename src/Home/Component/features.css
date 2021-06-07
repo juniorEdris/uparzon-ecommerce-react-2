@@ -4,11 +4,16 @@
 /* .single_feature{
     padding: 1rem ;
 } */
+.single_feature:not(:last-child) {
+    padding-right: .5rem!important;
+}
 .single_feature img{
     padding:1rem;
 }
 .single_feature .text{
-    font-size: 1.5rem;
     text-transform: capitalize;
     color: var(--muted-color);
+}
+.single_feature .text small{
+    font-size: 50%;
 }

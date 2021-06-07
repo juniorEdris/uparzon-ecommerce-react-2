@@ -55,19 +55,11 @@ const ListProductsSection = (props) => {
   return (
     <div className="section-gap-top">
       <div className="d-flex flex-wrap col-12 p-0">
-        <ListCard data={props.primaryProducts} title={'Headphones'} list />
-        <ListCard
-          data={props.primaryProducts}
-          title={'Top Selling Products'}
-          list
-        />
-        <ListCard
-          data={props.primaryProducts}
-          title={'On Sale Products'}
-          list
-        />
+        <ListCard data={props.products[0]} title={'Electronic Devices'} list />
+        <ListCard data={props.products[1]} title={`Men's Fashion`} list />
+        <ListCard data={props.products[2]} title={`Women's Fashion`} list />
         {/* <ListCard title={ 'Headphones'}/> */}
-        <div className={`col-md-3 col-12 list_view_section_banner`}>
+        <div className={`col-md-3 col-6 list_view_section_banner`}>
           <img
             src="./uparzonassets/uparzonimages/banners/imageBanner.png"
             alt=""
@@ -80,7 +72,7 @@ const ListProductsSection = (props) => {
 
 const mapStateToProps = (state) => ({
   loading: state.HomeContent.loading,
-  primaryProducts: state.HomeContent.primaryProducts,
+  products: state.HomeContent.categoryProducts,
 });
 
 const mapDispatchToProps = {};
@@ -89,3 +81,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ListProductsSection);
+
+// data={props.products[1]}

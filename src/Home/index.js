@@ -27,7 +27,7 @@ import ListProductsSection from './Component/ListProductsSection';
 
 const Index = (props) => {
   console.log('====================================');
-  console.log(props.primaryProducts);
+  console.log(props);
   console.log('====================================');
   useEffect(() => {
     toTheTop();
@@ -41,7 +41,6 @@ const Index = (props) => {
       {/* <OnlinePharma
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
       /> */}
-      {/* <FeatureBrands /> */}
       <FeatureProducts />
       <div className="container-md-fluid">
         <HalfBanners />
@@ -53,6 +52,7 @@ const Index = (props) => {
         <HomeAllProducts />
         <ListProductsSection />
       </div>
+      {/* <FeatureBrands /> use for the brand slider */}
       {/* <BannerSection />
       <PopularProduct />
       <HealthCareBanners />
@@ -68,7 +68,8 @@ const Index = (props) => {
 const mapStateToProps = (state) => ({
   loading: state.HomeContent.loading,
   sliders: state.HomeContent.homeSlider,
-  primaryProducts: state.HomeContent.primaryProducts,
+  allProducts: state.HomeContent.allProducts,
+  categoryProducts: state.HomeContent.categoryProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({});

@@ -59,21 +59,21 @@ function App(props) {
     //  props.demo();
     // props.User && props.getOrderList();
   }, []);
-  useEffect(() => {
-    document.body.style.overflow = categoryBar ? 'hidden' : '';
-  }, [categoryBar]);
+  // useEffect(() => {
+  //   document.body.style.overflow = categoryBar ? 'hidden' : '';
+  // }, [categoryBar]);
   return (
     <Router>
       <div className="App">
         <Header categoryBar={categoryBar} setCategoryBar={setCategoryBar} />
-        <CategorySidebar
+        {/* <CategorySidebar
           categoryName={categoryName}
           setCategoryName={setCategoryName}
           categoryBar={categoryBar}
           setCategoryBar={setCategoryBar}
           categoryID={categoryID}
           setCategoryID={setCategoryID}
-        />
+        /> */}
         <Switch>
           <Route exact path="/">
             <Home

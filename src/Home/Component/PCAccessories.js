@@ -6,9 +6,9 @@ const PCAccessories = (props) => {
   return (
     <div>
       <ProductRow
-        title={`PC Accessories`}
+        title={`Women's Fashion`}
         imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/pc_accessories_row_banner.png`}
-        data={props.primaryProducts}
+        data={props.products[2]}
       />
     </div>
   );
@@ -16,7 +16,7 @@ const PCAccessories = (props) => {
 
 const mapStateToProps = (state) => ({
   loading: state.HomeContent.loading,
-  primaryProducts: state.HomeContent.primaryProducts,
+  products: state.HomeContent.categoryProducts,
 });
 
 const mapDispatchToProps = {};

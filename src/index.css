@@ -70,6 +70,11 @@ html {
     /* css for scrollbar hide IE and Edge*/
     font-size: 14px;
     scroll-behavior: smooth;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
 }
 
 body::-webkit-scrollbar {
@@ -162,7 +167,9 @@ h6 {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
-
+.box-shadowOne{
+    box-shadow: var(--box-shadow-one) !important;
+}
 /* Dashboard table primary css */
 .primary_table table {
     text-align: center;
@@ -230,42 +237,45 @@ h6 {
 ALL Section Heading css starts here
 --------------------------------------------------------------------*/
 /* Section heading one */
-.section_heading_one {
-    position: relative;
-    /* font-size: 1rem; */
-    z-index: 1;
-    overflow: hidden;
-    text-align: center;
-    color: var(--heading-color);
-    padding: 0 0.625rem;
-    font-weight: 300;
-    margin-bottom: 1.2rem;
-    text-transform: capitalize;
+.sectionHeaderOne {
+    border-bottom: 1px solid var(--theme-color);
+    line-height: 0;
+    font-size: 0.7rem;
 }
 
-.section_heading_one:before,
-.section_heading_one:after {
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 50%;
-    height: 0.063rem;
-    content: '\a0';
-    background-color: var(--heading-color);
+.sectionHeaderOne ul {
+    margin: 0 !important;
+    padding-bottom: 0.5rem !important;
 }
 
-.section_heading_one:before {
-    margin-left: -54%;
-    text-align: right;
+.sectionHeaderOne ul li {
+    margin-right: 1rem;
 }
 
-.section_heading_one:after {
-    margin-left: 4%;
+.sectionHeaderOne ul li a {
+    color: var(--theme-color);
+}
+.sectionHeaderOne ul li a.active {
+    border-bottom: 3px solid var(--theme-color);
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>ALL PRODUCTS BTN <<<<<<<<<<<<<<<<<<<<*/
+a.all-products-btn {
+    color: var(--theme-color);
+    padding: .5rem;
+    border-radius: 8rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--theme-color);
+    line-height: 0;
+    margin-bottom: 0.365rem;
+}
+.float_right{
+    float: right;
+}
+.sectionHeaderOne a.all-products-btn:hover {
+    background-color: var(--theme-color);
+    color: var(--light-color);
 }
 
-.section_heading_one span {
-    font-weight: 600;
-}
 
 /* Section header two */
     .section_header_two {
@@ -277,7 +287,7 @@ ALL Section Heading css starts here
         display: inline-block;
         margin: 0;
         padding: 0;
-        /* padding-right: 3rem; */
+        padding-right: 0.7rem;
         padding-bottom: 0.4rem;
         color: var(--theme-color);
 }
@@ -286,37 +296,45 @@ ALL Section Heading css starts here
 /* Section heading three */
 .section_heading_three {
     position: relative;
-    /* font-size: 1rem; */
     z-index: 1;
     overflow: hidden;
-    color: var(--heading-color);
+    text-align: center;
+    color: var(--theme-color);
     padding: 0 0.625rem;
     font-weight: 300;
     margin-bottom: 1.2rem;
+    text-transform: capitalize;
+    font-size: 1.6rem;
 }
 
+.section_heading_three:before,
 .section_heading_three:after {
     position: absolute;
     top: 51%;
     overflow: hidden;
-    width: 75%;
+    width: 50%;
     height: 0.063rem;
     content: '\a0';
-    background-color: var(--heading-color);
+    background-color: var(--theme-color);
 }
 
 .section_heading_three:before {
-    margin-left: -54%;
+    margin-left: -50%;
     text-align: right;
 }
 
 .section_heading_three:after {
-    margin-left: 4%;
+    margin-left: 0%;
 }
 
 .section_heading_three span {
-    font-weight: 600;
+    display: inline-block;
+    width: 400px;
+    border: 1px solid var(--theme-color);
+    border-radius: 3rem;
+    background-color: var(--light-color);
 }
+
 
 /*--------------------------------------------------------------------
                         Primary Slider css starts here
@@ -663,14 +681,12 @@ ALL Section Heading css starts here
 .ham-burger:not(:last-child) a>span {
     margin-bottom: 5px;
 }
-
 .header {
     background-color: var(--theme-color);
     display: flex;
     align-items: center;
     z-index: 100;
     justify-content: space-between;
-    padding: 0px 20px;
 }
 
 .header__logo {
@@ -739,7 +755,7 @@ ALL Section Heading css starts here
 
 .header__search .selectDiv select {
     height: 40px;
-    width: 120px;
+    width: 150px;
     padding: 10px;
     padding-right: 32px;
     border: none;
@@ -751,6 +767,8 @@ ALL Section Heading css starts here
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    text-align-last: right;
+    padding-right: 40px;
 }
 
 .selectDiv {
@@ -995,6 +1013,70 @@ Back to top button css starts here
 Footer css starts here
 --------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------
+              Footer area css here
+-------------------------------------------------------------------*/
+
+
+.footer-top {
+    padding-bottom: 53px;
+    padding-top: 58px;
+}
+
+.footer_bottom_wrapper {
+    background-color: var(--newsletter-bg-color);
+}
+
+.footer_payment div {
+    float: right;
+}
+.footer_payment img {
+    height: 37px;
+    width: 238px;
+    object-fit: contain;
+    float: right;
+}
+
+.footer_top_logo img {
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.footer_top_logo p {
+    color: var(--theme-color);
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.footer_heading {
+    font-weight: 700;
+    font-size: 1rem!important;
+    margin-bottom: 1rem;
+}
+
+.footer_list li {
+    margin-bottom: 0.4rem;
+}
+
+.footer_list li a {
+    text-transform: capitalize;
+    color: var(--theme-color);
+}
+
+.footer_list li a:hover {
+    color: var(--dark-color) !important;
+    margin-left: 0.5rem;
+}
+
+
+
+/*
+
+    rest
+
+*/
 .footer {
     background: var(--light-color);
 }

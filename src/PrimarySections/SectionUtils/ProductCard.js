@@ -41,7 +41,7 @@ const ProductCard = (props) => {
                 ))}
             </div>
             <div className="product_price">
-              <p>&#2547; {props.product?.price}</p>
+              <p>&#2547; {(props.product?.price).toFixed(2)}</p>
             </div>
           </div>
           <div className="addTocart_btn">

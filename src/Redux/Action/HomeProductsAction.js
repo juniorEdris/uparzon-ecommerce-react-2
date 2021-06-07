@@ -12,8 +12,9 @@ const fetchHomeProductsRequest = () => ({
 const fetchHomeProductsSuccess = (res) => {
   return {
     type: FETCH_HOME_PRODUCTS_SUCCESS,
-    // categories: res.categories,
-    // slider: res.sliders,
+    categories: res.uparzon_categories,
+    categoryProducts: res.category_products,
+    slider: res.home_page_slider,
     // homeBrands: res.companies.data,
     // popularProducts: res.trending_products.data,
     // neccessaryProducts: res.products.data,
@@ -25,7 +26,8 @@ const fetchHomeProductsSuccess = (res) => {
     // top_large_banner: res.top_large_banner,
     // bottom_large_banner: res.bottom_large_banner,
     // appBanner: res.footer_top_large_banner,
-    primaryProducts: res.data,
+    allProducts: res.products,
+    basePath: res.img_base_path,
   };
 };
 const fetchHomeProductsError = (error) => ({

@@ -6,7 +6,7 @@ function Logo() {
     <>
       <Link to="/">
         <img
-          className="header__logo"
+          className="header__logo pl-0 pr-0"
           src={'uparzonassets/svg/logo/logo.svg'}
           alt="Uparzon Logo"
         />

@@ -8,7 +8,7 @@ const PhoneRow = (props) => {
       <ProductRow
         title={`Smartphone & Tablets`}
         imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/DyGEME3W0AAncU6.png`}
-        data={props.primaryProducts}
+        data={props.products[0]}
       />
     </div>
   );
@@ -16,7 +16,7 @@ const PhoneRow = (props) => {
 
 const mapStateToProps = (state) => ({
   loading: state.HomeContent.loading,
-  primaryProducts: state.HomeContent.primaryProducts,
+  products: state.HomeContent.categoryProducts,
 });
 
 const mapDispatchToProps = {};

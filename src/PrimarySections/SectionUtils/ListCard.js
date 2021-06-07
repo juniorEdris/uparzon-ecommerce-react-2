@@ -9,13 +9,13 @@ export default function ListCard(props) {
     <div
       className={`${
         props.fullWidth ? 'col-12' : 'col-md-3'
-      } product_list col-12  pl-0`}>
+      } product_list col-6  pl-0`}>
       <SectionHeadingTwo section_title={props.title} list={props.list} />
       <div className="">
         {props.data?.map((product) => (
           <div className={`home_product_list_wrapper col mb-3`}>
             <div className="d-flex">
-              <div className={`list_product_image`}>
+              <div className={`list_product_image pr-1`}>
                 {props.demoImage ? (
                   <img src={`${product?.photo}`} alt="" />
                 ) : (
@@ -42,7 +42,7 @@ export default function ListCard(props) {
                     ))}
                 </div>
                 <div className={`list_product_price d-flex`}>
-                  <p>&#2547; {product.price}</p>
+                  <p>&#2547; {product.price.toFixed(2)}</p>
                 </div>
               </div>
             </div>

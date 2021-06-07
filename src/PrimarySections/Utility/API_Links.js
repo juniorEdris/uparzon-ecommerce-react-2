@@ -1,5 +1,5 @@
 import Axios from 'axios';
-export const DOMAIN = `https://store.uparzon.com/`;
+export const DOMAIN = `https://demostore.uparzon.com/`;
 
 let BaseApi = Axios.create({
   baseURL: DOMAIN,

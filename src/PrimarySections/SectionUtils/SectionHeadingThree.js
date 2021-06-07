@@ -3,9 +3,9 @@ import React from 'react';
 function SectionHeadingThree(props) {
   return (
     <div>
-      <h1 className="section_heading_three">
-        <span>{props.textOne}</span> {props.textTwo}
-      </h1>
+      <h5 className="section_heading_three">
+        <span>{props.tittle}</span>
+      </h5>
     </div>
   );
 }

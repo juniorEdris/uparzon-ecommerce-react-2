@@ -36,10 +36,10 @@ const CategorySidebar = (props) => {
                     key={cat.id}
                     onClick={() => {
                       props.setCategoryBar(!props.categoryBar);
-                      props.setCategoryName(cat.name.en);
+                      props.setCategoryName(cat.name);
                       props.setCategoryID(cat.id);
                     }}>
-                    {cat.name.en}
+                    {cat.name}
                   </Link>
                 </li>
               ))}

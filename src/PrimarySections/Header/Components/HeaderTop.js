@@ -39,7 +39,7 @@ export const HeaderTop = (props) => {
     props.getSearchResults({ keywords: input, category: option });
   }, [input, option]);
   return (
-    <nav className="header">
+    <nav className="header container-md-fluid">
       {/* <HamBurger /> */}
       <Logo />
       <Search

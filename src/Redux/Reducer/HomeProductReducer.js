@@ -31,6 +31,7 @@ export const HomeContentReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         categories: action.categories,
+        categoryProducts: action.categoryProducts,
         homeSlider: action.slider,
         homeBrands: action.homeBrands,
         popularProducts: action.popularProducts,
@@ -43,7 +44,8 @@ export const HomeContentReducer = (state = initialState, action) => {
         hometoplargeBannner: action.top_large_banner,
         homebtmLargeBanner: action.bottom_large_banner,
         homeappBanner: action.appBanner,
-        primaryProducts: action.primaryProducts,
+        allProducts: action.allProducts,
+        basePath: action.basePath,
       };
     case FETCH_HOME_PRODUCTS_ERROR:
       return {

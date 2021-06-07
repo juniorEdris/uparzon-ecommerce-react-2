@@ -7,7 +7,11 @@ import SectionHeadingTwo from './SectionHeadingTwo';
 const ProductRow = (props) => {
   return (
     <div className=" section-gap-top">
-      <SectionHeadingTwo section_title={props.title} />
+      <SectionHeadingTwo
+        section_title={
+          props.title //props.data[0].category ? props.data[0].category?.name :
+        }
+      />
       <div className={`d-flex flex-wrap `}>
         <div
           className={`row_single_banner  col-6 col-md-4 col-lg-2 pb-2 pr-md-2 pl-md-2`}>

@@ -27,6 +27,7 @@ export const initialState = {
   pages: [],
   //HomeContents
   categories: [],
+  categoryProducts: [],
   homeSlider: [],
   homeBrands: [],
   neccessaryProducts: [],
@@ -39,7 +40,8 @@ export const initialState = {
   homebtmLargeBanner: {},
   homeappBanner: {},
   homebrandBtmBanner: {},
-  primaryProducts: [],
+  allProducts: [],
+  basePath: [],
   // Neccessary Page states
   neccessaryResults: [],
   neccessaryCategories: [],
