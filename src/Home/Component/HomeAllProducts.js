@@ -6,7 +6,7 @@ import SectionHeadingThree from '../../PrimarySections/SectionUtils/SectionHeadi
 const HomeAllProducts = (props) => {
   return (
     <div className="section-gap-top">
-      <SectionHeadingThree tittle={'See All Products'} />
+      <SectionHeadingThree tittle={'All Products'} />
       <div className="d-flex flex-wrap chilldren-gap-top">
         {props.products?.map((product) => (
           <div className="col-6 col-md-4 col-xl-2 mb-3 col-xxl-1 pr-md-2 pl-md-2">

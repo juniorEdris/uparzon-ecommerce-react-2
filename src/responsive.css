@@ -216,6 +216,10 @@
   .category_btn a{
     font-size: 0.8rem;
   }
+  .section_heading_three span{
+    width: unset !important;
+    padding: 0.8rem;
+  }
 }
 
 @media (min-width:576px) {

@@ -16,8 +16,8 @@ export const API = () => {
 
 export const ENDPOINTS = {
   HOMEPRODUCT: `api/uparzonweb/get_home_products`,
+  SEARCH: `/api/uparzonweb/search_products`,
   PRODUCTDETAILS: `api/web/get_single_product?product_id=`,
-  SEARCH: `api/web/search_product`,
   ADDTOBASKET: `api/product/add_to_cart`,
   CART_UPDATE: `api/user/cart_update/`,
   DELETEFROMBASKET: `api/cart/delete_product/`,

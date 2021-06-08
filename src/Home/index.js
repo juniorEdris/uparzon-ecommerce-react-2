@@ -73,7 +73,7 @@ const mapStateToProps = (state) => ({
   loading: state.HomeContent.loading,
   sliders: state.HomeContent.homeSlider,
   allProducts: state.HomeContent.allProducts,
-  categoryProducts: state.HomeContent.categoryProducts,
+  // categoryProducts: state.HomeContent.categoryProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({});

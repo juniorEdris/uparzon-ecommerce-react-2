@@ -1,9 +1,15 @@
 import Skeleton from '@yisheng90/react-loading';
 import React, { useState } from 'react';
+import InputRange from 'react-input-range';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Sidebar = (props) => {
+  const [priceRange, setPriceRange] = useState({
+    min: 0,
+    max: 500,
+  });
+  const [price, setPrice] = useState();
   const sorting = [
     // {
     //   id: 1,
@@ -28,102 +34,103 @@ const Sidebar = (props) => {
   ];
 
   return (
-    <div className="search_sidebar col-md-4 col-xl-3 d-none d-md-block">
-      {' '}
-      {/* categories */}
-      {!props.category_hide && (
-        <div className="sidebar_categories mb-5">
-          <div className="sidebar_header">
-            <h5>
-              {props.loading ? (
-                <Skeleton width="50%" height="50px" />
-              ) : (
-                'Categories'
-              )}
-            </h5>
-          </div>
-          <div className="sidebar_list">
-            {props.loading ? (
-              <ul>
-                {Array(6)
-                  .fill()
-                  .map((list) => (
-                    <li>
-                      <Skeleton width="100%" height="30px" />
-                    </li>
-                  ))}
-              </ul>
-            ) : (
-              <ul>
-                <li>
-                  <Link
-                    to="#"
-                    className={props.category === '' && 'active'}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.setCategory('');
-                    }}>
-                    All
-                  </Link>
-                </li>
-                {props.categories?.map((category) => (
-                  <li key={category.id}>
-                    <Link
-                      to="#"
-                      className={props.category === category.id && 'active'}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        props.setCategory(category.id);
-                      }}>
-                      {props.home ? category.name.en : category.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      )}
-      {/* sorting */}
-      <div className="sidebar_sorting mb-5">
-        <div className="sidebar_header">
-          <h5>
-            {props.loading ? (
-              <Skeleton width="50%" height="50px" />
-            ) : (
-              'Sorted by'
-            )}
-          </h5>
-        </div>
-        <div className="sidebar_list">
-          {props.loading ? (
-            <ul>
-              {Array(6)
-                .fill()
-                .map((list) => (
-                  <li>
-                    <Skeleton width="100%" height="30px" />
-                  </li>
-                ))}
-            </ul>
-          ) : (
-            <ul>
-              {sorting.map((sort) => (
-                <li key={sort.id}>
-                  <Link
-                    to="#"
-                    className={props.sort === sort.name && 'active'}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.setSort(sort.name);
-                    }}>
-                    {sort.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+    <div className="col-md-4 col-xl-3 d-none d-md-block chilldren-gap-top">
+      {/* Category starts here */}
+      <div className="sidebar_list_wrapper col mb-4">
+        <h5 className="sidebar_headings">categories</h5>
+        <ul className="sidebar_list not-square-option">
+          {props.categories?.map((cat) => (
+            <li>
+              <Link to="#" onClick={(e) => e.preventDefault()}>
+                {cat.name}
+              </Link>
+            </li>
+          ))}
+          {/* <li>
+            <Link to="">garden & kitchen </Link>
+          </li>
+          <li>
+            <Link to="">consumer electrics </Link>
+          </li>
+          <li>
+            <Link to="">health & beauty </Link>
+          </li>
+          <li>
+            <Link to="">computers & technology </Link>
+          </li>
+          <li>
+            <Link to="">jwelerry & watches </Link>
+          </li>
+          <li>
+            <Link to="">phone & Accessories </Link>
+          </li> */}
+        </ul>
+      </div>
+      <div className="sidebar_list_wrapper col mb-4">
+        <h5 className="sidebar_headings">price</h5>
+        <input type="range" name="" id="" max="5000" min="100" />
+        {/* <InputRange
+          maxValue={priceRange.max}
+          minValue={priceRange.min}
+          value={priceRange.max}
+          onChange={() => setPriceRange(priceRange.max)}
+        /> */}
+      </div>
+      <div className="sidebar_list_wrapper col mb-4 scroll-list">
+        <h5 className="sidebar_headings">brand</h5>
+        <ul className="sidebar_list">
+          <li>
+            <Link to="" className="active">
+              clothing & apparel{' '}
+            </Link>
+          </li>
+          <li>
+            <Link to="">garden & kitchen </Link>
+          </li>
+          <li>
+            <Link to="">consumer electrics </Link>
+          </li>
+          <li>
+            <Link to="">health & beauty </Link>
+          </li>
+          <li>
+            <Link to="">computers & technology </Link>
+          </li>
+          <li>
+            <Link to="">jwelerry & watches </Link>
+          </li>
+          <li>
+            <Link to="">phone & Accessories </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="sidebar_list_wrapper col mb-4 scroll-list">
+        <h5 className="sidebar_headings">color</h5>
+        <ul className="sidebar_list">
+          <li>
+            <Link to="" className="active">
+              clothing & apparel{' '}
+            </Link>
+          </li>
+          <li>
+            <Link to="">garden & kitchen </Link>
+          </li>
+          <li>
+            <Link to="">consumer electrics </Link>
+          </li>
+          <li>
+            <Link to="">health & beauty </Link>
+          </li>
+          <li>
+            <Link to="">computers & technology </Link>
+          </li>
+          <li>
+            <Link to="">jwelerry & watches </Link>
+          </li>
+          <li>
+            <Link to="">phone & Accessories </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

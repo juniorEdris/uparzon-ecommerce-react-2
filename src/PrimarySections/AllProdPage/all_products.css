@@ -128,3 +128,101 @@
       .search_banner .single_banner img{
         width: 100%;
       }
+
+      /* Uparzon sidebar */
+
+      /*--------------------------------------------------------------------
+                        All Products Components css starts here
+--------------------------------------------------------------------*/
+/* sidebar */
+/* sidebar_list_wrapper
+sidebar_headings
+sidebar_list */
+.sidebar_list_wrapper {
+  border: 1px solid var(--theme-color);
+}
+
+.sidebar_list_wrapper .sidebar_headings {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  border-bottom: 1px solid var(--dark-color);
+  color: var(--dark-color);
+}
+
+.sidebar_list_wrapper .sidebar_list li a {
+  display: block;
+  text-transform: capitalize;
+  color: var(--dark-color);
+  padding: 0.4rem 0;
+  position: relative;
+}
+.sidebar_list_wrapper.scroll-list .sidebar_list {
+height: 150px;
+overflow: auto;
+}
+.sidebar_list_wrapper.scroll-list .sidebar_list::-webkit-scrollbar {
+width: 10px;
+}
+.sidebar_list_wrapper.scroll-list .sidebar_list::-webkit-scrollbar-track {
+box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+background-color: #D1D1D1;
+}
+.sidebar_list_wrapper.scroll-list .sidebar_list::-webkit-scrollbar-thumb {
+background-color: var(--dark-color);
+}
+
+.sidebar_list_wrapper .sidebar_list li a::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sidebar_list_wrapper .sidebar_list.not-square-option li a::after {
+  content: '\f0dd';
+  font-family: 'Font Awesome 5 Free';
+}
+.sidebar_list_wrapper .sidebar_list.not-square-option li:hover a::after {
+  content: '\f0dd';
+  font-family: 'Font Awesome 5 Free';
+}
+.sidebar_list_wrapper .sidebar_list li a::after {
+  /* content: '\f0dd'; */
+  /* content: '\f14a'; */
+  content: '\f0c8';
+  font-family: 'Font Awesome 5 Free';
+  right: 6px;
+  position: absolute;
+  color: var(--dark-color);
+  font-weight: 400;
+}
+
+.sidebar_list_wrapper .sidebar_list li a:hover {
+  color: var(--theme-color);
+}
+.sidebar_list_wrapper .sidebar_list li:hover a::after,
+.sidebar_list_wrapper .sidebar_list li a.active::after {
+  content: '\f14a';
+  font-family: 'Font Awesome 5 Free';
+  right: 6px;
+  position: absolute;
+  color: var(--dark-color);
+  font-weight: 400;
+}
+
+/* body css */
+
+.view_product{
+  background-color: var(--theme-color);
+  padding: 0.8rem;
+}
+.view_product_inner a{
+  margin-left: 1rem;
+}
+.view_product_inner a img{
+  height: 20px;
+  width: 20px;
+}

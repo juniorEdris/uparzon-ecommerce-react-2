@@ -14,13 +14,13 @@ const SearchProducts = (props) => {
             ? Array(20)
                 .fill()
                 .map((s, i) => (
-                  <div className="col-6 col-lg-4 col-xl-3 mb-1 col-xxl-2">
+                  <div className="col-6 col-lg-4 col-xl-3 mb-3 col-xxl-2">
                     <Skeleton width="100%" height={354} />
                   </div>
                 ))
             : props.products?.map((product) => (
                 <div
-                  className="col-6 col-lg-4 col-xl-3 col-xxl-2"
+                  className="col-6 col-lg-4 col-xl-3 col-xxl-2 mb-3"
                   key={product.id}>
                   {' '}
                   {/* col-md-2 col-md-4 */}
@@ -45,13 +45,13 @@ const SearchProducts = (props) => {
           )}
         </div>
       )}
-      {props.pages?.links?.length > 0 && (
+      {/* {props.pages?.links?.length > 0 && (
         <Pagination
           page={props.page}
           pages={props.pages}
           setPage={props.setPage}
         />
-      )}
+      )} */}
     </div>
   );
 };

@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 import SearchBanner from './SubComponent/SearchBanner';
 import SearchProducts from './SubComponent/ProductsCase';
 import SectionHeadingOne from '../../SectionUtils/SectionHeadingOne';
+import ViewProducts from './SubComponent/ViewProducts';
 
 const Body = (props) => {
   return (
     <div className="search_body col-12 col-md-8 col-xl-9">
-      {' '}
+      <ViewProducts />
       {/*  */}
-      <SearchBanner />
-      <SectionHeadingOne
+      {/* <SearchBanner /> */}
+      {/* <SectionHeadingOne
         fontStyleOne={props.section_title}
         fontStyleTwo={props.section_title_bold}
-      />
+      /> */}
       <SearchProducts
         page={props.page}
         setPage={props.setPage}

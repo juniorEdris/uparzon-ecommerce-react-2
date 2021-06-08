@@ -116,7 +116,11 @@
     left: 0px;
     background: var(--light-color);
     z-index: 100;
-    width: 200px;
+    width: 22%;
+    box-shadow: var(--box-shadow-one);
+    }
+    .category_dropdown ul li:not(:last-child) {
+        border-bottom: 1px solid var(--theme-color);
     }
     .category_dropdown ul li a{
         display: block;
@@ -135,20 +139,20 @@
     }
     
     .category_dropdown ul li a::after {
-        content: '\f0dd';
+        content: '\f0da';
         font-family: 'Font Awesome 5 Free';
-        right: 10;
+        right: 10px;
         position: absolute;
         color: var(--dark-color);
         font-weight: 400;
     }
     
-    .category_dropdown ul li a:hover {
-        color: var(--theme-color);
+    .category_dropdown ul li:hover  {
+        background-color: var(--theme-color);
     }
     
     .category_dropdown ul li a:hover{
-        color: var(--dark-color);
+        color: var(--light-color);
         /* background-color: var(--dark-color); */
     }
 /* CATEGORY SIDEBAR CSS */

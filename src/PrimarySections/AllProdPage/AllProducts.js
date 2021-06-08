@@ -4,8 +4,12 @@ import { toTheTop } from '../SectionUtils/WindowTop';
 import Body from './Components/Body';
 import Sidebar from './Components/Sidebar';
 import './all_products.css';
+import { Features } from '../../Home/Component/Features';
 
 const AllProducts = (props) => {
+  console.log('=================madarchot===================');
+  console.log(props);
+  console.log('====================================');
   useEffect(() => {
     toTheTop();
   }, [props.page]);
@@ -32,6 +36,7 @@ const AllProducts = (props) => {
           section_title_bold={props.section_title_bold}
         />
       </div>
+      <Features />
     </div>
   );
 };

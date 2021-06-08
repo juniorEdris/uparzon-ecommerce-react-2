@@ -45,6 +45,7 @@ import OrderCancel from './OrderNotify/OrderCancel';
 import CategorySidebar from './PrimarySections/Header/Components/SubComponents/CategorySidebar';
 import Search from './SearchMedicine/Search';
 import { demoAll } from './Redux/Action/WishListAction';
+import Shop from './Shop';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -81,6 +82,9 @@ function App(props) {
               categoryID={categoryID}
               setCategoryID={setCategoryID}
             />
+          </Route>
+          <Route path="/shop">
+            <Shop />
           </Route>
           {/* <Route path="/search-medicines">
             <Search />
