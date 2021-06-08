@@ -62,29 +62,29 @@ const HompageCategories = (props) => {
     <div>
       <div className="container-md-fluid">
         <div className={`category_row_wrapper d-flex flex-wrap`}>
-          <ReactOwlCarousel items={4} className="owl-theme" {...options}>
-            {products.map((product) => (
+          {/* <ReactOwlCarousel items={4} className="owl-theme" {...options}> */}
+          {products.map((product) => (
+            <div
+              className={`single_category_wrapper col-6 col-lg-3  p-1 mb-2 mb-lg-0`}
+              key={product.id}>
+              {/* p-0 pr-3 col-md-4 col-6 col-lg-3*/}
               <div
-                className={`single_category_wrapper   p-1 mb-2 mb-lg-0`}
+                className={`single_category_box d-flex align-items-center`}
                 key={product.id}>
-                {/* p-0 pr-3 col-md-4 col-6 col-lg-3*/}
-                <div
-                  className={`single_category_box d-flex align-items-center`}
-                  key={product.id}>
-                  <div className={`category_image`}>
-                    <img
-                      src={`./uparzonassets/uparzonimages/categoryproducts/${product.photo}`}
-                      alt={product.name}
-                    />
+                <div className={`category_image`}>
+                  <img
+                    src={`./uparzonassets/uparzonimages/categoryproducts/${product.photo}`}
+                    alt={product.name}
+                  />
+                </div>
+                <div className={`category_details`}>
+                  <div className={`category_name`}>
+                    <span>{product.name}</span>
                   </div>
-                  <div className={`category_details`}>
-                    <div className={`category_name`}>
-                      <span>{product.name}</span>
-                    </div>
-                    <div className={`category_btn`}>
-                      <Link to="#">shop now</Link>
-                    </div>
-                    {/* <div className={`category_discount d-flex `}>
+                  <div className={`category_btn`}>
+                    <Link to="#">shop now</Link>
+                  </div>
+                  {/* <div className={`category_discount d-flex `}>
                       <div
                         className={`discount_text d-flex flex-column`}>
                         <span>Up</span>
@@ -92,11 +92,11 @@ const HompageCategories = (props) => {
                       </div>
                       <div className={`discount_number`}>7%</div>
                     </div> */}
-                  </div>
                 </div>
               </div>
-            ))}
-          </ReactOwlCarousel>
+            </div>
+          ))}
+          {/* </ReactOwlCarousel> */}
         </div>
       </div>
     </div>

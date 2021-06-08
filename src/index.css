@@ -170,6 +170,9 @@ h6 {
 .box-shadowOne{
     box-shadow: var(--box-shadow-one) !important;
 }
+.primary-light-bg{
+    background-color: var(--light-color);
+}
 /* Dashboard table primary css */
 .primary_table table {
     text-align: center;
@@ -341,12 +344,20 @@ a.all-products-btn {
 --------------------------------------------------------------------*/
 /*Image slider starts here */
 .image_container {
-    border-radius: 2rem;
-    height: 180px;
-    border: 1px solid var(--shadow-color);
-    background: var(--light-color);
-    box-shadow: var(--box-shadow-1);
-    margin: 1rem 0;
+    height:80px;
+   position: relative;
+}
+/* .image_container:not(:last-child) {
+    border-right: 1px solid var(--shadow-color);
+} */
+.image_container::after {
+    content: '';
+    border-right: 2px solid var(--dark-color);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 40%;
 }
 
 .image_container img {
@@ -1031,10 +1042,9 @@ Footer css starts here
     float: right;
 }
 .footer_payment img {
-    height: 37px;
-    width: 238px;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
-    float: right;
 }
 
 .footer_top_logo img {
@@ -1209,7 +1219,7 @@ Footer css starts here
                         Home Feature Area css starts here
 --------------------------------------------------------------------*/
 .home_feature_area img {
-    width: -webkit-fill-available;
+    width: 50px;
     width: 100%;
     max-width: 100%;
     object-fit: fill;
@@ -1319,18 +1329,18 @@ Home Online Pharmacy Area css starts here
 Feature Brands css starts here
 --------------------------------------------------------------------*/
 .feature_brands {
+    border-top:1px solid var(--theme-color) ;
+    border-bottom:1px solid var(--theme-color) ;
     margin-bottom: 0.625rem;
 }
 
 .feature_slider {
-    margin-top: 0.625rem;
-    padding: 1.5rem 0;
-    background: var(--gray-second-color);
+    padding: 1rem 0;
 }
 
 /* slider css starts*/
 .brand_section {
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
 }
 
 /*  */

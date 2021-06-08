@@ -13,7 +13,7 @@ const fetchHomeProductsSuccess = (res) => {
   return {
     type: FETCH_HOME_PRODUCTS_SUCCESS,
     categories: res.uparzon_categories,
-    categoryProducts: res.category_products,
+    // categoryProducts: res.category_products,
     slider: res.home_page_slider,
     // homeBrands: res.companies.data,
     // popularProducts: res.trending_products.data,

@@ -6,7 +6,7 @@ import NavRight from './SubComponents/NavRight';
 
 function HeaderNav(props) {
   return (
-    <div className="container-md-fluid mb-2 box-shadowOne">
+    <div className="container-md-fluid mb-2 box-shadowOne primary-light-bg">
       <div className="header_nav">
         <NavList
           categoryBar={props.categoryBar}

@@ -37,13 +37,14 @@
     bottom: 6px; */
   }
   .category_btn a{
+    color: var(--theme-color);
     text-transform: capitalize;
     font-weight: 400;
     margin-right: 0.3rem;
     padding: 0.4rem 0;
   }
   .category_btn a:hover{
-      color: var(--theme-color);
+    color: var(--dark-color);
   }
   .category_btn a:after{
       content: "\f054";

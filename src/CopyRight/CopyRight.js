@@ -3,19 +3,21 @@ import './copyright.css';
 
 export const CopyRight = (props) => {
   return (
-    <div className="footer_bottom_wrapper">
+    <div className="">
       <div className="container-md-fluid">
-        <div className="row no-gutters justify-content-between align-items-center">
-          <div className="col-6">
-            <span className="text-light">
+        <div className="col-12 footer_payment pt-2 pb-2">
+          <img
+            src="./uparzonassets/uparzonimages/payments/SSLCommerce.png"
+            alt="payment media"
+          />
+        </div>
+      </div>
+      <div className="footer_bottom_wrapper">
+        <div className="container-md-fluid">
+          <div className="col-12 text-center pt-2 pb-2">
+            <span className="text-light ">
               Copyright © 2021 Uparzon. All Right Reserved
             </span>
-          </div>
-          <div className="col-6 footer_payment">
-            <img
-              src="./uparzonassets/uparzonimages/payments/ssl.png"
-              alt="payment media"
-            />
           </div>
         </div>
       </div>

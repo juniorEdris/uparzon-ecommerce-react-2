@@ -11,22 +11,23 @@ const BrandSlider = (props) => {
     margin: 15,
     nav: true,
     dots: false,
-    responsive: {
-      0: {
-        // items: 3.5,
-        items: 2,
-        // nav: false,
-      },
-      700: {
-        items: 3,
-      },
-      1200: {
-        items: 6,
-      },
-      1550: {
-        items: 8,
-      },
-    },
+    items: 6,
+    // responsive: {
+    //   0: {
+    //     // items: 3.5,
+    //     items: 2,
+    //     // nav: false,
+    //   },
+    //   700: {
+    //     items: 3,
+    //   },
+    //   1200: {
+    //     items: 6,
+    //   },
+    //   1550: {
+    //     items: 8,
+    //   },
+    // },
   };
 
   return (
@@ -41,7 +42,11 @@ const BrandSlider = (props) => {
         {props.brands?.map((brand) => (
           <div className="brand_container image_container col" key={brand.id}>
             <Link to={`/company-medicines?company-id=${brand.id}`}>
-              <img src={`https:${brand.photo}`} alt={brand.name} />
+              {/* <img src={`https:${brand.photo}`} alt={brand.name} /> */}
+              <img
+                src={`./uparzonassets/uparzonimages/brands/${brand.photo}`}
+                alt={brand.name}
+              />
             </Link>
           </div>
         ))}

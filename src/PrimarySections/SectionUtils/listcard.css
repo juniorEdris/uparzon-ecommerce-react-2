@@ -4,12 +4,17 @@
         padding: 0.325rem;
     }
     .list_product_image img{
-        width: 150px;
-        height: 75px;
+        width: 79px;
+        height: 79px;
         object-fit: contain;
+    }
+    .list_product_name{
+      height: 42px;
+      margin-bottom: 0.625rem;
     }
     .list_product_name a p{
         color: var(--dark-color);
+        margin: 0;
     }
     .list_product_name a:hover p{
         color: var(--theme-color);

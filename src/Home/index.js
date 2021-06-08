@@ -24,11 +24,13 @@ import PCAccessories from './Component/PCAccessories';
 import FullBanner from './Component/FullBanner';
 import HomeAllProducts from './Component/HomeAllProducts';
 import ListProductsSection from './Component/ListProductsSection';
+import AutomobileMotors from './Component/AutomobileMotors';
+import HealthBeauty from './Component/HealthBeauty';
 
 const Index = (props) => {
-  console.log('====================================');
-  console.log(props);
-  console.log('====================================');
+  // console.log('====================================');
+  // console.log(props.allProducts);
+  // console.log('====================================');
   useEffect(() => {
     toTheTop();
     props.setCategoryID('');
@@ -47,12 +49,14 @@ const Index = (props) => {
         <HeadPhoneRow />
         <PhoneSections />
         <ComputerSections />
-        <PCAccessories />
+        {/* <PCAccessories /> */}
+        <AutomobileMotors />
+        <HealthBeauty />
         <FullBanner />
         <HomeAllProducts />
+        <FeatureBrands />
         <ListProductsSection />
       </div>
-      {/* <FeatureBrands /> use for the brand slider */}
       {/* <BannerSection />
       <PopularProduct />
       <HealthCareBanners />
