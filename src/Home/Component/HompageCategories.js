@@ -34,7 +34,11 @@ const HompageCategories = (props) => {
       discount: 7,
     },
   ];
-
+  // get Only 4 categories
+  let categories = [];
+  for (let i = 0; i <= 3; i++) {
+    categories.push(props.categoryProducts[i]);
+  }
   const options = {
     loop: true,
     // margin: 15,
@@ -63,23 +67,20 @@ const HompageCategories = (props) => {
       <div className="container-md-fluid">
         <div className={`category_row_wrapper d-flex flex-wrap`}>
           {/* <ReactOwlCarousel items={4} className="owl-theme" {...options}> */}
-          {products.map((product) => (
+          {categories?.map((product) => (
             <div
               className={`single_category_wrapper col-6 col-lg-3  p-1 mb-2 mb-lg-0`}
-              key={product.id}>
+              key={product?.id}>
               {/* p-0 pr-3 col-md-4 col-6 col-lg-3*/}
               <div
                 className={`single_category_box d-flex align-items-center`}
-                key={product.id}>
+                key={product?.id}>
                 <div className={`category_image`}>
-                  <img
-                    src={`./uparzonassets/uparzonimages/categoryproducts/${product.photo}`}
-                    alt={product.name}
-                  />
+                  <img src={`https:${product?.photo}`} alt={product?.name} />
                 </div>
                 <div className={`category_details`}>
                   <div className={`category_name`}>
-                    <span>{product.name}</span>
+                    <span>{product?.name}</span>
                   </div>
                   <div className={`category_btn`}>
                     <Link to="#">shop now</Link>
@@ -104,7 +105,7 @@ const HompageCategories = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  categoryProducts: state.HomeContent.categoryProducts,
+  categoryProducts: state.HomeContent.categories,
 });
 
 const mapDispatchToProps = (dispatch) => ({});

@@ -13,7 +13,7 @@ const fetchProductDetailsSuccess = (res) => {
   return {
     type: FETCH_PRODUCT_DETAILS_SUCCESS,
     details: res,
-    related: res.related_product,
+    related: res.related_products,
   };
 };
 const fetchProductDetailsError = (error) => ({
@@ -25,8 +25,9 @@ export const GetProductDetails = (id) => async (dispatch) => {
   dispatch(fetchProductDetailsRequest());
 
   await API()
-    .post(`${ENDPOINTS.PRODUCTDETAILS}${id}`)
+    .get(`${ENDPOINTS.PRODUCTDETAILS}${id}`)
     .then((res) => {
+      console.log('details', res);
       dispatch(fetchProductDetailsSuccess(res.data.data));
     })
     .catch((error) => {

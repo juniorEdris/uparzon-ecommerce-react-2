@@ -7,9 +7,6 @@ import './all_products.css';
 import { Features } from '../../Home/Component/Features';
 
 const AllProducts = (props) => {
-  console.log('=================madarchot===================');
-  console.log(props);
-  console.log('====================================');
   useEffect(() => {
     toTheTop();
   }, [props.page]);

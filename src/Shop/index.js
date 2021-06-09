@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { products } from '../data';
 import AllProducts from '../PrimarySections/AllProdPage/AllProducts';
+import BreadCrumb from '../PrimarySections/BreadCrumb';
 
 const Shop = (props) => {
   const [category, setCategory] = useState('');
@@ -9,6 +10,7 @@ const Shop = (props) => {
 
   return (
     <div className="shop_wrapper">
+      <BreadCrumb />
       <AllProducts
         categories={props.categories}
         products={props.allProducts?.features}

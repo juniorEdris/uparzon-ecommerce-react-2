@@ -1,0 +1,12 @@
+/*--------------------------------------------------------------------
+                        Breadcrumbs css starts here
+--------------------------------------------------------------------*/
+.uparzon-breadcrumbs {
+    background: var(--breadcrumbs-color);
+    padding: 1rem 0;
+    color: var(--theme-color);
+}
+
+.uparzon-breadcrumbs span.active {
+    color: var(--dark-color);
+}

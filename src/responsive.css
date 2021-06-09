@@ -5,6 +5,22 @@
     max-width: 20%;
   }
 }
+@media (min-width: 1370px) {
+  .sidebar_list_wrapper .sidebar_list li a{
+    font-size: 1.2rem !important;
+    padding: 0 !important;
+  }
+  .product_slider_details,.product_details_name p,
+  .product_prices .regular_price{
+    font-size: 1.8rem !important;
+  }
+  .product_buttons button{
+    font-size: 1.6rem !important;
+}
+.details__wrapper p{
+  font-size: 1.3rem;
+}
+}
 @media (max-width: 1300px) {
   .header__nav {
     justify-content: flex-end;

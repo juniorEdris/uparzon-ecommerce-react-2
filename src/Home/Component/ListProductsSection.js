@@ -7,26 +7,26 @@ const ListProductsSection = (props) => {
     <div className="section-gap-top">
       <div className="d-flex flex-wrap col-12 p-0">
         <ListCard
-          data={props.products?.electronic_devices}
+          data={props.products?.babies_and_toys}
           title={
-            props.products?.electronic_devices &&
-            props.products?.electronic_devices[0]?.category
+            props.products?.babies_and_toys &&
+            props.products?.babies_and_toys[0]?.category
           }
           list
         />
         <ListCard
-          data={props.products?.mens_fashion}
+          data={props.products?.office_stationary}
           title={
-            props.products?.mens_fashion &&
-            props.products?.mens_fashion[0]?.category
+            props.products?.office_stationary &&
+            props.products?.office_stationary[0]?.category
           }
           list
         />
         <ListCard
-          data={props.products?.womens_fashion}
+          data={props.products?.islamic_conner}
           title={
-            props.products?.womens_fashion &&
-            props.products?.womens_fashion[0]?.category
+            props.products?.islamic_conner &&
+            props.products?.islamic_conner[0]?.category
           }
           list
         />
@@ -53,12 +53,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ListProductsSection);
-
-/*
-          title={
-          props.products?.electronic_devices &&
-          props.products?.electronic_devices[0]?.category
-        }
-        data={props.products?.electronic_devices}
-  products: state.HomeContent.allProducts,
-*/

@@ -12,7 +12,7 @@ const ProductCard = (props) => {
       <div className="single_product_card">
         <div className="product_body">
           <div className="product_image">
-            <Link to="">
+            <Link to={`/productdetails?id=${props.product?.id}`}>
               <img
                 src={`https:${props.product?.photo}`}
                 alt={props.product?.name}
@@ -25,9 +25,10 @@ const ProductCard = (props) => {
           </div>
 
           <div className="product_name">
-            <Link to="">
+            <Link
+              to={`/productdetails?id=${props.product?.id}`}
+              title={props.product?.name}>
               <p>{Truncate(props.product?.name, 30)}</p>
-              {/* <p>Lorem ipsum dolor sit amet consectetur </p> */}
             </Link>
           </div>
         </div>
@@ -45,7 +46,7 @@ const ProductCard = (props) => {
             </div>
           </div>
           <div className="addTocart_btn">
-            <Link to="">
+            <Link to={`/productdetails?id=${props.product?.id}`}>
               <img
                 src="./uparzonassets/svg/icons/cart-arrow-down.svg"
                 alt="cart icons"

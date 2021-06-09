@@ -2,6 +2,7 @@
 :root {
     --theme-color: #13A7B1;
     --nav-bg: #00585E;
+    --reviews-color: #81710C;
     --primary-btn-color: rgba(164, 3, 78);
     --best-seller-color: rgba(230, 122, 0);
     --ratings-color: rgba(255, 216, 25);
@@ -172,6 +173,9 @@ h6 {
 }
 .primary-light-bg{
     background-color: var(--light-color);
+}
+.border-break{
+    border-bottom: 1px solid var(--dark-color);
 }
 /* Dashboard table primary css */
 .primary_table table {

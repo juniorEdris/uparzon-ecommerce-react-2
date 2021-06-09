@@ -12,6 +12,7 @@ export const HomeContentReducer = (state = initialState, action) => {
         ...state,
         loading: true,
         categories: [],
+        allbanners: [],
         homeSlider: [],
         homeBrands: [],
         popularProducts: [],
@@ -30,6 +31,7 @@ export const HomeContentReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        allbanners: action.banners,
         categories: action.categories,
         categoryProducts: action.categoryProducts,
         homeSlider: action.slider,
@@ -51,6 +53,7 @@ export const HomeContentReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
+        allbanners: [],
         categories: [],
         homeSlider: [],
         homeBrands: [],

@@ -7,27 +7,26 @@ import SectionHeadingTwo from './SectionHeadingTwo';
 export default function ListCard(props) {
   return (
     <div
-      className={`${
-        props.fullWidth ? 'col-12' : 'col-lg-3'
-      } product_list col-sm-6  pl-0`}>
-      <SectionHeadingTwo section_title={props.title} list={props.list} />
+      className={`${props.fullWidth ? 'col-12' : 'col-lg-3'} product_list ${
+        props.details ? '' : 'col-sm-6'
+      }  pl-0`}>
+      <SectionHeadingTwo
+        section_title={props.title}
+        list={props.list}
+        fullWidth={props.fullWidth}
+      />
       <div className="">
         {props.data?.map((product) => (
           <div className={`home_product_list_wrapper col mb-3`}>
             <div className="d-flex">
-              <div className={`list_product_image pr-2`}>
-                {props.demoImage ? (
-                  <img src={`${product?.photo}`} alt="" />
-                ) : (
+              <div className={`list_product_image pr-2 pr-xl-4`}>
+                <Link to={`productdetails?id=${product?.id}`}>
                   <img src={`https:${product?.photo}`} alt="" />
-                )}
+                </Link>
               </div>
               <div className="list_product_body">
                 <div className="list_product_name">
-                  {/* <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </p> */}
-                  <Link to="/id">
+                  <Link to={`productdetails?id=${product?.id}`}>
                     <p>{Truncate(product?.name, 30)}</p>
                   </Link>
                 </div>

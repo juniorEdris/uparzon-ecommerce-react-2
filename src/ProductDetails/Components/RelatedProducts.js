@@ -1,22 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Product from '../../PrimarySections/SliderComponents/ProductSlider';
+import ReactOwlCarousel from 'react-owl-carousel';
+import ProductCard from '../../PrimarySections/SectionUtils/ProductCard';
 
-const RelatedProducts = (props) => {
+function RelatedProducts(props) {
   return (
     <div className="related_products">
-      <h4 className="section_header">
-        People Who Viewed This Item Also Viewed
-      </h4>
-      <Product products={props.products} />
+      <h1>related</h1>
+      <ReactOwlCarousel>
+        {props.products?.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ReactOwlCarousel>
     </div>
   );
-};
+}
 
-const mapStateToProps = (state) => ({
-  products: state.ProductDetails.suggestions,
-});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedProducts);
+export default RelatedProducts;

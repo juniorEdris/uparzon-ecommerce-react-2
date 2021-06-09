@@ -16,7 +16,7 @@ import { GetHomeContents } from '../Redux/Action/HomeProductsAction';
 import { toTheTop } from '../PrimarySections/SectionUtils/WindowTop';
 import HompageCategories from './Component/HompageCategories';
 import FeatureProducts from './Component/FeatureProducts';
-import { HalfBanners } from './Component/HalfBanners';
+import HalfBanners from './Component/HalfBanners';
 import HeadPhoneRow from './Component/HeadPhoneRow';
 import PhoneSections from './Component/PhoneSections';
 import ComputerSections from './Component/ComputerSections';

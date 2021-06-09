@@ -89,10 +89,10 @@ function App(props) {
           {/* <Route path="/search-medicines">
             <Search />
           </Route> */}
-          {/* <Route path="/productdetails">
+          <Route path="/productdetails">
             <ProductDetails />
           </Route>
-          <Route path="/updatecartproduct" component={ProductDetails} />
+          {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
             {!props.User ? <Redirect to="/login" /> : <PrescriptionUpload />}

@@ -48,13 +48,15 @@ const FeatureProducts = (props) => {
           ))}
         </div>
       ) : (
-        <div className="d-flex flex-wrap p-0">
-          {props.topProducts?.map((product) => (
-            <div className="col-6 col-md-4 col-xl-2 mb-3 col-xxl-1 pr-md-2 pl-md-2">
-              <ProductCard product={product} key={product.id} />
-            </div>
-          ))}
-        </div>
+        section === 'top rated' && (
+          <div className="d-flex flex-wrap p-0">
+            {props.topProducts?.map((product) => (
+              <div className="col-6 col-md-4 col-xl-2 mb-3 col-xxl-1 pr-md-2 pl-md-2">
+                <ProductCard product={product} key={product.id} />
+              </div>
+            ))}
+          </div>
+        )
       )}
     </div>
   );
@@ -64,7 +66,7 @@ const mapStateToProps = (state) => ({
   loading: state.HomeContent.loading,
   featureProducts: state.HomeContent.allProducts?.features,
   saleProducts: state.HomeContent.allProducts?.on_sales,
-  topProducts: state.HomeContent.allProducts?.best_seller,
+  topProducts: state.HomeContent.allProducts?.top_rated,
 });
 
 const mapDispatchToProps = {};

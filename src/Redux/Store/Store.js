@@ -27,7 +27,8 @@ export const initialState = {
   pages: [],
   //HomeContents
   categories: [],
-  categoryProducts: [],
+  allbanners: [],
+  // categoryProducts: [],
   homeSlider: [],
   homeBrands: [],
   neccessaryProducts: [],

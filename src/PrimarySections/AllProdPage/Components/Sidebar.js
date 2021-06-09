@@ -9,6 +9,9 @@ const Sidebar = (props) => {
     min: 0,
     max: 500,
   });
+  /*=================================
+    Change All to component based
+  =====================================*/
   const [price, setPrice] = useState();
   const sorting = [
     // {

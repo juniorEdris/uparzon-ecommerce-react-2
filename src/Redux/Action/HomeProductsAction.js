@@ -12,6 +12,7 @@ const fetchHomeProductsRequest = () => ({
 const fetchHomeProductsSuccess = (res) => {
   return {
     type: FETCH_HOME_PRODUCTS_SUCCESS,
+    banners: res.products.banner,
     categories: res.uparzon_categories,
     // categoryProducts: res.category_products,
     slider: res.home_page_slider,
