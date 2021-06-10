@@ -41,7 +41,6 @@ export const GetHomeContents = () => async (dispatch) => {
   await API()
     .get(ENDPOINTS.HOMEPRODUCT)
     .then((res) => {
-      console.log('home', res);
       dispatch(fetchHomeProductsSuccess(res.data));
     })
     .catch((error) => {

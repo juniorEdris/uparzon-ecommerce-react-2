@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 import './hompageCategory.css';
 
 const HompageCategories = (props) => {
-  console.log('=====================categories===============');
-  console.log(props);
-  console.log('====================================');
   const products = [
     {
       id: 1,

@@ -49,42 +49,24 @@ const Sidebar = (props) => {
               </Link>
             </li>
           ))}
-          {/* <li>
-            <Link to="">garden & kitchen </Link>
-          </li>
-          <li>
-            <Link to="">consumer electrics </Link>
-          </li>
-          <li>
-            <Link to="">health & beauty </Link>
-          </li>
-          <li>
-            <Link to="">computers & technology </Link>
-          </li>
-          <li>
-            <Link to="">jwelerry & watches </Link>
-          </li>
-          <li>
-            <Link to="">phone & Accessories </Link>
-          </li> */}
         </ul>
       </div>
-      <div className="sidebar_list_wrapper col mb-4">
+      {/* <div className="sidebar_list_wrapper col mb-4">
         <h5 className="sidebar_headings">price</h5>
         <input type="range" name="" id="" max="5000" min="100" />
-        {/* <InputRange
+        <InputRange
           maxValue={priceRange.max}
           minValue={priceRange.min}
           value={priceRange.max}
           onChange={() => setPriceRange(priceRange.max)}
-        /> */}
-      </div>
+        />
+      </div> */}
       <div className="sidebar_list_wrapper col mb-4 scroll-list">
         <h5 className="sidebar_headings">brand</h5>
         <ul className="sidebar_list">
           <li>
             <Link to="" className="active">
-              clothing & apparel{' '}
+              Deef
             </Link>
           </li>
           <li>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Details = (props) => {
   const [quantity, setQuantity] = useState(0);
@@ -12,7 +13,11 @@ const Details = (props) => {
         className={`product_brand_name_sku d-flex align-items-center flex-wrap no-gutters chilldren-gap-bottom`}>
         <div className={`product_brand_name  `}>
           <span className={`brand_tag`}>brand: </span>
-          <span className={`brand_name`}>{props.details?.shop_name}</span>
+          <span className={`brand_name`}>
+            <Link to={`/single-brand?brand_id=${props.details?.shop_id}`}>
+              {props.details?.shop_name}
+            </Link>
+          </span>
         </div>
         <div className={`product_sku `}>
           <span className={`sku_tag`}>SKU: </span>

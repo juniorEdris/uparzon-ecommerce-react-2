@@ -36,7 +36,7 @@ import { GetHomeContents } from './Redux/Action/HomeProductsAction';
 import { getUserInfo } from './Redux/Action/GetUserInfoAction';
 import { getOrderList } from './Redux/Action/OrderListAction';
 import NeccessaryProducts from './NeccessaryProducts/NeccessaryPage';
-import CompanyProducts from './CompanyProducts/CompanyProducts';
+import SingleCompanyProducts from './CompanyProducts/CompanyProducts';
 import GenericProducts from './GenericProducts/GenericProducts';
 import CategoryBasedProducts from './CategoryBasedProducts/CategoryBasedProducts';
 import OtherBrands from './OtherBrands/OtherBrands';
@@ -92,6 +92,7 @@ function App(props) {
           <Route path="/productdetails">
             <ProductDetails />
           </Route>
+          <Route path="/single-brand" component={SingleCompanyProducts} />
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
@@ -116,7 +117,6 @@ function App(props) {
           </Route>
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/generic-products" component={GenericProducts} />
-          <Route path="/company-medicines" component={CompanyProducts} />
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
           <Route path="/about-us" component={AboutUs} />

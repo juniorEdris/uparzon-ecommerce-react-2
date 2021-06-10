@@ -21,12 +21,12 @@
     display: block;
   }
   
-  .sidebar_list ul li a::before {
+  /* .sidebar_list ul li a::before {
     content: '\f0c8';
     font-family: 'Font Awesome 5 Free';
     left: 0;
     position: absolute;
-  }
+  } */
   
   .sidebar_list ul li a::after {
     content: '\f14a';
@@ -194,14 +194,12 @@ background-color: var(--dark-color);
   color: var(--theme-color);
 }
 .sidebar_list_wrapper .sidebar_list li a::after {
-  /* content: '\f0dd'; */
-  /* content: '\f14a'; */
   content: '\f0c8';
   font-family: 'Font Awesome 5 Free';
   right: 6px;
   position: absolute;
   color: var(--dark-color);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .sidebar_list_wrapper .sidebar_list li a:hover {

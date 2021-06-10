@@ -36,6 +36,12 @@
     font-weight: 600;
     margin: 0 1rem;
 }
+.product_brand_name .brand_name a{
+    color: var(--dark-color);
+}
+.product_brand_name .brand_name a:hover{
+    color: var(--theme-color);
+}
 .product_stars::after{
     content: '';
     margin: 0 0.635rem;

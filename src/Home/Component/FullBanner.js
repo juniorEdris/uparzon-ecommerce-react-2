@@ -9,7 +9,6 @@ const FullBanner = (props) => {
       Banner = banner.photo;
     }
   });
-  console.log(Banner, 'banner');
   return (
     <div className="section-gap-top">
       <WideBanner

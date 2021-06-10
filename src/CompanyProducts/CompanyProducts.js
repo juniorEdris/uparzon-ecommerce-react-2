@@ -13,9 +13,9 @@ const CompanyProducts = (props) => {
   const [sort, setSort] = useState('');
   const [page, setPage] = useState(1);
   const query = useQuery();
-  const id = query.get('company-id');
+  const id = query.get('brand_id');
   useEffect(() => {
-    props.getProducts({ page, company_id: id, category_id: category });
+    props.getProducts({ page, shop_id: id, category_id: category });
   }, [page, id, category]);
   useEffect(() => {
     props.getSortingProducts({ sortingType: sort });
@@ -24,16 +24,16 @@ const CompanyProducts = (props) => {
     <div className="company_products_wrapper">
       <AllProducts
         categories={props.categories}
-        category={category}
-        setCategory={setCategory}
-        sort={sort}
-        setSort={setSort}
-        page={page}
-        setPage={setPage}
+        // category={category}
+        // setCategory={setCategory}
+        // sort={sort}
+        // setSort={setSort}
+        page={page} //page is active
+        // setPage={setPage}
         loading={props.loading}
         products={props.products}
-        pages={props.pages}
-        section_title={props.products[0]?.company}
+        // pages={props.pages}
+        // section_title={props.products[0]?.company}
       />
     </div>
   );
@@ -42,7 +42,8 @@ const CompanyProducts = (props) => {
 const mapStateToProps = (state) => ({
   loading: state.SingleCompany.loading,
   products: state.SingleCompany.company_products,
-  categories: state.SingleCompany.company_categories,
+  categories: state.HomeContent.categories,
+
   pages: state.SingleCompany.company_pages,
 });
 
