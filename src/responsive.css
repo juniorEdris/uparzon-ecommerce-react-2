@@ -8,17 +8,20 @@
 @media (min-width: 1370px) {
   .sidebar_list_wrapper .sidebar_list li a{
     font-size: 1.2rem !important;
-    padding: 0 !important;
+    /* padding: 0 !important; */
   }
-  .product_slider_details,.product_details_name p,
+  .product_slider_details,
   .product_prices .regular_price{
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
   }
   .product_buttons button{
     font-size: 1.6rem !important;
 }
 .details__wrapper p{
   font-size: 1.3rem;
+}
+.single_feature .text small{
+  font-size: 75%;
 }
 }
 @media (max-width: 1300px) {
@@ -48,6 +51,10 @@
   .category_image img {
     min-width: 77px;
 }
+.data-list {
+  width: 96%;
+  left: 17px;
+  }
 }
 
 /* ===================================== */
@@ -255,6 +262,21 @@
 
   .sectionHeaderOne ul li a.active {
       border-bottom: 5px solid var(--theme-color);
+  }
+  /* Product Cards  css here*/
+  .product_name a p{
+    font-size: 1rem;
+}
+  .product_rates_price .product_price p {
+    font-size: 1.2rem;
+  }
+  .product_rates_price .product_rating img {
+    height: 15px;
+    width: 15px;
+  }
+  .product_card_footer .addTocart_btn img {
+    height: 30px;
+    width: 30px;
   }
 }
 

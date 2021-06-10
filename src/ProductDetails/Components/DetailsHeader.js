@@ -6,8 +6,8 @@ import Slider from './SubComponents/Slider';
 const DetailsHeader = (props) => {
   return (
     <div className="col-12 p-0">
-      <div className="row no-gutters">
-        <div className="col-md-5 pr-3">
+      <div className="row ">
+        <div className="col-md-5 ">
           <Slider details={props.details} />
         </div>
         <div className="col-md-7">

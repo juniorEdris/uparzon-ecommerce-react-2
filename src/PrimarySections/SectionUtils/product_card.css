@@ -10,9 +10,10 @@
     padding: 0.85rem;
 }
 .product_image img{
-    height: 200px;
+    height: 150px;
     width: 100%;
     object-fit: contain;
+    padding:0.85rem;
 }
 .product_name {
     height: 48px;
@@ -20,6 +21,7 @@ padding:0.85rem;
 }
 .product_name a p{
     color: var(--dark-color);
+    font-size: 0.8rem;
 }
 
 .product_name a:hover p{
@@ -32,22 +34,23 @@ padding:0.85rem;
 }
 
 .product_rates_price .product_rating img {
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     object-fit: contain;
     margin-right: 0.2rem;
 }
 
 .product_rates_price .product_price p {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     font-weight: 600;
     margin-bottom: 0.65rem;
 }
 
 .product_card_footer .addTocart_btn img {
-    height: 30px !important;
-    width: 30px !important;
+    height: 20px;
+    width: 20px;
     object-fit: contain;
+
 }
 
 /*--------------------------------------------------------------------

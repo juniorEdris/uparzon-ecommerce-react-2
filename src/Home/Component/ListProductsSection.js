@@ -7,27 +7,18 @@ const ListProductsSection = (props) => {
     <div className="section-gap-top">
       <div className="d-flex flex-wrap col-12 p-0">
         <ListCard
-          data={props.products?.babies_and_toys}
-          title={
-            props.products?.babies_and_toys &&
-            props.products?.babies_and_toys[0]?.category
-          }
+          data={props.products.product_1}
+          title={props.titles.title_1}
           list
         />
         <ListCard
-          data={props.products?.office_stationary}
-          title={
-            props.products?.office_stationary &&
-            props.products?.office_stationary[0]?.category
-          }
+          data={props.products.product_2}
+          title={props.titles.title_2}
           list
         />
         <ListCard
-          data={props.products?.islamic_conner}
-          title={
-            props.products?.islamic_conner &&
-            props.products?.islamic_conner[0]?.category
-          }
+          data={props.products.product_3}
+          title={props.titles.title_3}
           list
         />
         {/* <ListCard title={ 'Headphones'}/> */}
@@ -43,8 +34,8 @@ const ListProductsSection = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.HomeContent.loading,
-  products: state.HomeContent.allProducts,
+  // loading: state.HomeContent.loading,
+  // products: state.HomeContent.allProducts,
 });
 
 const mapDispatchToProps = {};

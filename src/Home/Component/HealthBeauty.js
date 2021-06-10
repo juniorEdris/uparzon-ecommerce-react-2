@@ -7,11 +7,11 @@ const HealthBeauty = (props) => {
     <div>
       <ProductRow
         title={
-          props.products?.health_beauty &&
-          props.products?.health_beauty[0].category
+          props.products?.home_cat_products_section_5 &&
+          props.products?.home_cat_products_section_5[0].category
         }
         imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/primary.png`}
-        data={props.products?.health_beauty}
+        data={props.products?.home_cat_products_section_5}
       />
     </div>
   );

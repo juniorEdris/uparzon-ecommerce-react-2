@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import CategoryList from '../../PrimarySections/Category';
 import ListCard from '../../PrimarySections/SectionUtils/ListCard';
 
@@ -19,10 +18,10 @@ const DetailsSidebar = (props) => {
           fullWidth
           list
           details
-          data={props.products?.islamic_conner}
+          data={props.products?.details_page_left_aside_cat_products}
           title={
-            props.products?.islamic_conner &&
-            props.products?.islamic_conner[0]?.category
+            props.products?.details_page_left_aside_cat_products &&
+            props.products?.details_page_left_aside_cat_products[0]?.category
           }
         />
       </div>

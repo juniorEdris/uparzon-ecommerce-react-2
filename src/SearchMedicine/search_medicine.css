@@ -8,9 +8,9 @@
     font-size:1.6rem;
 }
 /* sidebar_list */
-.sidebar_list li {
+/* .sidebar_list li {
     margin-bottom: 1rem;
-}
+} */
 
   .sidebar_list ul li a {
     color: var(--dark-color);

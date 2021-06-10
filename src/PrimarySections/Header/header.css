@@ -144,9 +144,12 @@
         right: 10px;
         position: absolute;
         color: var(--dark-color);
-        font-weight: 400;
+        font-weight: 600;
     }
     
+    .category_dropdown ul li:hover a::after  {
+        color: var(--light-color);
+    }
     .category_dropdown ul li:hover  {
         background-color: var(--theme-color);
     }

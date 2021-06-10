@@ -10,7 +10,7 @@ const Shop = (props) => {
 
   return (
     <div className="shop_wrapper">
-      <BreadCrumb />
+      <BreadCrumb name={'Shop'} />
       <AllProducts
         categories={props.categories}
         products={props.allProducts?.features}

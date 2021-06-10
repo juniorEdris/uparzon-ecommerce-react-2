@@ -35,6 +35,25 @@ const Index = (props) => {
     toTheTop();
     props.setCategoryID('');
   }, []);
+  // products and tittles for List Components
+  const listSection = {
+    titles: {
+      title_1:
+        props.allProducts?.home_footer_cat_products_section_1 &&
+        props.allProducts?.home_footer_cat_products_section_1[0]?.category,
+      title_2:
+        props.allProducts?.home_footer_cat_products_section_2 &&
+        props.allProducts?.home_footer_cat_products_section_2[0]?.category,
+      title_3:
+        props.allProducts?.home_footer_cat_products_section_3 &&
+        props.allProducts?.home_footer_cat_products_section_3[0]?.category,
+    },
+    products: {
+      product_1: props.allProducts?.home_footer_cat_products_section_1,
+      product_2: props.allProducts?.home_footer_cat_products_section_2,
+      product_3: props.allProducts?.home_footer_cat_products_section_3,
+    },
+  };
   return (
     <div>
       <HomeSlider loading={props.loading} sliders={props.sliders} />
@@ -55,7 +74,13 @@ const Index = (props) => {
         <FullBanner />
         <HomeAllProducts />
         <FeatureBrands />
-        <ListProductsSection />
+        {props.allProducts && (
+          <ListProductsSection
+            titles={listSection.titles}
+            products={listSection.products}
+            loading={props.loading}
+          />
+        )}
       </div>
       {/* <BannerSection />
       <PopularProduct />

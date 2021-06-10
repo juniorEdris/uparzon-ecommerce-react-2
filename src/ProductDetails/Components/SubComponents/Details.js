@@ -67,7 +67,11 @@ const Details = (props) => {
             className="lnr lnr-plus-circle"
             onClick={() => setQuantity(quantity + 1)}></span>
         </div>
-        <button type="button" className="btn col-4">
+        <button type="button" className="btn col-5">
+          <img
+            src="./uparzonassets/svg/icons/products/add-cart.svg"
+            alt="add to cart icon"
+          />
           add to cart
         </button>
       </div>

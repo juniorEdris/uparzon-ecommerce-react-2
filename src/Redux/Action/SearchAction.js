@@ -22,7 +22,13 @@ const fetchSearchError = (error) => ({
 });
 
 export const GetSearchResults = (data) => async (dispatch) => {
-  const { keywords = '', category, subcategory, childcategory, page } = data;
+  const {
+    keywords = '',
+    category,
+    subcategory = '',
+    childcategory = '',
+    page = '',
+  } = data;
   dispatch(fetchSearchRequest());
   // keyword&category_id&subcategory_id&childcategory_id&is_latest&is_popular&is_flash
   await API()
@@ -32,9 +38,6 @@ export const GetSearchResults = (data) => async (dispatch) => {
       }?keyword=${keywords}&category_id=${category}&subcategory_id=${subcategory}&childcategory_id=${childcategory}&is_latest=${''}&is_popular=${''}&is_flash=${''}&per_page=20&page=${page}`
     )
     .then((res) => {
-      console.log('====================search================');
-      console.log(res);
-      console.log('====================================');
       dispatch(fetchSearchSuccess(res.data));
     })
     .catch((error) => {

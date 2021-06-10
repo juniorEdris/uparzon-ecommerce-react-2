@@ -21,17 +21,45 @@ const Detailsindex = (props) => {
     // get back to the Top
     toTheTop();
   }, [prodID]);
+  // products and tittles for List Components
+  const listSection = {
+    titles: {
+      title_1:
+        props.allProducts?.details_page_footer_cat_products_section_1 &&
+        props.allProducts?.details_page_footer_cat_products_section_1[0]
+          ?.category,
+      title_2:
+        props.allProducts?.details_page_footer_cat_products_section_2 &&
+        props.allProducts?.details_page_footer_cat_products_section_2[0]
+          ?.category,
+      title_3:
+        props.allProducts?.details_page_footer_cat_products_section_3 &&
+        props.allProducts?.details_page_footer_cat_products_section_3[0]
+          ?.category,
+    },
+    products: {
+      product_1: props.allProducts?.details_page_footer_cat_products_section_1,
+      product_2: props.allProducts?.details_page_footer_cat_products_section_2,
+      product_3: props.allProducts?.details_page_footer_cat_products_section_3,
+    },
+  };
   return (
     <div className="product_details_container mb-4">
-      <BreadCrumb />
+      <BreadCrumb name={'Product details'} />
       <div className="container-md-fluid">
         <div className="row">
           <DetailsSidebar />
           <DetailsBody />
-          {/* <RelatedProducts products={props.relatedProducts} /> */}
+          {/* {props.relatedProducts.length > 0 && (
+            <RelatedProducts products={props.relatedProducts} />
+          )} */}
         </div>
         <FeatureBrands />
-        <ListProductsSection />
+        <ListProductsSection
+          titles={listSection.titles}
+          products={listSection.products}
+          loading={props.loading}
+        />
         {/* {props.basketMsg && (
           <CartAddanime Msg={props.basketMsg} tabState={props.tabState} />
         )}
@@ -50,6 +78,7 @@ const mapStateToProps = (state) => ({
   wishState: state.Wishlist.wishlistStatus,
   details: state.ProductDetails.productDetails,
   relatedProducts: state.ProductDetails.suggestions,
+  allProducts: state.HomeContent.allProducts,
 });
 const mapDispatchToProps = (dispatch) => ({
   getProductDetails: (id) => dispatch(GetProductDetails(id)),

@@ -7,11 +7,11 @@ const HeadPhoneRow = (props) => {
     <div>
       <ProductRow
         title={
-          props.products?.womens_fashion &&
-          props.products?.womens_fashion[0].category
+          props.products?.home_cat_products_section_3 &&
+          props.products?.home_cat_products_section_3[0].category
         }
         imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/primary.png`}
-        data={props.products?.womens_fashion}
+        data={props.products?.home_cat_products_section_3}
       />
     </div>
   );

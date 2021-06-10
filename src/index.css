@@ -734,22 +734,41 @@ a.all-products-btn {
 
 .data-list {
     position: absolute;
-    background: var(--datalist-bg-color);
+    background: var(--light-color);
     padding: 0.625rem;
     font-size: 1.2rem;
     z-index: 1000;
-    width: 98%;
+    width: 93%;
     min-height: 100%;
     max-height: 60vh;
     overflow-y: scroll;
+    overflow-x: hidden;
+    left: 17px;
 }
 
+.data-list::-webkit-scrollbar {
+    /* // Width of vertical scroll bar */
+    width: 8px;
+    /* // Height of horizontal scroll bar */
+    height: 10px;
+
+  }
+  .data-list::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: var(--theme-color);
+    margin-right: 10px;
+  }
 .data-list div {
     padding: 0.625rem 1rem;
 }
 
-.data-list div:hover {
-    background-color: var(--dark-color);
+.data-list .search_product_view:hover {
+    background-color: #f9f9f9;
+}
+.data-list .search_list_image {
+    height: 50px;
+    width: 100%;
+    object-fit: contain;
 }
 .data-list .header_search_list_loader{
     background-color: var(--light-color) !important;
@@ -757,7 +776,7 @@ a.all-products-btn {
     text-align:center !important;
 }
 .data-list div:hover a {
-    color: var(--light-color);
+    color:var(--dark-color);
 }
 
 .header__search_inner {
@@ -1166,14 +1185,13 @@ Footer css starts here
     transform: translateY(-50%);
     height: 14px;
     line-height: 14px;
-    background: var(--light-color);
     border-radius: 1.25rem;
 }
 
 .home_slider .owl-carousel.owl-theme .owl-dots .owl-dot span {
     margin: 4px 5px;
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
 }
 
 .home_slider .owl-carousel.owl-theme .owl-dots .owl-dot.active span,

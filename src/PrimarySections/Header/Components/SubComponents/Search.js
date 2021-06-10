@@ -31,7 +31,7 @@ export const Search = (props) => {
             onKeyUp={() => props.setList(true)}
             onChange={handleChange}
             value={props.input}
-            placeholder="Search medicine,injections"
+            placeholder="Search here"
           />
           <div className="selectDiv">
             <select
@@ -42,7 +42,7 @@ export const Search = (props) => {
               <option value="">All</option>
               {props.categories?.map((cat) => (
                 <option value={cat.id} key={cat.id}>
-                  {cat.name.en}
+                  {cat.name}
                 </option>
               ))}
             </select>
@@ -63,14 +63,23 @@ export const Search = (props) => {
                     {!props.loading ? (
                       <div className="data-list col-12 p-0">
                         {props.results.map((result) => (
-                          <div className="col search_list" key={result.id}>
+                          <div className="col p-0 search_list" key={result.id}>
                             <Link
                               to={`/productdetails?id=${result.id}`}
                               onClick={(e) => {
                                 searchList(e, result.id);
                                 props.setInput('');
                               }}>
-                              {result.name}
+                              <div className="row no-gutters align-items-center search_product_view">
+                                <div className="col-2">
+                                  <img
+                                    src={`https:${result.photo}`}
+                                    alt={result.name}
+                                    className="search_list_image"
+                                  />
+                                </div>
+                                <div className="col-10">{result.name}</div>
+                              </div>
                             </Link>
                           </div>
                         ))}

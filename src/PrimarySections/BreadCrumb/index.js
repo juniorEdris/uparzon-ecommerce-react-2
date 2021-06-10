@@ -18,7 +18,8 @@ const Breadcrumbs = (props) => {
                         </Link>
                     </li>
                 </ul> */}
-        <span>Home</span> <span>/</span> <span className="active">Shop</span>
+        <span>Home</span> <span>/</span>{' '}
+        <span className="active">{props.name}</span>
       </div>
     </div>
   );

@@ -7,11 +7,11 @@ const AutomobileMotors = (props) => {
     <div>
       <ProductRow
         title={
-          props.products?.automobile_motorcycle &&
-          props.products?.automobile_motorcycle[0].category
+          props.products?.home_cat_products_section_4 &&
+          props.products?.home_cat_products_section_4[0].category
         }
         imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/primary.png`}
-        data={props.products?.automobile_motorcycle}
+        data={props.products?.home_cat_products_section_4}
       />
     </div>
   );
