@@ -82,6 +82,9 @@
 } */
 
 /* User Drop Down css */
+.dropdown_parent{
+    position: relative;
+}
 
 .dropdown{
     position: absolute;
@@ -157,6 +160,15 @@
     .category_dropdown ul li a:hover{
         color: var(--light-color);
         /* background-color: var(--dark-color); */
+    }
+    .category_dropdown_backdrop{
+        position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: var(--dark);
+    left: 0;
+    opacity: 0.4;
     }
 /* CATEGORY SIDEBAR CSS */
 .category_sidebar{

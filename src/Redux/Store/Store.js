@@ -65,6 +65,7 @@ export const initialState = {
   // cartItems: [],
   cart_update_id: '',
   // login/logout/user states
+  // user: true,
   user: localStorage.getItem('user_token')
     ? localStorage.getItem('user_token')
     : null,

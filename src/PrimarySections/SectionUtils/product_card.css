@@ -16,8 +16,9 @@
     padding:0.85rem;
 }
 .product_name {
-    height: 48px;
-padding:0.85rem;
+    height: 30px;
+    padding: 0 0.85rem;
+    overflow: hidden;
 }
 .product_name a p{
     color: var(--dark-color);

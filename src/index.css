@@ -1,6 +1,5 @@
 /* @import "react-alice-carousel/lib/alice-carousel.css"; */
 :root {
-    --theme-color: #13A7B1;
     --nav-bg: #00585E;
     --reviews-color: #81710C;
     --primary-btn-color: rgba(164, 3, 78);
@@ -29,7 +28,7 @@
     --primary-text-size: 1.286rem;
     /* uparzon */
     /* primary colors */
-    /* --theme-color: #13a7b1; */
+    --theme-color: #13A7B1;
     --breadcrumbs-color: #e9ecef;
     --newsletter-bg-color: #19868D;
     --light-color: #fff;
@@ -40,6 +39,7 @@
     /*product name color*/
     /* background colors */
     --bg-color-one: rgba(248, 248, 248, 100%);
+    --login-bg: #F2F2F2;
     /* border colors */
     --border-color-one: rgb(19, 19, 19, 53%);
     /* shadows */
@@ -1465,12 +1465,12 @@ Article css starts here
 /*--------------------------------------------------------------------
             User entry css starts here
             --------------------------------------------------------------------*/
-.user_entry {
-    color: var(--dark-color);
-    padding: 5% 0;
-    position: relative;
-}
-
+            .user_entry {
+                color: var(--dark-color);
+                padding: 5% 0;
+                position: relative;
+            }
+            
 .user_entry .login-form {
     padding: 0px 50px 40px;
     border: 1px solid var(--theme-color);
@@ -1497,9 +1497,9 @@ Article css starts here
 }
 
 .login-box button,.login-box a {
-    background: var(--user-entry-btn);
+    background: var(--theme-color);
     color: var(--light-color);
-    border-radius: 0.1rem !important;
+    border-radius: 0.25rem !important;
     height: 50px;
     font-size: 1.3rem;
 }
@@ -1529,4 +1529,76 @@ Article css starts here
 .resend_otp_button a:hover {
     color: var(--light-color);
     background: var(--dark-color);
+}
+/*--------------------------------------------------------------------
+            Uparzon entry css starts here
+--------------------------------------------------------------------*/
+.uparzon_entry_wrapper{
+    padding:3rem 0 ;
+    background-color: var(--login-bg);
+}
+.login_main{
+    /* border: 1px solid var(--theme-color); */
+}
+/* form section css */
+.uparzon_entry_form_child{
+    background-color:var(--light-color);
+    padding: 0;
+}
+/* form heading css here */
+.uparzon_entry_form_child .form_section_heading a{
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color:var(--theme-color);
+}
+.uparzon_entry_form_child .form_section_heading a:hover{
+    color:var(--light-color);
+    background-color: var(--theme-color);
+}
+.uparzon_entry_form_child .form_section_heading a.active{
+    color:var(--light-color);
+    background-color: var(--theme-color);
+}
+/* form form/input css here */
+.uparzon_entry_form_child form{
+    padding: 0 1.75rem;
+}
+.uparzon_input_wrapper .form-control:focus {
+    color: #495057;
+    border-color: var(--dark-color);
+    outline: 0;
+    box-shadow: 0 0 0 0 rgb(0 123 255 / 0%);
+}
+
+.uparzon_input_wrapper input{
+    border: none;
+    outline: none;
+    border-radius: 0;
+    position: relative;
+    height: 40px;
+}
+.uparzon_input_wrapper .single_input img{
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+.uparzon_input_wrapper .single_input::after{
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid var(--dark-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.user_entry_footer_msg p{
+    color: var(--dark-color);
+    font-size: 1rem;
+}
+.user_entry_footer_msg p a{
+    color: #006D74;
+}
+.user_entry_footer_msg p a:hover{
+    color: var(--dark-color);
 }

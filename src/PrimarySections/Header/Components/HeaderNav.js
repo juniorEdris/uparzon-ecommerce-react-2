@@ -22,17 +22,10 @@ function HeaderNav(props) {
                 <Link to="#">{category.name}</Link>
               </li>
             ))}
-            {/* <li>
-              <Link to="#">cat 1</Link>
-            </li>
-            <li>
-              <Link to="#">cat 1</Link>
-            </li>
-            <li>
-              <Link to="#">cat 1</Link>
-            </li> */}
           </ul>
-          <div className="category_dropdown_backdrop"></div>
+          {/* <div
+            className="category_dropdown_backdrop d-none d-md-block"
+            onClick={(e) => props.setCategoryBar(false)}></div> */}
         </div>
         <NavRight />
       </div>

@@ -46,6 +46,7 @@ import CategorySidebar from './PrimarySections/Header/Components/SubComponents/C
 import Search from './SearchMedicine/Search';
 import { demoAll } from './Redux/Action/WishListAction';
 import Shop from './Shop';
+import UparzonEntry from './MyAccount/UserActivity/Components/Uparzon_entry';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -93,17 +94,14 @@ function App(props) {
             <ProductDetails />
           </Route>
           <Route path="/single-brand" component={SingleCompanyProducts} />
+          <Route path="/login">
+            {/* <UserEntry pathRedirect={nextPage} /> */}
+            {!props.User ? <UparzonEntry /> : <Redirect to="/dashboard" />}
+          </Route>
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
             {!props.User ? <Redirect to="/login" /> : <PrescriptionUpload />}
-          </Route>
-          <Route path="/login">
-            {!props.User ? (
-              <UserEntry pathRedirect={nextPage} />
-            ) : (
-              <Redirect to="/dashboard" />
-            )}
           </Route>
           <Route path="/dashboard">
             {!props.User ? <Redirect to="/login" /> : <Dashboard />}

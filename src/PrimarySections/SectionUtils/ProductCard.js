@@ -28,7 +28,8 @@ const ProductCard = (props) => {
             <Link
               to={`/productdetails?id=${props.product?.id}`}
               title={props.product?.name}>
-              <p>{Truncate(props.product?.name, 30)}</p>
+              {/* <p>{Truncate(props.product?.name, 30)}</p> */}
+              <p>{Truncate(props.product?.name, 70)}</p>
             </Link>
           </div>
         </div>
@@ -41,8 +42,12 @@ const ProductCard = (props) => {
                   <img src="./uparzonassets/svg/icons/Icon-star.svg" alt="" />
                 ))}
             </div>
-            <div className="product_price">
+            <div className="product_price d-flex">
               <p>&#2547; {(props.product?.price).toFixed(2)}</p>
+              {/* <small>
+                {' '}
+                <del>&#2547; {(props.product?.price).toFixed(2)}</del>
+              </small> */}
             </div>
           </div>
           <div className="addTocart_btn">

@@ -264,9 +264,12 @@
       border-bottom: 5px solid var(--theme-color);
   }
   /* Product Cards  css here*/
+  .product_name{
+    height: 42px;
+  }
   .product_name a p{
     font-size: 1rem;
-}
+  }
   .product_rates_price .product_price p {
     font-size: 1.2rem;
   }
@@ -278,6 +281,10 @@
     height: 30px;
     width: 30px;
   }
+  /* Product Cards  css here*/
+  .user_entry_footer_msg p{
+    font-size: 1.4rem;
+}
 }
 
 
