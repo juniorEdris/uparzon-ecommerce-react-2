@@ -16,17 +16,20 @@ function HeaderNav(props) {
           className={`category_dropdown ${
             props.categoryBar ? 'd-block' : 'd-none'
           } `}>
-          <ul className="d-none d-md-block">
+          {' '}
+          <ul className="" onPointerLeave={() => props.setCategoryBar(false)}>
             {props.categories.map((category) => (
               <li key={category.id}>
                 <Link to="#">{category.name}</Link>
               </li>
             ))}
           </ul>
-          {/* <div
-            className="category_dropdown_backdrop d-none d-md-block"
-            onClick={(e) => props.setCategoryBar(false)}></div> */}
         </div>
+        {/* {props.categoryBar && (
+          <div
+            className="category_dropdown_backdrop d-none d-md-block"
+            onClick={(e) => props.setCategoryBar(false)}></div>
+        )} */}
         <NavRight />
       </div>
     </div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
+import VerifyPhone from './VerifyPhone';
 
 export const Uparzon_entry = (props) => {
   const [section, setSection] = useState('login');
@@ -19,7 +20,7 @@ export const Uparzon_entry = (props) => {
             </div>
             <div className="uparzon_entry_form col-12 col-lg-6">
               <div className="uparzon_entry_form_child col-12 pb-5">
-                <div className="form_section_heading row no-gutters">
+                <div className={`form_section_heading row no-gutters `}>
                   <Link
                     to="#"
                     className={`col-6 ${section === 'login' && 'active'}`}
@@ -31,7 +32,9 @@ export const Uparzon_entry = (props) => {
                   </Link>
                   <Link
                     to="#"
-                    className={`col-6 ${section === 'register' && 'active'}`}
+                    className={`col-6 ${section === 'register' && 'active'} ${
+                      section === 'verified' && 'active'
+                    }`}
                     onClick={(e) => {
                       e.preventDefault();
                       setSection('register');
@@ -39,7 +42,15 @@ export const Uparzon_entry = (props) => {
                     Register
                   </Link>
                 </div>
-                {section === 'login' ? <Login /> : <Register />}
+                {section === 'login' ? (
+                  <Login />
+                ) : section === 'register' ? (
+                  <VerifyPhone setSection={setSection} />
+                ) : section === 'verified' ? (
+                  <Register />
+                ) : (
+                  ''
+                )}
                 {/*  */}
               </div>
             </div>

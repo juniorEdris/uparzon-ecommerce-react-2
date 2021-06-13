@@ -15,24 +15,39 @@ function NavList(props) {
           </Link>
         </li>
         <li>
-          <Link to="#">
+          <Link className="nav-sections" to="#">
             all pages <span className="lnr lnr-chevron-down" />
           </Link>
         </li>
         <li>
-          <Link to="#">featured brands</Link>
+          <Link className="nav-sections" to="#">
+            featured brands
+          </Link>
         </li>
         <li>
-          <Link to="#">trending styles</Link>
+          <Link className="nav-sections" to="#">
+            trending styles
+          </Link>
         </li>
         <li>
-          <Link to="#">gift cards</Link>
+          <Link className="nav-sections" to="#">
+            gift cards
+          </Link>
         </li>
         <li>
-          <Link to="/shop">shop</Link>
+          <Link className="nav-sections" to="/shop">
+            shop
+          </Link>
         </li>
         <li>
-          <Link to="#">tech products</Link>
+          <Link className="nav-sections" to="#">
+            tech products
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-sections" to="/campaign">
+            campaign
+          </Link>
         </li>
       </ul>
     </div>

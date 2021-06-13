@@ -23,6 +23,9 @@
 .single_feature .text small{
   font-size: 75%;
 }
+.category_dropdown{
+  width: 18% !important;
+  }
 }
 @media (max-width: 1300px) {
   .header__nav {
@@ -40,6 +43,9 @@
   .nav_links ul li a {
     margin-right: 1rem !important;
   }
+  .nav_links ul li a.nav-all {
+    top: 6px !important;
+}
   .header__option__lineOne {
     font-size:1rem ;
   }
@@ -61,16 +67,23 @@
 /* LG Device :992px. */
 @media (min-width: 1000px) and (max-width:1400px) {
   .header_nav .more_link {
-    font-size: 0.8rem !important;
+    /* font-size: 0.8rem !important; */
 }
 .nav_links ul li a {
-    font-size: 0.8rem !important;
+    /* font-size: 0.8rem !important; */
 }
 }
 @media (min-width: 992px) and (max-width:1199px) {
+  .nav_links ul li a.nav-all {
+    top: 8px;
+}
   .more_link,.nav_links ul li a{
-    font-size: 0.8rem !important; 
+    /* font-size: 0.8rem !important;  */
+    font-size: 0.6rem !important; 
    }
+   .category_dropdown{
+    width: 25% !important;
+    }
 }
 @media (min-width: 992px) {
   /*and (max-width: 1199px) */
@@ -92,7 +105,7 @@
   .header__link .header__option__basket .icon_name {
     display: block;
   }
-  .nav_links {
+  .nav_links .nav-sections{
     display: block;
   }
   
@@ -118,6 +131,7 @@
 }
 /* ===================================== */
 @media (min-width: 991px) {
+  
 }
 
 /* MD Device */
@@ -151,6 +165,9 @@
     font-size: 1.3rem;
     text-align: center;
   }
+  .category_dropdown{
+    width: 40% !important;
+    }
 }
 @media (min-width: 768px) {
   .col-features{
@@ -167,34 +184,7 @@
   .more_link {
     /* font-size: 0.5rem; */
   }
-  .header_nav {
-    position: relative;
-  }
-  .nav_links {
-    margin: 0 auto;
-  }
-  .nav_links ul {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-  }
-
-  .nav_links ul li a {
-    color: var(--theme-color);
-    margin-right: 0.6rem;
-    text-transform: capitalize;
-    /* font-size: 0.5rem; */
-    line-height: 100%;
-    font-weight: 600;
-  }
-  .nav_links ul li a.nav-all{
-    position: absolute;
-    top: 7px;
-    left: 14px;
-  }
+  
   .nav_links ul li a.see-more{
     font-weight: 800;
   }
@@ -205,6 +195,7 @@
 .category_sidebar_list{
   width: 22% !important;
 }
+
 }
 
 /* SM Small Device */
@@ -216,7 +207,7 @@
     padding:0 15px;
   }
   .single-slider{
-    height: 150px;
+    /* height: 150px; */
     width: 100%;
   }
   .single-slider img.slider_image{
@@ -285,6 +276,9 @@
   .user_entry_footer_msg p{
     font-size: 1.4rem;
 }
+.category_dropdown{
+  width: 50%;
+  }
 }
 
 

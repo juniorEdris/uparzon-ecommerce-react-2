@@ -33,15 +33,20 @@ export const Features = (props) => {
       image: 'simple-f-secure.svg',
       name: 'Payment Secure',
       small: 'We ensure secure payment',
+      fullWidth: true,
     },
   ];
   return (
-    <div className="home_feature_area mb-5 mb-md-2 d-none d-md-block">
+    <div className="home_feature_area mb-5 mb-md-2 ">
       <div className="container-md-fluid">
         <div className="features_body">
           <div className="row align-tems-center">
             {images.map((image) => (
-              <div className="single_feature col-features mb-3" key={image.id}>
+              <div
+                className={`single_feature col-features ${
+                  image.fullWidth ? 'col-12' : 'col-6'
+                } mb-3`}
+                key={image.id}>
                 <div className="d-flex align-items-center feature_border feature_shadow flex-wrap justify-content-center">
                   <div className="image">
                     <img

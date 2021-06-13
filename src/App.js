@@ -47,6 +47,7 @@ import Search from './SearchMedicine/Search';
 import { demoAll } from './Redux/Action/WishListAction';
 import Shop from './Shop';
 import UparzonEntry from './MyAccount/UserActivity/Components/Uparzon_entry';
+import Campaign from './Campaigns';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -97,6 +98,9 @@ function App(props) {
           <Route path="/login">
             {/* <UserEntry pathRedirect={nextPage} /> */}
             {!props.User ? <UparzonEntry /> : <Redirect to="/dashboard" />}
+          </Route>
+          <Route path="/campaign">
+            <Campaign />
           </Route>
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />

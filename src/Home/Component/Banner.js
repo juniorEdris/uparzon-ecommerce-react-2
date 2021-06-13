@@ -45,11 +45,19 @@ const Banner = (props) => {
             props.sliders?.map((banner) => (
               <div className="slider-area " key={banner.photo}>
                 <div className="single-slider">
-                  <img
-                    className="slider_image"
-                    src={`https:${banner.image}`}
-                    alt="banners"
-                  />
+                  {props.demo ? (
+                    <img
+                      className="slider_image"
+                      src={`${banner.image}`}
+                      alt="banners"
+                    />
+                  ) : (
+                    <img
+                      className="slider_image"
+                      src={`https:${banner.image}`}
+                      alt="banners"
+                    />
+                  )}
                 </div>
               </div>
             ))}

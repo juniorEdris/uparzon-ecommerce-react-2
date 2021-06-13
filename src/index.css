@@ -34,6 +34,7 @@
     --light-color: #fff;
     --search-btn-color: rgba(0, 88, 94, 100%);
     --dark-color: rgb(91, 91, 91, 100%);
+    --secondary-gray-color: #707070;
     /* font colors */
     --font-color-one: rgba(97, 97, 97, 100%);
     /*product name color*/
@@ -175,6 +176,11 @@ h6 {
     background-color: var(--light-color);
 }
 .border-break{
+    border-bottom: 1px solid var(--dark-color);
+}
+.primary-page-break{
+    width: 100%;
+    margin: 45px 0;
     border-bottom: 1px solid var(--dark-color);
 }
 /* Dashboard table primary css */
@@ -341,10 +347,20 @@ a.all-products-btn {
     border-radius: 3rem;
     background-color: var(--light-color);
 }
+/* Section heading four */
+.section_heading_four{
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-bottom: 1px solid var(--secondary-gray-color);
+}
+.section_heading_four_title{
+    color: var(--theme-color);
+    line-height: 2;
+}
 
 
 /*--------------------------------------------------------------------
-                        Primary Slider css starts here
+Primary Slider css starts here
 --------------------------------------------------------------------*/
 /*Image slider starts here */
 .image_container {
@@ -963,13 +979,43 @@ a.header__option__lineTwo.header_logout {
     background-color: var(--light-color);
 }
 
-.nav_links {
+.header_nav {
+    position: relative;
+  }
+  .nav_links {
+    margin: 0 auto;
+  }
+  .nav_links ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav_links ul li a {
+    color: var(--theme-color);
+    margin-right: 0.6rem;
+    text-transform: capitalize;
+    /* font-size: 0.5rem; */
+    line-height: 100%;
+    font-weight: 600;
+  }
+  .nav_links ul li a.nav-all{
+      position: absolute;
+      top: 7px;
+      left: 14px;
+      font-size: 0.65rem;
+    }
+
+.nav_links .nav-sections{
     display: none;
 }
 
 .more_link {
     padding: 0.2rem;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: var(--theme-color);
     font-weight: 300;
 }
@@ -1591,6 +1637,25 @@ Article css starts here
     position: absolute;
     left: 0;
     bottom: 0;
+}
+.verify_number_heading{
+    color: var(--theme-color);
+    text-align: center;
+}
+.verify_number_heading_paragraph{
+    text-align: center;
+    /* font-size: 1.3rem; */
+}
+.verify_number_drop_down{
+    border: none;
+    border-bottom: 1px solid darkgray;
+    border-radius: 0;
+    margin-right: 15px;
+}
+.verify_number_input{
+    border: none;
+    border-bottom: 1px solid darkgray;
+    border-radius: 0;
 }
 .user_entry_footer_msg p{
     color: var(--dark-color);
