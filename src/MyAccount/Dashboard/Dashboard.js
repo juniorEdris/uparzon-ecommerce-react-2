@@ -11,17 +11,16 @@ import { guestCartItem } from '../../Redux/Action/BasketAction';
 import { guestWishItem } from '../../Redux/Action/WishListAction';
 
 const Dashboard = (props) => {
-  console.log(props.geustListloading);
-  useEffect(() => {
-    props.getCartItems();
-    props.User && props.getUserInfo();
-    props.User && props.getOrderList();
-  }, []);
-  useEffect(() => {
-    props.guestCartSubmit();
-    props.guestWishSubmit();
-    props.getOrderList();
-  }, []);
+  // useEffect(() => {
+  //   props.getCartItems();
+  //   props.User && props.getUserInfo();
+  //   props.User && props.getOrderList();
+  // }, []);
+  // useEffect(() => {
+  //   props.guestCartSubmit();
+  //   props.guestWishSubmit();
+  //   props.getOrderList();
+  // }, []);
   const [tab, setTab] = useState('dashboard');
   const [orderId, setOrderId] = useState('');
   return (

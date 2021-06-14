@@ -12,12 +12,12 @@ export default function NewsLetter() {
               className="mr-3"
               alt="news letter"
             />
-            <h5 className="text-light p-0 m-0">Sign Up For News Letters</h5>
+            <h3 className="text-light p-0 m-0">Sign Up For News Letters</h3>
           </div>
           <div className="col-md-3 d-flex align-items-center justify-content-center mb-3 mb-md-0">
-            <small className="text-light">
+            <p className="text-light mb-0">
               Be the First to Know. Sign up for newsletter today
-            </small>
+            </p>
           </div>
           <div className="col-md-5 mb-3 mb-md-0">
             <div

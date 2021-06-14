@@ -11,7 +11,8 @@ import { GetAreaOption } from '../../../../Redux/Action/GetUserInfoAction';
 const EditInformation = (props) => {
   console.log(props.loading, props.response, props.info);
   const [inputs, setInputs] = useState({
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     address: '',
@@ -53,68 +54,80 @@ const EditInformation = (props) => {
   return (
     <div className="edit_information">
       {props.response && <PopUp close={closePopup} response={props.response} />}
-      <div className="acc_dash_heading mb-5">
-        <h5>Edit account information</h5>
+      <div className="order_header pl-4 pb-3 pt-3 pr-4 mb-3">
+        <h3>Profile</h3>
       </div>
-      <div className="col-12 acc_info_inputs pr-md-5 pl-md-5 mb-5 mb-md-0">
-        <div className="info_heading">
-          <h3>Account Information</h3>
-        </div>
+      <div className="col-9 m-md-auto acc_info_inputs pr-md-5 pl-md-5 mb-5 mb-md-0">
         <form>
           <div className="form-row">
-            <div className="form-group col-12">
-              <label htmlFor="name">Full Name</label>
+            <div className="form-group col-6">
+              <label htmlFor="first_name">First Name</label>
               <input
-                type="email"
+                type="text"
                 className="form-control"
-                id="name"
-                placeholder="Full Name"
+                id="first_name"
+                placeholder="First Name"
                 onChange={handleChange}
-                value={inputs.name}
+                value={inputs.first_name}
               />
-              {inputs.name === '' && (
+              {inputs.first_name === '' && (
+                <small className="text-danger">Please provide your name.</small>
+              )}
+            </div>
+            <div className="form-group col-6">
+              <label htmlFor="last_name">Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="last_name"
+                placeholder="Last Name"
+                onChange={handleChange}
+                value={inputs.last_name}
+              />
+              {inputs.last_name === '' && (
                 <small className="text-danger">Please provide your name.</small>
               )}
             </div>
           </div>
-          <div className=" form-group">
-            <label htmlFor="phone">Mobile</label>
-            <div className="input-group">
+          <div className="form-row mt-4">
+            <div className=" form-group col-6">
+              <label htmlFor="phone">Mobile</label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="phone"
+                  // onChange={handleChange}
+                  value={inputs.phone}
+                  placeholder="Phone number"
+                />
+                <div className="col-12">
+                  {inputs.phone === '' && (
+                    <small className="text-danger">
+                      Please provide your mobile number.
+                    </small>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="form-group col-6">
+              <label htmlFor="email">Email Address</label>
               <input
                 type="text"
                 className="form-control"
-                id="phone"
-                // onChange={handleChange}
-                value={inputs.phone}
-                placeholder="Phone number"
-                readOnly
+                id="email"
+                placeholder="Email"
+                onChange={handleChange}
+                value={inputs.email}
               />
-              <div className="col-12">
-                {inputs.phone === '' && (
-                  <small className="text-danger">
-                    Please provide your mobile number.
-                  </small>
-                )}
-              </div>
+              {inputs.email === '' && (
+                <small className="text-danger">
+                  Please provide your email address.
+                </small>
+              )}
             </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input
-              type="text"
-              className="form-control"
-              id="email"
-              placeholder="Email"
-              onChange={handleChange}
-              value={inputs.email}
-            />
-            {inputs.email === '' && (
-              <small className="text-danger">
-                Please provide your email address.
-              </small>
-            )}
-          </div>
-          <div className="form-row">
+          {/* <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="district">District</label>
               <select
@@ -178,15 +191,15 @@ const EditInformation = (props) => {
                 Please provide your address.
               </small>
             )}
-          </div>
+          </div> */}
           <div className="account_submit_btn">
             <Link
               to="#"
               onClick={submitFrom}
               className={`${
                 inputs.address === '' && 'pointer_disabled'
-              } btn col-md-4`}>
-              Save Address
+              } btn col-12 mt-4`}>
+              Update
             </Link>
           </div>
         </form>

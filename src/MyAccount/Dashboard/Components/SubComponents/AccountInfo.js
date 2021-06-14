@@ -6,31 +6,50 @@ import { LogOutAction } from '../../../../Redux/Action/UserAction';
 
 const AccountInfo = (props) => {
   return (
-    <div className="account_information">
-      <div className="order_header pl-4 pr-4">
-        <span>Account Information</span>
-        <Link to="#" onClick={() => props.setTab('account')}>
-          edit
+    <div className="account_information col-md-6">
+      <h3 className="pl-4 pr-4">
+        Account Information{' '}
+        <Link to="#">
+          <i class="fas fa-edit"></i>
         </Link>
-      </div>
-      <h5 className="pl-4 pr-4">Contact Information</h5>
+      </h3>
       <div className="">
-        <div className="account_details">
-          <div className="pt-3 pb-3">
-            {props.loading ? (
-              <Skeleton width={`100%`} height={`50px`} />
-            ) : (
-              <h3 className="user_name">{props.info?.name || 'User name'}</h3>
-            )}
-          </div>
+        {props.loading ? (
           <div className="">
-            {props.loading ? (
-              <Skeleton width={'100%'} height={30} />
-            ) : (
-              <span>{props.info?.email || 'User email'}</span>
-            )}
+            <Skeleton width={'100%'} height={150} />
           </div>
-        </div>
+        ) : (
+          <div className="account_details">
+            <div className="row no-gutters">
+              <div className="col-lg-3">
+                <p>name:</p>
+              </div>
+              <div className="col-lg-5">
+                <p>{props.info?.name || 'eftekar raghib'}</p>
+              </div>
+            </div>
+            {/* phone */}
+            <div className="row no-gutters">
+              <div className="col-lg-3">
+                <p>phone number:</p>
+              </div>
+              <div className="col-lg-5">
+                <p>{props.info?.name || '0180000000'}</p>
+              </div>
+            </div>
+            {/* email */}
+            <div className="row no-gutters">
+              <div className="col-lg-3">
+                <p>email:</p>
+              </div>
+              <div className="col-lg-5">
+                <p className="text-lowercase">
+                  {props.info?.email || 'user@mail.com'}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -10,71 +10,72 @@
     margin-bottom: var(--margin-bottom);
 }
 
-.acc_heading {
+/* .acc_heading {
     background: var(--theme-color);
     color: var(--light-color);
     text-align: center;
     padding: 0.75rem 0;
     text-transform: uppercase;
-}
+} */
 
-.dash_nav_list ul {
+/* .dash_nav_list ul {
     border: 1px solid var(--theme-color);
     padding: 0.325rem 0.625rem;
-}
+} */
 
 .dash_nav_list ul li {
     text-transform: capitalize;
     padding: 0.325rem 0 0 0;
     font-size: var(--primary-text-size);
+    position: relative;
+}
+.dash_nav_list ul li::after {
+    content: '';
+    border-bottom: 1px solid var(--gray);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 75%;
+    opacity: 0.3;
 }
 
-.dash_nav_list ul li a.active::before {
+.dash_nav_list ul li.active::before {
     content: '';
-    border-color: var(--user-entry-btn);
+    border-color: var(--theme-color);
     border-style: solid;
     border-width: 0.1rem 0.3em 0 0;
-    height: 1em;
-    width: 0.5em;
+    height: 100%;
     margin-right: 0.4em;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-
 .dash_nav_list ul li a {
     color: var(--muted-color);
-    font-weight: 300;
+    font-weight: 500;
     display: block;
+    line-height: 2.2;
+    display: block;
+    padding-left: 2.5rem;
 }
-
-.dash_nav_list ul li a.active {
-    color: var(--user-entry-btn);
+.dash_nav_list ul li a svg{
+    margin-right: 1rem;
+}
+.dash_nav_list ul li.active a{
+    color: var(--theme-color);
 }
 
 .dash_nav_list ul li a:hover {
-    color: var(--user-entry-btn);
-    font-weight: 300;
+    color: var(--theme-color);
 }
-
-.dash_nav_list ul li.logout a {
-    font-weight: 400;
-    color: var(--light-color);
-    background-color: var(--theme-color);
-    text-align: center;
-
-}
-
-.dash_nav_list ul li.logout a:hover {
-    color: var(--light-color);
-    background-color: var(--dark-color);
-}
-
-.browse_nav_list ul li a {
+/* browse nav */
+/* .browse_nav_list ul li a {
     font-weight: 500 !important;
 }
 
 .browse_nav_list ul li a:hover {
     background-color: var(--muted-btn-color);
-}
-
+} */
 /* MY DASHBOARD CSS STARTS HERE (DASHBOARD BODY) */
 /* Account Dashboard */
 .account_msg {
@@ -85,34 +86,13 @@
     background: var(--myaccount-bg-color);
 }
 
-.acc_dash_heading h5 {
+/* .acc_dash_heading h5 {
     text-align: center;
     padding: 0.725rem 0;
     text-transform: capitalize;
     color: var(--light-color);
     background-color: var(--nav-bg);
-}
-
-.account_msg {
-    position: relative;
-    margin-top: 2rem;
-    font-size: var(--primary-text-size);
-    font-weight: 300;
-}
-
-.account_msg img {
-    position: absolute;
-    width: 1.571rem;
-    top: -10px;
-    left: 14px;
-}
-
-.account_msg p {
-    padding: 1rem;
-    -webkit-box-shadow: var(--box-shadow-1);
-    box-shadow: var(--box-shadow-1);
-    background: var(--light-color);
-}
+} */
 
 /* Order History */
 .order_lists,
@@ -145,28 +125,17 @@
     display: flex;
     /* NEW, Spec - Opera 12.1, Firefox 20+ */
     justify-content: space-between;
-    margin-bottom: 0.8rem;
     align-items: center;
 }
 
-.order_header span,
-.order_header a {
-    color: var(--dark-color);
-    font-size: var(--primary-text-size);
+.order_header  {
+    color: var(--light-color);
     text-transform: capitalize;
-}
-
-.order_header a {
-    color: var(--user-entry-btn);
-}
-
-.order_header a:hover {
-    color: var(--dark-color);
+    background-color: var(--theme-color);
 }
 
 .thead-primary {
-    background: var(--nav-bg);
-    color: var(--light-color);
+    color: var(--dark-color);
 }
 
 .trow-light {
@@ -176,22 +145,34 @@
 }
 
 /* Account information start here */
-.account_information h5 {
-    background: var(--nav-bg);
-    padding: 0.725rem 0;
+.account_information h3 {
+    background: var(--theme-color);
+    padding: 1rem 0;
     text-transform: capitalize;
     color: var(--light-color);
+    /* position: relative; */
+}
+.account_information h3 a{
+    color: var(--light-color);
+}
+.account_information h3 a svg{
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+    /* position: absolute;
+    left: 36%;
+    top: 22px; */
 }
 
-.account_details {
-    padding: 0.7rem;
+.account_details,.order_details {
+    padding: 0.7rem 2rem;
     font-size: var(--primary-text-size);
-    font-weight: 300;
     background: var(--light-color);
-    border: 1px solid var(--nav-bg);
     box-shadow: var(--box-shadow-1);
     -webkit-box-shadow: var(--box-shadow-1);
     margin-bottom: 2.7rem;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .account_details .user_name {
@@ -199,11 +180,9 @@
 }
 
 /* EDIT INFORMATION CSS STARTS HERE */
-.info_heading h3 {
-    border-bottom: 1px solid var(--dark-color);
-    margin-bottom: var(--top-whitespace);
+.acc_info_inputs{
+    padding: 100px 0 !important;
 }
-
 .acc_info_inputs form label {
     font-size: var(--primary-text-size);
 }
@@ -227,7 +206,7 @@
     margin-bottom: 1rem;
     font-size: 1.2rem;
     color: var(--light-color);
-    background-color: var(--user-entry-btn);
+    background-color: var(--nav-bg);
 }
 .account_submit_btn a:hover {
     color: var(--light-color);
@@ -263,4 +242,24 @@
     text-align:right;
     border-right: 1px solid var(--theme-color);
     font-weight: 500;
+}
+
+/* Order Summary start here */
+.order_summary h3 {
+    background: var(--theme-color);
+    padding: 1rem 0;
+    text-transform: capitalize;
+    color: var(--light-color);
+    /* position: relative; */
+}
+.order_summary h3 a{
+    color: var(--light-color);
+}
+.order_summary h3 a svg{
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+    /* position: absolute;
+    left: 36%;
+    top: 22px; */
 }

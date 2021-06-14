@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const VerifyPhone = (props) => {
   return (
@@ -12,7 +13,7 @@ export const VerifyPhone = (props) => {
       <div className="verify_number_heading_paragraph chilldren-gap-top">
         <p>Please enter your Number to receive a verification code</p>
       </div>
-      <div className="col ">
+      <div className="col verify_input_section">
         <div className="input-group mb-3 col-12 col-xl-8 m-auto">
           <div className="input-group-prepend">
             <button
@@ -47,9 +48,26 @@ export const VerifyPhone = (props) => {
         </div>
 
         <div className="login-box mt-4 col-12  text-center">
-          <button type="submit" className="btn mb-4 col-lg-5 col-12">
+          <button
+            type="button"
+            className="btn mb-4 col-lg-5 col-12"
+            onClick={(e) => {
+              e.preventDefault();
+              props.setSection('');
+            }}>
             Register
           </button>
+        </div>
+        <div className="text-center verify_links">
+          <p>Already have an account?</p>
+          <Link
+            to="#"
+            onClick={(e) => {
+              e.preventDefault();
+              props.setSection('login');
+            }}>
+            Sign in
+          </Link>
         </div>
       </div>
     </div>

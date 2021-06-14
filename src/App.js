@@ -102,13 +102,13 @@ function App(props) {
           <Route path="/campaign">
             <Campaign />
           </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
             {!props.User ? <Redirect to="/login" /> : <PrescriptionUpload />}
-          </Route>
-          <Route path="/dashboard">
-            {!props.User ? <Redirect to="/login" /> : <Dashboard />}
           </Route>
           <Route path="/category-products">
             <CategoryBasedProducts

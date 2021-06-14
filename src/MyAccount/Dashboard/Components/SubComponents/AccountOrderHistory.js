@@ -19,17 +19,14 @@ const AccountOrderHistory = (props) => {
   }
   return (
     <div className="">
-      <div className="order_header pl-4 pr-4">
-        <span>Recent Orders</span>
-        <Link to="#" onClick={viewAll}>
-          view all
-        </Link>
+      <div className="order_header pl-4 pb-3 pt-3 pr-4">
+        <h3>Recent Orders</h3>
       </div>
       {props.loading ? (
         <div className="order_lists primary_table">
           <Skeleton height={350} width={'100%'} />
         </div>
-      ) : props.orders?.length < 1 ? (
+      ) : props.orders?.length === 1 ? (
         <div className=" order_lists primary_table d-flex align-items-center justify-content-center null_result">
           <h3 className="">No orders yet!</h3>
         </div>

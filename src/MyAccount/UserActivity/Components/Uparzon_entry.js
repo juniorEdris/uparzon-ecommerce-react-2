@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import VerifyPhone from './VerifyPhone';
+import UparzonOTP from './UparzonOTP';
 
 export const Uparzon_entry = (props) => {
   const [section, setSection] = useState('login');
@@ -34,7 +35,7 @@ export const Uparzon_entry = (props) => {
                     to="#"
                     className={`col-6 ${section === 'register' && 'active'} ${
                       section === 'verified' && 'active'
-                    }`}
+                    } ${section === '' && 'active'}`}
                     onClick={(e) => {
                       e.preventDefault();
                       setSection('register');
@@ -49,7 +50,7 @@ export const Uparzon_entry = (props) => {
                 ) : section === 'verified' ? (
                   <Register />
                 ) : (
-                  ''
+                  <UparzonOTP />
                 )}
                 {/*  */}
               </div>

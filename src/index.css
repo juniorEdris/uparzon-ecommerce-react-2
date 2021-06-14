@@ -1590,6 +1590,7 @@ Article css starts here
 .uparzon_entry_form_child{
     background-color:var(--light-color);
     padding: 0;
+    box-shadow: var(--box-shadow-one);
 }
 /* form heading css here */
 .uparzon_entry_form_child .form_section_heading a{
@@ -1610,6 +1611,7 @@ Article css starts here
 /* form form/input css here */
 .uparzon_entry_form_child form{
     padding: 0 1.75rem;
+    margin-bottom: 12rem;
 }
 .uparzon_input_wrapper .form-control:focus {
     color: #495057;
@@ -1652,10 +1654,60 @@ Article css starts here
     border-radius: 0;
     margin-right: 15px;
 }
+.verify_number_drop_down.btn-outline-secondary:hover {
+    color: unset;
+    background-color: unset;
+    border-color: unset;
+}
+.verify_number_drop_down.btn-outline-secondary:focus {
+    border: unset;
+}
+.verify_number_drop_down.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle {
+    color: unset;
+    background-color: unset;
+    border-color: unset;
+    border: none;
+}
+.verify_input_section{
+    margin: 12rem 0;
+}
 .verify_number_input{
     border: none;
     border-bottom: 1px solid darkgray;
     border-radius: 0;
+}
+.verify_number_input:focus{
+    color: unset;
+    background-color: unset;
+    border-color: unset;
+    outline: 0;
+    box-shadow:unset;
+}
+.verify_links a{
+    color: var(--theme-color);
+}
+.verify_links a:hover{
+    color: var(--dark-color);
+}
+.uparzon_otp_input{
+    width: 35px !important;
+    margin-right: 20px !important;
+    margin-bottom: 20px !important;
+    border: none;
+    border-bottom: 3px solid var(--theme-color);
+}
+.uparzon_otp_input:not(:last-child){
+    margin-right: 40px !important;
+}
+.otp_time{
+    font-size: 1.4rem;
+}
+.otp_number{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+.uparzon_otp_wrapper{
+    margin: 12rem 0;
 }
 .user_entry_footer_msg p{
     color: var(--dark-color);

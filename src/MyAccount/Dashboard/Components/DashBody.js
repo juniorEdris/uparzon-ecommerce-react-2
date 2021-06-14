@@ -16,8 +16,8 @@ const DashBody = (props) => {
           setOrderId={props.setOrderId}
         />
       )}
-      {props.tab === 'account' && <EditInformation />}
-      {props.tab === 'order' && (
+      {props.tab === 'profile' && <EditInformation />}
+      {/*{props.tab === 'order' && (
         <MyOrders
           tab={props.tab}
           setTab={props.setTab}
@@ -32,7 +32,7 @@ const DashBody = (props) => {
           tab={props.tab}
           setTab={props.setTab}
         />
-      )}
+      )} */}
     </div>
   );
 };

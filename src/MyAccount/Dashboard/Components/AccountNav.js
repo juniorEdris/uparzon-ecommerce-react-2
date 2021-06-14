@@ -10,38 +10,36 @@ const AccountNav = (props) => {
   return (
     <div className="">
       <div className="account_nav">
-        <div className="acc_heading">
-          <h5>My Account</h5>
-        </div>
         <div className="dash_nav_list">
           <ul>
-            <li>
-              <Link
-                to="#"
-                className={props.tab === 'dashboard' && 'active'}
-                onClick={() => props.setTab('dashboard')}>
-                Account Dashboard
+            <li className={props.tab === 'dashboard' && 'active'}>
+              <Link to="#" onClick={() => props.setTab('dashboard')}>
+                <span class="fas fa-square-full"></span> Dashboard
               </Link>
             </li>
-            <li>
-              <Link
-                to="#"
-                className={props.tab === 'account' && 'active'}
-                onClick={() => props.setTab('account')}>
-                Account Information
+            <li className={props.tab === 'account' && 'active'}>
+              <Link to="#" onClick={() => props.setTab('account')}>
+                <span class="fas fa-square-full"></span> My Order
               </Link>
             </li>
-            <li>
-              <Link
-                to="#"
-                className={props.tab === 'order' && 'active'}
-                onClick={() => props.setTab('order')}>
-                My Order
+            <li className={props.tab === 'order' && 'active'}>
+              <Link to="#" onClick={() => props.setTab('order')}>
+                <span class="fas fa-square-full"></span> My Wishlist
+              </Link>
+            </li>
+            <li className={props.tab === 'profile' && 'active'}>
+              <Link to="#" onClick={() => props.setTab('profile')}>
+                <span class="fas fa-square-full"></span> Profile
+              </Link>
+            </li>
+            <li className={props.tab === 'change pass' && 'active'}>
+              <Link to="#" onClick={() => props.setTab('change pass')}>
+                <span class="fas fa-square-full"></span> Change Password
               </Link>
             </li>
             <li className="logout">
               <Link to="#" onClick={logOut}>
-                Log out
+                <span class="fas fa-square-full"></span> Log out
               </Link>
             </li>
           </ul>
