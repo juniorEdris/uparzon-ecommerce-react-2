@@ -170,6 +170,55 @@
     left: 0;
     z-index: 99;
     }
+    /* Responsive category dropdown */
+    .responsive_category_dropdown{
+        position: absolute;
+    top: 63px;
+    left: 0px;
+    background: var(--light-color);
+    z-index: 100;
+    width: 70%;
+    box-shadow: var(--box-shadow-one);
+    }
+    .responsive_category_dropdown ul li:not(:last-child) {
+        border-bottom: 1px solid var(--theme-color);
+    }
+    .responsive_category_dropdown ul li a{
+        display: block;
+        padding: 0.6rem 0 0.6rem 0.6rem;
+        text-transform: capitalize;
+        color: var(--theme-color);
+        font-size: 1rem;
+    }
+
+    .responsive_category_dropdown ul li a::after {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    .responsive_category_dropdown ul li a::after {
+        content: '\f0da';
+        font-family: 'Font Awesome 5 Free';
+        right: 10px;
+        position: absolute;
+        color: var(--dark-color);
+        font-weight: 600;
+    }
+    
+    .responsive_category_dropdown ul li:hover a::after  {
+        color: var(--light-color);
+    }
+    .responsive_category_dropdown ul li:hover  {
+        background-color: var(--theme-color);
+    }
+    
+    .responsive_category_dropdown ul li a:hover{
+        color: var(--light-color);
+        /* background-color: var(--dark-color); */
+    }
 /* CATEGORY SIDEBAR CSS */
 .category_sidebar{
     /* Useable from app.js */

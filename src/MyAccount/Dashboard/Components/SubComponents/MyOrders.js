@@ -7,11 +7,10 @@ import { Link } from 'react-router-dom';
 const MyOrders = (props) => {
   return (
     <div className="my_orders primary_table full_vh">
-      <div className="order_header">
-        <span>All Orders</span>
-        <Link to="#">view all</Link>
+      <div className="order_header pl-4 pb-3 pt-3 pr-4 mb-3">
+        <h3>Recent Orders</h3>
       </div>
-      {props.loading ? (
+      {!props.loading ? (
         <div className="">
           <Skeleton height={350} width={'100%'} />
         </div>

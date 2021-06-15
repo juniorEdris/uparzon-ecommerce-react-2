@@ -26,6 +26,9 @@
 .category_dropdown{
   width: 18% !important;
   }
+.responsive_category_dropdown{
+  width: 18% !important;
+  }
 }
 @media (max-width: 1300px) {
   .header__nav {
@@ -63,6 +66,15 @@
   }
 }
 
+@media (min-width: 1150px)  {
+  .nav_links .nav-all{
+    display: block;
+  }
+  .responsive_all_category{
+   display: none;
+ } 
+
+}
 /* ===================================== */
 /* LG Device :992px. */
 @media (min-width: 1000px) and (max-width:1400px) {
@@ -83,6 +95,9 @@
    }
    .category_dropdown{
     width: 25% !important;
+    }
+   .responsive_category_dropdown{
+    width: 33% !important;
     }
 }
 @media (min-width: 992px) {
@@ -105,9 +120,13 @@
   .header__link .header__option__basket .icon_name {
     display: block;
   }
+  
   .nav_links .nav-sections{
     display: block;
   }
+  /* .nav_links .responsive_all_category{
+    display: none;
+  } */
   
   .btn-cart {
     font-size: 1rem;
@@ -277,7 +296,10 @@
     font-size: 1.4rem;
 }
 .category_dropdown{
-  width: 50%;
+  width: 30%;
+  }
+.responsive_category_dropdown{
+  width: 45%;
   }
 }
 

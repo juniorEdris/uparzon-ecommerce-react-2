@@ -1002,13 +1002,27 @@ a.header__option__lineTwo.header_logout {
     line-height: 100%;
     font-weight: 600;
   }
-  .nav_links ul li a.nav-all{
+  .nav_links a.nav-all{
       position: absolute;
       top: 7px;
       left: 14px;
       font-size: 0.65rem;
     }
+    .nav_links a.responsive_all_category{
+    font-size: 0.65rem;
+    position: absolute;
+    top: 30px;
+    left: 14px;
+    background: var(--theme-color);
+    z-index: 99;
+    text-align: center;
+    color: var(--light-color);
+    text-transform: capitalize;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    }
 
+.nav_links .nav-all,
 .nav_links .nav-sections{
     display: none;
 }
@@ -1611,7 +1625,7 @@ Article css starts here
 /* form form/input css here */
 .uparzon_entry_form_child form{
     padding: 0 1.75rem;
-    margin-bottom: 12rem;
+    /* margin-bottom: 12rem; */
 }
 .uparzon_input_wrapper .form-control:focus {
     color: #495057;
@@ -1669,7 +1683,7 @@ Article css starts here
     border: none;
 }
 .verify_input_section{
-    margin: 12rem 0;
+    margin: 5rem 0;
 }
 .verify_number_input{
     border: none;
@@ -1707,7 +1721,7 @@ Article css starts here
     font-weight: 300;
 }
 .uparzon_otp_wrapper{
-    margin: 12rem 0;
+    margin: 5rem 0;
 }
 .user_entry_footer_msg p{
     color: var(--dark-color);

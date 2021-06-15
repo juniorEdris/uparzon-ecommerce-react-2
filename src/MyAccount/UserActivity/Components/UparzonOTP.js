@@ -18,7 +18,7 @@ const UparzonOTP = (props) => {
         <p>Please enter your Number to receive a verification code</p>
       </div>
       <div className="uparzon_otp_wrapper col ">
-        <div className="col-md-5 m-md-auto">
+        <div className="col-md-5 offset-xl-2">
           <OtpInput
             value={otp}
             onChange={handleChange}
@@ -30,7 +30,7 @@ const UparzonOTP = (props) => {
         <div className="text-center mb-5">
           <p className="otp_time">02:21</p>
           <p className="otp_number">
-            OTP Has been send to 01855474544. Please enter it below
+            OTP Has been send to 01800000000. Please enter it below
           </p>
         </div>
         <div className="login-box mt-4 col-12  text-center">

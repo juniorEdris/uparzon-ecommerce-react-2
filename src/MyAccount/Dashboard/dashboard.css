@@ -165,6 +165,7 @@
 }
 
 .account_details,.order_details {
+    min-height: 245px;
     padding: 0.7rem 2rem;
     font-size: var(--primary-text-size);
     background: var(--light-color);

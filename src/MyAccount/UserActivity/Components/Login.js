@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Login() {
+  const router = useHistory();
+  const login = (e) => {
+    router.push('/dashboard');
+  };
   return (
-    <form action="#">
+    <form action="#" onSubmit={login}>
       <div className="uparzon_input_wrapper mt-4">
         <div className="form-group  ">
           <label htmlFor="number" className="input_label text-capitalize">

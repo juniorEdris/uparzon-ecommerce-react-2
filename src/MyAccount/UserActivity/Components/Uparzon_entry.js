@@ -19,7 +19,7 @@ export const Uparzon_entry = (props) => {
                 alt="user entry"
               />
             </div>
-            <div className="uparzon_entry_form col-12 col-lg-6">
+            <div className="uparzon_entry_form col-12 col-lg-6 col-xl-4 m-auto">
               <div className="uparzon_entry_form_child col-12 pb-5">
                 <div className={`form_section_heading row no-gutters `}>
                   <Link
@@ -50,7 +50,7 @@ export const Uparzon_entry = (props) => {
                 ) : section === 'verified' ? (
                   <Register />
                 ) : (
-                  <UparzonOTP />
+                  <UparzonOTP setSection={setSection} />
                 )}
                 {/*  */}
               </div>

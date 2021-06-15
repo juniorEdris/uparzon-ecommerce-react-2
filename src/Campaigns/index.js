@@ -19,7 +19,49 @@ const Campaign = (props) => {
       name: `campaign 1`,
     },
   ];
-  const camp = [
+  const campOne = [
+    {
+      id: 1,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 2,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 3,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 4,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 5,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 6,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 7,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 8,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+      name: `campaign 1`,
+    },
+  ];
+  const campTwo = [
     {
       id: 1,
       photo: `./uparzonassets/uparzonimages/campaigncards/camp01.png`,
@@ -55,17 +97,64 @@ const Campaign = (props) => {
       photo: `./uparzonassets/uparzonimages/campaigncards/camp01.png`,
       name: `campaign 1`,
     },
+    {
+      id: 8,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp01.png`,
+      name: `campaign 1`,
+    },
+  ];
+  const campThree = [
+    {
+      id: 1,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 2,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 3,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 4,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 5,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 6,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 7,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
+    {
+      id: 8,
+      photo: `./uparzonassets/uparzonimages/campaigncards/camp03.png`,
+      name: `campaign 1`,
+    },
   ];
   return (
     <div className="featured_brands">
       <FeatureSlider loading={props.loading} sliders={banners} demo />
       <SectionHeadingFour />
       <div className="container-md-fluid">
-        <CampaignCards campaigns={camp} />
-        <div className="primary-page-break"></div>
-        <CampaignCards campaigns={camp} />
-        <div className="primary-page-break"></div>
-        <CampaignCards campaigns={camp} />
+        <CampaignCards campaigns={campOne} />
+        {/* <div className="primary-page-break"></div> */}
+        <CampaignCards campaigns={campTwo} />
+        {/* <div className="primary-page-break"></div> */}
+        <CampaignCards campaigns={campThree} />
         <Features />
       </div>
     </div>

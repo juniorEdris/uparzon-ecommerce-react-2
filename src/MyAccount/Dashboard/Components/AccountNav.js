@@ -15,31 +15,55 @@ const AccountNav = (props) => {
             <li className={props.tab === 'dashboard' && 'active'}>
               <Link to="#" onClick={() => props.setTab('dashboard')}>
                 <span class="fas fa-square-full"></span> Dashboard
-              </Link>
-            </li>
-            <li className={props.tab === 'account' && 'active'}>
-              <Link to="#" onClick={() => props.setTab('account')}>
-                <span class="fas fa-square-full"></span> My Order
+                {/* <img
+                  src="./uparzonassets/svg/icons/dashboard/dashboard.svg"
+                  alt="icons"
+                />{' '} */}
               </Link>
             </li>
             <li className={props.tab === 'order' && 'active'}>
               <Link to="#" onClick={() => props.setTab('order')}>
+                <span class="fas fa-square-full"></span> My Order
+                {/* <img
+                  src="./uparzonassets/svg/icons/dashboard/dashboard.svg"
+                  alt="icons"
+                />{' '} */}
+              </Link>
+            </li>
+            <li className={props.tab === 'wishlist' && 'active'}>
+              <Link to="#" onClick={() => props.setTab('wishlist')}>
                 <span class="fas fa-square-full"></span> My Wishlist
+                {/* <img
+                  src="./uparzonassets/svg/icons/dashboard/dashboard.svg"
+                  alt="icons"
+                />{' '} */}
               </Link>
             </li>
             <li className={props.tab === 'profile' && 'active'}>
               <Link to="#" onClick={() => props.setTab('profile')}>
                 <span class="fas fa-square-full"></span> Profile
+                {/* <img
+                  src="./uparzonassets/svg/icons/dashboard/dashboard.svg"
+                  alt="icons"
+                />{' '} */}
               </Link>
             </li>
             <li className={props.tab === 'change pass' && 'active'}>
               <Link to="#" onClick={() => props.setTab('change pass')}>
                 <span class="fas fa-square-full"></span> Change Password
+                {/* <img
+                  src="./uparzonassets/svg/icons/dashboard/dashboard.svg"
+                  alt="icons"
+                />{' '} */}
               </Link>
             </li>
             <li className="logout">
               <Link to="#" onClick={logOut}>
                 <span class="fas fa-square-full"></span> Log out
+                {/* <img
+                  src="./uparzonassets/svg/icons/dashboard/dashboard.svg"
+                  alt="icons"
+                />{' '} */}
               </Link>
             </li>
           </ul>

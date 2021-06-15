@@ -8,6 +8,12 @@ function NavList(props) {
   };
   return (
     <div className="nav_links">
+      {/* <Link to="#" className="all_category " onClick={allCategory}>
+        all categories <span class="lnr lnr-menu"></span>
+      </Link> */}
+      <Link to="#" className="responsive_all_category" onClick={allCategory}>
+        all categories <span class="lnr lnr-menu"></span>
+      </Link>
       <ul>
         <li>
           <Link to="#" className="nav-all" onClick={allCategory}>
@@ -24,11 +30,11 @@ function NavList(props) {
             featured brands
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link className="nav-sections" to="#">
             trending styles
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link className="nav-sections" to="#">
             gift cards

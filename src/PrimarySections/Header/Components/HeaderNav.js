@@ -17,10 +17,28 @@ function HeaderNav(props) {
             props.categoryBar ? 'd-block' : 'd-none'
           } `}>
           {' '}
-          <ul className="" onPointerLeave={() => props.setCategoryBar(false)}>
+          <ul
+            className="d-none d-xl-block"
+            onPointerLeave={() => props.setCategoryBar(false)}>
             {props.categories.map((category) => (
               <li key={category.id}>
                 <Link to="#">{category.name}</Link>
+              </li>
+            ))}
+            <li>
+              <Link to="#">{'category.name'}</Link>
+            </li>
+          </ul>
+        </div>
+        <div
+          className={`responsive_category_dropdown ${
+            props.categoryBar ? 'd-block' : 'd-none'
+          }`}>
+          {' '}
+          <ul className="d-xl-none">
+            {props.categories.map((category) => (
+              <li key={category.id}>
+                <Link to="">{category.name}</Link>
               </li>
             ))}
           </ul>

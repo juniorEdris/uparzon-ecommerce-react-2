@@ -57,7 +57,7 @@ const EditInformation = (props) => {
       <div className="order_header pl-4 pb-3 pt-3 pr-4 mb-3">
         <h3>Profile</h3>
       </div>
-      <div className="col-9 m-md-auto acc_info_inputs pr-md-5 pl-md-5 mb-5 mb-md-0">
+      <div className="col-md-9 m-md-auto acc_info_inputs pr-md-5 pl-md-5 mb-5 mb-md-0">
         <form>
           <div className="form-row">
             <div className="form-group col-6">
