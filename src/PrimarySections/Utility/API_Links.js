@@ -1,6 +1,6 @@
 import Axios from 'axios';
-// export const DOMAIN = `https://demostore.uparzon.com/`;
-export const DOMAIN = `https://store.uparzon.com/`;
+export const DOMAIN = `https://demostore.uparzon.com/`;
+// export const DOMAIN = `https://store.uparzon.com/`;
 
 let BaseApi = Axios.create({
   baseURL: DOMAIN,
@@ -16,9 +16,11 @@ export const API = () => {
 
 export const ENDPOINTS = {
   HOMEPRODUCT: `api/uparzonweb/get_home_products`,
-  SEARCH: `/api/uparzonweb/search_products`,
+  SEARCH: `api/uparzonweb/search_products`,
   PRODUCTDETAILS: `api/uparzonweb/get_product_details?product_id=`,
-  SINGLE_BRAND_PRODUCTS: `/api/uparzonweb/search_products`,
+  SINGLE_BRAND_PRODUCTS: `api/uparzonweb/search_products`,
+  CAMPAIGN_PRODUCTS: `api/uparzonweb/search_products`,
+  //
   ADDTOBASKET: `api/product/add_to_cart`,
   CART_UPDATE: `api/user/cart_update/`,
   DELETEFROMBASKET: `api/cart/delete_product/`,
@@ -37,7 +39,6 @@ export const ENDPOINTS = {
   PLACE_ORDER: `api/app/make_order`,
   GET_ORDER_LIST: `api/get_orders`,
   CANCEL_ORDER: `api/cancel_order`,
-  GENERIC_PRODUCTS: `api/web/product_by_generic`,
   GET_BLOG_LIST: `api/web/get_blog_lists`,
   GET_SINGLE_BLOG: `api/web/get_blog_details`,
   GET_SINGLE_ORDER: `api/get_order_details`,

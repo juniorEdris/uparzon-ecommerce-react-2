@@ -37,7 +37,7 @@ import { getUserInfo } from './Redux/Action/GetUserInfoAction';
 import { getOrderList } from './Redux/Action/OrderListAction';
 import NeccessaryProducts from './NeccessaryProducts/NeccessaryPage';
 import SingleCompanyProducts from './CompanyProducts/CompanyProducts';
-import GenericProducts from './GenericProducts/GenericProducts';
+import CampaignProducts from './CampaignProducts';
 import CategoryBasedProducts from './CategoryBasedProducts/CategoryBasedProducts';
 import OtherBrands from './OtherBrands/OtherBrands';
 import { CopyRight } from './CopyRight/CopyRight';
@@ -105,6 +105,7 @@ function App(props) {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
+          <Route path="/campaign-products" component={CampaignProducts} />
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
@@ -118,7 +119,6 @@ function App(props) {
             />
           </Route>
           <Route path="/otherbrands" component={OtherBrands} />
-          <Route path="/generic-products" component={GenericProducts} />
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
           <Route path="/about-us" component={AboutUs} />

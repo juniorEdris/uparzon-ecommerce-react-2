@@ -14,21 +14,10 @@ const fetchHomeProductsSuccess = (res) => {
     type: FETCH_HOME_PRODUCTS_SUCCESS,
     banners: res.products.banner,
     categories: res.uparzon_categories,
-    // categoryProducts: res.category_products,
     slider: res.home_page_slider,
-    // homeBrands: res.companies.data,
-    // popularProducts: res.trending_products.data,
-    // neccessaryProducts: res.products.data,
-    // commonProducts: res.common_products.data,
-    // homeBlogs: res.blogs,
-    // video: res.home_page_right_video,
-    // brand_bottom_banner: res.brand_bottom_banner,
-    // healthCareBanner: res.top_small_banners.data,
-    // top_large_banner: res.top_large_banner,
-    // bottom_large_banner: res.bottom_large_banner,
-    // appBanner: res.footer_top_large_banner,
     allProducts: res.products,
     basePath: res.img_base_path,
+    campaigns: res.get_all_campaigns,
   };
 };
 const fetchHomeProductsError = (error) => ({

@@ -102,6 +102,8 @@
     .details__wrapper{
         padding: 1.8rem;
         color: var(--dark-color);
+        width: 100vw;
+        overflow: auto;
     }
     .details__wrapper p{
         margin-bottom: 0;

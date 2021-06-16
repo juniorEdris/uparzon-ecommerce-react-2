@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import AllProducts from '../PrimarySections/AllProdPage/AllProducts';
 import { useQuery } from '../PrimarySections/Utility';
 import {
-  GetGenericResults,
-  getGenericSortedProducts,
-} from '../Redux/Action/GenericProductsAction';
+  GetCampaignResults,
+  getCampaignSortedProducts,
+} from '../Redux/Action/CampaignProductsAction';
 
-const GenericProducts = (props) => {
+const CampaignProducts = (props) => {
   const [category, setCategory] = useState('');
   const [sort, setSort] = useState('');
   const [page, setPage] = useState(1);
   const query = useQuery();
-  const id = query.get('generic-id');
+  const id = query.get('campaign-id');
   useEffect(() => {
     props.getProducts({ page, id });
   }, [page, id]);
@@ -20,8 +20,9 @@ const GenericProducts = (props) => {
   //   props.getSortedProducts({ sortingType: sort });
   // }, [sort]);
   return (
-    <div className="generic_products_wrapper">
+    <div className="campaign_products_wrapper">
       <AllProducts
+        categories={props.categories}
         category={category}
         setCategory={setCategory}
         sort={sort}
@@ -31,24 +32,21 @@ const GenericProducts = (props) => {
         loading={props.loading}
         products={props.products}
         pages={props.pages}
-        section_title={props.products[0]?.generic && `products under`}
-        section_title_bold={
-          props.products[0]?.generic && `${props.products[0]?.generic} generic`
-        }
       />
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.GenericProducts.loading,
-  products: state.GenericProducts.genericProducts,
-  pages: state.GenericProducts.genericPages,
+  categories: state.HomeContent.categories,
+  loading: state.CampaignProducts.loading,
+  products: state.CampaignProducts.campaignProducts,
+  pages: state.CampaignProducts.campaignPages,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getProducts: (data) => dispatch(GetGenericResults(data)),
-  getSortedProducts: (data) => dispatch(getGenericSortedProducts(data)),
+  getProducts: (data) => dispatch(GetCampaignResults(data)),
+  getSortedProducts: (data) => dispatch(getCampaignSortedProducts(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GenericProducts);
+export default connect(mapStateToProps, mapDispatchToProps)(CampaignProducts);

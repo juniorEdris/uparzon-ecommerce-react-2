@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import AllProducts from '../PrimarySections/AllProdPage/AllProducts';
 import { useQuery } from '../PrimarySections/Utility';
-import { GetGenericResults } from '../Redux/Action/GenericProductsAction';
+// import { GetGenericResults } from '../Redux/Action/CampaignProductsAction';
 import { getOtherBrands } from '../Redux/Action/OtherBrandsAction';
 import './otherbrands.css';
 const OtherBrands = (props) => {
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   //   getProducts: (data) => dispatch(getOtherBrands(data)),
-  getProducts: (data) => dispatch(GetGenericResults(data)),
+  // getProducts: (data) => dispatch(GetGenericResults(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(OtherBrands);

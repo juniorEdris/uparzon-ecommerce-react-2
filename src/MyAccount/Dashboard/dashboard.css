@@ -61,7 +61,8 @@
 .dash_nav_list ul li a svg{
     margin-right: 1rem;
 }
-.dash_nav_list ul li.active a{
+.dash_nav_list ul li.active a,
+.dash_nav_list ul li.active a svg{
     color: var(--theme-color);
 }
 

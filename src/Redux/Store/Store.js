@@ -15,7 +15,7 @@ import { PlaceOrderReducer } from '../Reducer/PlaceOrderReducer';
 import { SingleCompanyProducts } from '../Reducer/SingleBrandReducer';
 import { OrderListsReducer } from '../Reducer/OrderListReducer';
 import { NeccessaryProdReducer } from '../Reducer/NeccessaryProductsReducer';
-import { GenericProductsReducer } from '../Reducer/GenericProductsReducer';
+import { CampaignProductsReducer } from '../Reducer/CampaignProductsReducer';
 import { BlogListReducer } from '../Reducer/BlogListReducer';
 import { SingleBlogReducer } from '../Reducer/SingleBlogReducer';
 import { SingleOrderReducer } from '../Reducer/SingleOrderReducer';
@@ -28,21 +28,10 @@ export const initialState = {
   //HomeContents
   categories: [],
   allbanners: [],
-  // categoryProducts: [],
   homeSlider: [],
-  homeBrands: [],
-  neccessaryProducts: [],
-  popularProducts: [],
-  commonProducts: [],
-  homeBlogs: [],
-  homeVideo: {},
-  healthCareBanner: [],
-  hometoplargeBannner: {},
-  homebtmLargeBanner: {},
-  homeappBanner: {},
-  homebrandBtmBanner: {},
   allProducts: [],
   basePath: [],
+  campaigns: [],
   // Neccessary Page states
   neccessaryResults: [],
   neccessaryCategories: [],
@@ -104,9 +93,9 @@ export const initialState = {
   completedOrders: [],
   onDeliverOrders: [],
   order_pages: [],
-  // Generic Products States
-  genericProducts: [],
-  genericPages: [],
+  // Campaign Products States
+  campaignProducts: [],
+  campaignPages: [],
   // Blog List state
   blogLists: [],
   blogsPage: [],
@@ -134,6 +123,8 @@ const store = createStore(
     NeccessaryContent: NeccessaryProdReducer,
     ProductDetails: ProductDetailsReducer,
     Search: SearchReducer,
+    CampaignProducts: CampaignProductsReducer,
+    //
     Basket: AddBasketReducer,
     CartItems: CartItemsReducer,
     CartID: CartUpdateIDReducer,
@@ -145,7 +136,6 @@ const store = createStore(
     PlaceOrder: PlaceOrderReducer,
     SingleCompany: SingleCompanyProducts,
     OrderList: OrderListsReducer,
-    GenericProducts: GenericProductsReducer,
     AllBlogs: BlogListReducer,
     SingleBlog: SingleBlogReducer,
     SingleOrder: SingleOrderReducer,

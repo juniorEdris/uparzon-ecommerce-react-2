@@ -1,54 +1,51 @@
 import { API, ENDPOINTS } from '../../PrimarySections/Utility/API_Links';
 import {
-  GENERIC_PRODUCTS_REQUEST,
-  GENERIC_PRODUCTS_SUCCESS,
-  GENERIC_PRODUCTS_ERROR,
-  FILTER_GENERIC_PRODUCTS,
+  CAMPAIGN_PRODUCTS_REQUEST,
+  CAMPAIGN_PRODUCTS_SUCCESS,
+  CAMPAIGN_PRODUCTS_ERROR,
+  FILTER_CAMPAIGN_PRODUCTS,
 } from '../Types';
 
-const fetchGenericRequest = () => ({
-  type: GENERIC_PRODUCTS_REQUEST,
+const fetchCampaignRequest = () => ({
+  type: CAMPAIGN_PRODUCTS_REQUEST,
 });
 
-const fetchGenericSuccess = (res) => {
+const fetchCampaignSuccess = (res) => {
   return {
-    type: GENERIC_PRODUCTS_SUCCESS,
+    type: CAMPAIGN_PRODUCTS_SUCCESS,
     results: res.data,
-    pages: res.meta,
+    // pages: res.meta,
   };
 };
-const fetchGenericError = (error) => ({
-  type: GENERIC_PRODUCTS_ERROR,
+const fetchCampaignError = (error) => ({
+  type: CAMPAIGN_PRODUCTS_ERROR,
   error,
 });
 
-export const GetGenericResults = (data) => async (dispatch) => {
+export const GetCampaignResults = (data) => async (dispatch) => {
   const { id, category, subcategory, childcategory, page } = data;
-  dispatch(fetchGenericRequest());
-
+  dispatch(fetchCampaignRequest());
   await API()
-    .post(
-      `${ENDPOINTS.GENERIC_PRODUCTS}?per_page=20&generic_id=${id}&page=${page}`
-    )
+    .get(`${ENDPOINTS.CAMPAIGN_PRODUCTS}?campaign_category_id=${id}`)
     .then((res) => {
-      dispatch(fetchGenericSuccess(res.data));
+      dispatch(fetchCampaignSuccess(res.data));
     })
     .catch((error) => {
       console.log(error);
-      dispatch(fetchGenericError(error));
+      dispatch(fetchCampaignError(error));
     });
 };
 
 const filterProducts = (product, price) => {
   return {
-    type: FILTER_GENERIC_PRODUCTS,
+    type: FILTER_CAMPAIGN_PRODUCTS,
     product,
   };
 };
 
-export const getGenericSortedProducts = (data) => (dispatch, getState) => {
+export const getCampaignSortedProducts = (data) => (dispatch, getState) => {
   // console.log(data);
-  const sortedProds = getState().GenericProducts?.genericProducts?.slice();
+  const sortedProds = getState().CampaignProducts?.campaignProducts?.slice();
   // console.log(sortedProds);
 
   if (data.sortingType === 'price low to high') {

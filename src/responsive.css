@@ -4,6 +4,9 @@
     flex: 0 0 20%;
     max-width: 20%;
   }
+  .campaign_image{
+    height: 452px !important;
+}
 }
 @media (min-width: 1370px) {
   .sidebar_list_wrapper .sidebar_list li a{
@@ -290,6 +293,9 @@
   .product_card_footer .addTocart_btn img {
     height: 30px;
     width: 30px;
+  }
+  .product_card_wrapper .product_body .product_label {
+    font-size: 14px  !important;
   }
   /* Product Cards  css here*/
   .user_entry_footer_msg p{

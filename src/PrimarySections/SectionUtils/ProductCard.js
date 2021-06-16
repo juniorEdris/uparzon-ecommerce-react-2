@@ -5,6 +5,24 @@ import { Truncate } from '../Utility';
 import './product_card.css';
 
 const ProductCard = (props) => {
+  let compaign_price = 0;
+  if (
+    props.product?.campaign_category !== null &&
+    props.product?.campaign_category.status === 1
+  ) {
+    if (props.product.campaign_category.price_in_amount) {
+      compaign_price =
+        Number(props.product.price) -
+        Number(props.product.campaign_category.price_in_amount);
+    } else if (props.product.campaign_category.price_in_percentage) {
+      compaign_price =
+        Number(props.product.price) -
+        (Number(props.product.campaign_category.price_in_percentage) *
+          Number(props.product.price)) /
+          100;
+    }
+  }
+
   return (
     <div className={'product_card_wrapper '}>
       {' '}
@@ -32,6 +50,17 @@ const ProductCard = (props) => {
               <p>{Truncate(props.product?.name, 70)}</p>
             </Link>
           </div>
+          {compaign_price > 0 && (
+            <div className="product_label">
+              <span className="product_campaign_section">
+                {/* {props.product?.campaign_category?.name} */}
+                {props.product?.campaign_category?.price_in_percentage
+                  ? props.product.campaign_category.price_in_percentage +
+                    '% off'
+                  : props.product.campaign_category.price_in_amount + 'tk off'}
+              </span>
+            </div>
+          )}
         </div>
         <div className="product_card_footer d-flex align-items-center justify-content-between pb-0">
           <div className="product_rates_price">
@@ -43,7 +72,17 @@ const ProductCard = (props) => {
                 ))}
             </div>
             <div className="product_price d-flex">
-              <p>&#2547; {(props.product?.price).toFixed(2)}</p>
+              <p
+                className={`${
+                  compaign_price > 0 && 'campaign_old_price'
+                } pr-3`}>
+                &#2547; {(props.product?.price).toFixed(2)}
+              </p>
+              {compaign_price > 0 ? (
+                <p>&#2547; {compaign_price.toFixed(2)}</p>
+              ) : (
+                ''
+              )}
               {/* <small>
                 {' '}
                 <del>&#2547; {(props.product?.price).toFixed(2)}</del>

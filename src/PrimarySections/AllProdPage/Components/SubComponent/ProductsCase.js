@@ -34,7 +34,7 @@ const SearchProducts = (props) => {
             Array(20)
               .fill()
               .map((s, i) => (
-                <div className="col-6 col-lg-4 col-xl-3 mb-1">
+                <div className="col-6 col-lg-4 col-xl-3 col-xxl-2 mb-3">
                   <Skeleton width="100%" height={354} />
                 </div>
               ))
