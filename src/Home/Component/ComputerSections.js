@@ -16,7 +16,7 @@ const HeadPhoneRow = (props) => {
           props.products?.home_cat_products_section_3 &&
           props.products?.home_cat_products_section_3[0].category
         }
-        imgPath={`https://${Banner[0]}`}
+        imgPath={`https:${Banner[0]}`}
         // imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/primary.png`}
         data={props.products?.home_cat_products_section_3}
       />

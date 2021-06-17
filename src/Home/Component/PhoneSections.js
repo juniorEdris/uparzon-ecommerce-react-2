@@ -17,7 +17,7 @@ const PhoneRow = (props) => {
           props.products?.home_cat_products_section_2[0].category
         }
         // imgPath={`./uparzonassets/uparzonimages/ProductSections/headings/primary.png`}
-        imgPath={`https://${Banner[0]}`}
+        imgPath={`https:${Banner[0]}`}
         data={props.products?.home_cat_products_section_2}
       />
     </div>
