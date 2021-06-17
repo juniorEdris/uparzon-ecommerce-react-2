@@ -23,11 +23,13 @@ function HeaderNav(props) {
             {props.categories.map((category) => (
               <li key={category.id}>
                 <Link to="#">{category.name}</Link>
+                <ul className="sub_category">
+                  <li>
+                    <Link to="#">sub cat</Link>
+                  </li>
+                </ul>
               </li>
             ))}
-            <li>
-              <Link to="#">{'category.name'}</Link>
-            </li>
           </ul>
         </div>
         <div

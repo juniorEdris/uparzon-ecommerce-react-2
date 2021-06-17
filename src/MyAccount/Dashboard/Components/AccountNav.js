@@ -34,8 +34,8 @@ const AccountNav = (props) => {
               <Link to="#" onClick={() => props.setTab('order')}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="21.76"
-                  height="21.394"
+                  width="19.428"
+                  height="18.337"
                   viewBox="0 0 21.76 21.394">
                   <path
                     id="Icon_material-add-shopping-cart"
@@ -52,8 +52,8 @@ const AccountNav = (props) => {
               <Link to="#" onClick={() => props.setTab('wishlist')}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="21.587"
-                  height="18.694"
+                  width="19.428"
+                  height="18.337"
                   viewBox="0 0 21.587 18.694">
                   <path
                     id="Icon_material-favorite-border"
@@ -70,8 +70,8 @@ const AccountNav = (props) => {
               <Link to="#" onClick={() => props.setTab('profile')}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="19.154"
-                  height="20.202"
+                  width="19.428"
+                  height="18.337"
                   viewBox="0 0 19.154 20.202">
                   <path
                     id="Icon_awesome-user-alt"
@@ -87,8 +87,8 @@ const AccountNav = (props) => {
               <Link to="#" onClick={() => props.setTab('change pass')}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="21.267"
-                  height="24.45"
+                  width="19.428"
+                  height="18.337"
                   viewBox="0 0 21.267 24.45">
                   <path
                     id="Icon_awesome-unlock-alt"
@@ -105,8 +105,8 @@ const AccountNav = (props) => {
               <Link to="#" onClick={logOut}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="19.154"
-                  height="17.677"
+                  width="19.428"
+                  height="18.337"
                   viewBox="0 0 19.154 17.677">
                   <path
                     id="Icon_open-account-logout"

@@ -10,7 +10,8 @@ const CampaignCards = (props) => {
           </div> */}
           <div className="campaign_image">
             <Link to={`/campaign-products?campaign-id=${card.id}`}>
-              <img src={`https://${card.photo}`} alt={card.name} />
+              {/* <img src={`https://${card.photo}`} alt={card.name} /> */}
+              <img src={`${card.photo}`} alt={card.name} />
             </Link>
           </div>
         </div>

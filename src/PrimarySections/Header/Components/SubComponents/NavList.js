@@ -20,11 +20,11 @@ function NavList(props) {
             all categories <span class="lnr lnr-menu"></span>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link className="nav-sections" to="#">
             all pages <span className="lnr lnr-chevron-down" />
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link className="nav-sections" to="#">
             featured brands
@@ -51,7 +51,7 @@ function NavList(props) {
           </Link>
         </li>
         <li>
-          <Link className="nav-sections" to="/campaign">
+          <Link className="nav-sections " to="/campaign">
             campaign
           </Link>
         </li>

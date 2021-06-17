@@ -170,6 +170,20 @@
     left: 0;
     z-index: 99;
     }
+    /* .category_dropdown li:hover ul.sub_category {
+        top: 0;
+        opacity: 1;
+        visibility: visible; <===================
+    } */
+    .sub_category{
+        position: absolute;
+    left: 100%;
+    background: var(--light-color);
+    width: 13vw;
+    /* top: 77px; */
+    opacity: 0;
+    visibility: hidden;
+    }
     /* Responsive category dropdown */
     .responsive_category_dropdown{
         position: absolute;

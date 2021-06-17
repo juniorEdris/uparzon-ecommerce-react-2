@@ -25,22 +25,19 @@ const Detailsindex = (props) => {
   const listSection = {
     titles: {
       title_1:
-        props.allProducts?.details_page_footer_cat_products_section_1 &&
-        props.allProducts?.details_page_footer_cat_products_section_1[0]
-          ?.category,
+        props.allProducts?.home_footer_cat_products_section_1 &&
+        props.allProducts?.home_footer_cat_products_section_1[0]?.category,
       title_2:
-        props.allProducts?.details_page_footer_cat_products_section_2 &&
-        props.allProducts?.details_page_footer_cat_products_section_2[0]
-          ?.category,
+        props.allProducts?.home_footer_cat_products_section_2 &&
+        props.allProducts?.home_footer_cat_products_section_2[0]?.category,
       title_3:
-        props.allProducts?.details_page_footer_cat_products_section_3 &&
-        props.allProducts?.details_page_footer_cat_products_section_3[0]
-          ?.category,
+        props.allProducts?.home_footer_cat_products_section_3 &&
+        props.allProducts?.home_footer_cat_products_section_3[0]?.category,
     },
     products: {
-      product_1: props.allProducts?.details_page_footer_cat_products_section_1,
-      product_2: props.allProducts?.details_page_footer_cat_products_section_2,
-      product_3: props.allProducts?.details_page_footer_cat_products_section_3,
+      product_1: props.allProducts?.home_footer_cat_products_section_1,
+      product_2: props.allProducts?.home_footer_cat_products_section_2,
+      product_3: props.allProducts?.home_footer_cat_products_section_3,
     },
   };
   return (
