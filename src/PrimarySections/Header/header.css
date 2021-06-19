@@ -115,7 +115,7 @@
 /* CATEGORY DROPDOWN CSS */
     .category_dropdown{
     position: absolute;
-    top: 28px;
+    top: 45px;
     left: 0px;
     background: var(--light-color);
     z-index: 100;

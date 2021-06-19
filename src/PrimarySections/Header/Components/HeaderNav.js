@@ -5,9 +5,16 @@ import NavList from './SubComponents/NavList';
 import NavRight from './SubComponents/NavRight';
 
 function HeaderNav(props) {
+  const allCategory = (e) => {
+    e.preventDefault();
+    props.setCategoryBar(!props.categoryBar);
+  };
   return (
     <div className="container-md-fluid mb-2 box-shadowOne primary-light-bg">
       <div className="header_nav">
+        <Link to="#" className="all_category nav-all " onClick={allCategory}>
+          all categories <span class="ml-1 lnr lnr-menu"></span>
+        </Link>
         <NavList
           categoryBar={props.categoryBar}
           setCategoryBar={props.setCategoryBar}
@@ -32,7 +39,7 @@ function HeaderNav(props) {
             ))}
           </ul>
         </div>
-        <div
+        {/* <div
           className={`responsive_category_dropdown ${
             props.categoryBar ? 'd-block' : 'd-none'
           }`}>
@@ -44,7 +51,7 @@ function HeaderNav(props) {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         {/* {props.categoryBar && (
           <div
             className="category_dropdown_backdrop d-none d-md-block"

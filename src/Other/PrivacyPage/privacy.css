@@ -1,0 +1,9 @@
+.privacy_heading span{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.privacy_page p{
+    line-height: 2.3;
+    font-size: 1.2rem;
+    margin-bottom: 2.3rem !important;
+}

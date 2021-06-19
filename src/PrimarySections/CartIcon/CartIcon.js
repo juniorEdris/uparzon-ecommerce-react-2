@@ -33,10 +33,13 @@ const CartIcon = (props) => {
       <Link to="#" onClick={sidebarOpen}>
         <div className="cart_icon">
           <div className="icon_wrapper">
-            <img src="./assets/svg/icons/shopping-cart.svg" alt="cart_icon" />
-            <div className="items_count">{cartLength()} items</div>
+            <img
+              src="./uparzonassets/svg/icons/cart_icon/cart.svg"
+              alt="cart_icon"
+            />
+            {/* <div className="items_count">{cartLength()} items</div> */}
           </div>
-          {!props.user ? (
+          {/* {!props.user ? (
             <div className="total_wrapper">
               &#2547;{' '}
               {getCartProdSubTotal(props.localCartList, props.user) || 0}
@@ -45,7 +48,7 @@ const CartIcon = (props) => {
             <div className="total_wrapper">
               &#2547; {getCartProdSubTotal(props.cartList, props.user) || 0}
             </div>
-          )}
+          )} */}
         </div>
       </Link>
       <CartSidebar

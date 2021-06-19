@@ -26,6 +26,14 @@
 .single_feature .text small{
   font-size: 75%;
 }
+.expense-cat-images {
+  height: 100px !important;
+  width: 100px !important;
+  object-fit: contain !important;
+}
+.expense-text a{
+  font-size: 1.2rem;
+}
 .category_dropdown{
   width: 18% !important;
   }
@@ -43,11 +51,19 @@
   .container, .container-lg, .container-md, .container-sm,.container-md-fluid, .container-xl{
     min-width: 90% !important;
   }
-  .more_link,.nav_links ul li a {
+  .more_link,.nav_links ul li a,a.nav-all {
     font-size: 1rem !important;
   }
   .nav_links ul li a {
     margin-right: 1rem !important;
+  }
+  .nav_links ul li a.campaign_list {
+    font-size: 1.3rem !important;
+  }
+  .nav_links ul li a.campaign_list img{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
   }
   .nav_links ul li a.nav-all {
     top: 6px !important;
@@ -92,9 +108,11 @@
   .nav_links ul li a.nav-all {
     top: 8px;
 }
-  .more_link,.nav_links ul li a{
+  .more_link,.nav_links ul li a,
+  a.nav-all
+  {
     /* font-size: 0.8rem !important;  */
-    font-size: 0.6rem !important; 
+    font-size: 0.7rem !important; 
    }
    .category_dropdown{
     width: 25% !important;
@@ -117,8 +135,8 @@
     font-weight: 700;
   }
   .header_nav {
-    padding: 0rem 1rem;
-    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    justify-content: end;
   }
   .header__link .header__option__basket .icon_name {
     display: block;

@@ -24,7 +24,7 @@ export const Features = (props) => {
     },
     {
       id: 4,
-      image: 'shipping-fast.svg',
+      image: 'return.svg',
       name: '90 Days Return',
       small: 'If goods have problems',
     },

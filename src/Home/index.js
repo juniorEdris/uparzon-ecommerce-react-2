@@ -6,6 +6,7 @@ import BannerSectionTwo from './Component/BannerSectionTwo';
 import BannerSectionThree from './Component/BannerSectionThree';
 import FeatureBrands from './Component/FeatureBrands';
 import { Features } from './Component/Features';
+import ExpenseCategories from './Component/ExpenseCategories';
 import { OnlinePharma } from './Component/OnlinePharma';
 import PopularProduct from './Component/PopularProduct';
 import HealthCareBanners from './Component/HealthCareBanner';
@@ -58,6 +59,7 @@ const Index = (props) => {
     <div>
       <HomeSlider loading={props.loading} sliders={props.sliders} />
       <Features />
+      <ExpenseCategories />
       <HompageCategories />
       {/* <OnlinePharma
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}

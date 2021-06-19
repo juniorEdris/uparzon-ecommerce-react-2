@@ -11,10 +11,10 @@ function NavRight() {
         />
         <span>Hotline : +8801610 186 286</span>
       </Link>
-      <span className="divider"></span>{' '}
+      {/* <span className="divider"></span>{' '}
       <Link to="#">
         <span>Free Shipping on Order ৳2000+</span>
-      </Link>
+      </Link> */}
     </div>
   );
 }

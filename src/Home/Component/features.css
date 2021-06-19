@@ -3,10 +3,11 @@
 } */
 /* .single_feature{
     padding: 1rem ;
-} */
+}
 .single_feature:not(:last-child) {
     padding-right: .5rem!important;
 }
+ */
 .single_feature img{
     padding:1rem;
 }
@@ -16,4 +17,21 @@
 }
 .single_feature .text small{
     font-size: 50%;
+}
+/* Home Expense Categories Component*/
+.expense-cat-images{
+    height: 70px !important;
+    width: 70px !important;
+    object-fit: cover !important;
+}
+.expense-cat-border{
+    border-radius: 0.25rem;
+}
+.expense-text a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--theme-color);
+}
+.expense-text a:hover{
+    color: var(--dark-color);
 }

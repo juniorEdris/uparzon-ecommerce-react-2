@@ -48,6 +48,7 @@ import { demoAll } from './Redux/Action/WishListAction';
 import Shop from './Shop';
 import UparzonEntry from './MyAccount/UserActivity/Components/Uparzon_entry';
 import Campaign from './Campaigns';
+import PrivacyPage from './Other/PrivacyPage';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -106,6 +107,7 @@ function App(props) {
             <Dashboard />
           </Route>
           <Route path="/campaign-products" component={CampaignProducts} />
+          <Route path="/privacy-policy" component={PrivacyPage} />
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
@@ -133,7 +135,7 @@ function App(props) {
           {/* <Route path="/ordercancel" component={OrderCancel} /> */}
           <Route exact path="*" component={NoRoutes} />
         </Switch>
-        {/* <CartIcon loginSuccessPageRedirectTo={loginSuccessPageRedirectTo} /> */}
+        <CartIcon loginSuccessPageRedirectTo={loginSuccessPageRedirectTo} />
         <BackToTop />
         <Footer />
         <CopyRight />

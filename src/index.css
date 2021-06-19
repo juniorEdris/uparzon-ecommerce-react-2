@@ -994,19 +994,40 @@ a.header__option__lineTwo.header_logout {
     align-items: center;
   }
 
+  .nav_links ul li {
+      margin-right: 1rem;
+
+  }
   .nav_links ul li a {
     color: var(--theme-color);
-    margin-right: 0.6rem;
     text-transform: capitalize;
-    /* font-size: 0.5rem; */
     line-height: 100%;
     font-weight: 600;
+    /* font-size: 0.5rem; */
+    line-height: 25px;
+    display: flex;
+    align-items: center;
   }
-  .nav_links a.nav-all{
-      position: absolute;
+  .nav_links ul li a img{
+    height: 25px;
+    width: 25px;
+    object-fit: fill;
+    margin-right: 0.6rem;
+  }
+  a.nav-all{
+      /* position: absolute;
       top: 7px;
       left: 14px;
+      font-size: 0.65rem; */
+
+      color: var(--theme-color);
+      text-transform: capitalize;
+      line-height: 100%;
+      font-weight: 600;
       font-size: 0.65rem;
+      line-height: 25px;
+      display: flex;
+      align-items: center;
     }
     .nav_links a.responsive_all_category{
     font-size: 0.65rem;
@@ -1022,7 +1043,9 @@ a.header__option__lineTwo.header_logout {
     font-size: 0.8rem;
     }
 
-.nav_links .nav-all,
+.nav_links .nav-all{
+    display: flex;
+}
 .nav_links .nav-sections{
     display: none;
 }
@@ -1311,7 +1334,8 @@ Footer css starts here
     border-radius: 0.25rem;
 }
 .feature_shadow{
-    box-shadow: -4px 7px 12px -6px rgb(0 0 0 / 23%);
+    /* box-shadow: -4px 7px 12px -6px rgb(0 0 0 / 23%); */
+    box-shadow: var(--box-shadow-one);
 }
 
 /*--------------------------------------------------------------------

@@ -8,7 +8,7 @@ const Right = (props) => {
           <h5 className="footer_heading">Quick Links</h5>
           <ul className="footer_list">
             <li>
-              <Link to="/">Policy</Link>
+              <Link to="/privacy-policy">Policy</Link>
             </li>
             <li>
               <Link to="/">Terms & Condition</Link>
@@ -34,7 +34,7 @@ const Right = (props) => {
               <Link to="/">delivery information</Link>
             </li>
             <li>
-              <Link to="/">privacy policy</Link>
+              <Link to="/privacy-policy">privacy policy</Link>
             </li>
             <li>
               <Link to="/">terms and conditions</Link>
@@ -54,7 +54,7 @@ const Right = (props) => {
           <h5 className="footer_heading">Customer Care</h5>
           <ul className="footer_list">
             <li>
-              <Link to="/">my account</Link>
+              <Link to="/login">my account</Link>
             </li>
             <li>
               <Link to="/">track your order</Link>

@@ -8,7 +8,10 @@ const CartSidebar = (props) => {
       <div className={`cart_sidebar_route ${!props.cart && 'd-none'}`}>
         <div className="cart_header">
           <div className="cart_header_count">
-            <img src="./assets/svg/icons/shopping-cart.svg" alt="cart-icon" />
+            <img
+              src="./uparzonassets/svg/icons/cart_icon/cart.svg"
+              alt="cart-icon"
+            />
             <span className="cart_header_item_count">
               {props.cartLength()} items
             </span>

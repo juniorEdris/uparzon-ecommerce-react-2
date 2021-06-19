@@ -80,7 +80,7 @@ const Campaign = (props) => {
               ))}
           </div>
         ) : (
-          <CampaignCards campaigns={campOne} />
+          <CampaignCards campaigns={props.campaigns} />
         )}
 
         {/* <div className="primary-page-break"></div> */}
