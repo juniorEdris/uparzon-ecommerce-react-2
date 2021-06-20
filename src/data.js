@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    photo: 'img-1.png',
+    photo: '01.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
@@ -11,17 +11,17 @@ export const products = [
   },
   {
     id: 2,
-    photo: 'img-2.png',
+    photo: '02.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
-    price: 149,
+    price: '14948754.00',
     previous_price: 288,
     best_seller: true,
   },
   {
     id: 3,
-    photo: 'img-3.png',
+    photo: '03.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
@@ -31,7 +31,7 @@ export const products = [
   },
   {
     id: 4,
-    photo: 'img-4.png',
+    photo: '04.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
@@ -41,7 +41,7 @@ export const products = [
   },
   {
     id: 5,
-    photo: 'img-5.png',
+    photo: '05.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
@@ -51,7 +51,7 @@ export const products = [
   },
   {
     id: 6,
-    photo: 'img-6.png',
+    photo: '06.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
@@ -61,7 +61,7 @@ export const products = [
   },
   {
     id: 7,
-    photo: 'img-7.png',
+    photo: '07.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',
@@ -71,7 +71,7 @@ export const products = [
   },
   {
     id: 8,
-    photo: 'img-1.png',
+    photo: '01.png',
     name: 'Omron HEM 7120 Fully Automatic-100mg',
     mg: 100,
     brand: 'Omoron',

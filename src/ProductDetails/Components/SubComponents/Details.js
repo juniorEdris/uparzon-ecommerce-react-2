@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Details = (props) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   return (
     <div className="product_slider_details">
       <div className="product_details_name">
@@ -45,14 +45,14 @@ const Details = (props) => {
       )}
       {/* section break */}
       <div className="border-break w-100 pt-3 pb-3"></div>
-      <div className="col-12 product_short_list">
-        <ul>
+      <div className="col-12 product_short_list" style={{ minHeight: '183px' }}>
+        {/* <ul>
           <li>Unrestrained and portable active stereo speaker</li>
           <li>Free from the confines of wires and chords</li>
           <li>20 hours of portable capabilities</li>
           <li>Double-ended Coil Cord with 3.5mm Stereo Plugs Included</li>
           <li>3/4″ Dome Tweeters: 2X and 4″ Woofer: 1X</li>
-        </ul>
+        </ul> */}
       </div>
       <div className="product_prices">
         <span className="regular_price text-success pr-4">

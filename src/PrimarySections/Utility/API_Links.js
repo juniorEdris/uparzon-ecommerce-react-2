@@ -1,6 +1,7 @@
 import Axios from 'axios';
-// export const DOMAIN = `https://demostore.uparzon.com/`;
-export const DOMAIN = `https://store.uparzon.com/`;
+export const DOMAIN = `https://demostore.uparzon.com/`;
+// export const DOMAIN = `https://store.uparzon.com/`;
+export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
 
 let BaseApi = Axios.create({
   baseURL: DOMAIN,
@@ -20,8 +21,8 @@ export const ENDPOINTS = {
   PRODUCTDETAILS: `api/uparzonweb/get_product_details?product_id=`,
   SINGLE_BRAND_PRODUCTS: `api/uparzonweb/search_products`,
   CAMPAIGN_PRODUCTS: `api/uparzonweb/search_products`,
+  ADDTOBASKET: `api/user/product/add_to_cart`,
   //
-  ADDTOBASKET: `api/product/add_to_cart`,
   CART_UPDATE: `api/user/cart_update/`,
   DELETEFROMBASKET: `api/cart/delete_product/`,
   GETCARTITEMS: `api/user/cart_products`,

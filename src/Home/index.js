@@ -29,9 +29,6 @@ import AutomobileMotors from './Component/AutomobileMotors';
 import HealthBeauty from './Component/HealthBeauty';
 
 const Index = (props) => {
-  // console.log('====================================');
-  // console.log(props.allProducts);
-  // console.log('====================================');
   useEffect(() => {
     toTheTop();
     props.setCategoryID('');

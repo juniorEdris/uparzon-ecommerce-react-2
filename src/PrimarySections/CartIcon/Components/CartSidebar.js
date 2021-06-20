@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import CartList from './CartList';
 
 const CartSidebar = (props) => {
+  const [Cartsection, setCartsection] = useState('campaign');
+  const cartSections = (e) => {
+    e.preventDeafault();
+  };
   return (
     <div className="cart_sidebar">
       <div className={`cart_sidebar_route ${!props.cart && 'd-none'}`}>
@@ -19,6 +24,30 @@ const CartSidebar = (props) => {
           <span
             className="lnr lnr-arrow-right"
             onClick={() => props.setCart(false)}></span>
+        </div>
+        <div className="cart_section row no-gutters">
+          <Link
+            to="#"
+            className={`col-6 d-block text-center pt-3 pb-3 ${
+              Cartsection === 'campaign' && 'active'
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              setCartsection('campaign');
+            }}>
+            campaign
+          </Link>
+          <Link
+            to="#"
+            className={`col-6 d-block text-center pt-3 pb-3 ${
+              Cartsection === 'regular' && 'active'
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              setCartsection('regular');
+            }}>
+            regular
+          </Link>
         </div>
         <CartList
           setCart={props.setCart}

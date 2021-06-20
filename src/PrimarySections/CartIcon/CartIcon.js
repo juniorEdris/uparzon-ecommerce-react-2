@@ -37,7 +37,7 @@ const CartIcon = (props) => {
               src="./uparzonassets/svg/icons/cart_icon/cart.svg"
               alt="cart_icon"
             />
-            {/* <div className="items_count">{cartLength()} items</div> */}
+            <span className="items_count">{cartLength()}</span>
           </div>
           {/* {!props.user ? (
             <div className="total_wrapper">

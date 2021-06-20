@@ -24,7 +24,7 @@ const ListProductsSection = (props) => {
         {/* <ListCard title={ 'Headphones'}/> */}
         <div className={`col-lg-3 col-sm-6 list_view_section_banner`}>
           <img
-            src="./uparzonassets/uparzonimages/banners/imageBanner.png"
+            src="./uparzonassets/uparzonimages/banners/imageBanner2.jpg"
             alt=""
           />
         </div>

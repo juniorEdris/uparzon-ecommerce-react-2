@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { AddBasketProd } from '../../Redux/Action/BasketAction';
 import { Truncate } from '../Utility';
 import './product_card.css';
 
@@ -22,7 +23,23 @@ const ProductCard = (props) => {
           100;
     }
   }
-
+  const addProduct = (e) => {
+    // ?product_id=1009&user_id=6318&unit_price=170&total_quantity=3&is_campaign=0&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699&shop_id=90
+    e.preventDefault();
+    const data = {
+      product_id: props.product?.id || '',
+      photo: props.product?.photo,
+      name: props.product?.name,
+      unit_price: compaign_price > 0 ? compaign_price : props.product?.price,
+      total_quantity: 1,
+      shop_id: props.product?.shop_id,
+      is_campaign: compaign_price > 0 ? 1 : 0,
+    };
+    props.addtoCart(data);
+    // console.log('===========product add from card=========================');
+    // console.log(data);
+    // console.log('====================================');
+  };
   return (
     <div className={'product_card_wrapper '}>
       {' '}
@@ -90,7 +107,7 @@ const ProductCard = (props) => {
             </div>
           </div>
           <div className="addTocart_btn">
-            <Link to={`/productdetails?id=${props.product?.id}`}>
+            <Link to={`#`} onClick={addProduct}>
               <img
                 src="./uparzonassets/svg/icons/cart-arrow-down.svg"
                 alt="cart icons"
@@ -105,6 +122,8 @@ const ProductCard = (props) => {
 
 const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  addtoCart: (data) => dispatch(AddBasketProd(data)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);

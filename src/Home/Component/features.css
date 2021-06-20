@@ -27,11 +27,21 @@
 .expense-cat-border{
     border-radius: 0.25rem;
 }
-.expense-text a{
+.expense-text {
     text-decoration: none;
     text-transform: capitalize;
     color: var(--theme-color);
 }
-.expense-text a:hover{
+/* .expense-text a:hover{
     color: var(--dark-color);
+} */
+.expense_headings{
+    padding: 1rem 0.5rem;
+    text-transform: uppercase;
+    color: var(--light-color);
+    border-bottom: 2px solid var(--theme-color);
+    margin-bottom: 2rem;
+}
+.expense_headings span{
+    background-color: var(--theme-color);
 }

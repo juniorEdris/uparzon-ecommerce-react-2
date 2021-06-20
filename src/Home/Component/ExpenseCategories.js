@@ -58,6 +58,9 @@ const ExpenseCategories = (props) => {
     <div className="home_feature_area mb-5 mb-md-2 ">
       <div className="container-md-fluid">
         <div className="features_body">
+          {/* <div className="expense_headings">
+            <span>expenses Categories</span>
+          </div> */}
           <div className="row align-tems-center">
             {categories.map((image) => (
               <div
@@ -65,17 +68,19 @@ const ExpenseCategories = (props) => {
                 key={image.id}>
                 <div className="d-flex align-items-center feature_shadow expense-cat-border flex-wrap justify-content-center justify-content-md-around">
                   <div className="image">
-                    <Link to="/">
-                      <img
-                        src={`./uparzonassets/uparzonimages/expenseCategory/${image.image}`}
-                        className="expense-cat-images"
-                        alt={'feature images'}
-                      />
-                    </Link>
+                    {/* <Link to="/"> */}
+                    <img
+                      src={`./uparzonassets/uparzonimages/expenseCategory/${image.image}`}
+                      className="expense-cat-images"
+                      alt={'feature images'}
+                    />
+                    {/* </Link> */}
                   </div>
                   <div className="expense-text mb-2">
                     <p className="p-0 m-0">
-                      <Link to="/">{image.name}</Link>
+                      {/* <Link to="/"> */}
+                      {image.name}
+                      {/* </Link> */}
                     </p>
                   </div>
                 </div>
