@@ -30,6 +30,7 @@ const FeatureProducts = (props) => {
         morePath={'/nene'}
         section={section}
         setSection={setSection}
+        LinkHide
       />
       {section === 'feature product' ? (
         <div className="d-flex flex-wrap p-0">

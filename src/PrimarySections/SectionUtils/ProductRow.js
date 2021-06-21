@@ -11,6 +11,7 @@ const ProductRow = (props) => {
         section_title={
           props.title //props.data[0].category ? props.data[0].category?.name :
         }
+        list
       />
       <div className={`d-flex flex-wrap `}>
         <div

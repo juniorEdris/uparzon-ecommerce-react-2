@@ -12,13 +12,13 @@ const CategoryProducts = (props) => {
   const id = query.get('id');
   useEffect(() => {
     props.getProducts({ page, category_id: id });
-    props.setCategoryID(id);
+    // props.setCategoryID(id);
   }, [page, id]);
   return (
     <div className="other_brands_wrapper">
       <AllProducts
         home={true}
-        // categories={props.categories}
+        categories={props.categories}
         category={category}
         setCategory={setCategory}
         sort={sort}
@@ -28,8 +28,8 @@ const CategoryProducts = (props) => {
         loading={props.loading}
         products={props.products}
         pages={props.pages}
-        category_hide={true}
-        section_title={props.products[0]?.category}
+        // category_hide={true}
+        // section_title={props.products[0]?.category}
         // section_title={props.categoryName}
       />
     </div>
@@ -39,7 +39,7 @@ const CategoryProducts = (props) => {
 const mapStateToProps = (state) => ({
   loading: state.CategoryProducts.loading,
   products: state.CategoryProducts.categoryProducts,
-  categories: state.CategoryProducts.categoryLists,
+  categories: state.HomeContent.categories,
   pages: state.CategoryProducts.categorypages,
 });
 

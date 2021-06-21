@@ -39,7 +39,7 @@ const Sidebar = (props) => {
   return (
     <div className="col-md-4 col-xl-3 d-none d-md-block chilldren-gap-top">
       {/* Category starts here */}
-      <div className="sidebar_list_wrapper col mb-4">
+      {/* <div className="sidebar_list_wrapper col mb-4">
         <h5 className="sidebar_headings">categories</h5>
         <ul className="sidebar_list not-square-option">
           {props.categories?.map((cat) => (
@@ -50,7 +50,7 @@ const Sidebar = (props) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       {/* <div className="sidebar_list_wrapper col mb-4">
         <h5 className="sidebar_headings">price</h5>
         <input type="range" name="" id="" max="5000" min="100" />

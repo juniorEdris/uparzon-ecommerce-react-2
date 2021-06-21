@@ -1,6 +1,6 @@
 import Axios from 'axios';
-export const DOMAIN = `https://demostore.uparzon.com/`;
-// export const DOMAIN = `https://store.uparzon.com/`;
+// export const DOMAIN = `https://demostore.uparzon.com/`;
+export const DOMAIN = `https://store.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
 
 let BaseApi = Axios.create({
@@ -22,12 +22,15 @@ export const ENDPOINTS = {
   SINGLE_BRAND_PRODUCTS: `api/uparzonweb/search_products`,
   CAMPAIGN_PRODUCTS: `api/uparzonweb/search_products`,
   ADDTOBASKET: `api/user/product/add_to_cart`,
+  LOGIN: `https://partner.uparzon.com/api/partner/loginRequest?api_key=${api_key}`,
+  LOG_OUT: `https://demopartner.uparzon.com/api/partner/logout<--`,
+  VERIFY_PHONE: `https://demopartner.uparzon.com/api/partner/send-otp`,
+  VERIFY_OTP: `https://demopartner.uparzon.com/api/partner/check-otp`,
   //
+  REGISTER: `api/app/register`,
   CART_UPDATE: `api/user/cart_update/`,
   DELETEFROMBASKET: `api/cart/delete_product/`,
   GETCARTITEMS: `api/user/cart_products`,
-  REGISTER: `api/app/register`,
-  LOGIN: `api/app/login`,
   GET_WISHLIST_ITEM: `api/user/wishlist_products`,
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,
   UPDATE_WISHLIST_ITEM: `api/user/wishlist_update/`,
@@ -43,7 +46,6 @@ export const ENDPOINTS = {
   GET_BLOG_LIST: `api/web/get_blog_lists`,
   GET_SINGLE_BLOG: `api/web/get_blog_details`,
   GET_SINGLE_ORDER: `api/get_order_details`,
-  LOG_OUT: `api/app/logout`,
   CART_GUEST_CART: `api/product/add_to_cart`,
   WISH_GUEST_CART: `api/product/add_to_wishlist`,
 };

@@ -58,6 +58,7 @@ function App(props) {
   const loginSuccessPageRedirectTo = (path) => {
     setNextPage(path);
   };
+  const [cart, setCart] = useState(false);
   useEffect(() => {
     props.getHomeContents();
     //  props.demo();
@@ -69,7 +70,12 @@ function App(props) {
   return (
     <Router>
       <div className="App">
-        <Header categoryBar={categoryBar} setCategoryBar={setCategoryBar} />
+        <Header
+          categoryBar={categoryBar}
+          setCategoryBar={setCategoryBar}
+          cart={cart}
+          setCart={setCart}
+        />
         {/* <CategorySidebar
           categoryName={categoryName}
           setCategoryName={setCategoryName}
@@ -98,29 +104,33 @@ function App(props) {
           <Route path="/single-brand" component={SingleCompanyProducts} />
           <Route path="/login">
             {/* <UserEntry pathRedirect={nextPage} /> */}
-            {!props.User ? <UparzonEntry /> : <Redirect to="/dashboard" />}
+            {!props.User ? (
+              <UparzonEntry pathRedirect={nextPage} />
+            ) : (
+              <Redirect to="/dashboard" />
+            )}
           </Route>
           <Route path="/campaign">
             <Campaign />
           </Route>
           <Route path="/dashboard">
-            <Dashboard />
+            {!props.User ? <Redirect to="/login" /> : <Dashboard />}
           </Route>
           <Route path="/campaign-products" component={CampaignProducts} />
           <Route path="/privacy-policy" component={PrivacyPage} />
+          <Route path="/category-products">
+            <CategoryBasedProducts
+            // setCategoryID={setCategoryID}
+            // categoryName={categoryName}
+            // setCategoryName={setCategoryName}
+            />
+          </Route>
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
+          <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
             {!props.User ? <Redirect to="/login" /> : <PrescriptionUpload />}
           </Route>
-          <Route path="/category-products">
-            <CategoryBasedProducts
-              setCategoryID={setCategoryID}
-              categoryName={categoryName}
-              setCategoryName={setCategoryName}
-            />
-          </Route>
-          <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
           <Route path="/about-us" component={AboutUs} />
@@ -135,7 +145,11 @@ function App(props) {
           {/* <Route path="/ordercancel" component={OrderCancel} /> */}
           <Route exact path="*" component={NoRoutes} />
         </Switch>
-        <CartIcon loginSuccessPageRedirectTo={loginSuccessPageRedirectTo} />
+        <CartIcon
+          loginSuccessPageRedirectTo={loginSuccessPageRedirectTo}
+          cart={cart}
+          setCart={setCart}
+        />
         <BackToTop />
         <Footer />
         <CopyRight />

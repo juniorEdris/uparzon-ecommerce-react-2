@@ -14,54 +14,8 @@ const Campaign = (props) => {
       image: `./uparzonassets/uparzonimages/campaigncards/campaignbanner.png`,
       name: `campaign 1`,
     },
-    {
-      id: 2,
-      image: `./uparzonassets/uparzonimages/campaigncards/campaignbanner.png`,
-      name: `campaign 1`,
-    },
   ];
-  const campOne = [
-    {
-      id: 1,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 2,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 3,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 4,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 5,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 6,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 7,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-    {
-      id: 8,
-      photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
-      name: `campaign 1`,
-    },
-  ];
+
   return (
     <div className="featured_brands">
       <FeatureSlider loading={props.loading} sliders={banners} demo />

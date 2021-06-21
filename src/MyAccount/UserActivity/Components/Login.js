@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-function Login() {
-  const router = useHistory();
-  const login = (e) => {
-    router.push('/dashboard');
-  };
+function Login(props) {
+  const { loginInput, setLogin } = props;
   return (
-    <form action="#" onSubmit={login}>
+    <form action="#" onSubmit={props.loginRequest}>
       <div className="uparzon_input_wrapper mt-4">
         <div className="form-group  ">
           <label htmlFor="number" className="input_label text-capitalize">
@@ -22,8 +19,10 @@ function Login() {
               type="text"
               className="form-control input"
               id="number"
-              //   value={number}
-              //   onChange={(e) => setNumber(e.target.value)}
+              value={loginInput.number}
+              onChange={(e) =>
+                setLogin({ ...loginInput, phone: e.target.value })
+              }
               required
             />
             {/* <div className="error-handler">{error.message}</div> */}
@@ -44,8 +43,10 @@ function Login() {
               type="password"
               className="form-control input"
               id="password"
-              //   value={number}
-              //   onChange={(e) => setNumber(e.target.value)}
+              value={loginInput.password}
+              onChange={(e) =>
+                setLogin({ ...loginInput, password: e.target.value })
+              }
               required
             />
             {/* show password required */}

@@ -88,4 +88,6 @@
     color: var(--theme-color);
   }
   
-  
+  .bg-uparzon-gray{
+    background-color: #F3F3F3;
+  }

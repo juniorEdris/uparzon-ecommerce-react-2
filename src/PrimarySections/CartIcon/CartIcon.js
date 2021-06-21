@@ -8,13 +8,12 @@ import { getCartProdSubTotal } from '../../PrimarySections/Utility';
 
 const CartIcon = (props) => {
   // useEffect(() => {}, [props.user]);
-  const [cart, setCart] = useState(false);
   useEffect(() => {
-    document.body.style.overflow = cart ? 'hidden' : '';
-  }, [cart]);
+    document.body.style.overflow = props.cart ? 'hidden' : '';
+  }, [props.cart]);
   const sidebarOpen = (e) => {
     e.preventDefault();
-    setCart(!cart);
+    props.setCart(!props.cart);
     // await props.getCartItems();
   };
   let cartLength = () => {
@@ -52,13 +51,15 @@ const CartIcon = (props) => {
         </div>
       </Link>
       <CartSidebar
-        cart={cart}
-        setCart={setCart}
+        cart={props.cart}
+        setCart={props.setCart}
         cartLength={cartLength}
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
       />
-      {cart && (
-        <div className="cart-back-drop" onClick={() => setCart(false)}></div>
+      {props.cart && (
+        <div
+          className="cart-back-drop"
+          onClick={() => props.setCart(false)}></div>
       )}
     </div>
   );

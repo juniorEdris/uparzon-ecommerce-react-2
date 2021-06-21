@@ -36,12 +36,27 @@
     color: var(--dark-color);
 } */
 .expense_headings{
+    height: 45px;
     padding: 1rem 0.5rem;
     text-transform: uppercase;
     color: var(--light-color);
     border-bottom: 2px solid var(--theme-color);
     margin-bottom: 2rem;
+    position: relative;
 }
-.expense_headings span{
+.expense_headings::after{
+    content: 'expenses Categories';
     background-color: var(--theme-color);
+    width: 220px;
+    /* width: 289px; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-uparzon-light{
+    background: var(--light-color);
 }

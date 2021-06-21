@@ -14,9 +14,9 @@ const categoryBasedRequest = () => {
 const categoryBasedSuccess = (res) => {
   return {
     type: CATEGORY_BASED_SUCCESS,
-    results: res.products.data,
-    categories: res.categories,
-    pages: res.products.meta,
+    results: res.data,
+    // categories: res.categories,
+    pages: res.meta,
   };
 };
 
@@ -32,7 +32,7 @@ export const GetCategoryBasedProd = (data) => async (dispatch) => {
   dispatch(categoryBasedRequest());
   await API()
     .get(
-      `${ENDPOINTS.HOMEPRODUCT}?per_page=20&page=${page}&category_id=${category_id}`
+      `${ENDPOINTS.SEARCH}?per_page=20&page=${page}&category_id=${category_id}`
     )
     .then((res) => {
       dispatch(categoryBasedSuccess(res.data));

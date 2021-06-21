@@ -58,15 +58,13 @@ const ExpenseCategories = (props) => {
     <div className="home_feature_area mb-5 mb-md-2 ">
       <div className="container-md-fluid">
         <div className="features_body">
-          {/* <div className="expense_headings">
-            <span>expenses Categories</span>
-          </div> */}
+          <div className="expense_headings"></div>
           <div className="row align-tems-center">
             {categories.map((image) => (
               <div
                 className={`single_feature col-features col-6 mb-3`}
                 key={image.id}>
-                <div className="d-flex align-items-center feature_shadow expense-cat-border flex-wrap justify-content-center justify-content-md-around">
+                <div className="d-flex align-items-center feature_shadow expense-cat-border flex-wrap justify-content-center justify-content-md-around bg-uparzon-light">
                   <div className="image">
                     {/* <Link to="/"> */}
                     <img

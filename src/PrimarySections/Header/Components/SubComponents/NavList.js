@@ -27,7 +27,7 @@ function NavList(props) {
           </Link>
         </li> */}
           <li>
-            <Link className="nav-sections" to="#">
+            <Link className="nav-sections" to="/">
               <img
                 src="./uparzonassets/svg/icons/navLeft/giftcard.svg"
                 alt="gift card"
@@ -41,7 +41,7 @@ function NavList(props) {
           </Link>
         </li> */}
           <li>
-            <Link className="nav-sections" to="/shop">
+            <Link className="nav-sections" to="/">
               <img
                 src="./uparzonassets/svg/icons/navLeft/priorityShop.svg"
                 alt="priority Shop"
@@ -59,7 +59,7 @@ function NavList(props) {
             </Link>
           </li>
           <li>
-            <Link className="nav-sections" to="#">
+            <Link className="nav-sections" to="/">
               <img
                 src="./uparzonassets/svg/icons/navLeft/express.svg"
                 alt="express"
@@ -68,7 +68,7 @@ function NavList(props) {
             </Link>
           </li>
           <li>
-            <Link className="nav-sections " to="#">
+            <Link className="nav-sections " to="/">
               <img
                 src="./uparzonassets/svg/icons/navLeft/uparzon_offer.svg"
                 alt="uparzon_offer"

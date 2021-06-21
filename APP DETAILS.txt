@@ -1,14 +1,3 @@
-	MEDIPATHY REACT APP
-npm libraries:
-"react-owl-carousel": "^2.3.1",
-"react-redux": "^7.2.2",
-"react-router-dom": "^5.2.0",
-"redux": "^4.0.5",
-"redux-thunk": "^2.3.0",
-"web-vitals": "^1.1.0"
-
-
-
 https://react-bones.com/
 https://reactjsexample.com/a-loading-skeleton-component-built-on-react/
 https://reactjsexample.com/dead-simple-loading-components-for-react-and-react-native/
@@ -24,3 +13,23 @@ CSS==================
   html::-webkit-scrollbar {
   display: none; /* css for scrollbar hide*/
 }
+
+
+Uparzon ___________________
+
+1. All categores (sub category, child category)
+2. expense categories headline (home page)<<<<<<<<<<<<<<<<<<
+3. Nicher footer upore section a Right banner manually change kora<<<<<<<<<<<<<<
+4. Priority shop, gift cards, uparzon express, uparzon offer,..ai 4 ta akn clickable hobe na...<<<<<<<<<<<<<<<<<<<<
+5. header ar cart icon a click korle user 1, user 2 aigula bad jbe...<<<<<<<<<<<<<<<<<<<<<<
+6. expense categories ar niche main categores gula clickable na..shop page a jai na..<<<<<<<<<<<<<<<<<<<<
+7. Login, Registration full ok korte hobe.<<<<<<<<<<<<<<<<<<<<<
+8. Single product page a left side a category r niche akta choto banner ace oita change kore diben bappy theke nia...<<<<<<<<<<<<<<<<<<<<<<<
+9. Home page ar product line gular right side a choto kore all categories name button ace ...onkgula ace..oigula shob delete kore den...<<<<<<<<<<<<<<
+10. Footer ar upore jai 3 ta categories product show kortache Babies & toys, pet oigula product name line tar por gap ace oita bad diben or uprer gular moto 2 line ar dichen...<<<<<<<<<<<<<<<<<<<<<<<<<
+11. niche footer ar upore app download ar jai banner ta ace ..oita change kore diben manually bappy theke nia ...<<<<<<<<<<<<<<<<<<
+12. campaign page silde a banner ta change korben bappy theke nia ..aktai diben..aktai tkbe akn same bishoi ta 2 ta dekacce...<<<<<<<<<<<<<<
+banner gula bappy theke size diben or hole then change korben....
+
+
+aigula tik korien...kuno ta na bujle amke bolien...bakigula ami check kre dibo....ar shata ahmed api dile cart, user panel oigula o kore falien..

@@ -15,7 +15,7 @@ export const VerifyPhone = (props) => {
       </div>
       <div className="col verify_input_section">
         <div className="input-group mb-3 col-12 col-xl-8 m-auto">
-          <div className="input-group-prepend">
+          {/* <div className="input-group-prepend">
             <button
               className="btn btn-outline-secondary dropdown-toggle verify_number_drop_down"
               type="button"
@@ -39,11 +39,15 @@ export const VerifyPhone = (props) => {
                 Separated link
               </a>
             </div>
-          </div>
+          </div> */}
           <input
             type="text"
             className="form-control verify_number_input"
             aria-label="Text input with dropdown button"
+            value={props.loginInput.OTPNumber}
+            onChange={(e) =>
+              props.setLogin({ ...props.loginInput, OTPNumber: e.target.value })
+            }
           />
         </div>
 
@@ -52,8 +56,7 @@ export const VerifyPhone = (props) => {
             type="button"
             className="btn mb-4 col-lg-5 col-12"
             onClick={(e) => {
-              e.preventDefault();
-              props.setSection('');
+              props.verifyRequest();
             }}>
             Register
           </button>

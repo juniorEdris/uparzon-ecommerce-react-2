@@ -49,10 +49,16 @@ const CartSidebar = (props) => {
             regular
           </Link>
         </div>
-        <CartList
-          setCart={props.setCart}
-          loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
-        />
+        {Cartsection === 'campaign' ? (
+          <CartList
+            setCart={props.setCart}
+            loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+          />
+        ) : (
+          <div className="text-center text-capitalize pt-3">
+            no regular products
+          </div>
+        )}
       </div>
     </div>
   );

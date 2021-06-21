@@ -24,12 +24,13 @@ function HeaderNav(props) {
             props.categoryBar ? 'd-block' : 'd-none'
           } `}>
           {' '}
-          <ul
-            className="d-none d-xl-block"
-            onPointerLeave={() => props.setCategoryBar(false)}>
+          {/* onPointerLeave={() => props.setCategoryBar(false)} */}
+          <ul className="d-none d-xl-block">
             {props.categories.map((category) => (
               <li key={category.id}>
-                <Link to="#">{category.name}</Link>
+                <Link to={`/category-products?id=${category.id}`}>
+                  {category.name}
+                </Link>
                 <ul className="sub_category">
                   <li>
                     <Link to="#">sub cat</Link>
@@ -39,6 +40,7 @@ function HeaderNav(props) {
             ))}
           </ul>
         </div>
+
         {/* <div
           className={`responsive_category_dropdown ${
             props.categoryBar ? 'd-block' : 'd-none'

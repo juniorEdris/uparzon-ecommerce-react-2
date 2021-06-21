@@ -65,7 +65,11 @@ export const HeaderTop = (props) => {
           {/* <UserDropdown /> */}
           <UserDropdownTwo />
           {/* <ResposiveSearchIcon handleChange={openSeacrhbox} /> */}
-          <ProductCart handleChange={openSeacrhbox} />
+          <ProductCart
+            handleChange={openSeacrhbox}
+            cart={props.cart}
+            setCart={props.setCart}
+          />
         </div>
       </div>
       {/* {search && (

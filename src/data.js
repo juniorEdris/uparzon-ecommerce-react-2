@@ -80,3 +80,45 @@ export const products = [
     best_seller: false,
   },
 ];
+const campOne = [
+  {
+    id: 1,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 2,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 3,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 4,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 5,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 6,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 7,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+  {
+    id: 8,
+    photo: `./uparzonassets/uparzonimages/campaigncards/camp02.png`,
+    name: `campaign 1`,
+  },
+];

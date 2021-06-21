@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import OtpInput from 'react-otp-input';
 
 const UparzonOTP = (props) => {
-  const [otp, setOtp] = useState('');
   const handleChange = (e) => {
-    setOtp(e);
+    props.setOtp(e);
   };
   return (
     <div className="uparzon_otp">
@@ -20,9 +19,9 @@ const UparzonOTP = (props) => {
       <div className="uparzon_otp_wrapper col ">
         <div className="col-md-5 offset-xl-2">
           <OtpInput
-            value={otp}
+            value={props.otp}
             onChange={handleChange}
-            numInputs={6}
+            numInputs={4}
             //   separator={<span>-</span>}
             inputStyle="uparzon_otp_input"
           />
@@ -30,7 +29,7 @@ const UparzonOTP = (props) => {
         <div className="text-center mb-5">
           <p className="otp_time">02:21</p>
           <p className="otp_number">
-            OTP Has been send to 01800000000. Please enter it below
+            OTP Has been send to {props.number}. Please enter it below
           </p>
         </div>
         <div className="login-box mt-4 col-12  text-center">
@@ -38,8 +37,8 @@ const UparzonOTP = (props) => {
             type="button"
             className="btn mb-4 col-lg-5 col-12"
             onClick={(e) => {
-              e.preventDefault();
-              props.setSection('');
+              // props.setSection('');
+              props.verifyCompleteRequest();
             }}>
             Verify
           </button>

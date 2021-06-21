@@ -1,9 +1,28 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { AddBasketProd } from '../../../Redux/Action/BasketAction';
 
 const Details = (props) => {
+  console.log('prod details', props);
   const [quantity, setQuantity] = useState(1);
+  const addProduct = (e) => {
+    // ?product_id=1009&user_id=6318&unit_price=170&total_quantity=3&is_campaign=0&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699&shop_id=90
+    // e.preventDefault();
+    const data = {
+      product_id: props.details?.id || '',
+      photo: props.details?.photo,
+      name: props.details?.name,
+      unit_price: props.details?.price,
+      total_quantity: quantity,
+      shop_id: props.details?.shop_id,
+      is_campaign: 0,
+    };
+    props.addtoCart(data);
+    // console.log('===========product add from card=========================');
+    // console.log(data);
+    // console.log('====================================');
+  };
   return (
     <div className="product_slider_details">
       <div className="product_details_name">
@@ -72,7 +91,7 @@ const Details = (props) => {
             className="lnr lnr-plus-circle"
             onClick={() => setQuantity(quantity + 1)}></span>
         </div>
-        <button type="button" className="btn col-5">
+        <button type="button" className="btn col-5" onClick={addProduct}>
           <img
             src="./uparzonassets/svg/icons/products/add-cart.svg"
             alt="add to cart icon"
@@ -86,6 +105,8 @@ const Details = (props) => {
 
 const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch) => ({
+  addtoCart: (data) => dispatch(AddBasketProd(data)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

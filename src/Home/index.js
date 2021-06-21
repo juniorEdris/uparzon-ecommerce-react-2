@@ -55,8 +55,10 @@ const Index = (props) => {
   return (
     <div>
       <HomeSlider loading={props.loading} sliders={props.sliders} />
-      <Features />
-      <ExpenseCategories />
+      <div className="bg-uparzon-gray pt-5 pb-4 mb-3">
+        <Features />
+        <ExpenseCategories />
+      </div>
       <HompageCategories />
       {/* <OnlinePharma
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}

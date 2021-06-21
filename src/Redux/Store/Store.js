@@ -124,6 +124,7 @@ const store = createStore(
     ProductDetails: ProductDetailsReducer,
     Search: SearchReducer,
     CampaignProducts: CampaignProductsReducer,
+    CategoryProducts: CategoryBasedProdReducer,
     //
     Basket: AddBasketReducer,
     CartItems: CartItemsReducer,
@@ -140,7 +141,6 @@ const store = createStore(
     SingleBlog: SingleBlogReducer,
     SingleOrder: SingleOrderReducer,
     OtherBrands: OtherBrandsReducer,
-    CategoryProducts: CategoryBasedProdReducer,
     AccountInfo: AccountInfoReducer,
   }),
   initialState,

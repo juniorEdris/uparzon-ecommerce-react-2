@@ -112,6 +112,21 @@
     color: var(--dark);
     text-transform: capitalize;
 }
+.count{
+    color: var(--light-color);
+    position: absolute;
+    top: -13px;
+    left: -6px;
+    background: var(--dark-color);
+    height: 21px;
+    width: 21px;
+    line-height: 21px;
+    border: 2px solid var(--light-color);
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* CATEGORY DROPDOWN CSS */
     .category_dropdown{
     position: absolute;
@@ -170,11 +185,11 @@
     left: 0;
     z-index: 99;
     }
-    /* .category_dropdown li:hover ul.sub_category {
+    .category_dropdown li:hover ul.sub_category {
         top: 0;
         opacity: 1;
-        visibility: visible; <===================
-    } */
+        visibility: visible; 
+    }/*<===================*/
     .sub_category{
         position: absolute;
     left: 100%;
@@ -184,55 +199,7 @@
     opacity: 0;
     visibility: hidden;
     }
-    /* Responsive category dropdown */
-    .responsive_category_dropdown{
-        position: absolute;
-    top: 63px;
-    left: 0px;
-    background: var(--light-color);
-    z-index: 100;
-    width: 70%;
-    box-shadow: var(--box-shadow-one);
-    }
-    .responsive_category_dropdown ul li:not(:last-child) {
-        border-bottom: 1px solid var(--theme-color);
-    }
-    .responsive_category_dropdown ul li a{
-        display: block;
-        padding: 0.6rem 0 0.6rem 0.6rem;
-        text-transform: capitalize;
-        color: var(--theme-color);
-        font-size: 1rem;
-    }
-
-    .responsive_category_dropdown ul li a::after {
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-    }
     
-    .responsive_category_dropdown ul li a::after {
-        content: '\f0da';
-        font-family: 'Font Awesome 5 Free';
-        right: 10px;
-        position: absolute;
-        color: var(--dark-color);
-        font-weight: 600;
-    }
-    
-    .responsive_category_dropdown ul li:hover a::after  {
-        color: var(--light-color);
-    }
-    .responsive_category_dropdown ul li:hover  {
-        background-color: var(--theme-color);
-    }
-    
-    .responsive_category_dropdown ul li a:hover{
-        color: var(--light-color);
-        /* background-color: var(--dark-color); */
-    }
 /* CATEGORY SIDEBAR CSS */
 .category_sidebar{
     /* Useable from app.js */

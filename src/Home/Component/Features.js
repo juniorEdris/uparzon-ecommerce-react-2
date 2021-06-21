@@ -47,7 +47,7 @@ export const Features = (props) => {
                   image.fullWidth ? 'col-12' : 'col-6'
                 } mb-3`}
                 key={image.id}>
-                <div className="d-flex align-items-center feature_border feature_shadow flex-wrap justify-content-center">
+                <div className="d-flex align-items-center feature_border feature_shadow flex-wrap justify-content-center bg-uparzon-light">
                   <div className="image">
                     <img
                       src={`./uparzonassets/svg/icons/features/${image.image}`}

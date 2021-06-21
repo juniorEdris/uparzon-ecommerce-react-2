@@ -27,7 +27,7 @@ function Index(props) {
   }, [stickyNav]);
   return (
     <div className={stickyNav && 'header_sticky'}>
-      <HeaderTop />
+      <HeaderTop cart={props.cart} setCart={props.setCart} />
       <Navigation
         categoryBar={props.categoryBar}
         setCategoryBar={props.setCategoryBar}
