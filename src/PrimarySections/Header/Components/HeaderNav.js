@@ -24,8 +24,7 @@ function HeaderNav(props) {
             props.categoryBar ? 'd-block' : 'd-none'
           } `}>
           {' '}
-          {/* onPointerLeave={() => props.setCategoryBar(false)} */}
-          <ul className="d-none d-xl-block">
+          <ul className="" onPointerLeave={() => props.setCategoryBar(false)}>
             {props.categories.map((category) => (
               <li key={category.id}>
                 <Link to={`/category-products?id=${category.id}`}>

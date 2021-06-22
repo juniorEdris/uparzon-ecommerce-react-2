@@ -109,6 +109,115 @@ export const AddBasketProd = (product) => async (dispatch, getState) => {
       .catch((error) => console.log(error.Response));
   }
 };
+export const IncreamentBasketProd = (product) => async (dispatch, getState) => {
+  const user = localStorage.getItem('user_id');
+  // return action if its null
+  if (product === null) return;
+  if (!user) {
+    let cartItems = getState().Basket.localBasket.slice();
+    let exist = false;
+    cartItems.forEach((x) => {
+      if (x.product_id === product.product_id) {
+        exist = true;
+        x.price = product.price;
+        x.total_quantity = x.total_quantity + 1;
+        x.unit_prices_id = product.unit_prices_id;
+        dispatch(
+          addProdLocalBasketMsg({
+            type: true,
+            message: 'Product Added To Cart Successfully..',
+          })
+        );
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      }
+    });
+    if (!exist) {
+      cartItems.push(product);
+      dispatch(
+        addProdLocalBasketMsg({
+          type: true,
+          message: 'Product Added To Cart Successfully..',
+        })
+      );
+      setTimeout(() => {
+        dispatch(productStatusComplete());
+      }, 3000);
+    }
+    dispatch(addProdBasketSuccess(cartItems));
+    localStorage.setItem('Cart List', JSON.stringify(cartItems));
+  } else {
+    dispatch(addProdBasketRequest());
+    await API()
+      .post(
+        `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&unit_price_id=${product.unit_prices_id}&total_quantity=${product.total_quantity}`
+      )
+      .then((res) => {
+        dispatch(addProdServerBasketSuccess(res.data));
+        dispatch(productStatusSuccess());
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      })
+      .catch((error) => console.log(error.Response));
+  }
+};
+
+export const DecreamentBasketProd = (product) => async (dispatch, getState) => {
+  const user = localStorage.getItem('user_id');
+  // return action if its null
+  if (product === null) return;
+  if (!user) {
+    let cartItems = getState().Basket.localBasket.slice();
+    let exist = false;
+    cartItems.forEach((x) => {
+      if (x.product_id === product.product_id) {
+        exist = true;
+        x.price = product.price;
+        x.total_quantity = x.total_quantity - 1;
+        x.unit_prices_id = product.unit_prices_id;
+        dispatch(
+          addProdLocalBasketMsg({
+            type: true,
+            message: 'Product Added To Cart Successfully..',
+          })
+        );
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      }
+    });
+    if (!exist) {
+      cartItems.push(product);
+      dispatch(
+        addProdLocalBasketMsg({
+          type: true,
+          message: 'Product Added To Cart Successfully..',
+        })
+      );
+      setTimeout(() => {
+        dispatch(productStatusComplete());
+      }, 3000);
+    }
+    dispatch(addProdBasketSuccess(cartItems));
+    localStorage.setItem('Cart List', JSON.stringify(cartItems));
+  } else {
+    dispatch(addProdBasketRequest());
+    await API()
+      .post(
+        `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&unit_price_id=${product.unit_prices_id}&total_quantity=${product.total_quantity}`
+      )
+      .then((res) => {
+        dispatch(addProdServerBasketSuccess(res.data));
+        dispatch(productStatusSuccess());
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      })
+      .catch((error) => console.log(error.Response));
+  }
+};
 
 export const RemoveBasketProd = (product) => async (dispatch, getState) => {
   const user = localStorage.getItem('user_id');

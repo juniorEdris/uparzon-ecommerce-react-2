@@ -185,11 +185,11 @@
     left: 0;
     z-index: 99;
     }
-    .category_dropdown li:hover ul.sub_category {
+    /*.category_dropdown li:hover ul.sub_category {
         top: 0;
         opacity: 1;
         visibility: visible; 
-    }/*<===================*/
+    }<===================*/
     .sub_category{
         position: absolute;
     left: 100%;

@@ -32,13 +32,21 @@ export const getCartProdSubTotal = (basket, user) =>
   user
     ? basket?.reduce(
         (amount, item) =>
-          parseInt(item.unit_price?.price * item?.total_quantity) + amount,
+          parseInt(item.unit_price * item?.total_quantity) + amount, //need change
         0
       )
     : basket?.reduce(
-        (amount, item) => parseInt(item?.price * item?.total_quantity) + amount,
+        (amount, item) =>
+          parseInt(item?.unit_price * item?.total_quantity) + amount,
         0
       );
 
 export const UserToken = () => localStorage.getItem('user_token');
 export const UserID = () => localStorage.getItem('user_id');
+
+export const groupBy = function (xs, key) {
+  return xs.reduce(function (rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+};

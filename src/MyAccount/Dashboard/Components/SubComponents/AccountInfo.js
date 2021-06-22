@@ -25,7 +25,7 @@ const AccountInfo = (props) => {
                 <p>name:</p>
               </div>
               <div className="col-lg-5">
-                <p>{props.info?.name || 'eftekar raghib'}</p>
+                <p>{props.info?.name || 'user name'}</p>
               </div>
             </div>
             {/* phone */}

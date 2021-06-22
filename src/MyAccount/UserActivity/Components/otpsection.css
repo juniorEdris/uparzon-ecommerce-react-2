@@ -53,3 +53,7 @@
     cursor: pointer;
     text-align: center;
 }
+/* Show pass button css */
+.show-password{
+    cursor: pointer;
+}

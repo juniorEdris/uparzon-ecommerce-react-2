@@ -20,6 +20,13 @@ export const Uparzon_entry = (props) => {
     password: '',
     OTPNumber: '',
   });
+  const [register, setRegister] = useState({
+    first_name: '',
+    last_name: '',
+    password: '',
+    confirm_password: '',
+    refer_code: '',
+  });
   const [otp, setOtp] = useState('');
   const history = useHistory();
   const loginRequest = async (e) => {
@@ -61,6 +68,7 @@ export const Uparzon_entry = (props) => {
       .then((res) => {
         if (res.data.status) {
           setLoading(false);
+          setError({ verifyError: res.data.otp });
           setSection('');
         } else if (!res.data.status) {
           setLoading(false);
@@ -79,13 +87,13 @@ export const Uparzon_entry = (props) => {
       setError({ verifyErrMessage: 'Provide a valid number.' });
     }
     await axios
-      .post(`${ENDPOINTS.VERIFY_OTP}?mobile=${login.OTPNumber}&otp=${otp}`)
+      .post(
+        `${ENDPOINTS.VERIFY_OTP}?mobile=${login.OTPNumber}&otp=${otp}&type=register`
+      )
       .then((res) => {
         if (res.data.status) {
-          localStorage.setItem('user_token', res.data.auth_token);
-          props.setUser();
           setLoading(false);
-          history.push(`${props.pathRedirect}`);
+          setSection('verified');
         } else if (!res.data.status) {
           setLoading(false);
           setError({ verifyError: res.data.message });
@@ -94,6 +102,54 @@ export const Uparzon_entry = (props) => {
       .catch((error) => {
         console.log(error);
       });
+  };
+  const RegisterAction = async (e) => {
+    e.preventDefault();
+    setError({});
+    if (
+      !register.first_name ||
+      !register.last_name ||
+      !register.password ||
+      !register.confirm_password
+    ) {
+      setLoading(false);
+      setError({ registerError: 'Fill all the credentials.' });
+    } else if (
+      !(register.password.toLowerCase().length >= 8) ||
+      !(register.confirm_password.toLowerCase().length >= 8)
+    ) {
+      setLoading(false);
+      setError({
+        registerPassError: 'Password minimum length 8 characters long.',
+      });
+    } else if (
+      register.password.toLowerCase() !==
+      register.confirm_password.toLowerCase()
+    ) {
+      setLoading(false);
+      setError({ registerPassError: 'Confirm password did not matched!' });
+    } else {
+      setLoading(true);
+      await axios
+        .post(
+          `${ENDPOINTS.REGISTER}?mobile=${login.OTPNumber}&password=${register.password}&first_name=${register.first_name}&last_name=${register.last_name}&otp=${otp}`
+        )
+        .then((res) => {
+          if (res.data.status) {
+            localStorage.setItem('user_token', res.data.auth_token);
+            localStorage.setItem('user_id', res.data.user_id);
+            props.setUser();
+            setLoading(false);
+            history.push(`${props.pathRedirect}`);
+          } else if (!res.data.status) {
+            setLoading(false);
+            setError({ registerError: res.data.message });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
   return (
     <div className="uparzon_entry_wrapper">
@@ -145,7 +201,12 @@ export const Uparzon_entry = (props) => {
                     verifyRequest={verifyRequest}
                   />
                 ) : section === 'verified' ? (
-                  <Register />
+                  <Register
+                    register={register}
+                    setRegister={setRegister}
+                    RegisterAction={RegisterAction}
+                    error={error}
+                  />
                 ) : (
                   <UparzonOTP
                     setSection={setSection}
@@ -158,12 +219,12 @@ export const Uparzon_entry = (props) => {
                 {/*  */}
                 {error.loginError && (
                   <div className="error-handler text-center">
-                    {error.loginError}
+                    <small>{error.loginError}</small>
                   </div>
                 )}
                 {error.verifyError && (
                   <div className="error-handler text-center">
-                    {error.verifyError}
+                    <small>{error.verifyError}</small>
                   </div>
                 )}
               </div>

@@ -19,22 +19,19 @@ export const setUserAction = (user) => (dispatch, getState) => {
 };
 export const LogOutAction = () => async (dispatch, getState) => {
   dispatch(logoutRequest());
-  // const logout = await API()
-  //   .post(`${ENDPOINTS.LOG_OUT}`)
-  //   .then((res) => {
-  //     console.log(res);
-  //     if (!res.data.status) {
-  //       console.log('log out failed');
-  //     } else {
-  //       localStorage.removeItem('user_token');
-  //       localStorage.removeItem('user_id');
-  //       dispatch(logoutSuccess(false));
-  //     }
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // console.log(logout);
-  localStorage.removeItem('user_token');
-  dispatch(logoutSuccess(false));
+  const logout = await API()
+    .post(`${ENDPOINTS.LOG_OUT}`)
+    .then((res) => {
+      if (!res.data.status) {
+        console.log('log out failed');
+      } else {
+        localStorage.removeItem('user_token');
+        localStorage.removeItem('user_id');
+        dispatch(logoutSuccess(false));
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  console.log(logout);
 };

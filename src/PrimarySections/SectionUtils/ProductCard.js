@@ -28,6 +28,7 @@ const ProductCard = (props) => {
     e.preventDefault();
     const data = {
       product_id: props.product?.id || '',
+      shop_name: props.product?.shop_name || '',
       photo: props.product?.photo,
       name: props.product?.name,
       unit_price: compaign_price > 0 ? compaign_price : props.product?.price,

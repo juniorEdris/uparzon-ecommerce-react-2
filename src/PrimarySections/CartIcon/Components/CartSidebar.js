@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartList from './CartList';
+import RegularCartList from './RegularCartList';
 
 const CartSidebar = (props) => {
   const [Cartsection, setCartsection] = useState('campaign');
@@ -55,9 +56,10 @@ const CartSidebar = (props) => {
             loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
           />
         ) : (
-          <div className="text-center text-capitalize pt-3">
-            no regular products
-          </div>
+          <RegularCartList
+            setCart={props.setCart}
+            loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+          />
         )}
       </div>
     </div>

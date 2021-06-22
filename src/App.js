@@ -101,6 +101,7 @@ function App(props) {
           <Route path="/productdetails">
             <ProductDetails />
           </Route>
+          <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/single-brand" component={SingleCompanyProducts} />
           <Route path="/login">
             {/* <UserEntry pathRedirect={nextPage} /> */}
