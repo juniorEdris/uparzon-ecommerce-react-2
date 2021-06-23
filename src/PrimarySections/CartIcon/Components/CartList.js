@@ -1,4 +1,5 @@
 import Skeleton from '@yisheng90/react-loading';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
@@ -20,11 +21,9 @@ import CartButton from './CartButton';
 const CartList = (props) => {
   const router = useHistory();
   const query = useQuery();
-
   useEffect(() => {
     props.user && props.getCartItems();
   }, []);
-  // const [quantity, setQuantity] = useState(1);
 
   const removeFromCart = async (item) => {
     await props.removeProduct(item);

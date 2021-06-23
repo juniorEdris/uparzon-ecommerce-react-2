@@ -163,6 +163,12 @@ h6 {
 .full_vh{
     height: 100vh !important;
 }
+.theme-bg{
+    background: var(--theme-color);
+}
+.theme-color{
+    color: var(--theme-color);
+}
 .error-handler {
     color: rgb(211, 15, 15);
     margin: 1rem 0;

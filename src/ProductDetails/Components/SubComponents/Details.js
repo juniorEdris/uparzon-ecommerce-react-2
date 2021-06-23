@@ -34,12 +34,10 @@ const Details = (props) => {
       unit_price: props.details?.price,
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
+      vendor_delivery: props.details?.vendor_delivery,
       is_campaign: 0,
     };
     props.addtoCart(data);
-    // console.log('===========product add from card=========================');
-    // console.log(data);
-    // console.log('====================================');
   };
   return (
     <div className="product_slider_details">

@@ -34,12 +34,10 @@ const ProductCard = (props) => {
       unit_price: compaign_price > 0 ? compaign_price : props.product?.price,
       total_quantity: 1,
       shop_id: props.product?.shop_id,
+      vendor_delivery: props.product?.vendor_delivery,
       is_campaign: compaign_price > 0 ? 1 : 0,
     };
     props.addtoCart(data);
-    // console.log('===========product add from card=========================');
-    // console.log(data);
-    // console.log('====================================');
   };
   return (
     <div className={'product_card_wrapper '}>

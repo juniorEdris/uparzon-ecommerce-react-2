@@ -52,21 +52,76 @@ const RegularCartList = (props) => {
     await props.addToCart(item);
     props.user && (await props.getCartItems());
   };
+  // GROUP ITEMS LOGICS STARTS HERE
   const groupedItems = groupBy(
-    props.localCartList && props.localCartList,
+    regular_products.length > 0 && regular_products,
     'shop_name'
   );
-  console.log('regular products', groupedItems);
-  // const cartprod = Object.keys(groupedItems).map(function (grooupKey) {
-
-  // }
-
-  return (
-    <div>
-      <div className="regular_cart_wrapper">
-        {!props.user ? (
-          <ul className="regular_cart_sidebar_list">
-            {regular_products?.map((item) => (
+  const cartprod = Object.keys(groupedItems).map(function (grooupKey) {
+    const singleProduct = groupedItems[grooupKey][0];
+    return (
+      <div className="col mt-4">
+        <div className="regular_cart_header row no-gutters">
+          <div className="col-6 text-center">
+            {singleProduct.vendor_delivery ? singleProduct.shop_name : 'none'}
+          </div>
+          <div className="col-6 text-center">
+            {singleProduct.vendor_delivery
+              ? singleProduct.vendor_delivery.vendor_district
+              : 'none'}
+          </div>
+        </div>
+        <div className="regular_cart_middle row no-gutters mt-3">
+          <div className="col-6 regular_cart_delivery_details">
+            <div className=" regular_cart_title text-capitalize text-center">
+              delivery charges
+            </div>
+            <div className="row no-gutters regular_vendor_delivery_content_wrapper">
+              <div className="col-6 text-center regular_vendor_delivery_content">
+                <div className="theme-color mt-4">
+                  {singleProduct.vendor_delivery
+                    ? singleProduct.vendor_delivery.vendor_district
+                    : 'none'}
+                </div>
+                {singleProduct.vendor_delivery
+                  ? singleProduct.vendor_delivery.inside_deli_charge + 'tk'
+                  : 'none'}
+              </div>
+              <div className="col-6 text-center regular_vendor_delivery_content">
+                <div className="theme-color mt-4">{'Anywhere'}</div>
+                {singleProduct.vendor_delivery
+                  ? singleProduct.vendor_delivery.outside_deli_charge + 'tk'
+                  : 'none'}
+              </div>
+            </div>
+          </div>
+          <div className="col-6 regular_cart_delivery_details">
+            <div className=" text-capitalize text-center regular_cart_title">
+              delivery time
+            </div>
+            <div className="row no-gutters regular_vendor_delivery_content_wrapper">
+              <div className="col-6 text-center regular_vendor_delivery_content">
+                <div className="theme-color mt-4">
+                  {singleProduct.vendor_delivery
+                    ? singleProduct.vendor_delivery.vendor_district
+                    : 'none'}
+                </div>
+                {singleProduct.vendor_delivery
+                  ? singleProduct.vendor_delivery.inside_deli_time
+                  : 'none'}
+              </div>
+              <div className="col-6 text-center regular_vendor_delivery_content">
+                <div className="theme-color mt-4">Anywhere</div>
+                {singleProduct.vendor_delivery
+                  ? singleProduct.vendor_delivery.outside_deli_time
+                  : 'none'}
+              </div>
+            </div>
+          </div>
+        </div>
+        {groupedItems[grooupKey].map(function (item) {
+          return (
+            <ul className="regular_cart_sidebar_list">
               <li key={item.id}>
                 <div className="regular_cart_single_product row no-gutters align-items-center">
                   <div className="regular_cart_single_image col-3 p-2">
@@ -135,8 +190,19 @@ const RegularCartList = (props) => {
                   </div>
                 </div>{' '}
               </li>
-            ))}
-          </ul>
+            </ul>
+          );
+        })}
+      </div>
+    );
+  });
+  // GROUP ITEMS ENDS LOGICS HERE
+
+  return (
+    <div>
+      <div className="regular_cart_wrapper">
+        {!props.user ? (
+          cartprod
         ) : (
           <ul className="regular_cart_sidebar_list">
             {props.loading
