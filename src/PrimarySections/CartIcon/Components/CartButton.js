@@ -12,18 +12,24 @@ const CartButton = (props) => {
           <span>subtotal :</span>
           <span>
             &#2547;{' '}
-            {!props.user
+            {
+              /* {!props.user
               ? getCartProdSubTotal(props.localCartList, props.user) || 0
-              : getCartProdSubTotal(props.cartList, props.user) || 0}
+              : getCartProdSubTotal(props.cartList, props.user) || 0} */
+              getCartProdSubTotal(props.localCartList, props.user) || 0
+            }
           </span>
         </div>
         <div className="cart_total row no-gutters justify-content-between">
           <span>total :</span>
           <span>
             &#2547;{' '}
-            {!props.user
+            {
+              /* {!props.user
               ? getCartProdSubTotal(props.localCartList, props.user) || 0
-              : getCartProdSubTotal(props.cartList, props.user) || 0}
+              : getCartProdSubTotal(props.cartList, props.user) || 0} */
+              getCartProdSubTotal(props.localCartList, props.user) || 0
+            }
           </span>
         </div>
         <div className="checkout_btn">
@@ -31,7 +37,7 @@ const CartButton = (props) => {
             to={'/check-out'}
             className={`btn w-100`}
             onClick={(e) => {
-              //   props.loginSuccessPageRedirectTo('/check-out');
+              props.loginSuccessPageRedirectTo('/check-out');
               props.setCart(false);
             }}>
             <svg

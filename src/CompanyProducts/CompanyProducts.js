@@ -20,9 +20,16 @@ const CompanyProducts = (props) => {
   useEffect(() => {
     props.getSortingProducts({ sortingType: sort });
   }, [sort]);
+  const vendor = {
+    vendor_name: props.products && props.products[0]?.shop_name,
+    vendor_photo: props.products && props.products[0]?.thumbnail,
+    vendor_thumb: props.products && props.products[0]?.thumbnail,
+    vendor_address: props.products && props.products[0]?.shop_address,
+  };
   return (
     <div className="company_products_wrapper">
       <AllProducts
+        single_vendor={vendor}
         categories={props.categories}
         // category={category}
         // setCategory={setCategory}

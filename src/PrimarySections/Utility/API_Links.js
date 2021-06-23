@@ -1,6 +1,6 @@
 import Axios from 'axios';
-// export const DOMAIN = `https://demostore.uparzon.com/`;
-export const DOMAIN = `https://store.uparzon.com/`;
+export const DOMAIN = `https://demostore.uparzon.com/`;
+// export const DOMAIN = `https://store.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
 
 let BaseApi = Axios.create({

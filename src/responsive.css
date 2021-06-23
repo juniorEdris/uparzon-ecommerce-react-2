@@ -7,6 +7,15 @@
   .campaign_image{
     height: 452px !important;
 }
+/* CART SECTION CSS */
+.regular_vendor_delivery_content{
+  font-size: 0.9rem !important;
+}
+}
+@media (min-width: 1401px) {
+  .cart_sidebar_route{
+    width: calc(85% - 58%)!important;
+  }
 }
 @media (min-width: 1370px) {
   .sidebar_list_wrapper .sidebar_list li a{
@@ -72,9 +81,9 @@
     font-size:1rem ;
   }
   /* CART  SECTION  */
-  .cart_sidebar_route{
+  /* .cart_sidebar_route{
     width: calc(85% - 53%)!important;
-  }
+  } */
     .cart_section a{
       font-size: 1.2rem;
   }
@@ -103,9 +112,7 @@
 .cart_quantity{
   width:50%;
 }
-  .cart_sidebar_route{
-    width: calc(85% - 53%)!important;
-  }
+
 }
 /* ===================================== */
 /* LG Device :992px. */

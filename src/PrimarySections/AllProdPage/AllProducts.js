@@ -14,6 +14,7 @@ const AllProducts = (props) => {
     <div className="container-md-fluid mb-4">
       <div className="search_medicine_wrapper row">
         <Sidebar
+          single_vendor={props.single_vendor}
           home={props.home}
           loading={props.loading}
           categories={props.categories}

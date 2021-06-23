@@ -7,6 +7,28 @@
     font-weight: 700;
     font-size:1.6rem;
 }
+
+.vendor_sidebar_card{
+  box-shadow: var(--box-shadow-one);
+  padding: 0  0.4rem 1.5rem;
+}
+.vendor_image img{
+  height: 80px;
+    width: 80px;
+    object-fit: contain;
+}
+.vendor_name{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.vendor_address{
+  font-size: 1.2rem;
+}
+.vendor_follow_btn button{
+  background: var(--theme-color);
+  color: var(--light-color);
+  text-transform: uppercase;
+}
 /* sidebar_list */
 /* .sidebar_list li {
     margin-bottom: 1rem;

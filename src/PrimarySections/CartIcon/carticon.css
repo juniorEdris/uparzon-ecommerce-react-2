@@ -264,8 +264,8 @@
 }
 /* REGULAR PRODUCTS CSS */
 .regular_cart_wrapper{
-    height: 69vh;
-    overflow-y: scroll;
+    height: 65vh;
+    overflow-y: auto;
     font-size: 1.2rem;
 }
 .regular_cart_sidebar_list {
@@ -315,7 +315,7 @@
 }
 .regular_vendor_delivery_content{
     Padding: 1rem 0;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
 }
 .regular_vendor_delivery_content:first-child{
     position: relative;
@@ -340,7 +340,7 @@
     margin-right: 0.6rem;
 }
 .regular_cart_single_image img{
-    max-width: 100px;
+    max-width: 68px;
     max-height: 100px;
     object-fit: contain;
 }

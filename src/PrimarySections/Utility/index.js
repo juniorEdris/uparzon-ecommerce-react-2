@@ -45,8 +45,12 @@ export const UserToken = () => localStorage.getItem('user_token');
 export const UserID = () => localStorage.getItem('user_id');
 
 export const groupBy = function (xs, key) {
-  return xs.reduce(function (rv, x) {
-    (rv[x[key]] = rv[x[key]] || []).push(x);
-    return rv;
-  }, {});
+  if (xs === null) {
+    return;
+  } else {
+    return xs.reduce(function (rv, x) {
+      (rv[x[key]] = rv[x[key]] || []).push(x);
+      return rv;
+    }, {});
+  }
 };

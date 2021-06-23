@@ -26,7 +26,7 @@ export const getCartItems = () => async (dispatch, getState) => {
       dispatch(getCartItemSuccess(res.data.data));
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       dispatch(getCartItemError(err));
     });
 };

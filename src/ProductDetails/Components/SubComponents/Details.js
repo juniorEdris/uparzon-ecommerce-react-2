@@ -35,7 +35,7 @@ const Details = (props) => {
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
       vendor_delivery: props.details?.vendor_delivery,
-      is_campaign: 0,
+      is_campaign: compaign_price > 0 ? 1 : 0,
     };
     props.addtoCart(data);
   };

@@ -18,13 +18,16 @@ const CartIcon = (props) => {
   };
   let cartLength = () => {
     let allProd = [];
-    props.user
-      ? props.cartList?.forEach((x) => {
-          allProd.push(x.total_quantity);
-        })
-      : props.localCartList?.forEach((x) => {
-          allProd.push(x.total_quantity);
-        });
+    // props.user
+    //   ? props.cartList?.forEach((x) => {
+    //       allProd.push(x.total_quantity);
+    //     })
+    //   : props.localCartList?.forEach((x) => {
+    //       allProd.push(x.total_quantity);
+    //     });
+    props.localCartList?.forEach((x) => {
+      allProd.push(x.total_quantity);
+    });
     return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
   };
   return (

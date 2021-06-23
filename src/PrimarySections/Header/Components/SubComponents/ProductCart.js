@@ -7,6 +7,20 @@ const ProductCart = (props) => {
     e.preventDefault();
     props.setCart(!props.cart);
   };
+  let cartLength = () => {
+    let allProd = [];
+    // props.user
+    //   ? props.cartList?.forEach((x) => {
+    //       allProd.push(x.total_quantity);
+    //     })
+    //   : props.localCartList?.forEach((x) => {
+    //       allProd.push(x.total_quantity);
+    //     });
+    props.localCartList?.forEach((x) => {
+      allProd.push(x.total_quantity);
+    });
+    return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  };
   return (
     <div>
       <Link to="#" className="header__link2 " onClick={openDropdown}>
@@ -18,9 +32,7 @@ const ProductCart = (props) => {
               alt="shopping cart"
             />
           </div>
-          <div className="count">
-            {!props.user ? props.localCartList.length : props.cartList.length}
-          </div>
+          <div className="count">{cartLength()}</div>
         </div>
       </Link>
       {/* <div className={`${dropdown ? 'd-block' : 'd-none'} dropdown`}>
@@ -44,3 +56,5 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCart);
+
+// getCartItems: () => dispatch(getCartItems()),
