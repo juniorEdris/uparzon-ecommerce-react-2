@@ -33,6 +33,11 @@ function HeaderNav(props) {
                 <ul className="sub_category">
                   <li>
                     <Link to="#">sub cat</Link>
+                    <ul className="child_category">
+                  <li>
+                    <Link to="#">child cat</Link>
+                  </li>
+                </ul>
                   </li>
                 </ul>
               </li>
