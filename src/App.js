@@ -32,7 +32,10 @@ import BlogDetails from './BlogDetails';
 // slick
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { GetHomeContents } from './Redux/Action/HomeProductsAction';
+import {
+  GetHomeCategories,
+  GetHomeContents,
+} from './Redux/Action/HomeProductsAction';
 import { getUserInfo } from './Redux/Action/GetUserInfoAction';
 import { getOrderList } from './Redux/Action/OrderListAction';
 import NeccessaryProducts from './NeccessaryProducts/NeccessaryPage';
@@ -61,6 +64,7 @@ function App(props) {
   const [cart, setCart] = useState(false);
   useEffect(() => {
     props.getHomeContents();
+    props.getHomeCategories();
     //  props.demo();
     // props.User && props.getOrderList();
   }, []);
@@ -164,6 +168,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   getHomeContents: () => dispatch(GetHomeContents()),
+  getHomeCategories: () => dispatch(GetHomeCategories()),
   getUserInfo: () => dispatch(getUserInfo()),
   getOrderList: () => dispatch(getOrderList()),
   demo: () => dispatch(demoAll()),

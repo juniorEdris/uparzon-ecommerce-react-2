@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {
+  GetHomeChildCategories,
+  GetHomeSubCategories,
+} from '../../../Redux/Action/HomeProductsAction';
 import NavList from './SubComponents/NavList';
 import NavRight from './SubComponents/NavRight';
 
@@ -22,24 +26,52 @@ function HeaderNav(props) {
         <div
           className={`category_dropdown ${
             props.categoryBar ? 'd-block' : 'd-none'
-          } `}>
+          }`}>
           {' '}
           <ul className="" onPointerLeave={() => props.setCategoryBar(false)}>
             {props.categories.map((category) => (
-              <li key={category.id}>
-                <Link to={`/category-products?id=${category.id}`}>
+              <li
+                key={category.id}
+                className={`${category.has_subcategory && 'has_section'}`}>
+                <Link
+                  to={`/category-products?id=${category.id}`}
+                  onMouseOver={() => props.getsubcategories(category.id)}>
                   {category.name}
                 </Link>
-                <ul className="sub_category">
-                  <li>
-                    <Link to="#">sub cat</Link>
-                    <ul className="child_category">
-                  <li>
-                    <Link to="#">child cat</Link>
-                  </li>
-                </ul>
-                  </li>
-                </ul>
+                {props.subcategories && (
+                  <ul className="sub_category">
+                    {props.subcategories.map((subcat) => (
+                      <li
+                        key={subcat.id}
+                        className={`${
+                          subcat.has_childcategory && 'has_section'
+                        }`}>
+                        <Link
+                          to={`/category-products?subcategory-id=${subcat.id}`}
+                          onMouseOver={() =>
+                            props.getChildcategories(subcat.id)
+                          }>
+                          {subcat.name}
+                        </Link>
+                        {props.childcategories && (
+                          <ul className="child_category">
+                            {props.childcategories.map((childcat) => (
+                              <li key={childcat.id}>
+                                <Link
+                                  to={`/childcategory-products?subcategory-id=${childcat.id}`}
+                                  className={`${
+                                    childcat.has_childcategory && 'has_section'
+                                  }`}>
+                                  {childcat.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
@@ -68,7 +100,13 @@ function HeaderNav(props) {
     </div>
   );
 }
-
-export default connect((state) => ({
+const mapStateToProps = (state) => ({
   categories: state.HomeContent.categories,
-}))(HeaderNav);
+  subcategories: state.HomeContent.subcategories,
+  childcategories: state.HomeContent.childcategories,
+});
+const mapDispatchToProps = (dispatch) => ({
+  getsubcategories: (id) => dispatch(GetHomeSubCategories(id)),
+  getChildcategories: (id) => dispatch(GetHomeChildCategories(id)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderNav);

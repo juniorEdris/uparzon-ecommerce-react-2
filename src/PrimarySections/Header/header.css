@@ -156,7 +156,7 @@
         -webkit-font-smoothing: antialiased;
     }
     
-    .category_dropdown ul li a::after {
+    .category_dropdown ul li.has_section a::after {
         content: '\f0da';
         font-family: 'Font Awesome 5 Free';
         right: 10px;
