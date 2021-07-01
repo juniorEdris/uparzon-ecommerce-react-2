@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { GetAreaOption } from '../../Redux/Action/GetUserInfoAction';
+import CashBack from './SubComponents/CashBack';
 import DeliveryDetailsInput from './SubComponents/DeliveryDetailsInput';
 import PaymentMethod from './SubComponents/PaymentMethod';
 import PriceDetails from './SubComponents/PriceDetails';
@@ -38,9 +39,10 @@ const CheckOutBody = (props) => {
           details={DeliveryDetails}
           setDetails={setDeliveryDetails}
         />
-        <PaymentMethod type={paymentType} setType={setPaymentType} />
       </div>
       <div className="col-md-6">
+        <PaymentMethod type={paymentType} setType={setPaymentType} />
+        <CashBack/>
         <PriceDetails details={DeliveryDetails} type={paymentType} />
       </div>
     </div>

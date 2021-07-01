@@ -25,12 +25,8 @@ const PaymentMethod = (props) => {
               />
             </div>
             <div className="">
-              <label htmlFor="cashRadio">
-                <img
-                  src="./assets/svg/icons/cash_payment.svg"
-                  className="check-box-img"
-                  alt=""
-                />
+              <label htmlFor="cashRadio" className="payment-label">
+                Uparzon Balance
               </label>
             </div>
           </div>
@@ -46,12 +42,8 @@ const PaymentMethod = (props) => {
               />
             </div>
             <div className="">
-              <label htmlFor="cardRadio">
-                <img
-                  src="./assets/svg/icons/card_payment.svg"
-                  className="check-box-img"
-                  alt=""
-                />
+              <label htmlFor="cardRadio" className="payment-label">
+Online Payment
               </label>
             </div>
           </div>

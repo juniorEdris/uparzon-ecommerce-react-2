@@ -67,7 +67,7 @@ const DeliveryDetails = (props) => {
             )}
           </div>
           <div className="form-row">
-            <div className="form-group col-md-6">
+            <div className="form-group col-12">
               <label htmlFor="district">District</label>
               <select
                 id="district"
@@ -78,7 +78,7 @@ const DeliveryDetails = (props) => {
                 <option value="" selected>
                   Choose...
                 </option>
-                {props.info?.districts_lists?.map((district) => (
+                {/* {props.info?.districts_lists?.map((district) => (
                   <option
                     value={district.id}
                     key={district.name}
@@ -86,7 +86,7 @@ const DeliveryDetails = (props) => {
                   >
                     {district.name}
                   </option>
-                ))}
+                ))} */}
               </select>
               {props.details.district === '' && (
                 <small className="text-danger">
@@ -94,7 +94,9 @@ const DeliveryDetails = (props) => {
                 </small>
               )}
             </div>
-            <div className="form-group col-md-6">
+          </div>
+          <div className="form-row">
+            <div className="form-group col-12">
               <label htmlFor="area">Area</label>
               <select
                 id="area"
@@ -105,7 +107,7 @@ const DeliveryDetails = (props) => {
                 <option value="" selected>
                   Choose...
                 </option>
-                {props.useArea[0]?.areas?.map((area) => (
+                {/* {props.useArea[0]?.areas?.map((area) => (
                   <option
                     value={area.id}
                     key={area.name}
@@ -113,11 +115,40 @@ const DeliveryDetails = (props) => {
                   >
                     {area.name}
                   </option>
-                ))}
+                ))} */}
               </select>
               {props.details.area === '' && (
                 <small className="text-danger">
                   Please provide your area name.
+                </small>
+              )}
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-group col-12">
+              <label htmlFor="area">City</label>
+              <select
+                id="area"
+                className="form-control form-control-lg"
+                name="area"
+                onChange={handleChange}
+                required>
+                <option value="" selected>
+                  Choose...
+                </option>
+                {/* {props.useArea[0]?.areas?.map((area) => (
+                  <option
+                    value={area.id}
+                    key={area.name}
+                    // selected={Number(props.details?.area) === area.id}
+                  >
+                    {area.name}
+                  </option>
+                ))} */}
+              </select>
+              {props.details.area === '' && (
+                <small className="text-danger">
+                  Please provide your city name.
                 </small>
               )}
             </div>
@@ -140,23 +171,6 @@ const DeliveryDetails = (props) => {
                 </small>
               )}
             </div>
-            {/* <div className="form-group col-md-6">
-              <label htmlFor="zip">Zip</label>
-              <input
-                type="text"
-                className="form-control form-control-lg"
-                id="zip"
-                placeholder="zip code"
-                defaultValue={props.info?.zip}
-                name="zip"
-                onChange={handleChange}
-              />
-              {props.details.zip === '' && (
-                <small className="text-danger">
-                  Please provide your zip code.
-                </small>
-              )}
-            </div> */}
           </div>
         </form>
       </div>
@@ -176,7 +190,3 @@ const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeliveryDetails);
 
-//
-// area
-// address
-// zip

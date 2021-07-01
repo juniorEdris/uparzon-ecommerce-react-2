@@ -1,86 +1,68 @@
 /* Primary class */
-.checkout_headings {
-    border-bottom: 1px solid var(--muted-color);
-    padding-bottom: 0.625rem;
-}
-.checkout_headings h4 {
-    font-weight: 600;
-}
+
 .border_top_section{
     border-top: 2px solid var(--dark-color);
     margin-top: 1.325rem;
 }
 .checkout_wrapper{
-    background: var(--myaccount-bg-color);
+    background: #fff;
     padding: var(--top-whitespace) 0;
 }
-.checkout_heading{
-    margin: var(--top-whitespace) 0;
-    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox; /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Chrome */
-    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    justify-content: space-between;
-    align-items: center;
-}
-.checkout_heading_left span,
-.checkout_heading_left a{
-    font-size: var(--primary-text-size);
-}
-.checkout_heading_left h3{color:var(--nav-bg)}
-.checkout_heading_left span{color:var(--muted-color)}
-.checkout_heading_left a{
-    color:var(--nav-bg)
-}
-.checkout_heading_right {
-    background: var(--nav-bg);
-    padding: 0.5rem;
-    color: var(--light-color);
-    box-shadow: var(--box-shadow-1);
-    border-radius: 0.3rem;
-    font-size: var(--primary-text-size);
-}
-.checkout_heading_right img{
-    max-width: 40px;
+.checkout_heading h2{
+    color: #212529;
+    margin-bottom: 1.2rem;
 }
 /* CHECKOUT BODY CSS STARTS HERE */
+.checkout_headings h4 {
+    padding: 1rem ;
+    text-align: center;
+    background: #F2F4F9;
+    border-radius: 0.75rem;
+}
 .chekoutCard{
-    padding: 1.929rem;
-    border: 1px solid var(--nav-bg);
     border-radius: 0.75rem;
     background: var(--light-color);
     margin-bottom: var(--margin-top);
+    border: 1px solid #D5D5D5;
 }
 .checkout_body form{
-    margin-top: var(--margin-top);
+    border-radius: 0.75rem;
+    padding: 0 1rem;
+    padding-top:var(--margin-top);
 }
 .checkout_body form label{
     color: var(--muted-color);
     margin-bottom: 0;
 }
+/* Cashback css here */
+.cashback_wrapper{
+    margin: 1rem 0;
+}
+.cashback_wrapper button{
+    background: var(--theme-color);
+    color: var(--light-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.cashback_text{
+    padding: 0.7rem 0;
+    color: var(--theme-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
 /* Price Details css here */
-.sub-Total{
-    margin: var(--top-whitespace) 0;
-    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox; /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Chrome */
-    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    justify-content: space-between;
-    align-items: center;
-    font-size: var(--primary-text-size);
-    color: var(--muted-color);
+.order_summary{
+    padding: 0 1rem;
+    padding-bottom: 1rem;
 }
 .coupon_anchore{
     font-size: var(--primary-text-size);
-}
-.coupon_anchore img{
-    max-width: 30px;
+    text-align: center;
+    margin: 0.7rem 0;
 }
 .coupon_anchore a{
-    color:var(--user-entry-btn);
-    text-decoration: underline;
+    color: var(--theme-color);
+    font-weight: 600;
 }
 .coupon_anchore a:hover{
     color: var(--dark-color);
@@ -96,9 +78,6 @@
     background: var(--dark-color);
     color: var(--light-color);
 
-}
-.delivery_amount_hover{
-    cursor: pointer;
 }
 .delivery_charge{
     color: var(--muted-color);
@@ -120,18 +99,27 @@
     font-weight: 700;
 }
 .order_btn{
-    margin-top: 5rem;
-    text-align: center;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 0.25rem;
+    border: 1px solid var(--theme-color);
 }
 .order_btn button{
     font-size: 1.3rem;
-    background-color: var(--user-entry-btn);
-    border: 1px solid var(--light-color);
-    box-shadow: var(--box-shadow-1);
+    background-color: var(--theme-color);
+    border: none;
 }
 .order_btn button:hover{
     background-color: var(--dark-color);
-    border: 1px solid var(--light-color);
+}
+.order_btn_price{
+    color:var(--success) ;
+    text-align: center;
 }
 /* Payment Method */
 .payment_select{
@@ -139,6 +127,9 @@
 }
 .payment_select img{
     width: 8.714rem;
+}
+.payment-label{
+    font-weight: 600;
 }
 /* bootstrap radio css */
 .custom-control-inline{

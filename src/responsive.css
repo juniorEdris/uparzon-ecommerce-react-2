@@ -124,7 +124,8 @@
     /* font-size: 0.8rem !important; */
 }
 .cart_sidebar_route {
-  width: calc(85% - 38%)!important;
+  /* width: calc(85% - 38%)!important; */
+  width: calc(85% - 53%)!important;
 }
 /* Cart Css */
 .cart_quantity{

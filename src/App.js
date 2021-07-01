@@ -130,6 +130,9 @@ function App(props) {
             // setCategoryName={setCategoryName}
             />
           </Route>
+          <Route path="/check-out">
+            {!props.User ? <Redirect to="/login" /> : <CheckOut/>}
+          </Route> 
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
@@ -139,10 +142,7 @@ function App(props) {
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
           <Route path="/about-us" component={AboutUs} />
-          <Route path="/contact-us" component={ContactUs} />
-          <Route path="/check-out">
-            {!props.User ? <Redirect to="/login" /> : <CheckOut />}
-          </Route> */}
+          <Route path="/contact-us" component={ContactUs} />*/}
           {/* <Route path="/order-info" component={OrderInformation} /> */}
           {/* <Route path="/blog" component={Blog} />
           <Route path="/wishlist" component={WishList} />
