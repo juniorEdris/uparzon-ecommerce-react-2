@@ -28,7 +28,7 @@ function HeaderNav(props) {
             props.categoryBar ? 'd-block' : 'd-none'
           }`}>
           {' '}
-          <ul className="" onPointerLeave={() => props.setCategoryBar(false)}>
+          <ul className="categories" onPointerLeave={() => props.setCategoryBar(false)}>
             {props.categories.map((category) => (
               <li
                 key={category.id}
