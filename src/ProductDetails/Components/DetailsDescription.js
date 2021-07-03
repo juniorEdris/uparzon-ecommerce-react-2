@@ -32,8 +32,12 @@ const DetailsDescription = (props) => {
       />
       {section === 'description' && (
         <div className="col-12 details__wrapper">
-          {/* <p></p> */}
           {renderDiv(props.details?.details)}
+        </div>
+      )}
+      {section === 'specification' && (
+        <div className="col-12 specification__wrapper">
+          {renderDiv(props.details?.specification)}
         </div>
       )}
     </div>

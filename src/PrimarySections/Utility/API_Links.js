@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import {UserID} from '../../PrimarySections/Utility';
 export const DOMAIN = `https://demostore.uparzon.com/`;
 // export const DOMAIN = `https://store.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
@@ -28,10 +29,10 @@ export const ENDPOINTS = {
   VERIFY_PHONE: `https://demopartner.uparzon.com/api/partner/send-otp`,
   VERIFY_OTP: `https://demopartner.uparzon.com/api/partner/check-otp`,
   REGISTER: `https://demopartner.uparzon.com/api/partner/store/register`,
+  GETCARTITEMS: `api/uparzonapp/user/get_cart_products?api_key=${api_key}&user_id=${UserID()}`,
   //
   CART_UPDATE: `api/user/cart_update/`,
   DELETEFROMBASKET: `api/cart/delete_product/`,
-  GETCARTITEMS: `api/user/cart_products`,
   GET_WISHLIST_ITEM: `api/user/wishlist_products`,
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,
   UPDATE_WISHLIST_ITEM: `api/user/wishlist_update/`,

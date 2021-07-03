@@ -10,10 +10,18 @@ const CategoryProducts = (props) => {
   const [page, setPage] = useState(1);
   const query = useQuery();
   const id = query.get('id');
+  const subcategory_id = query.get('subcategory-id');
+  const childcategory_id = query.get('childcategory-id');
   useEffect(() => {
-    props.getProducts({ page, category_id: id });
+    if (id) {
+      props.getProducts({ page, category_id: id });
+    } else if (subcategory_id) {
+      props.getProducts({ page, subcategory: subcategory_id });
+    } else {
+      props.getProducts({ page, childcategory: childcategory_id });
+    }
     // props.setCategoryID(id);
-  }, [page, id]);
+  }, [page, id, subcategory_id, childcategory_id]);
   return (
     <div className="other_brands_wrapper">
       <AllProducts

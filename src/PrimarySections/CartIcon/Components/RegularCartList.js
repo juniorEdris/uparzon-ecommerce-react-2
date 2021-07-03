@@ -268,7 +268,13 @@ const RegularCartList = (props) => {
                 ))}
           </ul>
         )} */
-          cartprod
+          
+            regular_products.length > 0 ?
+              cartprod :
+            <div className="d-flex justify-content-center align-items-center empty_cart_placeholder">
+            <img src="uparzonassets/svg/icons/cart_icon/empty-cart.svg" alt="" />
+          </div>
+          
         }
       </div>
       {/* cart product wrapper ends */}

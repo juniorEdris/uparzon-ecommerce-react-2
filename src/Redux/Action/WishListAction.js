@@ -75,9 +75,10 @@ const addWishItemError = (error) => ({
 });
 
 export const addToWishlistAction = (product) => async (dispatch, getState) => {
+  console.log('wishlist action',product);
   dispatch(addWishItemRequest());
-  if (!UserToken()) {
-    let wishItems = getState().Wishlist.localWishlist.slice();
+  
+    let wishItems = getState().Wishlist.localWishlist?.slice() || [];
     let exist = false;
     wishItems.forEach((x) => {
       if (x.product_id === product.product_id) {
@@ -88,7 +89,6 @@ export const addToWishlistAction = (product) => async (dispatch, getState) => {
           dispatch(productStatusComplete());
         }, 3000);
         exist = true;
-        console.log('exist',exist);
         return;
       }
     });
@@ -104,29 +104,29 @@ export const addToWishlistAction = (product) => async (dispatch, getState) => {
     }
     dispatch(addWishItemLocalSuccess(wishItems));
     localStorage.setItem('Wish List', JSON.stringify(wishItems));
-  } else {
-    await API()
-      .post(
-        `${ENDPOINTS.ADD_WISHLIST_ITEM}product_id=${product.product_id}&unit_price_id=${product.unit_price.unit_prices_id}&total_quantity=${product.total_quantity}`
-      )
-      .then((res) => {
-        dispatch(productStatusSuccess());
-        dispatch(addWishItemOnlineSuccess(res.data));
-        setTimeout(() => {
-          dispatch(productStatusComplete());
-        }, 3000);
-      })
-      .catch((err) => {
-        console.log(err);
-        dispatch(addWishItemError(err));
-      });
-  }
+  // if (!UserToken()) {} else {
+  //   await API()
+  //     .post(
+  //       `${ENDPOINTS.ADD_WISHLIST_ITEM}product_id=${product.product_id}&unit_price_id=${product.unit_price.unit_prices_id}&total_quantity=${product.total_quantity}`
+  //     )
+  //     .then((res) => {
+  //       dispatch(productStatusSuccess());
+  //       dispatch(addWishItemOnlineSuccess(res.data));
+  //       setTimeout(() => {
+  //         dispatch(productStatusComplete());
+  //       }, 3000);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       dispatch(addWishItemError(err));
+  //     });
+  // }
 };
 
 export const RemoveWishProd = (product) => async (dispatch, getState) => {
-  if (!UserToken()) {
+  
     let wishItems = getState()
-      .Wishlist.localWishlist.slice()
+      .Wishlist.localWishlist?.slice()
       .filter((x) => x.product_id !== product.product_id);
     dispatch(removeProdLocalWish(wishItems));
     localStorage.setItem('Wish List', JSON.stringify(wishItems));
@@ -135,17 +135,17 @@ export const RemoveWishProd = (product) => async (dispatch, getState) => {
     setTimeout(() => {
       dispatch(productStatusComplete());
     }, 3000);
-  } else {
-    await API()
-      .delete(`${ENDPOINTS.DELETE_WISHLIST_ITEM}${product.id}`)
-      .then((res) => {
-        dispatch(removeProdOnlineWish(res.data.message));
-      })
-      .catch((err) => {
-        console.log(err);
-        dispatch(addWishItemError(err));
-      });
-  }
+  // if (!UserToken()) {} else {
+  //   await API()
+  //     .delete(`${ENDPOINTS.DELETE_WISHLIST_ITEM}${product.id}`)
+  //     .then((res) => {
+  //       dispatch(removeProdOnlineWish(res.data.message));
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       dispatch(addWishItemError(err));
+  //     });
+  // }
 };
 
 export const getWishlistItems = () => async (dispatch) => {
@@ -202,8 +202,4 @@ export const guestWishItem = (array) => async (dispatch, getState) => {
   } else {
     return
   }
-}
-
-export const demoAll = (array) => async (dispatch, getState) => {
- console.log('for every page run'); 
 }

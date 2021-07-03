@@ -17,6 +17,7 @@ const CheckOutBody = (props) => {
     zip: '',
   });
   const [paymentType, setPaymentType] = useState('Cash on Delivery');
+  const [storeAddress, setStoreAddress] = useState(false);
   useEffect(() => {
     setDeliveryDetails({
       name: props.info?.name,
@@ -38,6 +39,8 @@ const CheckOutBody = (props) => {
         <DeliveryDetailsInput
           details={DeliveryDetails}
           setDetails={setDeliveryDetails}
+          storeAddress={ storeAddress}
+          setStoreAddress={ setStoreAddress}
         />
       </div>
       <div className="col-md-6">

@@ -172,6 +172,11 @@ const DeliveryDetails = (props) => {
               )}
             </div>
           </div>
+          <div className="form-row">
+            <div className="form-group col-12 text-right">
+              <span className={`address_checkbox ${props.storeAddress && 'active'}`} onClick={() => props.setStoreAddress(!props.storeAddress)}>Make it your Default Address</span>
+            </div>
+          </div>
         </form>
       </div>
     </div>

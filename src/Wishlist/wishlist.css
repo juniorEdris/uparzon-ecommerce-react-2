@@ -1,6 +1,4 @@
 .wishlist_wrapper{
-    background-color: var(--muted-btn-color);
-    padding-top: var(--top-whitespace);
     padding-bottom: 3rem;
     min-height: 100vh;
 }
@@ -15,7 +13,8 @@
     width: 4rem;
 }
 .wishlist_header{
-    /* font-size: ; */
+    color: var(--light-color);
+    background-color: #006D74;
     text-transform: capitalize;
 }
 
@@ -23,7 +22,7 @@
         wishlist_table css starts here 
 ==================================================*/
 .wishlist_body{
-    overflow-x: scroll;
+    overflow: auto;
 }
 .wishlist_table td, .wishlist_table th{
     text-align: center;

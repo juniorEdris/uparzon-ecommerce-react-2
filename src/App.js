@@ -47,7 +47,6 @@ import { CopyRight } from './CopyRight/CopyRight';
 import OrderCancel from './OrderNotify/OrderCancel';
 import CategorySidebar from './PrimarySections/Header/Components/SubComponents/CategorySidebar';
 import Search from './SearchMedicine/Search';
-import { demoAll } from './Redux/Action/WishListAction';
 import Shop from './Shop';
 import UparzonEntry from './MyAccount/UserActivity/Components/Uparzon_entry';
 import Campaign from './Campaigns';
@@ -65,7 +64,6 @@ function App(props) {
   useEffect(() => {
     props.getHomeContents();
     props.getHomeCategories();
-    //  props.demo();
     // props.User && props.getOrderList();
   }, []);
   // useEffect(() => {
@@ -133,6 +131,7 @@ function App(props) {
           <Route path="/check-out">
             {!props.User ? <Redirect to="/login" /> : <CheckOut/>}
           </Route> 
+          <Route path="/wishlist" component={WishList} />
           {/* <Route path="/updatecartproduct" component={ProductDetails} />
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
@@ -145,7 +144,6 @@ function App(props) {
           <Route path="/contact-us" component={ContactUs} />*/}
           {/* <Route path="/order-info" component={OrderInformation} /> */}
           {/* <Route path="/blog" component={Blog} />
-          <Route path="/wishlist" component={WishList} />
           <Route path="/ordersuccess" component={OrderNotification} /> */}
           {/* <Route path="/ordercancel" component={OrderCancel} /> */}
           <Route exact path="*" component={NoRoutes} />
@@ -171,6 +169,5 @@ const mapDispatchToProps = (dispatch) => ({
   getHomeCategories: () => dispatch(GetHomeCategories()),
   getUserInfo: () => dispatch(getUserInfo()),
   getOrderList: () => dispatch(getOrderList()),
-  demo: () => dispatch(demoAll()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { renderDiv } from '../../../PrimarySections/Utility';
 import { AddBasketProd } from '../../../Redux/Action/BasketAction';
+import { addToWishlistAction } from '../../../Redux/Action/WishListAction';
 
 const Details = (props) => {
   let compaign_price = 0;
@@ -24,8 +26,6 @@ const Details = (props) => {
   }
   const [quantity, setQuantity] = useState(1);
   const addProduct = (e) => {
-    // ?product_id=1009&user_id=6318&unit_price=170&total_quantity=3&is_campaign=0&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699&shop_id=90
-    // e.preventDefault();
     const data = {
       product_id: props.details?.id || '',
       photo: props.details?.photo,
@@ -38,6 +38,21 @@ const Details = (props) => {
       is_campaign: compaign_price > 0 ? 1 : 0,
     };
     props.addtoCart(data);
+  };
+  const addProductToWish = (e) => {
+    e.preventDefault()
+    const data = {
+      product_id: props.details?.id || '',
+      photo: props.details?.photo,
+      shop_name: props.details?.shop_name || '',
+      name: props.details?.name,
+      unit_price: props.details?.price,
+      total_quantity: quantity,
+      shop_id: props.details?.shop_id,
+      vendor_delivery: props.details?.vendor_delivery,
+      is_campaign: compaign_price > 0 ? 1 : 0,
+    };
+    props.addtoWish(data);
   };
   return (
     <div className="product_slider_details">
@@ -81,13 +96,7 @@ const Details = (props) => {
       {/* section break */}
       <div className="border-break w-100 pt-3 pb-3"></div>
       <div className="col-12 product_short_list" style={{ minHeight: '183px' }}>
-        {/* <ul>
-          <li>Unrestrained and portable active stereo speaker</li>
-          <li>Free from the confines of wires and chords</li>
-          <li>20 hours of portable capabilities</li>
-          <li>Double-ended Coil Cord with 3.5mm Stereo Plugs Included</li>
-          <li>3/4″ Dome Tweeters: 2X and 4″ Woofer: 1X</li>
-        </ul> */}
+        { renderDiv(props.details?.product_key_points)}
       </div>
       <div className="product_prices">
         {compaign_price > 0 ? (
@@ -126,6 +135,14 @@ const Details = (props) => {
           />
           add to cart
         </button>
+        <div className="ml-3 d-flex align-items-center">
+          <Link to='#' onClick={addProductToWish}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="27.102" height="24.866" viewBox="0 0 27.102 24.866">
+  <path id="Icon_material-favorite-border" data-name="Icon material-favorite-border" d="M22.649,4.5a8.115,8.115,0,0,0-6.1,2.832,8.115,8.115,0,0,0-6.1-2.832A7.381,7.381,0,0,0,3,11.953c0,5.122,4.607,9.3,11.586,15.638l1.965,1.775,1.965-1.789C25.495,21.249,30.1,17.075,30.1,11.953A7.381,7.381,0,0,0,22.649,4.5ZM16.687,25.572l-.136.136-.136-.136C9.965,19.731,5.71,15.869,5.71,11.953A4.631,4.631,0,0,1,10.453,7.21a5.3,5.3,0,0,1,4.838,3.2h2.534a5.264,5.264,0,0,1,4.824-3.2,4.631,4.631,0,0,1,4.743,4.743C27.392,15.869,23.137,19.731,16.687,25.572Z" transform="translate(-3 -4.5)" fill="#15a6b1"/>
+</svg>
+
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -135,6 +152,7 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   addtoCart: (data) => dispatch(AddBasketProd(data)),
+  addtoWish: (data) => dispatch(addToWishlistAction(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

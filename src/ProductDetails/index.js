@@ -57,12 +57,12 @@ const Detailsindex = (props) => {
           products={listSection.products}
           loading={props.loading}
         />
-        {/* {props.basketMsg && (
+        {props.basketMsg && (
           <CartAddanime Msg={props.basketMsg} tabState={props.tabState} />
         )}
         {props.wishlistMsg && (
           <CartAddanime Msg={props.wishlistMsg} tabState={props.wishState} />
-        )} */}
+        )}
       </div>
     </div>
   );

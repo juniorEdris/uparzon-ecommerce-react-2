@@ -5,7 +5,7 @@ import CartList from './CartList';
 import RegularCartList from './RegularCartList';
 
 const CartSidebar = (props) => {
-  const [Cartsection, setCartsection] = useState('campaign');
+  const [Cartsection, setCartsection] = useState('regular');
   const cartSections = (e) => {
     e.preventDeafault();
   };
@@ -30,17 +30,6 @@ const CartSidebar = (props) => {
           <Link
             to="#"
             className={`col-6 d-block text-center pt-3 pb-3 ${
-              Cartsection === 'campaign' && 'active'
-            }`}
-            onClick={(e) => {
-              e.preventDefault();
-              setCartsection('campaign');
-            }}>
-            campaign
-          </Link>
-          <Link
-            to="#"
-            className={`col-6 d-block text-center pt-3 pb-3 ${
               Cartsection === 'regular' && 'active'
             }`}
             onClick={(e) => {
@@ -48,6 +37,17 @@ const CartSidebar = (props) => {
               setCartsection('regular');
             }}>
             regular
+          </Link>
+          <Link
+            to="#"
+            className={`col-6 d-block text-center pt-3 pb-3 ${
+              Cartsection === 'campaign' && 'active'
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              setCartsection('campaign');
+            }}>
+            campaign
           </Link>
         </div>
         {Cartsection === 'campaign' ? (

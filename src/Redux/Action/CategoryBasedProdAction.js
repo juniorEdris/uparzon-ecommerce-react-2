@@ -28,11 +28,11 @@ const categoryBasedError = (error) => {
 };
 
 export const GetCategoryBasedProd = (data) => async (dispatch) => {
-  const { keywords, category_id = '', subcategory, childcategory, page } = data;
+  const { keywords, category_id = '', subcategory='', childcategory='', page } = data;
   dispatch(categoryBasedRequest());
   await API()
     .get(
-      `${ENDPOINTS.SEARCH}?per_page=20&page=${page}&category_id=${category_id}`
+      `${ENDPOINTS.SEARCH}?per_page=20&page=${page}&category_id=${category_id}&subcategory=${subcategory}&childcategory=${childcategory}`
     )
     .then((res) => {
       dispatch(categoryBasedSuccess(res.data));

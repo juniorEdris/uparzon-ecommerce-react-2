@@ -20,7 +20,6 @@
 @media (min-width: 1370px) {
   .sidebar_list_wrapper .sidebar_list li a{
     font-size: 1.2rem !important;
-    /* padding: 0 !important; */
   }
   .product_slider_details,
   .product_prices .regular_price{
@@ -108,28 +107,15 @@
   .responsive_all_category{
    display: none;
  } 
- /* Cart Css */
-.cart_quantity{
-  width:50%;
-}
 
 }
 /* ===================================== */
 /* LG Device :992px. */
 @media (min-width: 1000px) and (max-width:1400px) {
-  .header_nav .more_link {
-    /* font-size: 0.8rem !important; */
-}
-.nav_links ul li a {
-    /* font-size: 0.8rem !important; */
-}
+
 .cart_sidebar_route {
   /* width: calc(85% - 38%)!important; */
   width: calc(85% - 53%)!important;
-}
-/* Cart Css */
-.cart_quantity{
-  width: 48% !important;
 }
 }
 @media (min-width: 992px) and (max-width:1199px) {
@@ -139,7 +125,6 @@
   .more_link,.nav_links ul li a,
   a.nav-all
   {
-    /* font-size: 0.8rem !important;  */
     font-size: 0.7rem !important; 
    }
    .category_dropdown{
@@ -186,18 +171,6 @@
   .back_to_top span.flat-btn {
     display: block;
   }
-  /* .scroll-top {
-    display: none;
-  } */
-
-  /* .wishlist_body,
-  .order_lists,.my_orders {
-    overflow-x: hidden  !important;
-} */
-/* Cart Css */
-.cart_quantity{
-  width:64%;
-}
 }
 /* ===================================== */
 @media (min-width: 991px) {
@@ -213,15 +186,6 @@
     justify-content: center;
     padding: 0rem 1rem;
   }
-  /* .header_nav .more_link {
-    font-size: 0.6rem !important;
-}
-.nav_links ul li a {
-    font-size: 0.6rem !important;
-} */
-/* .header__option span {
-  font-size: 0.7rem;
-} */
 .header__option {
   margin-left: 1rem;
 }
@@ -252,9 +216,6 @@
   display: none !important;
 }
 
-  .more_link {
-    /* font-size: 0.5rem; */
-  }
   
   .nav_links ul li a.see-more{
     font-weight: 800;

@@ -56,8 +56,16 @@
     padding: 1rem;
     text-transform: capitalize;
 }
+.specification__wrapper ul li,
 .product_short_list ul li{
     list-style-type: disc;
+}
+.specification__wrapper::marker,
+.product_short_list ul li::marker{
+    color: var(--theme-color);
+}
+.product_short_list ul li:not(:last-child){
+    margin-bottom: 1rem;
 }
 .product_prices .regular_price{
     font-size: 1.5rem;
@@ -99,11 +107,12 @@
 /* Product Header Css ends here */
 
 /* Product Details Css starts here */
-    .details__wrapper{
+.specification__wrapper,.details__wrapper{
         padding: 1.8rem;
         color: var(--dark-color);
         width: 100vw;
         overflow: auto;
+        font-size: 1.2rem;
     }
     .details__wrapper p{
         margin-bottom: 0;

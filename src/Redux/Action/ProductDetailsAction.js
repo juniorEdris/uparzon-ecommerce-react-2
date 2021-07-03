@@ -27,7 +27,6 @@ export const GetProductDetails = (id) => async (dispatch) => {
   await API()
     .get(`${ENDPOINTS.PRODUCTDETAILS}${id}`)
     .then((res) => {
-      console.log('details', res);
       dispatch(fetchProductDetailsSuccess(res.data.data));
     })
     .catch((error) => {

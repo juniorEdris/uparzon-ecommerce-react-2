@@ -45,6 +45,7 @@ export const Uparzon_entry = (props) => {
         if (res.data.auth_token) {
           setLoading(false);
           localStorage.setItem('user_token', res.data.auth_token);
+          localStorage.setItem('user_id', res.data.user_id);
           props.setUser();
           history.push(`${props.pathRedirect}`);
         } else if (!res.data.status) {

@@ -197,7 +197,8 @@ const CartList = (props) => {
                 ))}
           </ul>
         )} */}
-        <ul className="cart_sidebar_list">
+        {/* Primary */}
+        {campaign_products.length > 0 ? <ul className="cart_sidebar_list">
           {campaign_products.map((item) => (
             <li key={item.id}>
               <div className="cart_single_product">
@@ -235,28 +236,13 @@ const CartList = (props) => {
                         &#2547; {item?.unit_price}
                       </span>
                     </span>
-                    {/* <span className="count">{item.total_quantity || 2}</span> */}
                   </div>
                   <div className="d-flex align-items-center justify-content-between">
-                    <div className="cart_quantity">
-                      <span
-                        className={`${
-                          item.total_quantity === 1 && 'pointer_disabled'
-                        }`}
-                        onClick={() => props.decreamentProduct(item)}>
-                        -
-                      </span>
-                      <input
-                        type="text"
-                        value={item.total_quantity}
-                        defaultValue={item.total_quantity}
-                      />
-                      <span
-                        className=""
-                        onClick={() => props.increamentProduct(item)}>
-                        +
-                      </span>
-                    </div>
+                    <div className="cart_count_wrapper d-flex align-items-center">
+                   <span className={`${
+                          item.total_quantity === 1 && 'pointer_disabled'} cart_count dec`} onClick={()=>props.decreamentProduct(item)}>-</span><span>{item?.total_quantity}</span><span className='cart_count inc' onClick={() => props.increamentProduct(item)}>+</span>
+                 </div> 
+
                     <div className="cart_cancel pt-2 pb-2 ">
                       <span
                         className="cart_product_cross"
@@ -283,8 +269,12 @@ const CartList = (props) => {
                 </div>
               </div>{' '}
             </li>
-          ))}
-        </ul>
+          ))
+            
+          }
+        </ul>: <div className="d-flex justify-content-center align-items-center empty_cart_placeholder">
+            <img src="uparzonassets/svg/icons/cart_icon/empty-cart.svg" alt="" />
+          </div>}
       </div>
       {/* cart product wrapper ends */}
       {/* cart product button starts*/}

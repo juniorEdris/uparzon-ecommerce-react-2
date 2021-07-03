@@ -23,11 +23,11 @@ const WishList = (props) => {
   };
   return (
     <div className="wishlist_wrapper">
+          <WishlistHeader />
       <div className="container-md-fluid ">
         <div className="wrapper_body w-100">
-          <WishlistHeader />
-          {!UserID() ? (
-            !props.localWishlist?.length > 0 ? (
+          {/* {!UserID() ? (
+            props.localWishlist?.length > 0 ? (
               <div className="col-12 p-5 text-center">
                 <Link
                   className="btn btn-danger"
@@ -39,7 +39,8 @@ const WishList = (props) => {
             ) : (
               <WishlistBody
                 loading={false}
-                products={props.localWishlist}
+                // products={props.localWishlist}
+                products={products}
                 getCartItems={props.getCartItems}
                 addToCart={props.addToCart}
                 user={props.user}
@@ -70,8 +71,29 @@ const WishList = (props) => {
               user={props.user}
               removeProd={removeFromCart}
             />
-          )}
-          {/* <CartAddanime Msg={props.wishMessage} tabState={props.wishStatus} /> */}
+          )} */}
+          {
+          !props.localWishlist?.length > 0 ? (
+            <div className="col-12 p-5 text-center">
+              <Link
+                className="btn "
+                to="/"
+                style={{ fontSize: '1.2rem', borderRadius: '0',background:'#006D74',color:'#fff' }}>
+                Back to Home
+              </Link>
+            </div>
+          ) : (
+            <WishlistBody
+              loading={false}
+              products={props.localWishlist}
+              // products={products}
+              getCartItems={props.getCartItems}
+              addToCart={props.addToCart}
+              user={props.user}
+              removeProd={removeFromCart}
+            />
+          )
+          }
           <CartAddanime
             Msg={props.basketMessage}
             tabState={props.basketStatus}

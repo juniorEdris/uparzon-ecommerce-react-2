@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const WishListIconTwo = (props) => {
   return (
     <div>
-      <Link to="#" className="header__link2" onClick={props.handleChange}>
+      <Link to="/wishlist" className="header__link2" >
         <div className="header__option__basket">
           <div className="icon">
             <img

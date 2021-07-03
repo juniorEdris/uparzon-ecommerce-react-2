@@ -58,10 +58,8 @@ function HeaderNav(props) {
                             {props.childcategories.map((childcat) => (
                               <li key={childcat.id}>
                                 <Link
-                                  to={`/childcategory-products?subcategory-id=${childcat.id}`}
-                                  className={`${
-                                    childcat.has_childcategory && 'has_section'
-                                  }`}>
+                                  to={`/category-products?childcategory-id=${childcat.id}`}
+                                  >
                                   {childcat.name}
                                 </Link>
                               </li>
@@ -77,7 +75,7 @@ function HeaderNav(props) {
           </ul>
         </div>
 
-        {/* <div
+        {/* <div 
           className={`responsive_category_dropdown ${
             props.categoryBar ? 'd-block' : 'd-none'
           }`}>
