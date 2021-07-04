@@ -28,6 +28,7 @@ const WishlistBody = (props) => {
             <th scope="col">Unit price</th>
             <th scope="col">Stock status</th>
             <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>

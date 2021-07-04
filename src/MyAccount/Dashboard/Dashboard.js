@@ -8,21 +8,24 @@ import { getUserInfo } from '../../Redux/Action/GetUserInfoAction';
 import { getOrderList } from '../../Redux/Action/OrderListAction';
 import SpinLoader from '../../PrimarySections/SectionUtils/SpinLoader';
 import { guestCartItem } from '../../Redux/Action/BasketAction';
-import { guestWishItem } from '../../Redux/Action/WishListAction';
+import { getWishlistItems, guestWishItem } from '../../Redux/Action/WishListAction';
+import { toTheTop } from '../../PrimarySections/SectionUtils/WindowTop';
 
 const Dashboard = (props) => {
-  // useEffect(() => {
-  //   props.getCartItems();
-  //   props.User && props.getUserInfo();
-  //   props.User && props.getOrderList();
-  // }, []);
+  const [tab, setTab] = useState('dashboard');
+  const [orderId, setOrderId] = useState('');
+  useEffect(() => {
+    // props.getCartItems();
+    // props.User && props.getUserInfo();
+    // props.User && props.getOrderList();
+    // props.User && props.getWishlist();
+    toTheTop()
+  }, [tab]);
   // useEffect(() => {
   //   props.guestCartSubmit();
   //   props.guestWishSubmit();
   //   props.getOrderList();
   // }, []);
-  const [tab, setTab] = useState('dashboard');
-  const [orderId, setOrderId] = useState('');
   return (
     <div className="dashboard_wrapper container-md-fluid">
       {props.logOutRequest && <SpinLoader />}
@@ -57,6 +60,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getCartItems: () => dispatch(getCartItems()),
+  getWishlist: () => dispatch(getWishlistItems()),
   getUserInfo: () => dispatch(getUserInfo()),
   getOrderList: () => dispatch(getOrderList()),
   guestCartSubmit: (array) => dispatch(guestCartItem(array)),

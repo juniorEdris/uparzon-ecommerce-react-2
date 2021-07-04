@@ -287,6 +287,10 @@
 .dash_change_password form input{
     border:2px solid var(--theme-color)
 }
+/* Dash Wishlist css */
+.dash_wishlist_wrapper{
+    min-height: 100vh;
+}
 /* Custom checkbox css */
 .toggle {
   align-items: center;

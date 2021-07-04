@@ -51,6 +51,7 @@ import Shop from './Shop';
 import UparzonEntry from './MyAccount/UserActivity/Components/Uparzon_entry';
 import Campaign from './Campaigns';
 import PrivacyPage from './Other/PrivacyPage';
+import Invoice from './Invoice/Invoice';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -132,7 +133,9 @@ function App(props) {
             {!props.User ? <Redirect to="/login" /> : <CheckOut/>}
           </Route> 
           <Route path="/wishlist" component={WishList} />
-          {/* <Route path="/updatecartproduct" component={ProductDetails} />
+            <Route path="/order-info" component={OrderInformation} />
+            <Route path="/invoice" component={Invoice} />
+          {/* 
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
           <Route path="/upload-prescription">
@@ -142,7 +145,6 @@ function App(props) {
           <Route path="/blog-details" component={BlogDetails} />
           <Route path="/about-us" component={AboutUs} />
           <Route path="/contact-us" component={ContactUs} />*/}
-          {/* <Route path="/order-info" component={OrderInformation} /> */}
           {/* <Route path="/blog" component={Blog} />
           <Route path="/ordersuccess" component={OrderNotification} /> */}
           {/* <Route path="/ordercancel" component={OrderCancel} /> */}

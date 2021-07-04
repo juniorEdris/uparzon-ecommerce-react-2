@@ -56,7 +56,7 @@
 }
 /* XL Device :1200px. */
 @media (min-width: 1200px){
-  .container, .container-lg, .container-md, .container-sm,.container-md-fluid, .container-xl{
+   .container-lg, .container-md, .container-sm,.container-md-fluid, .container-xl{
     min-width: 90% !important;
   }
   .more_link,.nav_links ul li a,a.nav-all {

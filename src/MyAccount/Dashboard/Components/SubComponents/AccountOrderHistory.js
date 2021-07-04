@@ -26,7 +26,7 @@ const AccountOrderHistory = (props) => {
         <div className="order_lists primary_table">
           <Skeleton height={350} width={'100%'} />
         </div>
-      ) : props.orders?.length === 1 ? (
+      ) : !(props.orders?.length > 0) ? (
         <div className=" order_lists primary_table d-flex align-items-center justify-content-center null_result">
           <h3 className="">No orders yet!</h3>
         </div>

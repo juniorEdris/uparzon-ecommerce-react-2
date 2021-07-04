@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useQuery } from '../PrimarySections/Utility';
 import { getSingleOrderDetails } from '../Redux/Action/SingleOrderAction';
-import AddressSection from './Components/AddressSection';
+import TrackOrder from './Components/TrackOrder';
 import OrderDetails from './Components/OrderDetails';
 import OrderProducts from './Components/OrderProducts';
 import './order_information.css';
+import { products } from '../data';
 
 const OrderInformation = (props) => {
   // const query = useQuery();
@@ -19,18 +20,20 @@ const OrderInformation = (props) => {
         <div className="order-information-heading mt-0">
           {' '}
           {/*  */}
-          <h5 className="">Order Information</h5>
+          <h5 className="">Invoice : HDJ54541722417</h5>
+          <p>26 April 1997, 11:15 AM</p>
         </div>
+        <TrackOrder loading={false} order={props.singleorder} />
         <OrderDetails
-          loading={props.loading}
+          loading={false}
           order={props.singleorder}
           // order_id={id}
           order_id={props.orderId}
           tab={props.tab}
           setTab={props.setTab}
         />
-        <AddressSection loading={props.loading} order={props.singleorder} />
-        <OrderProducts loading={props.loading} order={props.singleorder} />
+        <OrderProducts loading={false} order={products} />
+        {/* <OrderProducts loading={false} order={props.singleorder} /> */}
       </div>
     </div>
   );

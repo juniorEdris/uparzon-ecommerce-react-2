@@ -36,38 +36,8 @@ const OrderDetails = (props) => {
         console.log(error);
       });
   };
-  // response.cancelStatus && history.push('/cancel-success');
-  return (
-    <div className="">
-      {response.cancelStatus && (
-        <OrderCancel
-          response={response.cancelMsg}
-          setResponse={setResponse}
-          close={goTodash}
-        />
-      )}
-      <div className="order_information_details">
-        {/* <div className="col-12">
-        <div className="row">
-          <h5 className="order_info_heading flex-grow-1">Order Details</h5>
-          <Link
-            to="#"
-            className="btn cancel_order_btn bg-danger"
-            onClick={cancelOrder}>
-            {' '}
-            cancel order
-          </Link>
-        </div>
-      </div> */}
-        <h5 className="order_info_heading">Order Details</h5>
-        {props.loading ? (
-          <div className="col-12 mt-2 ">
-            <Skeleton width={'100%'} height={100} />
-          </div>
-        ) : (
-          <div className="col-12 row justify-content-between">
-            <div className="col-md-6 p-0 pr-md-3">
-              <div className="list_content row justify-content-between align-items-center m-0">
+  /*
+  <div className="list_content row justify-content-between align-items-center m-0">
                 Order-ID:{props.order?.order_number}{' '}
                 {props.order?.delivery_status === 'cancelled' ? (
                   ''
@@ -85,26 +55,39 @@ const OrderDetails = (props) => {
                   </Link>
                 )}
               </div>
-              <div className="list_content">
-                Payment Method: {props.order?.method}
-              </div>
-              <div className="list_content">
-                Payment Status: {props.order?.payment_status}
-              </div>
-            </div>
-            <div className="col-md-6 p-0">
-              <div className="list_content">
-                Date Added:{' '}
-                {dateFormat(
+              {dateFormat(
                   props.order?.order_date,
                   'dddd, mmmm dS, yyyy, h:MM:ss TT'
                 )}
+  */ 
+  return (
+    <div className="">
+      {response.cancelStatus && (
+        <OrderCancel
+          response={response.cancelMsg}
+          setResponse={setResponse}
+          close={goTodash}
+        />
+      )}
+      <div className="order_information_details">
+        <h5 className="order-information-heading bottom-border">Shipping Details</h5>
+        {props.loading ? (
+          <div className="col-12 mt-2 ">
+            <Skeleton width={'100%'} height={100} />
+          </div>
+        ) : (
+          <div className="col-12 row justify-content-between">
+            <div className="col-md-6 p-0 right-border">
+            <div className="list_content row  align-items-center m-0">
+              <span className='list_content_head'>Name : </span> <span>John Doe</span>
               </div>
-              <div className="list_content">
-                Shipping Method: {props.order?.method}
+            <div className="list_content row  align-items-center m-0">
+              <span className='list_content_head'>Address : </span> <span>American Streets,PO-1247,Caldorb</span>
               </div>
-              <div className="list_content">
-                Delivery Status: {props.order?.delivery_status}
+            </div>
+            <div className="col-md-6 p-0">
+            <div className="list_content row  align-items-center m-0">
+              <span className='list_content_head'>Phone : </span> <span>+035 000 111 111</span>
               </div>
             </div>
           </div>

@@ -1,45 +1,76 @@
-.order_info_heading {
-    background-color: var(--nav-bg);
-    padding: 0.325rem;
-    color: var(--light-color);
-}
+.right-border{
 
+    position: relative;
+}
+.right-border::after{
+    content: '';
+    border-right: 3px solid var(--dark-color);
+    height: 100%;
+    position: absolute;
+    right: 12px;
+    top: 0;
+}
+.bottom-border{
+    position: relative;
+}
+.bottom-border::after{
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    border-bottom: 2px solid #ddd;
+}
 .order-information-heading {
-    padding: 0.325rem 0;
-    color: var(--nav-bg);
-    margin-top: var(--top-whitespace);
-    margin-bottom: var(--margin-bottom);
+    margin-bottom: 2rem;
+    padding-top: 1.2rem;
+} 
+.order_information{
+    min-height: 100vh;
+    background-color: #F8F8F8;
 }
-
-.order_information_details {
-    /* box-shadow: var(--box-shadow-1); */
+.track_order_body{
+    border: 1px solid #ddd;
+    box-shadow: 0px ​3px 4px rgba(0, 0, 0, 0.39%);
+    -webkit-box-shadow: 0px ​3px 4px rgba(0, 0, 0, 0.39%);
+-moz-box-shadow: 0px ​3px 4px rgba(0, 0, 0, 0.39%);
+    background-color: #fff;
+}
+.proccess_content{
+    text-align: center;
+}
+.proccess_content svg{
+    font-size: 1.5rem;
+    color: var(--theme-color);
+}
+.proccess_content_text p:first-child{
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+ .order_information_details {
+    /* box-shadow: var(--box-shadow-1);  */
+    padding: 0.5rem 1rem;
     margin-bottom: var(--margin-bottom);
+    background-color: #fff;
 }
 
 .list_content {
-    padding: 0.625rem;
+    padding: 0.625rem 0;
     font-weight: 300;
-    border-bottom: 2px solid var(--muted-color);
     font-size: 1.2rem;
     text-transform: capitalize;
-    color: var(--muted-color);
+    color: var(--dark-color);
 }
-
-/* .list_content:not(:last-child){
-} */
-
-.address_section {
-    padding: 0.325rem 0;
-    margin-top: var(--top-whitespace);
-    margin-bottom: var(--margin-bottom);
+.list_content_head{
+    font-weight: 600;
+    margin-right: 0.4rem;
 }
-
-.payment_address,
-.shipping_address {
-    /* box-shadow: var(--box-shadow-1); */
-    margin-bottom: 2rem;
+.product_table thead{
+    font-size: 1.2rem;
+    background-color: var(--theme-color);
+    color: #fff;
 }
-
+/* On Order Page Yet to Active these styles */
 .cancel_order_btn {
     color: var(--muted-color);
     text-transform: capitalize;

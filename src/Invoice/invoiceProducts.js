@@ -1,28 +1,27 @@
 import Skeleton from '@yisheng90/react-loading';
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { image_u } from '../../data';
-import { Truncate } from '../../PrimarySections/Utility';
+import { connect } from 'react-redux'
+import { image_u } from '../data';
+import { Truncate } from '../PrimarySections/Utility';
 
-const OrderProducts = (props) => {
-  let subTotal = () => {
-    let allProd = [];
-    props.order?.cart?.forEach((x) => {
-      allProd.push(x.price * x.total_quantity);
-    });
-    return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-  };
-  
-  return (
-    <div className="product_table">
+const InvoiceProducts = (props) => {
+    let subTotal = () => {
+        let allProd = [];
+        props.order?.cart?.forEach((x) => {
+          allProd.push(x.price * x.total_quantity);
+        });
+        return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+      };
+    return (
+        <div className='mb-3'>
+            <div className="invoice_product_table">
       <table className="table">
         <thead className="thead-primary">
           <tr>
-            <th scope="col">Product</th>
+            <th scope="col">id</th>
+            <th scope="col">Item & Description</th>
+            <th scope="col">Rate</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-            <th scope="col">Total</th>
+            <th scope="col">Amount</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -44,6 +43,9 @@ const OrderProducts = (props) => {
             {props.order?.map((item) => (
               <tr className="trow-light" key={item.product_id}>
                 <td>
+                  id
+                  </td>
+                <td>
                   <div className="row no-gutters" style={{width:'300px'}}>
                     <div className="col-3">
                       <img src={image_u} alt=''/>    
@@ -64,15 +66,7 @@ const OrderProducts = (props) => {
                    2200}
                 </td>
                 <td>
-                  <Link
-                    to={`/productdetails?id=${item.product_id}`}
-                    className="table_link pointer_none">
-                    {/* <img
-                  src="./assets/svg/icons/light-shopping-cart.svg"
-                  alt="cart img"
-                /> */}
-                    View Details
-                  </Link>
+                  1550
                 </td>
               </tr>
             ))}
@@ -105,11 +99,16 @@ const OrderProducts = (props) => {
         )}
       </table>
     </div>
-  );
-};
+        </div>
+    )
+}
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+    
+})
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+    
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderProducts);
+export default connect(mapStateToProps, mapDispatchToProps)(InvoiceProducts)

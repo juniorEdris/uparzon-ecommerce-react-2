@@ -172,10 +172,8 @@
         background-color: var(--theme-color);
         color: var(--light-color);
     }
-    /* .category_dropdown ul.categories li a:hover{
-        color: var(--light-color);
-    } */
-    .categories li:hover .sub_category  li a,
+
+    .categories li:hover .sub_category  li:not(:hover) a,
     .categories li:hover .child_category  li a{
         color: var(--theme-color);
     }
@@ -187,17 +185,6 @@
     .category_dropdown ul li:hover a{
         color: var(--light-color);
     }
-    /*.sub_category  li a:hover{
-        color: #fff;
-    }
-     .category_dropdown_backdrop{
-        position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    } */
     .category_dropdown ul.categories li{
         position: relative;
     }
