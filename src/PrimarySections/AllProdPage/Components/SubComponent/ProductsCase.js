@@ -45,13 +45,13 @@ const SearchProducts = (props) => {
           )}
         </div>
       )}
-      {/* {props.pages?.links?.length > 0 && (
+      {props.pages?.links?.length > 0 && (
         <Pagination
           page={props.page}
           pages={props.pages}
           setPage={props.setPage}
         />
-      )} */}
+      )}
     </div>
   );
 };

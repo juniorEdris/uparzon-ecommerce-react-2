@@ -20,13 +20,13 @@ export default function ListCard(props) {
           <div className={`home_product_list_wrapper col mb-3`}>
             <div className="d-flex">
               <div className={`list_product_image pr-2 pr-xl-4`}>
-                <Link to={`productdetails?id=${product?.id}`}>
+                <Link to={`/productdetails?product=${product?.slug}&id=${product?.id}`}>
                   <img src={`https:${product?.photo}`} alt="" />
                 </Link>
               </div>
               <div className="list_product_body">
                 <div className="list_product_name">
-                  <Link to={`productdetails?id=${product?.id}`}>
+                  <Link to={`/productdetails?product=${product?.slug}&id=${product?.id}`}>
                     <p>{Truncate(product?.name, 30)}</p>
                   </Link>
                 </div>

@@ -31,15 +31,15 @@ const CompanyProducts = (props) => {
       <AllProducts
         single_vendor={vendor}
         categories={props.categories}
-        // category={category}
-        // setCategory={setCategory}
+        category={category}
+        setCategory={setCategory}
         // sort={sort}
         // setSort={setSort}
         page={page} //page is active
-        // setPage={setPage}
+        setPage={setPage}
         loading={props.loading}
         products={props.products}
-        // pages={props.pages}
+        pages={props.pages}
         // section_title={props.products[0]?.company}
       />
     </div>

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import InputRange from 'react-input-range';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import CategoryList from '../../Category';
+import {GetHomeSubCategories, GetHomeChildCategories} from '../../../Redux/Action/HomeProductsAction';
 
 const Sidebar = (props) => {
   const [priceRange, setPriceRange] = useState({
@@ -119,14 +121,19 @@ const Sidebar = (props) => {
         <h5 className="sidebar_headings">categories</h5>
         <ul className="sidebar_list not-square-option">
           {props.categories?.map((cat) => (
-            <li>
-              <Link to="#" onClick={(e) => e.preventDefault()}>
+            <li key={ cat.id}>
+              <Link to={`/category-products?id=${cat.id}`}>
                 {cat.name}
               </Link>
             </li>
           ))}
         </ul>
       </div> */}
+      <CategoryList categories={props.categories} 
+      subcategories={props.subcategories} childcategories={props.childcategories}
+      getsubcategories={props.getsubcategories}
+      getChildcategories={ props.getChildcategories}
+      />
       {/* <div className="sidebar_list_wrapper col mb-4">
         <h5 className="sidebar_headings">price</h5>
         <input type="range" name="" id="" max="5000" min="100" />
@@ -136,7 +143,7 @@ const Sidebar = (props) => {
           value={priceRange.max}
           onChange={() => setPriceRange(priceRange.max)}
         />
-      </div> */}
+      </div> 
       <div className="sidebar_list_wrapper col mb-4 scroll-list">
         <h5 className="sidebar_headings">brand</h5>
         <ul className="sidebar_list">
@@ -192,13 +199,19 @@ const Sidebar = (props) => {
             <Link to="">phone & Accessories </Link>
           </li>
         </ul>
-      </div>
+      </div>*/}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  subcategories: state.HomeContent.subcategories,
+  childcategories: state.HomeContent.childcategories,
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch) => ({
+  getsubcategories: (id) => dispatch(GetHomeSubCategories(id)),
+  getChildcategories: (id) => dispatch(GetHomeChildCategories(id)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

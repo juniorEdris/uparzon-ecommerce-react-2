@@ -34,7 +34,7 @@ function HeaderNav(props) {
                 key={category.id}
                 className={`${category.has_subcategory && 'has_section'}`}>
                 <Link
-                  to={`/category-products?id=${category.id}`}
+                  to={`/category-products?category=${category.slug}&id=${category.id}`}
                   onMouseOver={() => props.getsubcategories(category.id)}>
                   {category.name}
                 </Link>
@@ -47,7 +47,7 @@ function HeaderNav(props) {
                           subcat.has_childcategory && 'has_section'
                         }`}>
                         <Link
-                          to={`/category-products?subcategory-id=${subcat.id}`}
+                          to={`/category-products?subcategory=${subcat.slug}&subcategory-id=${subcat.id}`}
                           onMouseOver={() =>
                             props.getChildcategories(subcat.id)
                           }>
@@ -58,7 +58,7 @@ function HeaderNav(props) {
                             {props.childcategories.map((childcat) => (
                               <li key={childcat.id}>
                                 <Link
-                                  to={`/category-products?childcategory-id=${childcat.id}`}
+                                  to={`/category-products?childcatgory=${childcat.slug}&childcatgory-id=${childcat.id}`}
                                   >
                                   {childcat.name}
                                 </Link>

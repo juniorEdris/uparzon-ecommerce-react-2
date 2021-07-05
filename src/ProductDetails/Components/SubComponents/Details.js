@@ -43,6 +43,7 @@ const Details = (props) => {
     e.preventDefault()
     const data = {
       product_id: props.details?.id || '',
+      slug: props.details?.slug || '',
       photo: props.details?.photo,
       shop_name: props.details?.shop_name || '',
       name: props.details?.name,
@@ -64,7 +65,7 @@ const Details = (props) => {
         <div className={`product_brand_name  `}>
           <span className={`brand_tag`}>brand: </span>
           <span className={`brand_name`}>
-            <Link to={`/single-brand?brand_id=${props.details?.shop_id}`}>
+            <Link to={`/single-brand?brand=${props.details?.shop_name?.replaceAll(' ','_')}&brand_id=${props.details?.shop_id}`}>
               {props.details?.shop_name}
             </Link>
           </span>

@@ -28,6 +28,7 @@ const ProductCard = (props) => {
     e.preventDefault();
     const data = {
       product_id: props.product?.id || '',
+      slug: props.product?.slug || '',
       shop_name: props.product?.shop_name || '',
       photo: props.product?.photo,
       name: props.product?.name,
@@ -46,7 +47,7 @@ const ProductCard = (props) => {
       <div className="single_product_card">
         <div className="product_body">
           <div className="product_image">
-            <Link to={`/productdetails?id=${props.product?.id}`}>
+            <Link to={`/productdetails?product=${props.product?.slug}&id=${props.product?.id}`}>
               <img
                 src={`https:${props.product?.photo}`}
                 alt={props.product?.name}
@@ -60,7 +61,7 @@ const ProductCard = (props) => {
 
           <div className="product_name">
             <Link
-              to={`/productdetails?id=${props.product?.id}`}
+              to={`/productdetails?product=${props.product?.slug}&id=${props.product?.id}`}
               title={props.product?.name}>
               {/* <p>{Truncate(props.product?.name, 30)}</p> */}
               <p>{Truncate(props.product?.name, 70)}</p>

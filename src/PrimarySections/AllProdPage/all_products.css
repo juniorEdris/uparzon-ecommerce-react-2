@@ -204,16 +204,73 @@ background-color: var(--dark-color);
   -webkit-font-smoothing: antialiased;
 }
 
+.sidebar_list_wrapper .sidebar_list.not-square-option li{
+  position: relative;
+}
 .sidebar_list_wrapper .sidebar_list.not-square-option li a::after {
-  content: '\f0dd';
+  content: '\f0da';
   font-family: 'Font Awesome 5 Free';
   font-weight: 600;
 }
 .sidebar_list_wrapper .sidebar_list.not-square-option li:hover a::after {
-  content: '\f0dd';
+  content: '\f0da';
   font-family: 'Font Awesome 5 Free';
   font-weight: 600;
   color: var(--theme-color);
+}
+.sidebar_list_wrapper .sidebar_sub_list.not-square-option {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 13vw;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.sidebar_list_wrapper .sidebar_list.not-square-option li:hover .sidebar_sub_list.not-square-option{
+  opacity: 1;
+  visibility: visible;
+  background: var(--light-color);
+}
+.sidebar_list_wrapper .sidebar_sub_list.not-square-option li{
+  position: relative;
+}
+.sidebar_list_wrapper .sidebar_child_list.not-square-option{
+  opacity: 0;
+  visibility: hidden;
+}
+.sidebar_list_wrapper .sidebar_child_list.not-square-option li:hover .sidebar_child_list.not-square-option{
+  opacity: 1;
+  visibility: visible;
+  background: var(--light-color);
+}
+.sidebar_list_wrapper .sidebar_child_list.not-square-option {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 100%;
+  width: 13vw;
+}
+/* .sidebar_list_wrapper .sidebar_sub_list.not-square-option li a::after {
+  content: '\f0da';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
+} */
+.sidebar_list_wrapper .sidebar_child_list.not-square-option li a::after {
+  content: '';
+}
+.sidebar_list_wrapper .sidebar_sub_list.not-square-option li a{
+  position: relative;
+}
+.sidebar_list_wrapper .sidebar_sub_list.not-square-option li:hover a::after,
+.sidebar_list_wrapper .sidebar_child_list.not-square-option li:hover a::after {
+  content: '\f0da' !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
+  color: var(--theme-color);
+  position: absolute;
+  right: 10px;
+  top: 0px;
 }
 .sidebar_list_wrapper .sidebar_list li a::after {
   content: '\f0c8';

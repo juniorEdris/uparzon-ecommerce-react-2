@@ -200,10 +200,10 @@ const CartList = (props) => {
         {/* Primary */}
         {campaign_products.length > 0 ? <ul className="cart_sidebar_list">
           {campaign_products.map((item) => (
-            <li key={item.id}>
+            <li key={item.product_id}>
               <div className="cart_single_product">
                 <div className="cart_single_image">
-                  <Link to={`/updatecartproduct?id=${item.product_id}`}>
+                  <Link to={`/productdetails?product=${item?.slug}&id=${item?.product_id}`}>
                     <img
                       src={`https:${item.photo}`}
                       // src={`uparzonassets/uparzonimages/products/${item.photo}`}
@@ -216,7 +216,7 @@ const CartList = (props) => {
                   <div className="d-flex">
                     <div className="cart_single_name">
                       <Link
-                        to={`/updatecartproduct?id=${item.product_id}`}
+                        to={`/productdetails?product=${item?.slug}&id=${item?.product_id}`}
                         onClick={() => props.getCartID(item.product_id)}>
                         {item.name}
                       </Link>

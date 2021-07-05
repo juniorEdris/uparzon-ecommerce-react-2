@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import {UserID} from '../../PrimarySections/Utility';
-export const DOMAIN = `https://demostore.uparzon.com/`;
-// export const DOMAIN = `https://store.uparzon.com/`;
+// export const DOMAIN = `https://demostore.uparzon.com/`;
+export const DOMAIN = `https://store.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
 
 let BaseApi = Axios.create({
@@ -19,10 +19,11 @@ export const API = () => {
 export const ENDPOINTS = {
   HOMEPRODUCT: `api/uparzonweb/get_home_products`,
   CATEGORIES: `api/uparzonweb/get_categories`,
+  CATEGORY_PRODUCTS: `api/uparzonweb/search_category_products`,
   SEARCH: `api/uparzonweb/search_products`,
   PRODUCTDETAILS: `api/uparzonweb/get_product_details?product_id=`,
   SINGLE_BRAND_PRODUCTS: `api/uparzonweb/search_products`,
-  CAMPAIGN_PRODUCTS: `api/uparzonweb/search_products`,
+  CAMPAIGN_PRODUCTS: `api/uparzonweb/search_category_products`,
   ADDTOBASKET: `api/user/product/add_to_cart`,
   LOGIN: `https://demopartner.uparzon.com/api/partner/loginRequest?api_key=${api_key}`,
   LOG_OUT: `https://demopartner.uparzon.com/api/partner/logout`,

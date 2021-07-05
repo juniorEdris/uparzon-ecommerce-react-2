@@ -9,9 +9,8 @@ const CampaignCards = (props) => {
             <span>{card.name}</span>
           </div> */}
           <div className="campaign_image">
-            <Link to={`/campaign-products?campaign-id=${card.id}`}>
-              {/* <img src={`https://${card.photo}`} alt={card.name} /> */}
-              <img src={`${card.photo}`} alt={card.name} />
+            <Link to={`/campaign-products?name=${card?.name.replaceAll(' ','_')}&campaign-id=${card.id}`}>
+              <img src={`https:${card.photo}`} alt={card.name} />
             </Link>
           </div>
         </div>

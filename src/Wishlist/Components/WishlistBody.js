@@ -8,6 +8,7 @@ const WishlistBody = (props) => {
   const addProduct = async (details) => {
     const data = {
       product_id: details.product_id || '',
+      slug: props.product?.slug || '',
       photo: details?.photo,
       shop_name: details?.shop_name || '',
       name: details?.name,
@@ -16,6 +17,7 @@ const WishlistBody = (props) => {
       vendor_delivery: details?.vendor_delivery,
       is_campaign: details.is_campaign,
     };
+     console.log(data);
     // await props.addToCart(data);
     // props.user && (await props.getCartItems());
   };

@@ -80,7 +80,7 @@ const HompageCategories = (props) => {
                     <span>{product?.name}</span>
                   </div>
                   <div className={`category_btn`}>
-                    <Link to={`/category-products?id=${product?.id}`}>
+                    <Link to={`/category-products?category=${product?.slug}&id=${product?.id}`}>
                       shop now
                     </Link>
                   </div>

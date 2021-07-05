@@ -32,7 +32,7 @@ export const GetCategoryBasedProd = (data) => async (dispatch) => {
   dispatch(categoryBasedRequest());
   await API()
     .get(
-      `${ENDPOINTS.SEARCH}?per_page=20&page=${page}&category_id=${category_id}&subcategory=${subcategory}&childcategory=${childcategory}`
+      `${ENDPOINTS.CATEGORY_PRODUCTS}?per_page=20&page=${page}&category_id=${category_id}&subcategory_id=${subcategory}&childcategory_id=${childcategory}`
     )
     .then((res) => {
       dispatch(categoryBasedSuccess(res.data));

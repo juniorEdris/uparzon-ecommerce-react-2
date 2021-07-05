@@ -11,7 +11,7 @@ const CategoryProducts = (props) => {
   const query = useQuery();
   const id = query.get('id');
   const subcategory_id = query.get('subcategory-id');
-  const childcategory_id = query.get('childcategory-id');
+  const childcategory_id = query.get('childcatgory-id');
   useEffect(() => {
     if (id) {
       props.getProducts({ page, category_id: id });

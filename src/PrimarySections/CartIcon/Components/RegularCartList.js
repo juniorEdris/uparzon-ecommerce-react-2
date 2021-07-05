@@ -128,10 +128,10 @@ const RegularCartList = (props) => {
               {groupedItems[grooupKey].map(function (item) {
                 return (
                   <ul className="regular_cart_sidebar_list">
-                    <li key={item.id}>
+                    <li key={item.product_id}>
                       <div className="regular_cart_single_product row no-gutters align-items-center">
                         <div className="regular_cart_single_image col-3 p-2">
-                          <Link to={`/updatecartproduct?id=${item.product_id}`}>
+                          <Link to={`/productdetails?product=${item?.slug}&id=${item?.product_id}`}>
                             <img
                               src={`https:${item.photo}`}
                               // src={`uparzonassets/uparzonimages/products/${item.photo}`}
@@ -142,7 +142,7 @@ const RegularCartList = (props) => {
                         </div>
                         <div className="regular_cart_single_name col">
                           <Link
-                            to={`/updatecartproduct?id=${item.product_id}`}
+                            to={`/productdetails?product=${item?.slug}&id=${item?.product_id}`}
                             onClick={() => props.getCartID(item.product_id)}>
                             {item.name}
                           </Link>

@@ -52,6 +52,10 @@ import UparzonEntry from './MyAccount/UserActivity/Components/Uparzon_entry';
 import Campaign from './Campaigns';
 import PrivacyPage from './Other/PrivacyPage';
 import Invoice from './Invoice/Invoice';
+import TermsandConditions from './Other/PolicyPages/TermsandConditions';
+import CookiePolicy from './Other/PolicyPages/CookiePolicy';
+import PurchasingPolicy from './Other/PolicyPages/PurchasingPolicy';
+import ReturnsPolicy from './Other/PolicyPages/ReturnsPolicy';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -135,6 +139,10 @@ function App(props) {
           <Route path="/wishlist" component={WishList} />
             <Route path="/order-info" component={OrderInformation} />
             <Route path="/invoice" component={Invoice} />
+            <Route path="/terms-and-conditions" component={TermsandConditions} />
+            <Route path="/cookie-policy" component={CookiePolicy} />
+            <Route path="/purchasing-policy" component={PurchasingPolicy} />
+            <Route path="/return-policy" component={ReturnsPolicy} />
           {/* 
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />

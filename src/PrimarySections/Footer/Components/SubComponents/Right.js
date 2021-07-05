@@ -11,16 +11,13 @@ const Right = (props) => {
               <Link to="/privacy-policy">Policy</Link>
             </li>
             <li>
-              <Link to="/">Terms & Condition</Link>
+              <Link to="/terms-and-conditions">Terms &#38; Condition</Link>
             </li>
             <li>
-              <Link to="/">Shipping</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>Shipping</Link>
             </li>
             <li>
-              <Link to="/">Returns</Link>
-            </li>
-            <li>
-              <Link to="/">FAQ's</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>FAQ's</Link>
             </li>
           </ul>
         </div>
@@ -28,25 +25,22 @@ const Right = (props) => {
           <h5 className="footer_heading">Information</h5>
           <ul className="footer_list">
             <li>
-              <Link to="/">About us</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>About us</Link>
             </li>
             <li>
-              <Link to="/">delivery information</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>delivery information</Link>
             </li>
             <li>
               <Link to="/privacy-policy">privacy policy</Link>
             </li>
             <li>
-              <Link to="/">terms and conditions</Link>
+              <Link to="/terms-and-conditions">terms &#38; conditions</Link>
             </li>
             <li>
-              <Link to="/">contact us</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>contact us</Link>
             </li>
             <li>
-              <Link to="/">returns</Link>
-            </li>
-            <li>
-              <Link to="/">site map</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>site map</Link>
             </li>
           </ul>
         </div>
@@ -57,19 +51,19 @@ const Right = (props) => {
               <Link to="/login">my account</Link>
             </li>
             <li>
-              <Link to="/">track your order</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>track your order</Link>
             </li>
             <li>
-              <Link to="/">customer service</Link>
+              <Link to="#" onClick={(e)=>e.preventDefault()}>customer service</Link>
             </li>
             <li>
-              <Link to="/">returns / exchange</Link>
+              <Link to="/return-policy">returns / exchange</Link>
             </li>
             <li>
-              <Link to="/">FAQ</Link>
+              <Link to="/cookie-policy">cookie policy</Link>
             </li>
             <li>
-              <Link to="/">product support</Link>
+              <Link to="/purchasing-policy">purchasing policy</Link>
             </li>
           </ul>
         </div>
