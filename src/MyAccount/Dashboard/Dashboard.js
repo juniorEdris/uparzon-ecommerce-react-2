@@ -4,7 +4,7 @@ import DashBody from './Components/DashBody';
 import DashSidebar from './Components/DashSidebar';
 import { getCartItems } from '../../Redux/Action/CartProductsAction';
 import './dashboard.css';
-import { getUserInfo } from '../../Redux/Action/GetUserInfoAction';
+import { GetUserDistrict, getUserInfo } from '../../Redux/Action/GetUserInfoAction';
 import { getOrderList } from '../../Redux/Action/OrderListAction';
 import SpinLoader from '../../PrimarySections/SectionUtils/SpinLoader';
 import { guestCartItem } from '../../Redux/Action/BasketAction';
@@ -16,16 +16,17 @@ const Dashboard = (props) => {
   const [orderId, setOrderId] = useState('');
   useEffect(() => {
     // props.getCartItems();
-    // props.User && props.getUserInfo();
     // props.User && props.getOrderList();
     // props.User && props.getWishlist();
+    props.User && props.getUserInfo();
+    props.User && props.getUserDistrict();
     toTheTop()
   }, [tab]);
-  // useEffect(() => {
+  useEffect(() => {
   //   props.guestCartSubmit();
   //   props.guestWishSubmit();
   //   props.getOrderList();
-  // }, []);
+  }, []);
   return (
     <div className="dashboard_wrapper container-md-fluid">
       {props.logOutRequest && <SpinLoader />}
@@ -52,7 +53,6 @@ const mapStateToProps = (state) => ({
   info: state.UserInfo.info,
   orders: state.OrderList.orders,
   loading: state.AccountInfo.storeInfoloading,
-  response: state.AccountInfo.storeInfoStatus,
   localCartList: state.Basket.localBasket,
   geustListloading: state.Basket.loading,
   logOutRequest: state.User.logOutRequest,
@@ -62,6 +62,7 @@ const mapDispatchToProps = (dispatch) => ({
   getCartItems: () => dispatch(getCartItems()),
   getWishlist: () => dispatch(getWishlistItems()),
   getUserInfo: () => dispatch(getUserInfo()),
+  getUserDistrict: () => dispatch(GetUserDistrict()),
   getOrderList: () => dispatch(getOrderList()),
   guestCartSubmit: (array) => dispatch(guestCartItem(array)),
   guestWishSubmit: (array) => dispatch(guestWishItem(array)),

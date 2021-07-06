@@ -9,12 +9,12 @@ const AccountDashboard = (props) => {
   return (
     <div className="account_dashboard">
       <div className="row">
-        <AccountInfo loading={false} info={props.info} setTab={props.setTab} />
-        <OrderSummary />
+        <AccountInfo loading={props.infoLoading} info={props.info} setTab={props.setTab} />
+        <OrderSummary loading={props.infoLoading}/>
       </div>
       {/* order history start here */}
       <OrderHistory
-        loading={false}
+        loading={props.infoLoading}
         orders={props.pendingOrders}
         orderPages={props.orderPages}
         tab={props.tab}

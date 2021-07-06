@@ -69,10 +69,10 @@ export const initialState = {
   wishlistMsg: '',
   wishlistStatus: '',
   //   UserInfo state
-  deliveryTypes: [],
   info: {},
+  districts_lists:[],
+  userUpazilla: [],
   userAreas: [],
-  status: '',
   // Contact Page states
   error: { name: '', email: '', subject: '', message: '', prescription: '' },
   contactConfirm: '',

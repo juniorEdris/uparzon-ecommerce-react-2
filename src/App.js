@@ -56,6 +56,7 @@ import TermsandConditions from './Other/PolicyPages/TermsandConditions';
 import CookiePolicy from './Other/PolicyPages/CookiePolicy';
 import PurchasingPolicy from './Other/PolicyPages/PurchasingPolicy';
 import ReturnsPolicy from './Other/PolicyPages/ReturnsPolicy';
+import FAQ from './Other/FAQ';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -143,6 +144,8 @@ function App(props) {
             <Route path="/cookie-policy" component={CookiePolicy} />
             <Route path="/purchasing-policy" component={PurchasingPolicy} />
             <Route path="/return-policy" component={ReturnsPolicy} />
+            <Route path="/FAQ" component={FAQ} />
+            <Route path="/about-us" component={AboutUs} />
           {/* 
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
@@ -151,7 +154,6 @@ function App(props) {
           </Route>
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
-          <Route path="/about-us" component={AboutUs} />
           <Route path="/contact-us" component={ContactUs} />*/}
           {/* <Route path="/blog" component={Blog} />
           <Route path="/ordersuccess" component={OrderNotification} /> */}

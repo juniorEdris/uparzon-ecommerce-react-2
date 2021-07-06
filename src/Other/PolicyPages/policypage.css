@@ -1,8 +1,30 @@
+.uparzon_order_list{
+    margin-left:20px;
+}
+.uparzon_order_list,
+.uparzon_order_list li{
+    list-style: auto !important;
+}
+.uparzon_order_list li{
+    margin-top: 1.2rem;
+}
 .policy_wrapper{
     min-height: 100vh;
 }
-.policy_wrapper p {
+.policy_wrapper p, .policy_wrapper strong {
     line-height: 2.3;
     font-size: 1.2rem;
     margin-bottom: 2.3rem !important;
+}
+.faq_wrapper{
+    margin: 2.1rem 0;
+}
+.btn-faq{
+    text-decoration: none!important;
+    font-weight: 600 !important;
+    line-height: 2;
+    color: var(--theme-color);
+}
+.btn-faq:hover{
+    color: var(--dark-color);
 }

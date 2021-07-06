@@ -15,8 +15,8 @@ const MyOrders = (props) => {
           <Skeleton height={350} width={'100%'} />
         </div>
       ) : props.allOrders?.length < 1 ? (
-        <div className=" d-flex align-items-center justify-content-center null_result">
-          <h3 className="">No orders yet!</h3>
+        <div className=" d-flex align-items-center pt-5 justify-content-center null_result">
+          <img style={{ height: '150px',width: '150px',objectFit: 'contain'}} src='uparzonassets/svg/icons/placeholders/no-orders.svg' alt='orders'/>
         </div>
       ) : (
         <table class="table">

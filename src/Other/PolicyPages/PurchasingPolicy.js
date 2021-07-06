@@ -9,14 +9,31 @@ const PurchasingPolicy = () => {
     return (
         <div className="purchasing_policy policy_wrapper">
             <div className="container mt-3">
-        <h3 className="text-center mb-1">Purchasing Policy</h3>
+        <h1 className="text-center mb-3">Purchasing Policy</h1>
         <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, eum placeat assumenda sint officiis quae reiciendis non aut ab architecto asperiores dolor obcaecati, error recusandae quia veritatis ex, iusto optio corrupti consequuntur temporibus tenetur. Culpa ipsum necessitatibus magnam dolorem eveniet quod blanditiis, id commodi numquam velit, hic animi earum est dicta possimus voluptas repellendus magni? Incidunt error ut necessitatibus voluptatem, magnam aspernatur eos inventore dicta, recusandae praesentium ab quibusdam atque molestiae commodi sunt aliquid? Voluptatem, nemo tenetur? Ad, dolorem perspiciatis. Fugiat dolores eaque, non incidunt repellat laudantium? Quasi quam dolore iste iusto nemo veniam, libero velit placeat consequatur qui voluptas nobis. Nostrum quo facere quos asperiores ipsam atque incidunt? Illum rem temporibus placeat animi, nihil iure eveniet molestias nam est! Praesentium accusantium cupiditate inventore voluptas, beatae quam accusamus dolore blanditiis dolorum sit! Aliquam, praesentium architecto! Modi repellendus consectetur unde ad provident error quod, alias quia, consequuntur commodi est natus aliquid illum mollitia, recusandae numquam quae animi. Error, cum porro? Possimus mollitia aliquam optio iste sint suscipit impedit hic alias, officia accusamus ullam, veritatis minus tempora quo laborum quis, voluptatibus excepturi quaerat vel sed perspiciatis facilis! Nobis nulla sunt maiores dolorum pariatur adipisci iusto. Ab, veritatis error excepturi nisi id minus!
+        Uparzon is an online platform where sellers and buyers would be able to directly connect with another. Uparzon promotes dealers in its systems and customers are capable of being in direct contact with those dealers. Uparzon does not manufacture nor does it take responsibility for any product sold on its platform. All the goods sold in the Uparzon platform are sold by the sellers of Uparzon and responsibility is taken by the sellers as per their agreements with Uparzon.
         </p>
         
+                <p>
+                Unless it is stated in the product information that a certain product has guarantee for it, Uparzon does not provide any guarantees for products.
+                </p>
+
+                <p>
+                Customers are provided records regarding the dealers and are liable for checking the originality of the stated products. Being an online platform for sellers, as a virtual shopping mall, Uparzon does not store any products and cannot check the originality of the products and cannot guarantee it unless it is from their strategic partners. Buyers are suggested to immediately talk over with the seller to be confident of the high-satisfactory and originality of the products.
+            </p>
+
+                <p>
+                Uparzon will ensure the return of products within 3 days from the customer’s end if the customer faces the aforementioned difficulties. Uparzon always looks out for the best interest of its users.
+                </p>
+                <p>
+                Uparzon is an online marketplace with thousands of registered sellers and operates as a virtual and futuristic shopping mall.
+                </p>
+                <p>
+                Sellers are advised to mention their stores if any product is a duplicate/reproduction. Failure to achieve this will result in penalization for that particular store and the seller will be held answerable for any proceedings concerning duplicate products through the customer. It could range from financial penalization to the dismissal of the store from Uparzon’s platform.
+                </p>
       </div>
         </div>
      );
-}
+    }
  
 export default PurchasingPolicy;

@@ -9,14 +9,14 @@ const AccountInfo = (props) => {
     <div className="account_information col-md-6">
       <h3 className="pl-4 pr-4">
         Account Information{' '}
-        <Link to="#">
+        <Link to="#" onClick={(e) => { e.preventDefault(); props.setTab('profile')}}>
           <i class="fas fa-edit"></i>
         </Link>
       </h3>
       <div className="">
         {props.loading ? (
           <div className="">
-            <Skeleton width={'100%'} height={150} />
+            <Skeleton width={'100%'} height={250} />
           </div>
         ) : (
           <div className="account_details">
@@ -34,7 +34,7 @@ const AccountInfo = (props) => {
                 <p>phone number:</p>
               </div>
               <div className="col-lg-5">
-                <p>{props.info?.name || '0180000000'}</p>
+                <p>{props.info?.phone || '0180000000'}</p>
               </div>
             </div>
             {/* email */}
@@ -58,7 +58,6 @@ const AccountInfo = (props) => {
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  logOut: () => dispatch(LogOutAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountInfo);

@@ -9,10 +9,51 @@ const ReturnsPolicy = () => {
     return (
         <div className="return_policy policy_wrapper">
             <div className="container mt-3">
-        <h3 className="text-center mb-1">Returns Policy</h3>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus deserunt excepturi reiciendis adipisci incidunt aliquid illum quisquam omnis sit minima temporibus, dolorum illo nesciunt accusantium sapiente earum? Minima hic est quia tempora excepturi! Inventore, neque. Fugit non quod iusto ducimus eaque hic nostrum nulla pariatur nemo consequatur repellat, deserunt quae nesciunt assumenda vitae debitis? Quos soluta et eaque assumenda laudantium velit officia minus nemo natus, delectus minima quo nisi culpa expedita officiis quidem, incidunt ipsum molestiae ipsa. Cupiditate, praesentium atque blanditiis culpa corporis saepe aut ipsam sapiente enim omnis aliquid laborum placeat nemo nam alias, ipsum est architecto provident vel veritatis, neque ex ullam? Suscipit dolore expedita nam cum totam nesciunt, aspernatur officia ratione perspiciatis, quidem alias, iusto eligendi quis necessitatibus odio veniam? Voluptate dolor rem repudiandae est quidem officiis ex, sapiente amet doloribus quam nobis recusandae obcaecati iste asperiores voluptas porro quod illo in facilis unde quibusdam culpa? Dolor, praesentium nisi non consequuntur quibusdam voluptatibus accusamus officia voluptate voluptates perferendis ipsam incidunt officiis vitae deserunt quas delectus autem possimus ex quam eum recusandae animi. Earum vel voluptatum accusamus eum? Perferendis animi modi dolorem unde est libero. Nesciunt, explicabo minus, totam nisi dolorum voluptate aliquam blanditiis voluptas ad molestiae, ex ducimus voluptatibus facere distinctio laboriosam dolorem omnis impedit consequatur eligendi natus dolore quae minima expedita accusamus. Odit autem perferendis nesciunt minima commodi aliquam soluta impedit. Error quos cumque ipsum id saepe voluptatum ratione corporis accusantium odio. Harum, consequatur recusandae suscipit accusantium saepe eius distinctio adipisci dicta in eveniet soluta?
-        </p>
+        <h1 className="text-center mb-3">Returns Policy</h1>
+        <div className="">
+               <strong>Returning Issue:</strong>
+            <p>
+                <ol className='uparzon_order_list'>
+                            <li>
+                                If your item is faulty/harmed or mistaken/bad on the hour of conveyance, if you do not mind, please get in touch with us withinside the pertinent go back window. Your item is probably certified for discount or substitution depending upon the item elegance and condition.
+                            </li>
+                            <li>
+                                Please be aware that some gadgets aren't certified for arrival if the item is "Never once more required"
+                            </li>
+                            <li>
+                                For gadget related troubles after use or the lapse of the appearance window, we can allude you to the brand assure focus (if relevant).
+
+                            </li>
+                            <li>
+                                Please be aware which you must keep and be capable of provide proper documentation and evidence about your return/refund claim (i.e. unboxing video, receiving invoice, etc).                      
+                                
+                            </li>
+               </ol>
+            </p>
+            
+                </div>
+                <div className="">
+                    <strong>Cancellation Issue:</strong>
+                    <p>
+                    Uparzon keeps unqualified right to cancel any order at its sole discretion prior to dispatch and for any purpose which may also include, but not restricted to, the product being mispriced, out of stock, expired, defective, malfunctioned, and containing wrong information or description arising out of technical or typographical mistakes or for another purpose.
+
+                    </p>
+                </div>
+                <div className="">
+                    <strong>Refund Issue:</strong> <br />
+                    <p>
+                    In case of any cancellations of any order(s) because of inevitable occasions the paid amount could be refunded because the customers' uparzon account firstly. Customer want to report an issue as refund category and ought to point out his/her favored refund type(i.e. bkash/bank) together with details (bkash personal number, bank account details)
+                    </p>
+                    <p>
+                    If an order was given canceled, then the purchaser gets refunded with his/her main amount (paid amount) and could be disqualified for any type of offers or cashback related to the particular order.
+                    </p>
+                    <p>
+                    The refund system may also absorb to 30 working days or extra depending upon the payment service gateway provider’s clauses. The refund may be initiated in the same payment channel i.e. if the purchaser can pay through bKash then the purchaser can be refunded via bKash. The purchaser can't be refunded through another payment channels. But Uparzon keeps the right and has the right to consider/rethink refund through any other flexible channel(s) to make the refund gadget faster or to make it simpler for the customer.
+                    </p>
+                    <p>
+                    The purchaser will not be eligible for any extra cashback/bonus towards his main amount in case of refunds. Uparzon isn't certain to pay any type of service fee or charge for the refunded amount.
+                    </p>
+                </div>
       </div>
         </div>
      );

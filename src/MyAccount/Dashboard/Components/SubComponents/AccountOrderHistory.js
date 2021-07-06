@@ -28,7 +28,9 @@ const AccountOrderHistory = (props) => {
         </div>
       ) : !(props.orders?.length > 0) ? (
         <div className=" order_lists primary_table d-flex align-items-center justify-content-center null_result">
-          <h3 className="">No orders yet!</h3>
+            <img style={{ height: '80px',width: '80px',objectFit: 'contain'}} src='uparzonassets/svg/icons/placeholders/no-orders.svg' alt='orders'/>
+            {/* <h3 className="mt-4 col-12">No orders yet!</h3> */}
+            
         </div>
       ) : props.orders?.length > 3 ? (
         <div className="order_lists primary_table">

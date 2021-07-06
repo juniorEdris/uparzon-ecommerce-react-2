@@ -4,6 +4,8 @@ import {
   GET_USER_INFO_REQUEST,
   GET_USER_INFO_SUCCESS,
   GET_USER_AREAS,
+  GET_USER_DISTRICTS,
+  GET_USER_UPAZILA,
 } from '../Types';
 
 export const UserInfoReducer = (state = initialState, action) => {
@@ -12,29 +14,35 @@ export const UserInfoReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        delivery_types: [],
-        info: [],
-        status: [],
+        info: {},
+        userUpazilla: [],
         userAreas: [],
       };
-    case GET_USER_INFO_SUCCESS:
+      case GET_USER_INFO_SUCCESS:
       return {
         ...state,
         loading: false,
-        delivery_types: action.deliveryTypes,
         info: action.info,
-        status: action.status,
         userAreas: [],
       };
-    case GET_USER_INFO_ERROR:
+      case GET_USER_INFO_ERROR:
+        return {
+          ...state,
+          loading: true,
+          info: {},
+          userAreas: [],
+        userUpazilla: [],
+        error: action.error,
+      };
+    case GET_USER_DISTRICTS:
       return {
         ...state,
-        loading: true,
-        delivery_types: [],
-        info: [],
-        status: [],
-        error: action.error,
-        userAreas: [],
+        districts_lists: action.districts,
+      };
+    case GET_USER_UPAZILA:
+      return {
+        ...state,
+        userUpazilla: action.upazilla,
       };
     case GET_USER_AREAS:
       return {

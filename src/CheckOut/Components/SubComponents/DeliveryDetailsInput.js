@@ -8,7 +8,6 @@ const DeliveryDetails = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-
   return (
     <div className="">
       <div className="delivery_details chekoutCard">
@@ -78,7 +77,7 @@ const DeliveryDetails = (props) => {
                 <option value="" selected>
                   Choose...
                 </option>
-                {/* {props.info?.districts_lists?.map((district) => (
+                {props.district_lists?.map((district) => (
                   <option
                     value={district.id}
                     key={district.name}
@@ -86,7 +85,7 @@ const DeliveryDetails = (props) => {
                   >
                     {district.name}
                   </option>
-                ))} */}
+                ))}
               </select>
               {props.details.district === '' && (
                 <small className="text-danger">
@@ -99,15 +98,15 @@ const DeliveryDetails = (props) => {
             <div className="form-group col-12">
               <label htmlFor="area">Area</label>
               <select
-                id="area"
+                id="upazilla"
                 className="form-control form-control-lg"
-                name="area"
+                name="upazilla"
                 onChange={handleChange}
                 required>
                 <option value="" selected>
                   Choose...
                 </option>
-                {/* {props.useArea[0]?.areas?.map((area) => (
+                {props.upazilla_lists[0]?.upazilas?.map((area) => (
                   <option
                     value={area.id}
                     key={area.name}
@@ -115,9 +114,9 @@ const DeliveryDetails = (props) => {
                   >
                     {area.name}
                   </option>
-                ))} */}
+                ))}
               </select>
-              {props.details.area === '' && (
+              {props.details.upazilla === '' && (
                 <small className="text-danger">
                   Please provide your area name.
                 </small>
@@ -136,7 +135,7 @@ const DeliveryDetails = (props) => {
                 <option value="" selected>
                   Choose...
                 </option>
-                {/* {props.useArea[0]?.areas?.map((area) => (
+                { props.area_lists[0]?.Unions?.map((area) => (
                   <option
                     value={area.id}
                     key={area.name}
@@ -144,7 +143,7 @@ const DeliveryDetails = (props) => {
                   >
                     {area.name}
                   </option>
-                ))} */}
+                ))}
               </select>
               {props.details.area === '' && (
                 <small className="text-danger">

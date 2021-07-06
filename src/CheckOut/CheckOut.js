@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCartProdSubTotal } from '../PrimarySections/Utility';
-import { getUserInfo } from '../Redux/Action/GetUserInfoAction';
+import { GetUserDistrict, getUserInfo } from '../Redux/Action/GetUserInfoAction';
 import './checkout.css';
 import CheckOutBody from './Components/CheckOutBody';
 
 const CheckOut = (props) => {
   useEffect(() => {
+    props.user && props.getUserDistrict();
     props.user && props.getUserInfo();
   }, []);
   return (
@@ -49,6 +50,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getUserInfo: () => dispatch(getUserInfo()),
+  getUserDistrict: () => dispatch(GetUserDistrict()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckOut);
+
+

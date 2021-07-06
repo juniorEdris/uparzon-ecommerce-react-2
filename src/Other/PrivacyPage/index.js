@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   return (
     <div className="privacy_page col mt-5">
       <div className="container mt-3">
-        <h3 className="text-center mb-1">Privacy</h3>
+        <h1 className="text-center mb-1">Privacy &#38; Policy</h1>
         <p>
           Uparzon, the biggest growing E-Commerce website in Bangladesh is
           dedicated to protecting your privacy and appreciate and under the Laws

@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import {UserID} from '../../PrimarySections/Utility';
-// export const DOMAIN = `https://demostore.uparzon.com/`;
-export const DOMAIN = `https://store.uparzon.com/`;
+export const DOMAIN = `https://demostore.uparzon.com/`;
+// export const DOMAIN = `https://store.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
 
 let BaseApi = Axios.create({
@@ -31,6 +31,8 @@ export const ENDPOINTS = {
   VERIFY_OTP: `https://demopartner.uparzon.com/api/partner/check-otp`,
   REGISTER: `https://demopartner.uparzon.com/api/partner/store/register`,
   GETCARTITEMS: `api/uparzonapp/user/get_cart_products?api_key=${api_key}&user_id=${UserID()}`,
+  GETDISTRICTS: `api/uparzonweb/get_districts?api_key=${api_key}`,
+  PLACE_ORDER: `api/uparzonapp/latest_place_order?api_key=${api_key}`,
   //
   CART_UPDATE: `api/user/cart_update/`,
   DELETEFROMBASKET: `api/cart/delete_product/`,
@@ -38,12 +40,11 @@ export const ENDPOINTS = {
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,
   UPDATE_WISHLIST_ITEM: `api/user/wishlist_update/`,
   DELETE_WISHLIST_ITEM: `api/delete/wishlist_product/`,
-  USER_INFO: `api/get_user_info`,
+  USER_INFO: `api/uparzonweb/get_user_info?api_key=${api_key}`,
   USER_UPDATE: `api/user_update`,
   PRESCRIPTION_UPLOAD: `api/app/prescription_store?`,
   SEND_CONTACT_MSG: `api/send/contact-us-message`,
   COUPON_TOKEN: `api/verify_coupon`,
-  PLACE_ORDER: `api/app/make_order`,
   GET_ORDER_LIST: `api/get_orders`,
   CANCEL_ORDER: `api/cancel_order`,
   GET_BLOG_LIST: `api/web/get_blog_lists`,

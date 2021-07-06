@@ -14,10 +14,16 @@ const Right = (props) => {
               <Link to="/terms-and-conditions">Terms &#38; Condition</Link>
             </li>
             <li>
-              <Link to="#" onClick={(e)=>e.preventDefault()}>Shipping</Link>
+              <Link to="/FAQ">FAQ's</Link>
             </li>
             <li>
-              <Link to="#" onClick={(e)=>e.preventDefault()}>FAQ's</Link>
+              <Link to="/return-policy">return policy</Link>
+            </li>
+            <li>
+              <Link to="/cookie-policy">cookie policy</Link>
+            </li>
+            <li>
+              <Link to="/purchasing-policy">purchasing policy</Link>
             </li>
           </ul>
         </div>
@@ -25,10 +31,7 @@ const Right = (props) => {
           <h5 className="footer_heading">Information</h5>
           <ul className="footer_list">
             <li>
-              <Link to="#" onClick={(e)=>e.preventDefault()}>About us</Link>
-            </li>
-            <li>
-              <Link to="#" onClick={(e)=>e.preventDefault()}>delivery information</Link>
+              <Link to="/about-us">About us</Link>
             </li>
             <li>
               <Link to="/privacy-policy">privacy policy</Link>
@@ -55,15 +58,6 @@ const Right = (props) => {
             </li>
             <li>
               <Link to="#" onClick={(e)=>e.preventDefault()}>customer service</Link>
-            </li>
-            <li>
-              <Link to="/return-policy">returns / exchange</Link>
-            </li>
-            <li>
-              <Link to="/cookie-policy">cookie policy</Link>
-            </li>
-            <li>
-              <Link to="/purchasing-policy">purchasing policy</Link>
             </li>
           </ul>
         </div>

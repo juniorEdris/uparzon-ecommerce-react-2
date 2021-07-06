@@ -21,9 +21,8 @@ const WishList = (props) => {
       {
           !props.localWishlist?.length > 0 ? (
             <div className="col-12 p-5 text-center">
-              <div className="col-12 mb-2" style={{fontSize: '1.5rem',
-    color:'rgb(0, 109, 116)'}}>
-                No Products Yet
+              <div className="col-12 mb-4" >
+                <img style={{ height: '150px',width: '150px',objectFit: 'contain'}} src='uparzonassets/svg/icons/placeholders/no-wishitems.svg' alt='wishitems'/>
               </div>
               <Link
                 className="btn "
