@@ -59,7 +59,7 @@ export const AddBasketProd = (product) => async (dispatch, getState) => {
   const user = localStorage.getItem('user_id');
   // return action if its null
   if (product === null) return;
-  
+  if (!user) {
     let cartItems = getState().Basket.localBasket.slice();
     let exist = false;
     cartItems.forEach((x) => {
@@ -93,27 +93,27 @@ export const AddBasketProd = (product) => async (dispatch, getState) => {
     }
     dispatch(addProdBasketSuccess(cartItems));
     localStorage.setItem('Cart List', JSON.stringify(cartItems));
-  // if (!user) {} else {
-  //   dispatch(addProdBasketRequest());
-  //   await API()
-  //     .post(
-  //       `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&unit_price_id=${product.unit_prices_id}&total_quantity=${product.total_quantity}`
-  //     )
-  //     .then((res) => {
-  //       dispatch(addProdServerBasketSuccess(res.data));
-  //       dispatch(productStatusSuccess());
-  //       setTimeout(() => {
-  //         dispatch(productStatusComplete());
-  //       }, 3000);
-  //     })
-  //     .catch((error) => console.log(error.Response));
-  // }
+  } else {
+    dispatch(addProdBasketRequest());
+    await API()
+    .post(
+      `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&user_id=${user}&unit_price=${product.unit_price}&total_quantity=${product.total_quantity}&is_campaign=${product.is_campaign}&api_key=${api_key}&shop_id=${product.shop_id}`
+      )
+      .then((res) => {
+        dispatch(addProdServerBasketSuccess(res.data));
+        dispatch(productStatusSuccess());
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      })
+      .catch((error) => console.log(error.Response));
+  }
 };
 export const IncreamentBasketProd = (product) => async (dispatch, getState) => {
   const user = localStorage.getItem('user_id');
   // return action if its null
   if (product === null) return;
-  
+  if (!user) {
     let cartItems = getState().Basket.localBasket.slice();
     let exist = false;
     cartItems.forEach((x) => {
@@ -147,28 +147,29 @@ export const IncreamentBasketProd = (product) => async (dispatch, getState) => {
     }
     dispatch(addProdBasketSuccess(cartItems));
     localStorage.setItem('Cart List', JSON.stringify(cartItems));
-  // if (!user) {} else {
-  //   dispatch(addProdBasketRequest());
-  //   await API()
-  //     .post(
-  //       `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&unit_price_id=${product.unit_prices_id}&total_quantity=${product.total_quantity}`
-  //     )
-  //     .then((res) => {
-  //       dispatch(addProdServerBasketSuccess(res.data));
-  //       dispatch(productStatusSuccess());
-  //       setTimeout(() => {
-  //         dispatch(productStatusComplete());
-  //       }, 3000);
-  //     })
-  //     .catch((error) => console.log(error.Response));
-  // }
+  } else {
+    dispatch(addProdBasketRequest());
+    let quantity = Number(product.total_quantity) + 1 
+    await API()
+      .post(
+        `${ENDPOINTS.CART_UPDATE}${product.product_id}?total_quantity=${quantity}&api_key=${api_key}`
+      )
+      .then((res) => {
+        dispatch(addProdServerBasketSuccess(res.data));
+        dispatch(productStatusSuccess());
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      })
+      .catch((error) => console.log(error.Response));
+  }
 };
 
 export const DecreamentBasketProd = (product) => async (dispatch, getState) => {
   const user = localStorage.getItem('user_id');
   // return action if its null
   if (product === null) return;
-  
+  if (!user) {
     let cartItems = getState().Basket.localBasket.slice();
     let exist = false;
     cartItems.forEach((x) => {
@@ -202,26 +203,28 @@ export const DecreamentBasketProd = (product) => async (dispatch, getState) => {
     }
     dispatch(addProdBasketSuccess(cartItems));
     localStorage.setItem('Cart List', JSON.stringify(cartItems));
-  // if (!user) {} else {
-  //   dispatch(addProdBasketRequest());
-  //   await API()
-  //     .post(
-  //       `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&unit_price_id=${product.unit_prices_id}&total_quantity=${product.total_quantity}`
-  //     )
-  //     .then((res) => {
-  //       dispatch(addProdServerBasketSuccess(res.data));
-  //       dispatch(productStatusSuccess());
-  //       setTimeout(() => {
-  //         dispatch(productStatusComplete());
-  //       }, 3000);
-  //     })
-  //     .catch((error) => console.log(error.Response));
-  // }
+  } else {
+    dispatch(addProdBasketRequest());
+    let quantity = Number(product.total_quantity) - 1 
+    await API()
+      .post(
+        `${ENDPOINTS.CART_UPDATE}${product.product_id}?total_quantity=${quantity}&api_key=${api_key}`
+      )
+      .then((res) => {
+        dispatch(addProdServerBasketSuccess(res.data));
+        dispatch(productStatusSuccess());
+        setTimeout(() => {
+          dispatch(productStatusComplete());
+        }, 3000);
+      })
+      .catch((error) => console.log(error.Response));
+  }
 };
 
 export const RemoveBasketProd = (product) => async (dispatch, getState) => {
+  console.log(product,`${ENDPOINTS.DELETEFROMBASKET}${product.product_id}?api_key=${api_key}`);
   const user = localStorage.getItem('user_id');
-  
+  if (!user) {
     let cartItems = getState()
       .Basket.localBasket.slice()
       .filter((x) => x.product_id !== product.product_id);
@@ -236,14 +239,14 @@ export const RemoveBasketProd = (product) => async (dispatch, getState) => {
     }, 3000);
     dispatch(removeProdBasket(cartItems));
     localStorage.setItem('Cart List', JSON.stringify(cartItems));
-  // if (!user) {} else {
-  //   await API()
-  //     .delete(`${ENDPOINTS.DELETEFROMBASKET}${product.id}`)
-  //     .then((res) => {
-  //       dispatch(removeProdBasket(res.message));
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
+  } else {
+    await API()
+      .delete(`${ENDPOINTS.DELETEFROMBASKET}${product.product_id}?api_key=${api_key}`)
+      .then((res) => {
+        dispatch(removeProdBasket(res.message));
+      })
+      .catch((err) => console.log(err));
+  }
 };
 
 export const updateCartItem = (product) => async (dispatch, getState) => {

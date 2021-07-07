@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AddBasketProd } from '../../Redux/Action/BasketAction';
+import { getCartItems } from '../../Redux/Action/CartProductsAction';
 import { Truncate } from '../Utility';
 import './product_card.css';
 
@@ -13,32 +14,33 @@ const ProductCard = (props) => {
   ) {
     if (props.product.campaign_category.price_in_amount) {
       compaign_price =
-        Number(props.product.price) -
-        Number(props.product.campaign_category.price_in_amount);
+      Number(props.product.price) -
+      Number(props.product.campaign_category.price_in_amount);
     } else if (props.product.campaign_category.price_in_percentage) {
       compaign_price =
-        Number(props.product.price) -
+      Number(props.product.price) -
         (Number(props.product.campaign_category.price_in_percentage) *
-          Number(props.product.price)) /
-          100;
+        Number(props.product.price)) /
+        100;
+      }
     }
-  }
-  const addProduct = (e) => {
-    // ?product_id=1009&user_id=6318&unit_price=170&total_quantity=3&is_campaign=0&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699&shop_id=90
-    e.preventDefault();
-    const data = {
-      product_id: props.product?.id || '',
-      slug: props.product?.slug || '',
-      shop_name: props.product?.shop_name || '',
-      photo: props.product?.photo,
-      name: props.product?.name,
-      unit_price: compaign_price > 0 ? compaign_price : props.product?.price,
-      total_quantity: 1,
-      shop_id: props.product?.shop_id,
-      vendor_delivery: props.product?.vendor_delivery,
-      is_campaign: compaign_price > 0 ? 1 : 0,
-    };
+    const addProduct = async (e) => {
+      // ?product_id=1009&user_id=6318&unit_price=170&total_quantity=3&is_campaign=0&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699&shop_id=90
+      e.preventDefault();
+      const data = {
+        product_id: props.product?.id || '',
+        slug: props.product?.slug || '',
+        shop_name: props.product?.shop_name || '',
+        photo: props.product?.photo,
+        name: props.product?.name,
+        unit_price: compaign_price > 0 ? compaign_price : props.product?.price,
+        total_quantity: 1,
+        shop_id: props.product?.shop_id,
+        vendor_delivery: props.product?.vendor_delivery,
+        is_campaign: compaign_price > 0 ? 1 : 0,
+      };
     props.addtoCart(data);
+    props.user && (await props.getCartItems());
   };
   return (
     <div className={'product_card_wrapper '}>
@@ -120,10 +122,15 @@ const ProductCard = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  user:state.User.user,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addtoCart: (data) => dispatch(AddBasketProd(data)),
+  getCartItems: () => dispatch(getCartItems()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
+
+

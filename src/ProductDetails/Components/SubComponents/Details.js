@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { renderDiv } from '../../../PrimarySections/Utility';
 import { AddBasketProd } from '../../../Redux/Action/BasketAction';
+import { getCartItems } from '../../../Redux/Action/CartProductsAction';
 import { addToWishlistAction } from '../../../Redux/Action/WishListAction';
 
 const Details = (props) => {
@@ -25,7 +26,7 @@ const Details = (props) => {
     }
   }
   const [quantity, setQuantity] = useState(1);
-  const addProduct = (e) => {
+  const addProduct = async (e) => {
     const data = {
       product_id: props.details?.id || '',
       photo: props.details?.photo,
@@ -38,6 +39,7 @@ const Details = (props) => {
       is_campaign: compaign_price > 0 ? 1 : 0,
     };
     props.addtoCart(data);
+    props.user && (await props.getCartItems());
   };
   const addProductToWish = (e) => {
     e.preventDefault()
@@ -149,11 +151,14 @@ const Details = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  user: state.User.user,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addtoCart: (data) => dispatch(AddBasketProd(data)),
   addtoWish: (data) => dispatch(addToWishlistAction(data)),
+  getCartItems: () => dispatch(getCartItems()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

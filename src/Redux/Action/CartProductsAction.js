@@ -23,6 +23,7 @@ export const getCartItems = () => async (dispatch, getState) => {
   await API()
     .get(`${ENDPOINTS.GETCARTITEMS}`)
     .then((res) => {
+      console.log('cart',res);
       dispatch(getCartItemSuccess(res.data.data));
     })
     .catch((err) => {

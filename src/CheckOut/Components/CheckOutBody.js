@@ -16,7 +16,7 @@ const CheckOutBody = (props) => {
     address: '',
     zip: '',
   });
-  const [paymentType, setPaymentType] = useState('Cash on Delivery');
+  const [paymentType, setPaymentType] = useState('ub');
   const [storeAddress, setStoreAddress] = useState(false);
   useEffect(() => {
     setDeliveryDetails({
@@ -26,7 +26,7 @@ const CheckOutBody = (props) => {
       district: props.info?.district_id || '',
       upazilla: props.info?.upazila_id || '',
       area: props.info?.area_id || '',
-      address: props.info?.address,
+      address: props.info?.address || '',
       zip: props.info?.zip || '',
     });
   }, [props.info]);

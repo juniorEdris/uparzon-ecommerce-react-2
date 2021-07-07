@@ -19,7 +19,7 @@ const PaymentMethod = (props) => {
                 type="radio"
                 name="blankRadio"
                 id="cashRadio"
-                value="Cash on Delivery"
+                value="ub"
                 defaultChecked
                 onChange={handleChange}
               />
@@ -30,20 +30,20 @@ const PaymentMethod = (props) => {
               </label>
             </div>
           </div>
-          <div className="row no-gutters pointer_none">
+          <div className="row no-gutters">
             <div className="form-check">
               <input
                 className="form-check-input position-static check-box"
                 type="radio"
                 name="blankRadio"
                 id="cardRadio"
-                value="card"
+                value="ssl"
                 onChange={handleChange}
               />
             </div>
             <div className="">
               <label htmlFor="cardRadio" className="payment-label">
-Online Payment
+                Online Payment
               </label>
             </div>
           </div>

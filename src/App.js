@@ -57,6 +57,7 @@ import CookiePolicy from './Other/PolicyPages/CookiePolicy';
 import PurchasingPolicy from './Other/PolicyPages/PurchasingPolicy';
 import ReturnsPolicy from './Other/PolicyPages/ReturnsPolicy';
 import FAQ from './Other/FAQ';
+import CartAddanime from './PrimarySections/CartAddAnime/CartAddanime';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
@@ -168,6 +169,12 @@ function App(props) {
         <BackToTop />
         <Footer />
         <CopyRight />
+        {props.basketMsg && (
+          <CartAddanime Msg={props.basketMsg} tabState={props.tabState} />
+        )}
+        {props.wishlistMsg && (
+          <CartAddanime Msg={props.wishlistMsg} tabState={props.wishState} />
+        )}
       </div>
     </Router>
   );
@@ -175,6 +182,10 @@ function App(props) {
 
 const mapStateToProps = (state) => ({
   User: state.User.user,
+  basketMsg: state.Basket.basketmsg,
+  wishlistMsg: state.Wishlist.wishlistMsg,
+  tabState: state.Basket.tabStatus,
+  wishState: state.Wishlist.wishlistStatus,
 });
 const mapDispatchToProps = (dispatch) => ({
   getHomeContents: () => dispatch(GetHomeContents()),

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 const DeliveryDetails = (props) => {
@@ -81,7 +81,6 @@ const DeliveryDetails = (props) => {
                   <option
                     value={district.id}
                     key={district.name}
-                    // selected={Number(props.details?.district) === district.id}
                   >
                     {district.name}
                   </option>
@@ -96,7 +95,7 @@ const DeliveryDetails = (props) => {
           </div>
           <div className="form-row">
             <div className="form-group col-12">
-              <label htmlFor="area">Area</label>
+              <label htmlFor="upazila">Upazila</label>
               <select
                 id="upazilla"
                 className="form-control form-control-lg"
@@ -110,7 +109,6 @@ const DeliveryDetails = (props) => {
                   <option
                     value={area.id}
                     key={area.name}
-                    // selected={Number(props.details?.area) === area.id}
                   >
                     {area.name}
                   </option>
@@ -125,7 +123,7 @@ const DeliveryDetails = (props) => {
           </div>
           <div className="form-row">
             <div className="form-group col-12">
-              <label htmlFor="area">City</label>
+              <label htmlFor="area">Area(optional)</label>
               <select
                 id="area"
                 className="form-control form-control-lg"
@@ -139,17 +137,16 @@ const DeliveryDetails = (props) => {
                   <option
                     value={area.id}
                     key={area.name}
-                    // selected={Number(props.details?.area) === area.id}
                   >
                     {area.name}
                   </option>
                 ))}
               </select>
-              {props.details.area === '' && (
+              {/* {props.details.area === '' && (
                 <small className="text-danger">
                   Please provide your city name.
                 </small>
-              )}
+              )} */}
             </div>
           </div>
           <div className="form-row">

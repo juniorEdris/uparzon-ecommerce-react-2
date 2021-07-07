@@ -4,6 +4,20 @@ import { Link } from 'react-router-dom';
 import { getCartProdSubTotal } from '../../Utility';
 
 const CartButton = (props) => {
+  
+  let server_products = [];
+  let local_products = [];
+  if (!props.user) {
+    props.localCartList?.forEach((e) => {
+      local_products.push(e);
+    })
+  } else {
+    props.cartList?.forEach((e) => {
+      e.shop_cart_products.forEach(e => {
+          server_products.push(e);
+      })
+    })    
+  };
   return (
     <div>
       {/* cart product button starts */}
@@ -13,10 +27,9 @@ const CartButton = (props) => {
           <span>
             &#2547;{' '}
             {
-              /* {!props.user
-              ? getCartProdSubTotal(props.localCartList, props.user) || 0
-              : getCartProdSubTotal(props.cartList, props.user) || 0} */
-              getCartProdSubTotal(props.localCartList, props.user) || 0
+               !props.user
+              ? getCartProdSubTotal(local_products, props.user) || 0
+              : getCartProdSubTotal(server_products, props.user) || 0
             }
           </span>
         </div>
@@ -25,10 +38,9 @@ const CartButton = (props) => {
           <span>
             &#2547;{' '}
             {
-              /* {!props.user
-              ? getCartProdSubTotal(props.localCartList, props.user) || 0
-              : getCartProdSubTotal(props.cartList, props.user) || 0} */
-              getCartProdSubTotal(props.localCartList, props.user) || 0
+              !props.user
+              ? getCartProdSubTotal(local_products, props.user) || 0
+              : getCartProdSubTotal(server_products, props.user) || 0
             }
           </span>
         </div>

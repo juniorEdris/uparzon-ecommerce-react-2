@@ -25,43 +25,50 @@ const PriceDetails = (props) => {
     e.preventDefault();
     setCoupon(!coupon);
   };
-
+  let server_products = [];
+  props.cartList?.forEach((e) => {
+        e.shop_cart_products.forEach(e => {
+            server_products.push(e);
+        })
+      })   
   // GET TOTAL PRICE
-  const total_amount = !props.user
-    ? getCartProdSubTotal(props.localCartList, props.user) || 0
-    : getCartProdSubTotal(props.cartList, props.user) || 0;
+  const total_amount = getCartProdSubTotal(server_products, props.user) || 0;
 
   // GET DELIVERY & MIN ORDER
   let PriceContainer = {
     delivery_charge: '',
     min_order: 100,
   };
-  props.deliveryTypes?.forEach((type) => {
-    if (type.conditional !== '1') {
-      type.delivery_charges.forEach((charge) => {
-        PriceContainer = {
-          delivery_charge: charge.delivery_charge,
-          min_order: charge.min_order,
-        };
-        // delivery_charge = charge.delivery_charge;
-      });
-    } else {
-      for (let i = 0; i <= type?.delivery_charges?.length; i++) {
-        if (total_amount >= type?.delivery_charges[i]?.min_order) {
-          PriceContainer = {
-            delivery_charge: type?.delivery_charges[i]?.delivery_charge,
-            min_order: type?.delivery_charges[i]?.min_order,
-          };
-          return PriceContainer;
-        }
-      }
-    }
-  });
+  // props.deliveryTypes?.forEach((type) => {
+  //   if (type.conditional !== '1') {
+  //     type.delivery_charges.forEach((charge) => {
+  //       PriceContainer = {
+  //         delivery_charge: charge.delivery_charge,
+  //         min_order: charge.min_order,
+  //       };
+  //       // delivery_charge = charge.delivery_charge;
+  //     });
+  //   } else {
+  //     for (let i = 0; i <= type?.delivery_charges?.length; i++) {
+  //       if (total_amount >= type?.delivery_charges[i]?.min_order) {
+  //         PriceContainer = {
+  //           delivery_charge: type?.delivery_charges[i]?.delivery_charge,
+  //           min_order: type?.delivery_charges[i]?.min_order,
+  //         };
+  //         return PriceContainer;
+  //       }
+  //     }
+  //   }
+  // });
   // GET TOTAL AMOUNT
+  // const final_total_amount = (
+  //   parseInt(getCartProdSubTotal(props.cartList, props.user)) +
+  //     Number(PriceContainer?.delivery_charge) ||
+  //   getCartProdSubTotal(props.cartList, props.user) ||
+  //   0
+  // ).toFixed(2);
   const final_total_amount = (
-    parseInt(getCartProdSubTotal(props.cartList, props.user)) +
-      Number(PriceContainer?.delivery_charge) ||
-    getCartProdSubTotal(props.cartList, props.user) ||
+    getCartProdSubTotal(server_products, props.user) ||
     0
   ).toFixed(2);
 
@@ -94,17 +101,12 @@ const PriceDetails = (props) => {
       props.details?.phone === '' ||
       props.details?.email === '' ||
       props.details?.district === '' ||
-      props.details?.area === '' ||
+      props.details?.upazilla === '' ||
       props.details?.address === ''
     ) {
       setError('Please fill all the delivery details.');
     } else if (!props.cartList?.length > 0) {
       setError('your cart is empty');
-    } else if (
-      Number(PriceContainer?.min_order) >
-      (getCartProdSubTotal(props.cartList, props.user) || 0)
-    ) {
-      setError(`minimum order price ${PriceContainer?.min_order}tk`);
     } else {
       const data = {
         ...props.details,
@@ -114,7 +116,16 @@ const PriceDetails = (props) => {
         delivery_charge: PriceContainer.delivery_charge,
       };
       props.order(data);
+      console.log('placeorder page',props.details);
     }
+    /*
+       else if (
+      Number(PriceContainer?.min_order) >
+      (getCartProdSubTotal(server_products, props.user) || 0)
+    ) {
+      setError(`minimum order price ${PriceContainer?.min_order}tk`);
+    }
+    */ 
   };
 
   // PUSH TO ORDER SUCCESS NOTIFICATION
@@ -139,7 +150,7 @@ const PriceDetails = (props) => {
               <p className="mr-3 discount_amount mb-0">Subtotal: </p>{' '}
               <span className="discount_amount">
                 &#2547;{' '}
-                {(getCartProdSubTotal(props.cartList, props.user) || 0).toFixed(
+                {(getCartProdSubTotal(server_products, props.user) || 0).toFixed(
                   2
                 )}
               </span>
@@ -212,7 +223,7 @@ const PriceDetails = (props) => {
       <div className="order_btn">
             <button
               type="button"
-              className={` btn btn-primary pointer_none col-9`}
+              className={` btn btn-primary col-9`}
               onClick={PlaceOrder}
               >
               {props.orderSuccessLoading ? 'ORDER PROCESSING...' : 'PLACE ORDER'}
