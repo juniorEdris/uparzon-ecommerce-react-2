@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { PopUp } from '../../../PrimarySections/SectionUtils/PopUp';
-import { getCartProdSubTotal } from '../../../PrimarySections/Utility';
+import { getCartProdSubTotal} from '../../../PrimarySections/Utility';
 import { API, ENDPOINTS } from '../../../PrimarySections/Utility/API_Links';
-import { PlaceOrder } from '../../../Redux/Action/PlaceOrderAction';
+import { getCartItems } from '../../../Redux/Action/CartProductsAction';
+import { PlaceOrder, PlaceOrderClearMsg } from '../../../Redux/Action/PlaceOrderAction';
 
 const PriceDetails = (props) => {
   const [offer, setOffer] = useState({});
@@ -110,13 +111,13 @@ const PriceDetails = (props) => {
     } else {
       const data = {
         ...props.details,
-        coupon_id: offer.id,
-        coupon_discount: offer.price,
+        coupon_id: offer.id || '',
+        coupon_discount: offer.price || '',
         payment_type: props.type,
+        adjusted_amount:props.cashBack || '',
         delivery_charge: PriceContainer.delivery_charge,
       };
       props.order(data);
-      console.log('placeorder page',props.details);
     }
     /*
        else if (
@@ -129,16 +130,21 @@ const PriceDetails = (props) => {
   };
 
   // PUSH TO ORDER SUCCESS NOTIFICATION
-  props.orderStatus && history.push('/ordersuccess');
+  // props.orderStatus && history.push('/ordersuccess');
   // Close the popup
   const closePopup = (e) => {
     e.preventDefault();
     setError('');
+    props.orderClearMsg()
+    props.getCartItems()
   };
   return (
     <div className="">
       {error && (
         <PopUp response={error} setResponse={setError} close={closePopup} />
+      )}
+      {props.order_msg && (
+        <PopUp response={props.order_msg} setResponse={setError} close={closePopup} />
       )}
       <div className="price_details chekoutCard">
         <div className="checkout_headings">
@@ -228,7 +234,7 @@ const PriceDetails = (props) => {
               >
               {props.orderSuccessLoading ? 'ORDER PROCESSING...' : 'PLACE ORDER'}
         </button>
-        <div className="order_btn_price col-3">&#2547; 175</div>
+        <div className="order_btn_price col-3">&#2547; {final_total_amount}</div>
           </div>
     </div>
   );
@@ -244,12 +250,14 @@ const mapStateToProps = (state) => ({
   user: state.User.user,
   orderSuccessLoading: state.PlaceOrder.placingOrder,
   orderStatus: state.PlaceOrder.place_order_status,
-  orderSuccess: state.PlaceOrder.place_order_msg,
+  order_msg: state.PlaceOrder.place_order_msg,
   orderError: state.PlaceOrder.order_error,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   order: (data) => dispatch(PlaceOrder(data)),
+  orderClearMsg: () => dispatch(PlaceOrderClearMsg()),
+  getCartItems: () => dispatch(getCartItems()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PriceDetails);

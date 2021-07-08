@@ -40,7 +40,7 @@ const Right = (props) => {
               <Link to="/terms-and-conditions">terms &#38; conditions</Link>
             </li>
             <li>
-              <Link to="#" onClick={(e)=>e.preventDefault()}>contact us</Link>
+              <Link to="/contact-us">contact us</Link>
             </li>
             <li>
               <Link to="#" onClick={(e)=>e.preventDefault()}>site map</Link>

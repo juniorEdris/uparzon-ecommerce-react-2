@@ -97,10 +97,11 @@ const ContactForm = (props) => {
         )}
         <Link
           to="#"
+          title='Disable due to under construction.'
           onClick={sendMsg}
           className={`${
             formData.message.length === 0 && 'pointer_disabled'
-          } btn button`}>
+          } btn button pointer_none`}>
           Send
         </Link>
       </form>

@@ -33,3 +33,16 @@ banner gula bappy theke size diben or hole then change korben....
 
 
 aigula tik korien...kuno ta na bujle amke bolien...bakigula ami check kre dibo....ar shata ahmed api dile cart, user panel oigula o kore falien..
+
+
+
+    // const id = query.get('id');
+    // let redirect = '';
+    // if (id) {
+    //   redirect = `/productdetails?id=${id}`;
+    // } else {
+    //   redirect = `${router.location.pathname}${
+    //     router.location.search && router.location.search
+    //   }`;
+    // }
+    // router.replace(redirect);

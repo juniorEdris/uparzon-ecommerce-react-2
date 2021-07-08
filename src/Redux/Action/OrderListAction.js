@@ -31,11 +31,12 @@ export const getOrderList = (data) => async (dispatch) => {
   API()
     .get(`${ENDPOINTS.GET_ORDER_LIST}`)
     .then((res) => {
-      if (res.data.status === false) {
-        dispatch(OrderListError());
-      } else {
-        dispatch(OrderListSuccess(res.data));
-      }
+      console.log('orders',res);
+      // if (res.data.status === false) {
+      //   dispatch(OrderListError());
+      // } else {
+      //   dispatch(OrderListSuccess(res.data));
+      // }
     })
     .catch((error) => {
       // dispatch(OrderListError());

@@ -39,7 +39,7 @@ const ProductCard = (props) => {
         vendor_delivery: props.product?.vendor_delivery,
         is_campaign: compaign_price > 0 ? 1 : 0,
       };
-    props.addtoCart(data);
+      await props.addtoCart(data);
     props.user && (await props.getCartItems());
   };
   return (
@@ -54,10 +54,6 @@ const ProductCard = (props) => {
                 src={`https:${props.product?.photo}`}
                 alt={props.product?.name}
               />
-              {/* <img
-                src="./uparzonassets/uparzonimages/products/01.png"
-                alt={''}
-              /> */}
             </Link>
           </div>
 
@@ -65,14 +61,12 @@ const ProductCard = (props) => {
             <Link
               to={`/productdetails?product=${props.product?.slug}&id=${props.product?.id}`}
               title={props.product?.name}>
-              {/* <p>{Truncate(props.product?.name, 30)}</p> */}
               <p>{Truncate(props.product?.name, 70)}</p>
             </Link>
           </div>
           {compaign_price > 0 && (
             <div className="product_label">
               <span className="product_campaign_section">
-                {/* {props.product?.campaign_category?.name} */}
                 {props.product?.campaign_category?.price_in_percentage
                   ? props.product.campaign_category.price_in_percentage +
                     '% off'
@@ -102,10 +96,6 @@ const ProductCard = (props) => {
               ) : (
                 ''
               )}
-              {/* <small>
-                {' '}
-                <del>&#2547; {(props.product?.price).toFixed(2)}</del>
-              </small> */}
             </div>
           </div>
           <div className="addTocart_btn">

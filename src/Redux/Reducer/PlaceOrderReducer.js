@@ -4,6 +4,7 @@ import {
   PLACE_ORDER_SUCCESS,
   PLACE_ORDER_ERROR,
   PLACE_ORDER_COMPLETE,
+  PLACE_ORDER_POPUP_CLEAR,
 } from '../Types';
 export const PlaceOrderReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -40,12 +41,17 @@ export const PlaceOrderReducer = (state = initialState, action) => {
     case PLACE_ORDER_ERROR:
       return {
         ...state,
-        placingOrder: true,
-        loading: true,
-        place_order_msg: '',
+        placingOrder: false,
+        loading: false,
+        place_order_msg: action.err.message,
         order_error: action.error,
         place_order_status: '',
         place_order_id: '',
+      };
+    case PLACE_ORDER_POPUP_CLEAR:
+      return {
+        ...state,
+        place_order_msg: '',
       };
     default:
       return { ...state };

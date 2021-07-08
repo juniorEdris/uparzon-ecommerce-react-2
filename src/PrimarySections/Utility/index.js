@@ -54,3 +54,9 @@ export const groupBy = function (xs, key) {
     }, {});
   }
 };
+
+// total delivery
+export const total_deli_charge = (array)=>array.reduce((a, b) => a + b, 0)
+
+// Reward Cash Back Adjust Amount
+export const rewardCash= (amount)=> amount.reduce((a, b) => a + b * 50 /100, 0)

@@ -10,9 +10,7 @@ import Logo from './SubComponents/Logo';
 import ProductCart from './SubComponents/ProductCart';
 import ResposiveSearchIcon from './SubComponents/ResposiveSearchIcon';
 import Search from './SubComponents/Search';
-import UserDropdown from './SubComponents/UserDropdown';
 import UserDropdownTwo from './SubComponents/UserDropdownTwo';
-import WishListIcon from './SubComponents/Wishlist';
 import WishListIconTwo from './SubComponents/WishListIconTwo';
 
 export const HeaderTop = (props) => {
@@ -60,9 +58,7 @@ export const HeaderTop = (props) => {
         </Link> */}
         <div className="header__nav">
           <CompareIcon />
-          {/* <WishListIcon /> */}
           <WishListIconTwo />
-          {/* <UserDropdown /> */}
           <UserDropdownTwo />
           {/* <ResposiveSearchIcon handleChange={openSeacrhbox} /> */}
           <ProductCart

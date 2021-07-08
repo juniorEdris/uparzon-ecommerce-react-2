@@ -1,5 +1,4 @@
 import Skeleton from '@yisheng90/react-loading';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';

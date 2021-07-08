@@ -1,5 +1,5 @@
 import Skeleton from '@yisheng90/react-loading';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { products } from '../../../data';
@@ -23,16 +23,6 @@ const RegularCartList = (props) => {
 
   const removeFromCart = async (item) => {
     await props.removeProduct(item);
-    const id = query.get('id');
-    let redirect = '';
-    if (id) {
-      redirect = `/productdetails?id=${id}`;
-    } else {
-      redirect = `${router.location.pathname}${
-        router.location.search && router.location.search
-      }`;
-    }
-    router.replace(redirect);
     props.user && (await props.getCartItems());
   };
   // FILTER REGULAR PRODUCTS
@@ -70,7 +60,6 @@ const RegularCartList = (props) => {
     await props.increamentProduct(item)
     props.user && (await props.getCartItems());
   };
-  console.log('>>>',non_campaign_products,groupedItems);
   const cartprod = props.user ? (
     server_non_campaign_products.length > 0
       ? server_non_campaign_products.map(function (item) {
@@ -415,4 +404,4 @@ const mapDispatchToProps = (dispatch) => ({
   addToCart: (product) => dispatch(AddBasketProd(product)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegularCartList);
+export default connect(mapStateToProps, mapDispatchToProps)(memo(RegularCartList));

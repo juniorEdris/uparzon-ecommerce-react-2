@@ -21,7 +21,7 @@ const CashBack = (props) => {
   </g>
                     </svg>{' '}
 
-                    Cashback 0 Points
+                    Cashback {props.cashBack || 0} Taka
                 </p>
             </div>
         </div>

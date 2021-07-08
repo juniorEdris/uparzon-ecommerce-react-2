@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { rewardCash, total_deli_charge } from '../../PrimarySections/Utility';
 import { GetAreaOption, GetUserUpazilla } from '../../Redux/Action/GetUserInfoAction';
 import CashBack from './SubComponents/CashBack';
 import DeliveryDetailsInput from './SubComponents/DeliveryDetailsInput';
@@ -38,6 +39,46 @@ const CheckOutBody = (props) => {
     DeliveryDetails.upazilla && props.getArea(DeliveryDetails.upazilla);
     setDeliveryDetails({ ...DeliveryDetails, area: '' });
   }, [DeliveryDetails.upazilla]);
+  //  storing all the API queries in varriables
+  let inside_delivery_charge = [];// need fix
+  let outside_delivery_charge = [];// need fix
+  let inside;
+  let outside;
+  let delivery_location_charge;
+  let arr = [];
+  let adjusted_amount;
+  let rc_adjusted_amount = [];
+  let vendorID = [];
+  props.cartList.forEach(x => {
+    x.shop_cart_products.forEach(x => {
+      const prod = {
+        product_id: x.id,
+        color: x.color,
+        vendor_price: x.vendor_price,
+        size: x.size,
+        price: x.price,
+        size_qty: x.size_qty,
+        qty: x.qty_request_to_buy,
+        size_key: null,
+      };
+      arr.push(prod);
+      vendorID.push(x.shop_id); // no need
+    })
+  });
+  // rc_adjusted_price
+  arr.forEach(x => {
+    const amount = x.price - x.vendor_price;
+    rc_adjusted_amount.push(amount);
+  });
+  adjusted_amount = rewardCash(rc_adjusted_amount);
+  inside = total_deli_charge(inside_delivery_charge);
+  outside = total_deli_charge(outside_delivery_charge);
+  delivery_location_charge = inside;
+  // const total = getCartProdTotal(
+  //   getActiveCartProdSubTotal(props.finalCart),
+  //   delivery_location_charge
+  // );
+
   return (
     <div className="checkout_body row">
       <div className="col-md-6">
@@ -53,8 +94,8 @@ const CheckOutBody = (props) => {
       </div>
       <div className="col-md-6">
         <PaymentMethod type={paymentType} setType={setPaymentType} />
-        <CashBack/>
-        <PriceDetails details={DeliveryDetails} type={paymentType} />
+        <CashBack cashBack={ adjusted_amount}/>
+        <PriceDetails details={DeliveryDetails} type={paymentType} cashBack={ adjusted_amount}/>
       </div>
     </div>
   );
@@ -65,6 +106,8 @@ const mapStateToProps = (state) => ({
   district_lists: state.UserInfo.districts_lists,
   upazilla_lists: state.UserInfo.userUpazilla,
   area_lists: state.UserInfo.userAreas,
+  cartList: state.CartItems.basket || [],
+  user: state.User.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({

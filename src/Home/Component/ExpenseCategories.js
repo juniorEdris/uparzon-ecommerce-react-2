@@ -65,20 +65,16 @@ const ExpenseCategories = (props) => {
                 className={`single_feature col-features col-6 mb-3`}
                 key={image.id}>
                 <div className="d-flex align-items-center feature_shadow expense-cat-border flex-wrap justify-content-center justify-content-md-around bg-uparzon-light">
-                  <div className="image">
-                    {/* <Link to="/"> */}
+                  <div className="image p-0 col-5">
                     <img
                       src={`./uparzonassets/uparzonimages/expenseCategory/${image.image}`}
                       className="expense-cat-images"
                       alt={'feature images'}
                     />
-                    {/* </Link> */}
                   </div>
-                  <div className="expense-text mb-2">
+                  <div className="expense-text mb-2 p-0 col-7">
                     <p className="p-0 m-0">
-                      {/* <Link to="/"> */}
                       {image.name}
-                      {/* </Link> */}
                     </p>
                   </div>
                 </div>

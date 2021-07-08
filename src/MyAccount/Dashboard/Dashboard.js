@@ -15,8 +15,8 @@ const Dashboard = (props) => {
   const [tab, setTab] = useState('dashboard');
   const [orderId, setOrderId] = useState('');
   useEffect(() => {
-    // props.getCartItems();
-    // props.User && props.getOrderList();
+    props.getCartItems();
+    props.User && props.getOrderList();
     // props.User && props.getWishlist();
     props.User && props.getUserInfo();
     props.User && props.getUserDistrict();

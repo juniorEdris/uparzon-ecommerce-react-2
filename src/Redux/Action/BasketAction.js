@@ -152,7 +152,7 @@ export const IncreamentBasketProd = (product) => async (dispatch, getState) => {
     let quantity = Number(product.total_quantity) + 1 
     await API()
       .post(
-        `${ENDPOINTS.CART_UPDATE}${product.product_id}?total_quantity=${quantity}&api_key=${api_key}`
+        `${ENDPOINTS.CART_UPDATE}${product.id}?total_quantity=${quantity}&api_key=${api_key}`
       )
       .then((res) => {
         dispatch(addProdServerBasketSuccess(res.data));
@@ -208,7 +208,7 @@ export const DecreamentBasketProd = (product) => async (dispatch, getState) => {
     let quantity = Number(product.total_quantity) - 1 
     await API()
       .post(
-        `${ENDPOINTS.CART_UPDATE}${product.product_id}?total_quantity=${quantity}&api_key=${api_key}`
+        `${ENDPOINTS.CART_UPDATE}${product.id}?total_quantity=${quantity}&api_key=${api_key}`
       )
       .then((res) => {
         dispatch(addProdServerBasketSuccess(res.data));
@@ -222,7 +222,6 @@ export const DecreamentBasketProd = (product) => async (dispatch, getState) => {
 };
 
 export const RemoveBasketProd = (product) => async (dispatch, getState) => {
-  console.log(product,`${ENDPOINTS.DELETEFROMBASKET}${product.product_id}?api_key=${api_key}`);
   const user = localStorage.getItem('user_id');
   if (!user) {
     let cartItems = getState()
@@ -241,7 +240,7 @@ export const RemoveBasketProd = (product) => async (dispatch, getState) => {
     localStorage.setItem('Cart List', JSON.stringify(cartItems));
   } else {
     await API()
-      .delete(`${ENDPOINTS.DELETEFROMBASKET}${product.product_id}?api_key=${api_key}`)
+      .delete(`${ENDPOINTS.DELETEFROMBASKET}${product.id}?api_key=${api_key}&user_id=${user}`)
       .then((res) => {
         dispatch(removeProdBasket(res.message));
       })

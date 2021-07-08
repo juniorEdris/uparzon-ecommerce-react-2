@@ -147,6 +147,7 @@ function App(props) {
             <Route path="/return-policy" component={ReturnsPolicy} />
             <Route path="/FAQ" component={FAQ} />
             <Route path="/about-us" component={AboutUs} />
+          <Route path="/contact-us" component={ContactUs} />*/}
           {/* 
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
@@ -155,7 +156,6 @@ function App(props) {
           </Route>
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
-          <Route path="/contact-us" component={ContactUs} />*/}
           {/* <Route path="/blog" component={Blog} />
           <Route path="/ordersuccess" component={OrderNotification} /> */}
           {/* <Route path="/ordercancel" component={OrderCancel} /> */}

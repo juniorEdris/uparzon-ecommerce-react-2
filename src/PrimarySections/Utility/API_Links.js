@@ -35,6 +35,7 @@ export const ENDPOINTS = {
   DELETEFROMBASKET: `api/cart/delete_product/`,
   GETDISTRICTS: `api/uparzonweb/get_districts?api_key=${api_key}`,
   PLACE_ORDER: `api/uparzonapp/latest_place_order?api_key=${api_key}`,
+  GET_ORDER_LIST: `api/uparzonapp/get_orders?api_key=${api_key}&user_id=${UserID()}`,
   //
   GET_WISHLIST_ITEM: `api/user/wishlist_products`,
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,
@@ -45,7 +46,6 @@ export const ENDPOINTS = {
   PRESCRIPTION_UPLOAD: `api/app/prescription_store?`,
   SEND_CONTACT_MSG: `api/send/contact-us-message`,
   COUPON_TOKEN: `api/verify_coupon`,
-  GET_ORDER_LIST: `api/get_orders`,
   CANCEL_ORDER: `api/cancel_order`,
   GET_BLOG_LIST: `api/web/get_blog_lists`,
   GET_SINGLE_BLOG: `api/web/get_blog_details`,

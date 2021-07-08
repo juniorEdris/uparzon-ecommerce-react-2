@@ -10,7 +10,7 @@ const getCartItemRequest = () => ({
 });
 
 const getCartItemSuccess = (res) => {
-  return { type: GET_CART_ITEM_SUCCESS, cartItems: res };
+  return { type: GET_CART_ITEM_SUCCESS, cartItems: res || [] };
 };
 
 const getCartItemError = (res) => ({
@@ -23,7 +23,6 @@ export const getCartItems = () => async (dispatch, getState) => {
   await API()
     .get(`${ENDPOINTS.GETCARTITEMS}`)
     .then((res) => {
-      console.log('cart',res);
       dispatch(getCartItemSuccess(res.data.data));
     })
     .catch((err) => {
