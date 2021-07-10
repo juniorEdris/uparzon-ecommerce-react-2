@@ -29,12 +29,12 @@ export const getSingleOrderDetails = (data) => async (dispatch) => {
   dispatch(SingleOrderRequest());
 
   API()
-    .post(`${ENDPOINTS.GET_SINGLE_ORDER}?order_id=${data}`)
+    .post(`${ENDPOINTS.GET_SINGLE_ORDER}&order_id=${data}`)
     .then((res) => {
       dispatch(SingleOrderSuccess(res.data));
     })
     .catch((error) => {
       dispatch(SingleOrderSuccessError());
-      console.log(error);
+      console.log(error.Response);
     });
 };

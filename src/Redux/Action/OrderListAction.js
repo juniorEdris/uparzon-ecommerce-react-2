@@ -37,9 +37,9 @@ export const getOrderList = (data) => async (dispatch) => {
       // } else {
       //   dispatch(OrderListSuccess(res.data));
       // }
+        dispatch(OrderListSuccess(res.data));
     })
     .catch((error) => {
-      // dispatch(OrderListError());
       console.log(error);
     });
 };

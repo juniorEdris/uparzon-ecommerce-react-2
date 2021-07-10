@@ -1,5 +1,5 @@
 import Skeleton from '@yisheng90/react-loading';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { products } from '../../../data';
@@ -241,6 +241,9 @@ const CartList = (props) => {
       <CartButton
         setCart={props.setCart}
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+        is_campaign={true}
+        campaign={props.campaign}
+        setCampaign={props.setCampaign}
       />
     </div>
   );
@@ -264,4 +267,4 @@ const mapDispatchToProps = (dispatch) => ({
   addToCart: (product) => dispatch(AddBasketProd(product)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartList);
+export default connect(mapStateToProps, mapDispatchToProps)(memo(CartList));

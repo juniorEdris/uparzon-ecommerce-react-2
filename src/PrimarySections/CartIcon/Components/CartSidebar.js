@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartList from './CartList';
@@ -54,11 +54,15 @@ const CartSidebar = (props) => {
           <CartList
             setCart={props.setCart}
             loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+            campaign={props.campaign}
+            setCampaign={props.setCampaign}
           />
         ) : (
           <RegularCartList
             setCart={props.setCart}
-            loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+              loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+              campaign={props.campaign}
+              setCampaign={props.setCampaign}
           />
         )}
       </div>
@@ -75,4 +79,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartSidebar);
+export default connect(mapStateToProps, mapDispatchToProps)(memo(CartSidebar));

@@ -1,6 +1,6 @@
 import Skeleton from '@yisheng90/react-loading';
 import dateFormat from 'dateformat';
-import React from 'react';
+import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const MyOrders = (props) => {
       <div className="order_header pl-4 pb-3 pt-3 pr-4 mb-3">
         <h3>Recent Orders</h3>
       </div>
-      {!props.loading ? (
+      {props.loading ? (
         <div className="">
           <Skeleton height={350} width={'100%'} />
         </div>
@@ -59,7 +59,7 @@ const MyOrders = (props) => {
                         e.preventDefault();
                         props.setTab('orderInfo');
                         props.setOrderId(order.id);
-                      }}>
+                      }} title={order.id }>
                       view order
                     </Link>
                   </div>
@@ -81,7 +81,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyOrders);
+export default connect(mapStateToProps, mapDispatchToProps)(memo(MyOrders));
 
 /*
 

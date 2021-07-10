@@ -240,11 +240,11 @@ export const RemoveBasketProd = (product) => async (dispatch, getState) => {
     localStorage.setItem('Cart List', JSON.stringify(cartItems));
   } else {
     await API()
-      .delete(`${ENDPOINTS.DELETEFROMBASKET}${product.id}?api_key=${api_key}&user_id=${user}`)
+      .post(`${ENDPOINTS.DELETEFROMBASKET}${product.id}?api_key=${api_key}&user_id=${user}`)
       .then((res) => {
         dispatch(removeProdBasket(res.message));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(`${ENDPOINTS.DELETEFROMBASKET}${product.id}?api_key=${api_key}&user_id=${user}`,err));
   }
 };
 

@@ -51,6 +51,7 @@ const CartButton = (props) => {
             onClick={(e) => {
               props.loginSuccessPageRedirectTo('/check-out');
               props.setCart(false);
+              props.setCampaign(props.is_campaign)
             }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -48,7 +48,6 @@ const CheckOutBody = (props) => {
   let arr = [];
   let adjusted_amount;
   let rc_adjusted_amount = [];
-  let vendorID = [];
   props.cartList.forEach(x => {
     x.shop_cart_products.forEach(x => {
       const prod = {
@@ -62,8 +61,9 @@ const CheckOutBody = (props) => {
         size_key: null,
       };
       arr.push(prod);
-      vendorID.push(x.shop_id); // no need
     })
+    inside_delivery_charge.push(x.vendor_delivery?.inside_deli_charge)
+    outside_delivery_charge.push(x.vendor_delivery?.outside_deli_charge);
   });
   // rc_adjusted_price
   arr.forEach(x => {
@@ -78,7 +78,7 @@ const CheckOutBody = (props) => {
   //   getActiveCartProdSubTotal(props.finalCart),
   //   delivery_location_charge
   // );
-
+  console.log(adjusted_amount, inside, outside)
   return (
     <div className="checkout_body row">
       <div className="col-md-6">
@@ -95,7 +95,10 @@ const CheckOutBody = (props) => {
       <div className="col-md-6">
         <PaymentMethod type={paymentType} setType={setPaymentType} />
         <CashBack cashBack={ adjusted_amount}/>
-        <PriceDetails details={DeliveryDetails} type={paymentType} cashBack={ adjusted_amount}/>
+        <PriceDetails details={DeliveryDetails} type={paymentType} cashBack={adjusted_amount}
+        campaign={ props.campaign}
+        setCampaign={props.setCampaign}
+        />
       </div>
     </div>
   );

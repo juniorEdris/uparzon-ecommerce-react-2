@@ -32,10 +32,11 @@ export const ENDPOINTS = {
   ADDTOBASKET: `api/user/product/add_to_cart`,
   CART_UPDATE: `api/user/cart_update/`,
   GETCARTITEMS: `api/uparzonapp/user/get_cart_products?api_key=${api_key}&user_id=${UserID()}`,
-  DELETEFROMBASKET: `api/cart/delete_product/`,
+  DELETEFROMBASKET: `api/uparzonweb/cart/delete_product/`,
   GETDISTRICTS: `api/uparzonweb/get_districts?api_key=${api_key}`,
   PLACE_ORDER: `api/uparzonapp/latest_place_order?api_key=${api_key}`,
   GET_ORDER_LIST: `api/uparzonapp/get_orders?api_key=${api_key}&user_id=${UserID()}`,
+  GET_SINGLE_ORDER: `api/uparzonapp/get_order_details?api_key=${api_key}`,
   //
   GET_WISHLIST_ITEM: `api/user/wishlist_products`,
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,
@@ -49,7 +50,6 @@ export const ENDPOINTS = {
   CANCEL_ORDER: `api/cancel_order`,
   GET_BLOG_LIST: `api/web/get_blog_lists`,
   GET_SINGLE_BLOG: `api/web/get_blog_details`,
-  GET_SINGLE_ORDER: `api/get_order_details`,
   CART_GUEST_CART: `api/product/add_to_cart`,
   WISH_GUEST_CART: `api/product/add_to_wishlist`,
 };

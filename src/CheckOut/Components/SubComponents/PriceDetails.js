@@ -21,6 +21,7 @@ const PriceDetails = (props) => {
   const [couponNum, setCouponNum] = useState({
     coupon_number: '',
   });
+  console.log(props.cartList,props.campaign);
   // Coupon input state
   const CouponInput = (e) => {
     e.preventDefault();
@@ -114,8 +115,9 @@ const PriceDetails = (props) => {
         coupon_id: offer.id || '',
         coupon_discount: offer.price || '',
         payment_type: props.type,
-        adjusted_amount:props.cashBack || '',
+        adjusted_amount: '',//props.cashBack ||
         delivery_charge: PriceContainer.delivery_charge,
+        is_campaign:props.campaign,
       };
       props.order(data);
     }

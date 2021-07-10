@@ -61,6 +61,7 @@ import CartAddanime from './PrimarySections/CartAddAnime/CartAddanime';
 
 function App(props) {
   const [nextPage, setNextPage] = useState('/dashboard');
+  const [campaign, setCampaign] = useState(false);
   const [categoryBar, setCategoryBar] = useState(false);
   const [categoryID, setCategoryID] = useState(1);
   const [categoryName, setCategoryName] = useState('');
@@ -136,7 +137,10 @@ function App(props) {
             />
           </Route>
           <Route path="/check-out">
-            {!props.User ? <Redirect to="/login" /> : <CheckOut/>}
+            {!props.User ? <Redirect to="/login" /> : <CheckOut
+            campaign={ campaign}
+            setCampaign={setCampaign }
+            />}
           </Route> 
           <Route path="/wishlist" component={WishList} />
             <Route path="/order-info" component={OrderInformation} />
@@ -147,7 +151,7 @@ function App(props) {
             <Route path="/return-policy" component={ReturnsPolicy} />
             <Route path="/FAQ" component={FAQ} />
             <Route path="/about-us" component={AboutUs} />
-          <Route path="/contact-us" component={ContactUs} />*/}
+          <Route path="/contact-us" component={ContactUs} />
           {/* 
           <Route path="/otherbrands" component={OtherBrands} />
           <Route path="/single-blog" component={BlogDetails} />
@@ -165,6 +169,8 @@ function App(props) {
           loginSuccessPageRedirectTo={loginSuccessPageRedirectTo}
           cart={cart}
           setCart={setCart}
+          campaign={ campaign}
+          setCampaign={setCampaign }
         />
         <BackToTop />
         <Footer />

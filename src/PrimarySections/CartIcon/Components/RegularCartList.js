@@ -36,14 +36,30 @@ const RegularCartList = (props) => {
     })
   } else {
     props.cartList?.forEach((x) => {
+      let shop_cart_products= []
+      // const data = {
+      //   shop_name:x.shop_name,
+      //   vendor_delivery: x.vendor_delivery,
+      //   shop_cart_products: shop_cart_products,
+      // }
       x.shop_cart_products.forEach(e => {
         if (e.is_campaign !== 1) {
-          server_non_campaign_products.push(x);
+          // shop_cart_products.push(e);
+          server_non_campaign_products.push(x)
         }
+        // let exist = false;
+        // server_non_campaign_products.forEach(z => {
+        //   if (z.product_id === e.prpoduct_id) {
+        //     exist = true
+        //   }
+        //   if (!exist) {
+        //   }
+        // })
       })
     })
     
   };
+  console.log('non-camp',server_non_campaign_products);
     // GROUP ITEMS LOGICS STARTS HERE
     const groupedItems = groupBy(
       non_campaign_products.length > 0 ? non_campaign_products : null,
@@ -381,6 +397,9 @@ const RegularCartList = (props) => {
       <CartButton
         setCart={props.setCart}
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+        is_campaign={false}
+        campaign={props.campaign}
+        setCampaign={props.setCampaign}
       />
     </div>
   );

@@ -16,14 +16,14 @@ const Dashboard = (props) => {
   const [orderId, setOrderId] = useState('');
   useEffect(() => {
     props.getCartItems();
-    props.User && props.getOrderList();
     // props.User && props.getWishlist();
     props.User && props.getUserInfo();
     props.User && props.getUserDistrict();
+    props.User && props.getOrderList();
     toTheTop()
   }, [tab]);
   useEffect(() => {
-  //   props.guestCartSubmit();
+    //   props.guestCartSubmit();
   //   props.guestWishSubmit();
   //   props.getOrderList();
   }, []);

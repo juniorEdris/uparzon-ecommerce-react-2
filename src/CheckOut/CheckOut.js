@@ -31,7 +31,10 @@ const CheckOut = (props) => {
               <h2 className='text-center font-weight-bold'>Checkout</h2>
           </div>
           {/* CHECKOUT BODY STARTS HERE */}
-          <CheckOutBody />
+          <CheckOutBody 
+          campaign={ props.campaign}
+          setCampaign={props.setCampaign}
+          />
         </div>
       </div>
     </div>

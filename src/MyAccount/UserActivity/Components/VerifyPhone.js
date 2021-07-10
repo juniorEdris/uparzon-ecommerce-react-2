@@ -7,7 +7,7 @@ export const VerifyPhone = (props) => {
     <div className="verify_number_container">
       <h3
         className="text-center verify_number_heading chilldren-gap-top"
-        onClick={() => props.setSection('')}>
+        >
         Verify Your Number
       </h3>
       <div className="verify_number_heading_paragraph chilldren-gap-top">

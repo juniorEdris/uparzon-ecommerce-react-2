@@ -1,14 +1,12 @@
 import Skeleton from '@yisheng90/react-loading';
 import dateFormat from 'dateformat';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import OrderCancel from '../../OrderNotify/OrderCancel';
 import { API, ENDPOINTS } from '../../PrimarySections/Utility/API_Links';
 
 const OrderDetails = (props) => {
-  console.log(props.order?.delivery_status,'45454');
-  const history = useHistory();
   const [response, setResponse] = useState({
     loading: false,
     cancelMsg: '',
@@ -17,19 +15,18 @@ const OrderDetails = (props) => {
   const goTodash = (e) => {
     e.preventDefault();
     setResponse({ cancelStatus: false });
-    // history.push('/dashboard');
     props.setTab('dashboard')
   };
   const cancelOrder = (e) => {
     e.preventDefault();
     API()
-      .post(`${ENDPOINTS.CANCEL_ORDER}?order_id=${props.order_id}`)
-      .then((res) => {
-        console.log('remove order', res);
-        setResponse({
-          loading: false,
-          cancelStatus: res.data.status,
-          cancelMsg: res.data.message,
+    .post(`${ENDPOINTS.CANCEL_ORDER}?order_id=${props.order_id}`)
+    .then((res) => {
+      console.log('remove order', res);
+      setResponse({
+        loading: false,
+        cancelStatus: res.data.status,
+        cancelMsg: res.data.message,
         });
       })
       .catch((error) => {
@@ -41,7 +38,7 @@ const OrderDetails = (props) => {
                 Order-ID:{props.order?.order_number}{' '}
                 {props.order?.delivery_status === 'cancelled' ? (
                   ''
-                ) : props.order?.delivery_status === 'on delivery' ? (
+                  ) : props.order?.delivery_status === 'on delivery' ? (
                   ''
                 ) : props.order?.delivery_status === 'completed' ? (
                   ''
@@ -79,15 +76,15 @@ const OrderDetails = (props) => {
           <div className="col-12 row justify-content-between">
             <div className="col-md-6 p-0 right-border">
             <div className="list_content row  align-items-center m-0">
-              <span className='list_content_head'>Name : </span> <span>John Doe</span>
+              <span className='list_content_head'>Name : </span> <span>{props.order?.shipping_name}</span>
               </div>
             <div className="list_content row  align-items-center m-0">
-              <span className='list_content_head'>Address : </span> <span>American Streets,PO-1247,Caldorb</span>
+              <span className='list_content_head'>Address : </span> <span>{props.order?.shipping_address || 'none'}</span>
               </div>
             </div>
             <div className="col-md-6 p-0">
             <div className="list_content row  align-items-center m-0">
-              <span className='list_content_head'>Phone : </span> <span>+035 000 111 111</span>
+              <span className='list_content_head'>Phone : </span> <span>{props.order?.shipping_phone}</span>
               </div>
             </div>
           </div>
@@ -101,4 +98,4 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(memo(OrderDetails));

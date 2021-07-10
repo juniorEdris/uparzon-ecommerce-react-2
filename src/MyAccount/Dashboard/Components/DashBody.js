@@ -29,14 +29,14 @@ const DashBody = (props) => {
           setOrderId={props.setOrderId}
         />
       )}
-      {/* {props.tab === 'orderInfo' && (
+      {props.tab === 'orderInfo' && (
         <OrderInformation
           orderId={props.orderId}
           setOrderId={props.setOrderId}
           tab={props.tab}
           setTab={props.setTab}
         />
-      )}  */}
+      )} 
     </div>
   );
 };

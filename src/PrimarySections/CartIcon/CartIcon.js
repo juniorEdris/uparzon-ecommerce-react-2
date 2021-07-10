@@ -57,6 +57,8 @@ const CartIcon = (props) => {
         setCart={props.setCart}
         cartLength={cartLength}
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
+        campaign={props.campaign}
+        setCampaign={props.setCampaign}
       />
       {props.cart && (
         <div

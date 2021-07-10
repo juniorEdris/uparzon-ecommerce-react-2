@@ -7,10 +7,12 @@ import OrderDetails from './Components/OrderDetails';
 import OrderProducts from './Components/OrderProducts';
 import './order_information.css';
 import { products } from '../data';
+import dateFormat from 'dateformat';
 
 const OrderInformation = (props) => {
   // const query = useQuery();
   // const id = query.get('id');
+  console.log('single order page',props.singleorder)
   useEffect(() => {
     props.getSingleOrder(props.orderId);
   }, [props.orderId]);
@@ -20,10 +22,13 @@ const OrderInformation = (props) => {
         <div className="order-information-heading mt-0">
           {' '}
           {/*  */}
-          <h5 className="">Invoice : HDJ54541722417</h5>
-          <p>26 April 1997, 11:15 AM</p>
+          <h5 className="">Invoice : {'HDJ54541722417'}</h5>
+          <p>{dateFormat(
+                  props.singleorder?.date,
+                  'dddd, mmmm dS, yyyy, h:MM:ss TT'
+                )}</p>
         </div>
-        <TrackOrder loading={false} order={props.singleorder} />
+        <TrackOrder loading={props.loading} order={props.singleorder} />
         <OrderDetails
           loading={false}
           order={props.singleorder}
@@ -32,8 +37,7 @@ const OrderInformation = (props) => {
           tab={props.tab}
           setTab={props.setTab}
         />
-        <OrderProducts loading={false} order={products} />
-        {/* <OrderProducts loading={false} order={props.singleorder} /> */}
+        <OrderProducts loading={props.loading} order={props.singleorder} />
       </div>
     </div>
   );

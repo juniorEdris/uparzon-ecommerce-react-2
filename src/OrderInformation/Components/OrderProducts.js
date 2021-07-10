@@ -9,7 +9,7 @@ const OrderProducts = (props) => {
   let subTotal = () => {
     let allProd = [];
     props.order?.cart?.forEach((x) => {
-      allProd.push(x.price * x.total_quantity);
+      allProd.push(x.price * x.qty);
     });
     return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
   };
@@ -40,28 +40,26 @@ const OrderProducts = (props) => {
           </tbody>
         ) : (
           <tbody>
-            {/* {props.order?.cart?.map((item) => ( */}
-            {props.order?.map((item) => (
+            {props.order?.cart?.map((item) => (
               <tr className="trow-light" key={item.product_id}>
                 <td>
-                  <div className="row no-gutters" style={{width:'300px'}}>
+                  <div className="row align-items-center" style={{width:'300px'}}>
                     <div className="col-3">
-                      <img src={image_u} alt=''/>    
+                      <img src={`https://${item.photo}`} alt={item.name}/>    
                     </div>
                     <div className="col-9">
-                      {Truncate(item.name, 15) || 'Lorem ipsum dolor sit amet consectetur adipisicing elit'}   
+                      {Truncate(item.name, 15)}   
                     </div>
                   </div>
                   </td>
-                <td>{item.total_quantity || 2}</td>
-                <td>BDT {item.price || 450}</td>
+                <td>{item.qty }</td>
+                <td>BDT {item.price}</td>
                 <td>
                   BDT{' '}
                   {
-                  //   (Number(item.price) * Number(item.total_quantity)).toFixed(
-                  //   2
-                  // )
-                   2200}
+                    (Number(item.price) * Number(item.qty)).toFixed(
+                      2
+                    )}
                 </td>
                 <td>
                   <Link
@@ -88,8 +86,8 @@ const OrderProducts = (props) => {
                 Regular (withine 24 hours)
               </td>
                 <td>BDT {
-                  // Number(props.order?.shipping_cost).toFixed(2) 
-                   0}</td>
+                  Number(props.order?.shipping_cost).toFixed(2) 
+                   }</td>
               <td></td>
             </tr>
             <tr className="order_price_card">
@@ -97,8 +95,8 @@ const OrderProducts = (props) => {
                 Total
               </td>
                 <td>BDT {
-                  // Number(props.order?.pay_amount).toFixed(2)
-               0}</td>
+                  Number(props.order?.pay_amount).toFixed(2)
+               }</td>
               <td></td>
             </tr>
           </tbody>
