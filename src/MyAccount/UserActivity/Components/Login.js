@@ -24,6 +24,7 @@ function Login(props) {
                 setLogin({ ...loginInput, phone: e.target.value })
               }
               required
+              placeholder={'01XXXXXXXXX'}
             />
             {/* <div className="error-handler">{error.message}</div> */}
           </div>
@@ -47,11 +48,17 @@ function Login(props) {
               onChange={(e) =>
                 setLogin({ ...loginInput, password: e.target.value })
               }
+              placeholder={'password'}
               required
             />
             {/* show password required */}
             {/* <div className="error-handler">{error.message}</div> */}
           </div>
+          {props.error.loginError && (
+                  <div className="error-handler text-center">
+                    <small>{props.error.loginError}</small>
+                  </div>
+                )}
         </div>
       </div>
       <div className="login-box mt-4 text-center">

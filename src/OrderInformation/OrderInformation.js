@@ -12,7 +12,7 @@ import dateFormat from 'dateformat';
 const OrderInformation = (props) => {
   // const query = useQuery();
   // const id = query.get('id');
-  console.log('single order page',props.singleorder)
+  console.log('single order page',props.singleorder,props.orderId)
   useEffect(() => {
     props.getSingleOrder(props.orderId);
   }, [props.orderId]);
@@ -30,7 +30,7 @@ const OrderInformation = (props) => {
         </div>
         <TrackOrder loading={props.loading} order={props.singleorder} />
         <OrderDetails
-          loading={false}
+          loading={props.loading}
           order={props.singleorder}
           // order_id={id}
           order_id={props.orderId}

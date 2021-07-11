@@ -193,6 +193,7 @@ export const Uparzon_entry = (props) => {
                     loginInput={login}
                     setLogin={setLogin}
                     loginRequest={loginRequest}
+                    error={ error}
                   />
                 ) : section === 'register' ? (
                   <VerifyPhone
@@ -200,13 +201,16 @@ export const Uparzon_entry = (props) => {
                     loginInput={login}
                     setLogin={setLogin}
                     verifyRequest={verifyRequest}
+                    error={ error}
+                      
                   />
                 ) : section === 'verified' ? (
                   <Register
                     register={register}
                     setRegister={setRegister}
                     RegisterAction={RegisterAction}
-                    error={error}
+                        error={error}
+                        
                   />
                 ) : (
                   <UparzonOTP
@@ -214,10 +218,12 @@ export const Uparzon_entry = (props) => {
                     number={login.OTPNumber}
                     verifyCompleteRequest={verifyCompleteRequest}
                     otp={otp}
-                    setOtp={setOtp}
+                          setOtp={setOtp}
+                    error={ error}
+                          
                   />
                 )}
-                {/*  */}
+                {/*  
                 {error.loginError && (
                   <div className="error-handler text-center">
                     <small>{error.loginError}</small>
@@ -227,7 +233,7 @@ export const Uparzon_entry = (props) => {
                   <div className="error-handler text-center">
                     <small>{error.verifyError}</small>
                   </div>
-                )}
+                )}*/}
               </div>
             </div>
           </div>

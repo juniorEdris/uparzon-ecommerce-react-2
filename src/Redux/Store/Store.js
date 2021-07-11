@@ -91,6 +91,8 @@ export const initialState = {
   company_pages: [],
   // Order Lists
   orders: [],
+  regular_orders: [],
+  campaign_orders: [],
   pendingOrders: [],
   completedOrders: [],
   onDeliverOrders: [],

@@ -22,6 +22,12 @@ export const OrderListsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         orders: action.results,
+        regular_orders: action.results.filter(
+          (x) => x.is_campaign !== true
+        ),
+        campaign_orders: action.results.filter(
+          (x) => x.is_campaign === true
+        ),
         pendingOrders: action.results.filter(
           (x) => x.delivery_status !== 'completed'
         ),

@@ -19,9 +19,10 @@ const getCartItemError = (res) => ({
 });
 
 export const getCartItems = () => async (dispatch, getState) => {
+  const user = localStorage.getItem('user_id')
   dispatch(getCartItemRequest());
   await API()
-    .get(`${ENDPOINTS.GETCARTITEMS}`)
+    .get(`${ENDPOINTS.GETCARTITEMS}&user_id=${user}`)
     .then((res) => {
       dispatch(getCartItemSuccess(res.data.data));
     })

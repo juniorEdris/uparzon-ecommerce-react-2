@@ -238,13 +238,13 @@ const CartList = (props) => {
       </div>
       {/* cart product wrapper ends */}
       {/* cart product button starts*/}
-      <CartButton
+      { campaign_products.length > 0 || server_campaign_products.length > 0 ? <CartButton
         setCart={props.setCart}
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
         is_campaign={true}
         campaign={props.campaign}
         setCampaign={props.setCampaign}
-      />
+      /> : ''}
     </div>
   );
 };

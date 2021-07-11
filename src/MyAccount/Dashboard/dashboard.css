@@ -113,6 +113,20 @@
 .primary_table td {
     vertical-align: middle !important;
 }
+.order_section{
+    background-color: #ddd;
+    box-shadow: var(--box-shadow-one);
+    margin-bottom: 1rem;
+}
+.order_section a{
+    text-transform: capitalize;
+    color: var(--theme-color);
+}
+.order_section a.active {
+    border-bottom: 2px solid var(--theme-color);
+    color: var(--theme-color);
+    background-color: var(--light-color);
+}
 
 .order_header {
     display: -webkit-box;

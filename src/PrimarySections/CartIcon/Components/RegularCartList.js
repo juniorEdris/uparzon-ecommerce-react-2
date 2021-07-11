@@ -59,7 +59,6 @@ const RegularCartList = (props) => {
     })
     
   };
-  console.log('non-camp',server_non_campaign_products);
     // GROUP ITEMS LOGICS STARTS HERE
     const groupedItems = groupBy(
       non_campaign_products.length > 0 ? non_campaign_products : null,
@@ -394,13 +393,13 @@ const RegularCartList = (props) => {
       </div>
       {/* cart product wrapper ends */}
       {/* cart product button starts*/}
-      <CartButton
+      {non_campaign_products.length > 0 || server_non_campaign_products.length > 0 ? <CartButton
         setCart={props.setCart}
         loginSuccessPageRedirectTo={props.loginSuccessPageRedirectTo}
         is_campaign={false}
         campaign={props.campaign}
         setCampaign={props.setCampaign}
-      />
+      />: ''}
     </div>
   );
 };

@@ -19,6 +19,8 @@ const CheckOutBody = (props) => {
   });
   const [paymentType, setPaymentType] = useState('ub');
   const [storeAddress, setStoreAddress] = useState(false);
+  const [serverRCAdjustedPrice, setServerRCAdjustedPrice] = useState(0);
+  const [FinalRewardCash, setFinalRewardCash] = useState(0);
   useEffect(() => {
     setDeliveryDetails({
       name: props.info?.name,
@@ -78,7 +80,7 @@ const CheckOutBody = (props) => {
   //   getActiveCartProdSubTotal(props.finalCart),
   //   delivery_location_charge
   // );
-  console.log(adjusted_amount, inside, outside)
+  console.log(adjusted_amount,serverRCAdjustedPrice,FinalRewardCash);
   return (
     <div className="checkout_body row">
       <div className="col-md-6">
@@ -94,10 +96,16 @@ const CheckOutBody = (props) => {
       </div>
       <div className="col-md-6">
         <PaymentMethod type={paymentType} setType={setPaymentType} />
-        <CashBack cashBack={ adjusted_amount}/>
+        <CashBack cashBack={adjusted_amount}
+          serverRCAdjustedPrice={serverRCAdjustedPrice}
+          setServerRCAdjustedPrice={setServerRCAdjustedPrice}
+          setFinalRewardCash={setFinalRewardCash}
+          adjusted_amount={adjusted_amount}
+        />
         <PriceDetails details={DeliveryDetails} type={paymentType} cashBack={adjusted_amount}
-        campaign={ props.campaign}
+        campaign={props.campaign}
         setCampaign={props.setCampaign}
+        FinalRewardCash={FinalRewardCash}
         />
       </div>
     </div>

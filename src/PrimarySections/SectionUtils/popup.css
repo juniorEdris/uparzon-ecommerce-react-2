@@ -30,7 +30,6 @@
 }
 .primary_back_btn{
     text-align: center;
-    background: var(--light-color);
 }
 .primary_back_btn a{
     background-color: var(--theme-color);

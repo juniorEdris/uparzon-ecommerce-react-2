@@ -1,8 +1,49 @@
+import { useState } from 'react';
+import PopUpTwo from '../../../PrimarySections/SectionUtils/PopUpTwo';
+import SpinLoader from '../../../PrimarySections/SectionUtils/SpinLoader';
+import {API, ENDPOINTS} from '../../../PrimarySections/Utility/API_Links';
 const CashBack = (props) => {
+  /*
+    serverRCAdjustedPrice
+    setServerRCAdjustedPrice
+  */
+ const [rewardPopUp, setRewardPopUp] = useState(false);
+ const [loading, setLoading] = useState(false);
+ const [error, setError] = useState({success:'',error:''});
+  const getRewardCash = e => {
+    setLoading(true)
+    API().post(`${ENDPOINTS.GET_REWARD_CASH}`).then(res => {
+      console.log('cb', res);
+      if (res.data.status) {
+        props.setServerRCAdjustedPrice(res.data.reward_cashback)
+        setRewardPopUp(true)
+        setLoading(false)
+        setError({success:'Cash Reward success!'})
+      } else {
+        setLoading(false)
+        setError({error:'Cash Reward failed!'})
+      }
+    }
+    ).catch(err => {
+      console.log(err);
+    })
+  }
+  const rewardCashSubmit = e => {
+        if (props.adjusted_amount > props.serverRCAdjustedPrice) {
+            props.setFinalRewardCash(0)
+        } else {
+            props.setFinalRewardCash(props.serverRCAdjustedPrice)
+        }
+  }
+  const closeRewardPopUp = e => {
+    setRewardPopUp(false)
+  }
     return (
-        <div className="cashback_wrapper">
+      <div className="cashback_wrapper">
+        {loading && <SpinLoader/>}
+        {rewardPopUp && <PopUpTwo access={rewardCashSubmit} response={props.serverRCAdjustedPrice} close={closeRewardPopUp}/>}
             <div className="col p-0">
-                <button type='button' className='btn col'>Adjust Reward Cashback</button>
+          <button type='button' className='btn col' onClick={getRewardCash}>Adjust Reward Cashback</button>
             </div>
             <div className="cashback_text">
                 <p className='m-0 text-center'>
@@ -23,7 +64,12 @@ const CashBack = (props) => {
 
                     Cashback {props.cashBack || 0} Taka
                 </p>
-            </div>
+        </div>
+        {error.error && (
+          <div className="error-handler text-center">
+            <small>{error}</small>
+          </div>
+        ) }
         </div>
      );
 }

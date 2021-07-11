@@ -21,7 +21,6 @@ const PriceDetails = (props) => {
   const [couponNum, setCouponNum] = useState({
     coupon_number: '',
   });
-  console.log(props.cartList,props.campaign);
   // Coupon input state
   const CouponInput = (e) => {
     e.preventDefault();

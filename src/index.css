@@ -170,10 +170,16 @@ h6 {
     color: var(--theme-color);
 }
 .error-handler {
-    color: rgb(211, 15, 15);
+    color: rgba(155,44,44,100%);
     margin: 1rem 0;
+    padding: 0.6rem 0;
     font-size: 1.2rem;
     text-transform: capitalize;
+    background: #fed7d7;
+}
+.error-handler small{
+    font-weight: 600;
+
 }
 .box-shadowOne{
     box-shadow: var(--box-shadow-one) !important;

@@ -63,12 +63,8 @@ const OrderProducts = (props) => {
                 </td>
                 <td>
                   <Link
-                    to={`/productdetails?id=${item.product_id}`}
+                    to={`/productdetails?product=${item.slug}&id=${item.id}`}
                     className="table_link pointer_none">
-                    {/* <img
-                  src="./assets/svg/icons/light-shopping-cart.svg"
-                  alt="cart img"
-                /> */}
                     View Details
                   </Link>
                 </td>

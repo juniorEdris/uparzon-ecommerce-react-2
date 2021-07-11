@@ -66,13 +66,14 @@ const OrderDetails = (props) => {
           close={goTodash}
         />
       )}
+      {props.loading ? (
+          <div className="col-12 mt-2 ">
+            <Skeleton width={'100%'} height={165} />
+        </div>
+      ) : (
       <div className="order_information_details">
         <h5 className="order-information-heading bottom-border">Shipping Details</h5>
-        {props.loading ? (
-          <div className="col-12 mt-2 ">
-            <Skeleton width={'100%'} height={100} />
-          </div>
-        ) : (
+        
           <div className="col-12 row justify-content-between">
             <div className="col-md-6 p-0 right-border">
             <div className="list_content row  align-items-center m-0">
@@ -88,8 +89,8 @@ const OrderDetails = (props) => {
               </div>
             </div>
           </div>
-        )}
       </div>
+        )}
     </div>
   );
 };

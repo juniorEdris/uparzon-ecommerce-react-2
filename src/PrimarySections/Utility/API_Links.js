@@ -1,5 +1,4 @@
 import Axios from 'axios';
-import {UserID} from '../../PrimarySections/Utility';
 export const DOMAIN = `https://demostore.uparzon.com/`;
 // export const DOMAIN = `https://store.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
@@ -31,12 +30,13 @@ export const ENDPOINTS = {
   REGISTER: `https://demopartner.uparzon.com/api/partner/store/register`,
   ADDTOBASKET: `api/user/product/add_to_cart`,
   CART_UPDATE: `api/user/cart_update/`,
-  GETCARTITEMS: `api/uparzonapp/user/get_cart_products?api_key=${api_key}&user_id=${UserID()}`,
+  GETCARTITEMS: `api/uparzonapp/user/get_cart_products?api_key=${api_key}`,
   DELETEFROMBASKET: `api/uparzonweb/cart/delete_product/`,
   GETDISTRICTS: `api/uparzonweb/get_districts?api_key=${api_key}`,
   PLACE_ORDER: `api/uparzonapp/latest_place_order?api_key=${api_key}`,
-  GET_ORDER_LIST: `api/uparzonapp/get_orders?api_key=${api_key}&user_id=${UserID()}`,
+  GET_ORDER_LIST: `api/uparzonapp/get_orders?api_key=${api_key}`,
   GET_SINGLE_ORDER: `api/uparzonapp/get_order_details?api_key=${api_key}`,
+  GET_REWARD_CASH: `https://demopartner.uparzon.com/api/partner/store/getBalance`,
   //
   GET_WISHLIST_ITEM: `api/user/wishlist_products`,
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,

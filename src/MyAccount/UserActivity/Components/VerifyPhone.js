@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ export const VerifyPhone = (props) => {
     <div className="verify_number_container">
       <h3
         className="text-center verify_number_heading chilldren-gap-top"
-        >
+      >
         Verify Your Number
       </h3>
       <div className="verify_number_heading_paragraph chilldren-gap-top">
@@ -15,39 +14,15 @@ export const VerifyPhone = (props) => {
       </div>
       <div className="col verify_input_section">
         <div className="input-group mb-3 col-12 col-xl-8 m-auto">
-          {/* <div className="input-group-prepend">
-            <button
-              className="btn btn-outline-secondary dropdown-toggle verify_number_drop_down"
-              type="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false">
-              Dropdown
-            </button>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-              <div role="separator" className="dropdown-divider" />
-              <a className="dropdown-item" href="#">
-                Separated link
-              </a>
-            </div>
-          </div> */}
           <input
             type="text"
-            className="form-control verify_number_input"
+            className="form-control verify_number_input text-center"
             aria-label="Text input with dropdown button"
             value={props.loginInput.OTPNumber}
             onChange={(e) =>
               props.setLogin({ ...props.loginInput, OTPNumber: e.target.value })
             }
+            placeholder={'01XXXXXXXXX'}
           />
         </div>
 
