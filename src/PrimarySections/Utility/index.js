@@ -32,12 +32,12 @@ export const getCartProdSubTotal = (basket, user) =>
   user
     ? basket?.reduce(
         (amount, item) =>
-          parseInt(item.price * item?.total_quantity) + amount, 
+          Number(item.price * item?.total_quantity) + amount, 
         0
       )
     : basket?.reduce(
         (amount, item) =>
-          parseInt(item?.price * item?.total_quantity) + amount,
+          Number(item?.price * item?.total_quantity) + amount,
         0
       );
 

@@ -48,7 +48,7 @@ function Login(props) {
               onChange={(e) =>
                 setLogin({ ...loginInput, password: e.target.value })
               }
-              placeholder={'password'}
+              placeholder={'*********'}
               required
             />
             {/* show password required */}

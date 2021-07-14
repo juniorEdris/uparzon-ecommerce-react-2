@@ -15,18 +15,18 @@ const Dashboard = (props) => {
   const [tab, setTab] = useState('dashboard');
   const [orderId, setOrderId] = useState('');
   useEffect(() => {
+    //   props.guestWishSubmit();
+    //   props.getOrderList();
+  }, []);
+  useEffect(() => {
     props.getCartItems();
+    // props.localCartList.length > 0 &&  props.guestCartSubmit();
     // props.User && props.getWishlist();
     props.User && props.getUserInfo();
     props.User && props.getUserDistrict();
     props.User && props.getOrderList();
     toTheTop()
   }, [tab]);
-  useEffect(() => {
-    //   props.guestCartSubmit();
-  //   props.guestWishSubmit();
-  //   props.getOrderList();
-  }, []);
   return (
     <div className="dashboard_wrapper container-md-fluid">
       {props.logOutRequest && <SpinLoader />}

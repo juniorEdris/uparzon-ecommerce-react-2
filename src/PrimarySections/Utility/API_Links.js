@@ -37,6 +37,7 @@ export const ENDPOINTS = {
   GET_ORDER_LIST: `api/uparzonapp/get_orders?api_key=${api_key}`,
   GET_SINGLE_ORDER: `api/uparzonapp/get_order_details?api_key=${api_key}`,
   GET_REWARD_CASH: `https://demopartner.uparzon.com/api/partner/store/getBalance`,
+  COUPON_TOKEN: `api/uparzonapp/verify_coupon`,
   //
   GET_WISHLIST_ITEM: `api/user/wishlist_products`,
   ADD_WISHLIST_ITEM: `api/product/add_to_wishlist?`,
@@ -46,7 +47,6 @@ export const ENDPOINTS = {
   USER_UPDATE: `api/user_update`,
   PRESCRIPTION_UPLOAD: `api/app/prescription_store?`,
   SEND_CONTACT_MSG: `api/send/contact-us-message`,
-  COUPON_TOKEN: `api/verify_coupon`,
   CANCEL_ORDER: `api/cancel_order`,
   GET_BLOG_LIST: `api/web/get_blog_lists`,
   GET_SINGLE_BLOG: `api/web/get_blog_details`,

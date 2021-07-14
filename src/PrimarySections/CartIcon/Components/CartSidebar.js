@@ -6,9 +6,6 @@ import RegularCartList from './RegularCartList';
 
 const CartSidebar = (props) => {
   const [Cartsection, setCartsection] = useState('regular');
-  const cartSections = (e) => {
-    e.preventDeafault();
-  };
   return (
     <div className="cart_sidebar">
       <div className={`cart_sidebar_route ${!props.cart && 'd-none'}`}>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PopUpTwo from '../../../PrimarySections/SectionUtils/PopUpTwo';
 import SpinLoader from '../../../PrimarySections/SectionUtils/SpinLoader';
 import {API, ENDPOINTS} from '../../../PrimarySections/Utility/API_Links';
@@ -9,16 +9,20 @@ const CashBack = (props) => {
   */
  const [rewardPopUp, setRewardPopUp] = useState(false);
  const [loading, setLoading] = useState(false);
- const [error, setError] = useState({success:'',error:''});
+  const [error, setError] = useState({ success: '', error: '' });
+  const [cbMessage, setCBMessage] = useState('');
+  useEffect(() => {
+    setError({})
+  }, [])
   const getRewardCash = e => {
     setLoading(true)
     API().post(`${ENDPOINTS.GET_REWARD_CASH}`).then(res => {
-      console.log('cb', res);
       if (res.data.status) {
-        props.setServerRCAdjustedPrice(res.data.reward_cashback)
+        props.setServerRCAdjustedPrice(res.data)
         setRewardPopUp(true)
         setLoading(false)
-        setError({success:'Cash Reward success!'})
+        setCBMessage(`You have got ${Number(props.serverRCAdjustedPrice.reward_cashback) > Number(props.adjusted_amount) ? Number(props.serverRCAdjustedPrice.reward_cashback) : 0} tk reward cashback`)
+        // setError({success:'Cash Reward success!'})
       } else {
         setLoading(false)
         setError({error:'Cash Reward failed!'})
@@ -29,19 +33,23 @@ const CashBack = (props) => {
     })
   }
   const rewardCashSubmit = e => {
-        if (props.adjusted_amount > props.serverRCAdjustedPrice) {
-            props.setFinalRewardCash(0)
-        } else {
-            props.setFinalRewardCash(props.serverRCAdjustedPrice)
-        }
+    if (props.serverRCAdjustedPrice.reward_cashback > props.adjusted_amount) {
+        props.setFinalRewardCash(props.serverRCAdjustedPrice.reward_cashback)
+      setError({ success: `Cash Reward added ${props.FinalRewardCash}` })
+    } else {
+      props.setFinalRewardCash(0)
+      setError({success:`Cash Reward added ${props.FinalRewardCash}`})
+      }
+      setRewardPopUp(false)
   }
   const closeRewardPopUp = e => {
     setRewardPopUp(false)
   }
+  // server > local cash = true ? false
     return (
       <div className="cashback_wrapper">
         {loading && <SpinLoader/>}
-        {rewardPopUp && <PopUpTwo access={rewardCashSubmit} response={props.serverRCAdjustedPrice} close={closeRewardPopUp}/>}
+        {rewardPopUp && <PopUpTwo access={rewardCashSubmit} response={cbMessage} close={closeRewardPopUp}/>}
             <div className="col p-0">
           <button type='button' className='btn col' onClick={getRewardCash}>Adjust Reward Cashback</button>
             </div>
@@ -67,7 +75,12 @@ const CashBack = (props) => {
         </div>
         {error.error && (
           <div className="error-handler text-center">
-            <small>{error}</small>
+            <small>{error.error}</small>
+          </div>
+        ) }
+        {error.success && (
+          <div className="alert alert-success text-center">
+            {error.success}
           </div>
         ) }
         </div>

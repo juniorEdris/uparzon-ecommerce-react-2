@@ -19,7 +19,10 @@ const CheckOutBody = (props) => {
   });
   const [paymentType, setPaymentType] = useState('ub');
   const [storeAddress, setStoreAddress] = useState(false);
-  const [serverRCAdjustedPrice, setServerRCAdjustedPrice] = useState(0);
+  const [serverRCAdjustedPrice, setServerRCAdjustedPrice] = useState({
+    uparzon_balance: 0,
+    reward_cashback:0
+  });
   const [FinalRewardCash, setFinalRewardCash] = useState(0);
   useEffect(() => {
     setDeliveryDetails({
@@ -80,7 +83,6 @@ const CheckOutBody = (props) => {
   //   getActiveCartProdSubTotal(props.finalCart),
   //   delivery_location_charge
   // );
-  console.log(adjusted_amount,serverRCAdjustedPrice,FinalRewardCash);
   return (
     <div className="checkout_body row">
       <div className="col-md-6">
@@ -100,9 +102,11 @@ const CheckOutBody = (props) => {
           serverRCAdjustedPrice={serverRCAdjustedPrice}
           setServerRCAdjustedPrice={setServerRCAdjustedPrice}
           setFinalRewardCash={setFinalRewardCash}
+          FinalRewardCash={FinalRewardCash}
           adjusted_amount={adjusted_amount}
-        />
-        <PriceDetails details={DeliveryDetails} type={paymentType} cashBack={adjusted_amount}
+          />
+        <PriceDetails details={DeliveryDetails} type={paymentType}
+        serverRCAdjustedPrice={serverRCAdjustedPrice}
         campaign={props.campaign}
         setCampaign={props.setCampaign}
         FinalRewardCash={FinalRewardCash}

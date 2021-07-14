@@ -5,15 +5,22 @@ import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { PopUp } from '../../../PrimarySections/SectionUtils/PopUp';
 import { getCartProdSubTotal} from '../../../PrimarySections/Utility';
-import { API, ENDPOINTS } from '../../../PrimarySections/Utility/API_Links';
+import { API, api_key, ENDPOINTS } from '../../../PrimarySections/Utility/API_Links';
 import { getCartItems } from '../../../Redux/Action/CartProductsAction';
 import { PlaceOrder, PlaceOrderClearMsg } from '../../../Redux/Action/PlaceOrderAction';
 
 const PriceDetails = (props) => {
-  const [offer, setOffer] = useState({});
+  const [offer, setOffer] = useState({
+    price:'',
+    percentage:'',
+  });
   const [error, setError] = useState('');
   useEffect(() => {
-    setOffer({});
+    setOffer({
+      price:'',
+      percentage:'',
+    });
+    setError('')
   }, []);
   const history = useHistory();
   const [coupon, setCoupon] = useState(false);
@@ -82,19 +89,41 @@ const PriceDetails = (props) => {
   // COUPON SUBMIT
   const submitCoupon = (e) => {
     setCouponLoading(true);
+    const user = localStorage.getItem('user_id')
     e.preventDefault();
     API()
-      .post(`${ENDPOINTS.COUPON_TOKEN}?coupon_code=${couponNum.coupon_number}`)
+      .post(`${ENDPOINTS.COUPON_TOKEN}?api_key=${api_key}&user_id=${user}&coupon_code=${couponNum.coupon_number}`)
       .then((res) => {
-        setOffer(res.data.data);
-        setCouponLoading(false);
+        if (!res.data.data.id) {
+          setOffer({ coupon_error: res.data.data.message })
+          setCouponLoading(false);
+        } else { 
+          setOffer({...res.data.data, coupon_success: `Coupon added successfully`});
+          setCouponLoading(false);
+        };
       })
       .catch((error) => {
+        setCouponLoading(false);
         console.log(error);
       });
-  };
+    };
   // PLACE ORDER FUNCTION
   const PlaceOrder = (e) => {
+    const order = () => { 
+      const data = {
+        ...props.details,
+        coupon_id: offer.id || '',
+        coupon_discount: offer?.price
+        ? Number(offer.price).toFixed(2)
+        : offer?.percentage,
+        payment_type: props.type,
+        adjusted_amount: props.FinalRewardCash,
+        delivery_charge: PriceContainer.delivery_charge,
+        is_campaign: props.campaign,
+      };
+      props.order(data);
+      // console.log(props.FinalRewardCash,'>>>final amount',final_total_amount, 'order', data);
+    }
     e.preventDefault();
     setError('');
     if (
@@ -108,26 +137,15 @@ const PriceDetails = (props) => {
       setError('Please fill all the delivery details.');
     } else if (!props.cartList?.length > 0) {
       setError('your cart is empty');
+    } else if (props.type ==='ub') { 
+      if (props.serverRCAdjustedPrice.uparzon_balance >= Number(final_total_amount)) {
+        order()
+      } else { 
+        setError('insufficiant uparzon balance!')
+      }
     } else {
-      const data = {
-        ...props.details,
-        coupon_id: offer.id || '',
-        coupon_discount: offer.price || '',
-        payment_type: props.type,
-        adjusted_amount: '',//props.cashBack ||
-        delivery_charge: PriceContainer.delivery_charge,
-        is_campaign:props.campaign,
-      };
-      props.order(data);
-    }
-    /*
-       else if (
-      Number(PriceContainer?.min_order) >
-      (getCartProdSubTotal(server_products, props.user) || 0)
-    ) {
-      setError(`minimum order price ${PriceContainer?.min_order}tk`);
-    }
-    */ 
+      order()
+      }
   };
 
   // PUSH TO ORDER SUCCESS NOTIFICATION
@@ -138,6 +156,11 @@ const PriceDetails = (props) => {
     setError('');
     props.orderClearMsg()
     props.getCartItems()
+    setOffer({
+      price:'',
+      percentage:''
+    })
+    setError('')
   };
   return (
     <div className="">
@@ -176,8 +199,10 @@ const PriceDetails = (props) => {
             <div className="row justify-content-between m-0 col-12 p-0">
               <p className=" discount_amount mb-0">Discount: </p>{' '}
               <span className="discount_amount">
-                &#2547;{' '}
-                {offer?.price ? Number(offer.price).toFixed(2) : (0).toFixed(2)}
+                {' '}
+                {offer.id ? offer?.price
+                  ? Number(offer.price).toFixed(2) + 'tk'
+                  : offer?.percentage + ' %' : 0}
               </span>
             </div>
           </div>
@@ -188,10 +213,14 @@ const PriceDetails = (props) => {
             <span className="grand_total_amount">
               &#2547;{' '}
               {offer?.price
-                ? (final_total_amount - Number(offer.price).toFixed(2)).toFixed(
-                    2
-                  ) || 0
-                : final_total_amount}
+                  ? Number(final_total_amount) - Number(offer.price).toFixed(2)
+                  : offer?.percentage
+                  ? (
+                      (Number(final_total_amount) * Number(offer.percentage)) /
+                      100
+                    ).toFixed(2)
+                  : Number(final_total_amount)}
+
             </span>
           </div>
 
@@ -202,7 +231,7 @@ const PriceDetails = (props) => {
             Do You Have a Coupon Code ?
           </Link>
         {coupon && (
-          <div className="row mt-2 coupon_input">
+          <div className="row no-gutters mt-2 coupon_input">
             <div className="form-group col-md-9 mb-2">
               <label htmlFor="coupon_number" className="sr-only">
                 Coupon number
@@ -226,6 +255,12 @@ const PriceDetails = (props) => {
             </button>
           </div>
         )}
+        {offer.coupon_error && 
+          <div className="error-handler text-center">{ offer.coupon_error}</div>
+        }
+        {offer.coupon_success && 
+          <div className="alert alert-success text-center">{ offer.coupon_success}</div>
+        }
         </div>
       <div className="order_btn">
             <button
@@ -235,7 +270,16 @@ const PriceDetails = (props) => {
               >
               {props.orderSuccessLoading ? 'ORDER PROCESSING...' : 'PLACE ORDER'}
         </button>
-        <div className="order_btn_price col-3">&#2547; {final_total_amount}</div>
+        <div className="order_btn_price col-3">&#2547;
+        {offer?.price
+                  ? Number(final_total_amount) - Number(offer.price).toFixed(2)
+                  : offer?.percentage
+                  ? (
+                      (Number(final_total_amount) * Number(offer.percentage)) /
+                      100
+                    ).toFixed(2)
+                  : Number(final_total_amount)} 
+        </div>
           </div>
     </div>
   );

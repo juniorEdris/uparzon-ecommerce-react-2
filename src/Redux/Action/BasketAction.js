@@ -314,6 +314,8 @@ export const updateCartItem = (product) => async (dispatch, getState) => {
   // }
 };
 export const guestCartItem = (array) => async (dispatch, getState) => {
+  console.log('guest cart called');
+  const user = localStorage.getItem('user_id');
   dispatch(addProdBasketRequest());
   let Data = [];
   let cartItems = getState().Basket.localBasket.slice();
@@ -327,21 +329,23 @@ export const guestCartItem = (array) => async (dispatch, getState) => {
   });
   const arr = JSON.stringify(Object.assign([], Data));
   if (Data.length > 0) {
+    
     await API()
-      .post(`${ENDPOINTS.CART_GUEST_CART}`, {
+      .post(`${ENDPOINTS.ADDTOBASKET}?&user_id=${user}`, {
         guest_carts: JSON.parse(arr),
       })
       .then((res) => {
-        if (res.data.type) {
-          dispatch(addProdServerBasketSuccess({ ...res.data, type: true }));
-          dispatch(productStatusSuccess());
-          setTimeout(() => {
-            dispatch(productStatusComplete());
-          }, 3000);
-          localStorage.setItem('Cart List', JSON.stringify([]));
-        } else {
-          console.log(res.data);
-        }
+        console.log('guest basket',res);
+        localStorage.setItem('Cart List', JSON.stringify([]));
+        // if (res.data.type) {
+        //   dispatch(addProdServerBasketSuccess({ ...res.data, type: true }));
+        //   dispatch(productStatusSuccess());
+        //   setTimeout(() => {
+        //     dispatch(productStatusComplete());
+        //   }, 3000);
+        // } else {
+        //   console.log(res.data);
+        // }
       })
       .catch((err) => console.log(err));
     // console.log(arr,'basket');

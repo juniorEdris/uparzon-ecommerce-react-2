@@ -28,8 +28,8 @@ const CartButton = (props) => {
             &#2547;{' '}
             {
                !props.user
-              ? getCartProdSubTotal(local_products, props.user) || 0
-              : getCartProdSubTotal(server_products, props.user) || 0
+              ? getCartProdSubTotal(local_products, props.user).toFixed(2) || 0
+              : getCartProdSubTotal(server_products, props.user).toFixed(2) || 0
             }
           </span>
         </div>
@@ -39,8 +39,8 @@ const CartButton = (props) => {
             &#2547;{' '}
             {
               !props.user
-              ? getCartProdSubTotal(local_products, props.user) || 0
-              : getCartProdSubTotal(server_products, props.user) || 0
+              ? getCartProdSubTotal(local_products, props.user).toFixed(2) || 0
+              : getCartProdSubTotal(server_products, props.user).toFixed(2) || 0
             }
           </span>
         </div>
