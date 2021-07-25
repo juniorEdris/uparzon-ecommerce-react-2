@@ -158,7 +158,7 @@ const RegularCartList = (props) => {
                       <div className="regular_cart_total_price text-right col-3">
                         <div className="regular_cart_price">
                           &#2547;{' '}
-                          {(item?.unit_price * item.total_quantity).toFixed(
+                          {(item?.price * item.total_quantity).toFixed(
                             2
                           )}
                         </div>
@@ -371,14 +371,20 @@ const RegularCartList = (props) => {
           !props.user ? 
           (non_campaign_products.length > 0 ?
             cartprod :
-          <div className="d-flex justify-content-center align-items-center empty_cart_placeholder">
-          <img src="uparzonassets/svg/icons/cart_icon/empty-cart.svg" alt="" />
-        </div>)
+            <div className="d-flex flex-column justify-content-center align-items-center empty_cart_placeholder">
+            <img src="uparzonassets/svg/icons/cart_icon/empty-cart.svg" alt="" />
+            <div className="empty_cart_placeholder_text">
+              no products
+            </div>
+          </div>)
           : (server_non_campaign_products.length > 0 ?
               cartprod :
-            <div className="d-flex justify-content-center align-items-center empty_cart_placeholder">
-            <img src="uparzonassets/svg/icons/cart_icon/empty-cart.svg" alt="" />
-          </div>)
+              <div className="d-flex flex-column justify-content-center align-items-center empty_cart_placeholder">
+              <img src="uparzonassets/svg/icons/cart_icon/empty-cart.svg" alt="" />
+              <div className="empty_cart_placeholder_text">
+                no products
+              </div>
+            </div>)
           
         }
       </div>

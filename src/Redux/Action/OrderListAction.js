@@ -32,7 +32,7 @@ export const getOrderList = (data) => async (dispatch) => {
   API()
     .get(`${ENDPOINTS.GET_ORDER_LIST}&user_id=${user}`)
     .then((res) => {
-      console.log(res,'Order');
+      // console.log(res,'Order');
       // if (!res.data.status) {
       //   dispatch(OrderListError());
       // } else {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import DashBody from './Components/DashBody';
 import DashSidebar from './Components/DashSidebar';
@@ -15,13 +15,13 @@ const Dashboard = (props) => {
   const [tab, setTab] = useState('dashboard');
   const [orderId, setOrderId] = useState('');
   useEffect(() => {
-    //   props.guestWishSubmit();
     //   props.getOrderList();
   }, []);
   useEffect(() => {
     props.getCartItems();
-    // props.localCartList.length > 0 &&  props.guestCartSubmit();
-    // props.User && props.getWishlist();
+    props.localCartList.length > 0 &&  props.guestCartSubmit();
+    props.User &&  props.guestWishSubmit();
+    props.User && props.getWishlist();
     props.User && props.getUserInfo();
     props.User && props.getUserDistrict();
     props.User && props.getOrderList();
@@ -53,7 +53,8 @@ const mapStateToProps = (state) => ({
   info: state.UserInfo.info,
   orders: state.OrderList.orders,
   loading: state.AccountInfo.storeInfoloading,
-  localCartList: state.Basket.localBasket,
+  localCartList: state.Basket.localBasket ||[],
+  localWishList: state.Wishlist.localWishlist,
   geustListloading: state.Basket.loading,
   logOutRequest: state.User.logOutRequest,
 });
@@ -68,4 +69,4 @@ const mapDispatchToProps = (dispatch) => ({
   guestWishSubmit: (array) => dispatch(guestWishItem(array)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(memo(Dashboard));

@@ -28,7 +28,7 @@ export const WishlistReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        localWishlist: action.product,
+        localWishlist: action.product || [],
         error: '',
       };
     case ADD_TO_ONLINE_WISHLIST_SUCCESS:
@@ -43,7 +43,7 @@ export const WishlistReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        localWishlist: action.product,
+        localWishlist: action.payload,
         error: '',
       };
     case REMOVE_FROM_ONLINE_WISHLIST:

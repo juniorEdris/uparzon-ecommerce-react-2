@@ -1,3 +1,4 @@
+import Skeleton from '@yisheng90/react-loading';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -5,25 +6,10 @@ const WishlistBody = (props) => {
   const Styles = {
     minWidth: '400px',
   };
-  const addProduct = async (details) => {
-    const data = {
-      product_id: details.product_id || '',
-      slug: props.product?.slug || '',
-      photo: details?.photo,
-      shop_name: details?.shop_name || '',
-      name: details?.name,
-      unit_price: details?.unit_price,
-      shop_id: details?.shop_id,
-      vendor_delivery: details?.vendor_delivery,
-      is_campaign: details.is_campaign,
-    };
-     console.log(data);
-    // await props.addToCart(data);
-    // props.user && (await props.getCartItems());
-  };
+  
   return (
     <div className="wishlist_body">
-      <table class="table wishlist_table">
+        <table class="table wishlist_table">
         <thead>
           <tr>
             <th scope="col">Product name</th>
@@ -34,16 +20,15 @@ const WishlistBody = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.loading
-            ? 'loading'
-            : props.products?.map((product) => (
+          {
+              props.products?.map((product) => (
               <tr key={ product.product_id}>
                   <td style={Styles}>
                     <div className="col-12">
                     <div className="row align-items-center flex-nowrap">
 
                         <div className="wish_item_image col-3">
-                      <Link to={`/productdetails?id=${product.product_id}`}>
+                      <Link to={`/productdetails?product=${product.slug}&id=${product.product_id}`}>
                           <img
                             src={`https:${product?.photo}`}
                             alt={product?.name}
@@ -51,7 +36,7 @@ const WishlistBody = (props) => {
                             </Link>
                         </div>
                       <div className="wish_item_name col-9">
-                        <Link to={`/productdetails?id=${product.product_id}`}>
+                        <Link to={`/productdetails?product=${product.slug}&id=${product.product_id}`}>
                           {product.name}
                       </Link>
                         
@@ -77,7 +62,7 @@ const WishlistBody = (props) => {
                   <td>
                     <button
                       className="btn btn-addcart text-light col-12"
-                      onClick={() => addProduct(product)}>
+                      onClick={() => props.addProduct(product)}>
                       <i className="fas fa-cart-plus mr-2"></i>
                       <span className="d-none d-md-inline"> add to cart</span>
                     </button>
@@ -90,7 +75,8 @@ const WishlistBody = (props) => {
                     </div>
                   </td>
                 </tr>
-              ))}
+              )) 
+              }
         </tbody>
       </table>
     </div>

@@ -55,10 +55,11 @@ const productStatusComplete = () => ({
   status: false,
 });
 
-export const AddBasketProd = (product) => async (dispatch, getState) => {
+export const AddBasketProd = (product,from_wishcart) => async (dispatch, getState) => {
   const user = localStorage.getItem('user_id');
   // return action if its null
   if (product === null) return;
+  const url = from_wishcart ? `${ENDPOINTS.WISH_TO_CART}/${product.wish_id}?api_key=${api_key}&user_id=${user}` : `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&user_id=${user}&unit_price=${product.unit_price}&total_quantity=${product.total_quantity}&is_campaign=${product.is_campaign}&api_key=${api_key}&shop_id=${product.shop_id}`
   if (!user) {
     let cartItems = getState().Basket.localBasket.slice();
     let exist = false;
@@ -97,9 +98,10 @@ export const AddBasketProd = (product) => async (dispatch, getState) => {
     dispatch(addProdBasketRequest());
     await API()
     .post(
-      `${ENDPOINTS.ADDTOBASKET}?product_id=${product.product_id}&user_id=${user}&unit_price=${product.unit_price}&total_quantity=${product.total_quantity}&is_campaign=${product.is_campaign}&api_key=${api_key}&shop_id=${product.shop_id}`
+      url
       )
       .then((res) => {
+        // console.log('basket res',res);
         dispatch(addProdServerBasketSuccess(res.data));
         dispatch(productStatusSuccess());
         setTimeout(() => {
@@ -314,41 +316,38 @@ export const updateCartItem = (product) => async (dispatch, getState) => {
   // }
 };
 export const guestCartItem = (array) => async (dispatch, getState) => {
-  console.log('guest cart called');
   const user = localStorage.getItem('user_id');
   dispatch(addProdBasketRequest());
-  let Data = [];
+  let string = [];
+  let j = '';
   let cartItems = getState().Basket.localBasket.slice();
-  cartItems.forEach((e) => {
-    const item = {
-      product_id: e.product_id,
-      total_quantity: e.total_quantity,
-      unit_price_id: e.unit_prices_id,
-    };
-    Data.push(item);
+  cartItems.forEach((guest_carts,i) => {
+    const products = `guest_carts[${i}][unit_price]=${guest_carts.unit_price}&guest_carts[${i}][is_campaign]=${guest_carts.is_campaign}&guest_carts[${i}][shop_id]=${guest_carts.shop_id}&guest_carts[${i}][user_id]=${user}&guest_carts[${i}][product_id]=${guest_carts.product_id}&guest_carts[${i}][total_quantity]=${guest_carts.total_quantity}`
+    string.push(products)
+    j = string.join('&')
   });
-  const arr = JSON.stringify(Object.assign([], Data));
-  if (Data.length > 0) {
-    
+
+  if (cartItems.length > 0) {
     await API()
-      .post(`${ENDPOINTS.ADDTOBASKET}?&user_id=${user}`, {
-        guest_carts: JSON.parse(arr),
-      })
+      .post(`${ENDPOINTS.ADDTOBASKET}?api_key=${api_key}&${j}`)
       .then((res) => {
-        console.log('guest basket',res);
-        localStorage.setItem('Cart List', JSON.stringify([]));
-        // if (res.data.type) {
-        //   dispatch(addProdServerBasketSuccess({ ...res.data, type: true }));
-        //   dispatch(productStatusSuccess());
-        //   setTimeout(() => {
-        //     dispatch(productStatusComplete());
-        //   }, 3000);
-        // } else {
-        //   console.log(res.data);
-        // }
+        if (res.data.type) {
+          dispatch(addProdServerBasketSuccess({ ...res.data, type: true }));
+          dispatch(productStatusSuccess());
+          setTimeout(() => {
+            dispatch(productStatusComplete());
+          }, 3000);
+          localStorage.setItem('Cart List', JSON.stringify([]));
+        } else {
+          console.log(res.data);
+          dispatch(addProdServerBasketSuccess({ ...res.data, type: true }));
+          dispatch(productStatusSuccess());
+          setTimeout(() => {
+            dispatch(productStatusComplete());
+          }, 3000);
+        }
       })
       .catch((err) => console.log(err));
-    // console.log(arr,'basket');
   } else {
     return;
   }

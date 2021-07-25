@@ -1,5 +1,6 @@
 import Skeleton from '@yisheng90/react-loading';
 import React from 'react';
+import ReactImageMagnify from 'react-image-magnify';
 import { connect } from 'react-redux';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -15,14 +16,15 @@ const Slider = (props) => {
           interval="3000"
           transitionTime="1000"
           infiniteLoop
-          showIndicators={false}>
+            showIndicators={false}>
           <img
             src={`http:${props.details?.photo}`}
             // src={`./uparzonassets/uparzonimages/products/slider/Image 95.png`}
             className="slider_image"
             alt={props.details?.name}
-          />
+            />
         </Carousel>
+
       )}
     </div>
   );

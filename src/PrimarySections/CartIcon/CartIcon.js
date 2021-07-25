@@ -8,8 +8,6 @@ import CartSidebar from './Components/CartSidebar';
 const CartIcon = (props) => {
   useEffect(() => {
     props.user &&  props.getCartItems()
-  }, []);
-  useEffect(() => {
     document.body.style.overflow = props.cart ? 'hidden' : '';
   }, [props.cart]);
   const sidebarOpen = async (e) => {

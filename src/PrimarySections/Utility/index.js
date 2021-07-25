@@ -37,7 +37,7 @@ export const getCartProdSubTotal = (basket, user) =>
       )
     : basket?.reduce(
         (amount, item) =>
-          Number(item?.price * item?.total_quantity) + amount,
+          Number(item?.unit_price * item?.total_quantity) + amount,
         0
       );
 

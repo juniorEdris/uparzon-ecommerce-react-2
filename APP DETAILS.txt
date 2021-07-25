@@ -46,3 +46,13 @@ aigula tik korien...kuno ta na bujle amke bolien...bakigula ami check kre dibo..
     //   }`;
     // }
     // router.replace(redirect);
+
+
+    {props.loading
+          ?
+          <div className="pl-2 pr-2 pb-2">
+            <Skeleton width={'100%'} height="100px" className="mb-2" />
+            <Skeleton width={'100%'} height="100px" className="mb-2" />
+            <Skeleton width={'100%'} height="100px" className="mb-2" />
+          </div>
+        :

@@ -38,7 +38,6 @@ const placeOrderClearMsg = () => {
 export const PlaceOrder = (data) => async (dispatch) => {
   const user = localStorage.getItem('user_id');
   const campaign = data.is_campaign.toString()
-  console.log(typeof(campaign))
   // data.adjusted_amount
   dispatch(placeOrderRequest());
   await API()
@@ -46,7 +45,7 @@ export const PlaceOrder = (data) => async (dispatch) => {
       `${ENDPOINTS.PLACE_ORDER}&user_id=${user}&shipping_phone=${data.phone}&shipping_name=${data.name}&shipping_district_id=${data.district}&shipping_address=${data.address}shipping_upazilla_id=${data.district}&shipping_union_id=${data.area}&shipping_city=${''}&shipping_zip=${''}&billing_address_id=${''}&coupon_discount=${data.coupon_discount}&rc_adjusted_amount=${data.adjusted_amount}&shipping_email=${data.email}&payment_method=${data.payment_type}&tax=${''}&packing_cost=${''}&coupon_id=${data.coupon_id}&total_delivery_charge=${''}&is_campaign=${campaign}&order_note=order from web`
     )
     .then((res) => {
-      console.log('place order',res);
+      // console.log('place order',res);
       if (!res.data.status) {
         dispatch(placeOrderError(res.data));
       } else {

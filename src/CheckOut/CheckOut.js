@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCartProdSubTotal } from '../PrimarySections/Utility';
+import { guestCartItem } from '../Redux/Action/BasketAction';
+import { getCartItems } from '../Redux/Action/CartProductsAction';
 import { GetUserDistrict, getUserInfo } from '../Redux/Action/GetUserInfoAction';
+import { getWishlistItems, guestWishItem } from '../Redux/Action/WishListAction';
 import './checkout.css';
 import CheckOutBody from './Components/CheckOutBody';
 
@@ -10,6 +13,11 @@ const CheckOut = (props) => {
   useEffect(() => {
     props.user && props.getUserDistrict();
     props.user && props.getUserInfo();
+    // local products to server
+    props.localCartList?.length > 0 && props.guestCartSubmit();
+    props.localWishList?.length > 0 && props.guestWishSubmit();
+    props.user && props.getCartItems()
+    props.user && props.getWishItems()
   }, []);
   return (
     <div className="">
@@ -49,11 +57,18 @@ const mapStateToProps = (state) => ({
   status: state.UserInfo.status,
   cartList: state.CartItems.basket,
   orderSuccessLoading: state.PlaceOrder.placingOrder,
+  localCartList: state.Basket.localBasket,
+  localWishList: state.Wishlist.localWishlist,
+  geustListloading: state.Basket.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getUserInfo: () => dispatch(getUserInfo()),
   getUserDistrict: () => dispatch(GetUserDistrict()),
+  guestCartSubmit: (array) => dispatch(guestCartItem(array)),
+  guestWishSubmit: (array) => dispatch(guestWishItem(array)),
+  getCartItems: () => dispatch(getCartItems()),
+  getWishItems: () => dispatch(getWishlistItems()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckOut);
