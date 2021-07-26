@@ -83,6 +83,28 @@ const CheckOutBody = (props) => {
   //   getActiveCartProdSubTotal(props.finalCart),
   //   delivery_location_charge
   // );
+   // GET CAMPAIGN PRODUCTS PRICES
+  let server_campaign_products = [];
+  props.cartList?.forEach((e) => {
+    e.shop_cart_products.forEach(e => {
+      if (e.is_campaign !== 0) {
+        server_campaign_products.push(e);
+      }
+    })
+  })
+  const CampaignPrices = server_campaign_products?.map(prod=>prod.price).reduce((a, b) => parseInt(a) + parseInt(b), 0);
+
+
+  // GET REGULAR PRODUCTS PRICES
+  let server_non_campaign_products = [];
+  props.cartList?.forEach((x) => {
+  x.shop_cart_products.forEach(e => {
+      if (e.is_campaign !== 1) {
+        server_non_campaign_products.push(e)
+      }
+    })
+  })
+  const nonCampaignPrices = server_non_campaign_products?.map(prod=>prod.price).reduce((a, b) => parseInt(a) + parseInt(b), 0);
   return (
     <div className="checkout_body row">
       <div className="col-md-6">

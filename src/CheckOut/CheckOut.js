@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { toTheTop } from '../PrimarySections/SectionUtils/WindowTop';
 import { getCartProdSubTotal } from '../PrimarySections/Utility';
 import { guestCartItem } from '../Redux/Action/BasketAction';
 import { getCartItems } from '../Redux/Action/CartProductsAction';
@@ -18,6 +19,7 @@ const CheckOut = (props) => {
     props.localWishList?.length > 0 && props.guestWishSubmit();
     props.user && props.getCartItems()
     props.user && props.getWishItems()
+    toTheTop();
   }, []);
   return (
     <div className="">

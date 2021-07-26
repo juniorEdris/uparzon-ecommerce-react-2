@@ -122,7 +122,6 @@ const PriceDetails = (props) => {
         is_campaign: props.campaign,
       };
       props.order(data);
-      // console.log(props.FinalRewardCash,'>>>final amount',final_total_amount, 'order', data);
     }
     e.preventDefault();
     setError('');
@@ -162,6 +161,7 @@ const PriceDetails = (props) => {
     })
     setError('')
   };
+
   return (
     <div className="">
       {error && (
@@ -213,13 +213,13 @@ const PriceDetails = (props) => {
             <span className="grand_total_amount">
               &#2547;{' '}
               {offer?.price
-                  ? Number(final_total_amount) - Number(offer.price).toFixed(2)
+                  ? Number(final_total_amount).toFixed(2) - Number(offer.price).toFixed(2)
                   : offer?.percentage
                   ? (
                       (Number(final_total_amount) * Number(offer.percentage)) /
                       100
                     ).toFixed(2)
-                  : Number(final_total_amount)}
+                  : Number(final_total_amount).toFixed(2)}
 
             </span>
           </div>
@@ -278,7 +278,7 @@ const PriceDetails = (props) => {
                       (Number(final_total_amount) * Number(offer.percentage)) /
                       100
                     ).toFixed(2)
-                  : Number(final_total_amount)} 
+                  : (Number(final_total_amount)).toFixed(2)} 
         </div>
           </div>
     </div>

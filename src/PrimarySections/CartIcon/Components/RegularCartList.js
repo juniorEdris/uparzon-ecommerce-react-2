@@ -64,6 +64,20 @@ const RegularCartList = (props) => {
     await props.increamentProduct(item)
     props.user && (await props.getCartItems());
   };
+
+    // get campaign/non-campaign separate amounts
+    const non_campaign_prices = () => {
+      let allProd = [];
+      props.user
+      ?
+      server_non_campaign_products?.forEach((x) => {
+        allProd.push(x.price);
+      })
+      : non_campaign_products?.forEach((x) => {
+        allProd.push(x.unit_price);
+      });
+      return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+    };
   const cartprod = props.user ? (
     server_non_campaign_products.length > 0
       ? 
@@ -396,6 +410,7 @@ const RegularCartList = (props) => {
         is_campaign={false}
         campaign={props.campaign}
         setCampaign={props.setCampaign}
+        prices={non_campaign_prices}
       />: ''}
     </div>
   );

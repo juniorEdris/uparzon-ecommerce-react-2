@@ -21,7 +21,6 @@ const CartList = (props) => {
   const router = useHistory();
   const query = useQuery();
   const removeFromCart = async (item) => {
-    console.log('remove cart',item);
     await props.removeProduct(item);
     const id = query.get('id');
     let redirect = '';
@@ -35,7 +34,7 @@ const CartList = (props) => {
     // router.replace(redirect);
     props.user && (await props.getCartItems());
   };
-
+  
   const addToCart = async (item) => {
     await props.addToCart(item);
     props.user && (await props.getCartItems());
@@ -67,6 +66,20 @@ const CartList = (props) => {
     })
     
   };
+
+  // get campaign/non-campaign separate amounts
+  const campaign_prices = () => {
+    let allProd = [];
+    props.user
+    ? server_campaign_products?.forEach((x) => {
+      allProd.push(x.price);
+    })
+    : campaign_products?.forEach((x) => {
+      allProd.push(x.unit_price);
+    });
+    return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  };
+
   return (
     <div>
       <div className="cart_product_wrapper">
@@ -249,6 +262,7 @@ const CartList = (props) => {
         is_campaign={true}
         campaign={props.campaign}
         setCampaign={props.setCampaign}
+        prices={campaign_prices}
       /> : ''}
     </div>
   );

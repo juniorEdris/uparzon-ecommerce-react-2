@@ -5,6 +5,7 @@ import CartList from './CartList';
 import RegularCartList from './RegularCartList';
 
 const CartSidebar = (props) => {
+  
   const [Cartsection, setCartsection] = useState('regular');
   return (
     <div className="cart_sidebar">
