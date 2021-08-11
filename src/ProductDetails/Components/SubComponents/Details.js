@@ -1,30 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { renderDiv } from '../../../PrimarySections/Utility';
+import { renderDiv,get_singleProd_campaign_price } from '../../../PrimarySections/Utility';
 import { AddBasketProd } from '../../../Redux/Action/BasketAction';
 import { getCartItems } from '../../../Redux/Action/CartProductsAction';
 import { addToWishlistAction } from '../../../Redux/Action/WishListAction';
 
 const Details = (props) => {
-  let compaign_price = 0;
-  if (
-    props.details?.campaign_category !== null &&
-    props.details?.campaign_category &&
-    props.details?.campaign_category.status === 1
-  ) {
-    if (props.details.campaign_category.price_in_amount) {
-      compaign_price =
-        Number(props.details.price) -
-        Number(props.details.campaign_category.price_in_amount);
-    } else if (props.details.campaign_category.price_in_percentage) {
-      compaign_price =
-        Number(props.details.price) -
-        (Number(props.details.campaign_category.price_in_percentage) *
-          Number(props.details.price)) /
-          100;
-    }
-  }
+  // GETTING CAMPAIGN PRICES DONE
+  const compaign_price = get_singleProd_campaign_price(props.details)
   const [quantity, setQuantity] = useState(1);
   const addProduct = async (e) => {
     const data = {
@@ -32,11 +16,12 @@ const Details = (props) => {
       photo: props.details?.photo,
       shop_name: props.details?.shop_name || '',
       name: props.details?.name,
-      unit_price: props.details?.price,
+      price: compaign_price > 0 ? compaign_price : props.product?.price,
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
       vendor_delivery: props.details?.vendor_delivery,
       is_campaign: compaign_price > 0 ? 1 : 0,
+      campaign_category:props.details.campaign_category || ''
     };
     props.addtoCart(data);
     props.user && (await props.getCartItems());
@@ -49,7 +34,7 @@ const Details = (props) => {
       photo: props.details?.photo,
       shop_name: props.details?.shop_name || '',
       name: props.details?.name,
-      unit_price: props.details?.price,
+      price: compaign_price > 0 ? compaign_price : props.product?.price,
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
       vendor_delivery: props.details?.vendor_delivery,

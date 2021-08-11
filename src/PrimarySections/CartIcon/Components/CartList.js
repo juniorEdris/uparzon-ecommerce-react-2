@@ -14,7 +14,7 @@ import {
   getCartUpdateID,
   removeCartUpdateID,
 } from '../../../Redux/Action/CartUpdateIDAction';
-import { getCartProdSubTotal, useQuery } from '../../Utility';
+import { getCartProdSubTotal, get_singleProd_campaign_price, get_singleProd_campaign_price_count, useQuery } from '../../Utility';
 import CartButton from './CartButton';
 
 const CartList = (props) => {
@@ -34,7 +34,7 @@ const CartList = (props) => {
     // router.replace(redirect);
     props.user && (await props.getCartItems());
   };
-  
+
   const addToCart = async (item) => {
     await props.addToCart(item);
     props.user && (await props.getCartItems());
@@ -72,14 +72,14 @@ const CartList = (props) => {
     let allProd = [];
     props.user
     ? server_campaign_products?.forEach((x) => {
-      allProd.push(x.price);
+      allProd.push(get_singleProd_campaign_price_count(x));
     })
     : campaign_products?.forEach((x) => {
-      allProd.push(x.unit_price);
+      allProd.push(get_singleProd_campaign_price_count(x));
     });
     return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
   };
-
+  
   return (
     <div>
       <div className="cart_product_wrapper">
@@ -112,7 +112,7 @@ const CartList = (props) => {
                           <div className="cart_total_price">
                             <span className="cart_price">
                               &#2547;{' '}
-                              {(item?.unit_price * item.total_quantity).toFixed(2)}
+                              {(item?.price * item.total_quantity).toFixed(2)}
                             </span>
                           </div>
                         </div>
@@ -121,7 +121,7 @@ const CartList = (props) => {
                           <span className="cart_price">
                             Price:{' '}
                             <span className="theme-color">
-                              &#2547; {item?.unit_price}
+                              &#2547; {item?.price}
                             </span>
                           </span>
                         </div>
@@ -196,7 +196,7 @@ const CartList = (props) => {
                         <div className="cart_total_price">
                           <span className="cart_price">
                             &#2547;{' '}
-                            {(item?.price * item.total_quantity).toFixed(2)}
+                            {(get_singleProd_campaign_price(item) * item.total_quantity).toFixed(2)}
                           </span>
                         </div>
                       </div>
@@ -205,7 +205,8 @@ const CartList = (props) => {
                         <span className="cart_price">
                           Price:{' '}
                           <span className="theme-color">
-                            &#2547; {item?.price}
+                            {/* &#2547; {item?.price} */}
+                            &#2547; {get_singleProd_campaign_price(item)}
                           </span>
                         </span>
                       </div>

@@ -25,7 +25,6 @@ export const VerifyPhone = (props) => {
             placeholder={'01XXXXXXXXX'}
           />
         </div>
-
         <div className="login-box mt-4 col-12  text-center">
           <button
             type="button"
@@ -36,6 +35,11 @@ export const VerifyPhone = (props) => {
             Register
           </button>
         </div>
+              {props.error.verifyError && (
+                        <div className="error-handler text-center">
+                          <small>{props.error.verifyError}</small>
+                        </div>
+                      )}
         <div className="text-center verify_links">
           <p>Already have an account?</p>
           <Link

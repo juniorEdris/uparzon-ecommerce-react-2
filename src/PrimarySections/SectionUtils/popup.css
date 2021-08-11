@@ -16,6 +16,8 @@
     padding: 2rem 0;
     background: var(--light-color);
     transform: translate(-50%, 50%);
+    border: 2px solid var(--theme-color);
+    border-radius: 0.75rem;
 }
 
 .primary_popup_backdrop {

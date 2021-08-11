@@ -60,4 +60,49 @@ export const total_deli_charge = (array)=>array.reduce((a, b) => a + b, 0)
 
 // Reward Cash Back Adjust Amount
 // export const rewardCash= (amount)=> amount.reduce((a, b) => a + b * 50 /100, 0)
-export const rewardCash= (amount)=> amount.reduce((a, b) => a + b /2, 0)
+export const rewardCash = (amount) => amount.reduce((a, b) => a + b / 2, 0)
+
+// GET CAMPAIGN PRICES (USED IN CAMPAIGN CART COMPONENT)
+export const get_singleProd_campaign_price = (array) => {
+  let compaign_price = 0;
+  if (
+    array?.campaign_category !== null &&
+    array?.campaign_category &&
+    array?.campaign_category.status === 1
+  ) {
+    if (array.campaign_category.price_in_amount) {
+      compaign_price =
+        Number(array.price) -
+        Number(array.campaign_category.price_in_amount);
+    } else if (array.campaign_category.price_in_percentage) {
+      compaign_price =
+        Number(array.price) -
+        (Number(array.campaign_category.price_in_percentage) *
+          Number(array.price)) /
+          100;
+    }
+  }
+  return compaign_price
+}
+export const get_singleProd_campaign_price_count = (array) => {
+  // console.log('checkout',array);
+  let compaign_price = 0;
+  if (
+    array?.campaign_category !== null &&
+    array?.campaign_category &&
+    array?.campaign_category.status === 1
+  ) {
+    if (array.campaign_category.price_in_amount) {
+      compaign_price =
+        Number(array.price) -
+        Number(array.campaign_category.price_in_amount);
+    } else if (array.campaign_category.price_in_percentage) {
+      compaign_price =
+        Number(array.price) -
+        (Number(array.campaign_category.price_in_percentage) *
+          Number(array.price)) /
+          100;
+    }
+  }
+  return compaign_price * array.total_quantity
+}

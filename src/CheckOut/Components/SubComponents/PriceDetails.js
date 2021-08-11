@@ -2,9 +2,9 @@
 /* eslint-disable no-mixed-operators */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PopUp } from '../../../PrimarySections/SectionUtils/PopUp';
-import { getCartProdSubTotal} from '../../../PrimarySections/Utility';
+import {  get_singleProd_campaign_price_count} from '../../../PrimarySections/Utility';
 import { API, api_key, ENDPOINTS } from '../../../PrimarySections/Utility/API_Links';
 import { getCartItems } from '../../../Redux/Action/CartProductsAction';
 import { PlaceOrder, PlaceOrderClearMsg } from '../../../Redux/Action/PlaceOrderAction';
@@ -22,7 +22,6 @@ const PriceDetails = (props) => {
     });
     setError('')
   }, []);
-  const history = useHistory();
   const [coupon, setCoupon] = useState(false);
   const [couponLoading, setCouponLoading] = useState(false);
   const [couponNum, setCouponNum] = useState({
@@ -39,46 +38,52 @@ const PriceDetails = (props) => {
             server_products.push(e);
         })
       })   
-  // GET TOTAL PRICE
-  const total_amount = getCartProdSubTotal(server_products, props.user) || 0;
 
   // GET DELIVERY & MIN ORDER
   let PriceContainer = {
     delivery_charge: '',
     min_order: 100,
-  };
-  // props.deliveryTypes?.forEach((type) => {
-  //   if (type.conditional !== '1') {
-  //     type.delivery_charges.forEach((charge) => {
-  //       PriceContainer = {
-  //         delivery_charge: charge.delivery_charge,
-  //         min_order: charge.min_order,
-  //       };
-  //       // delivery_charge = charge.delivery_charge;
-  //     });
-  //   } else {
-  //     for (let i = 0; i <= type?.delivery_charges?.length; i++) {
-  //       if (total_amount >= type?.delivery_charges[i]?.min_order) {
-  //         PriceContainer = {
-  //           delivery_charge: type?.delivery_charges[i]?.delivery_charge,
-  //           min_order: type?.delivery_charges[i]?.min_order,
-  //         };
-  //         return PriceContainer;
-  //       }
-  //     }
-  //   }
-  // });
-  // GET TOTAL AMOUNT
-  // const final_total_amount = (
-  //   parseInt(getCartProdSubTotal(props.cartList, props.user)) +
-  //     Number(PriceContainer?.delivery_charge) ||
-  //   getCartProdSubTotal(props.cartList, props.user) ||
-  //   0
-  // ).toFixed(2);
-  const final_total_amount = (
-    getCartProdSubTotal(server_products, props.user) ||
+  };    
+    // GET REGULAR PRODUCTS PRICES
+    const getProductPrice = (arr,campaign)=> {
+      let products = [];
+    arr?.forEach((x) => {
+      x.shop_cart_products.forEach(e => {
+        if (e.is_campaign === campaign) {
+          products.push(e)
+        }
+      })
+    })
+    let allProd = []
+    products?.forEach((x) => {
+      allProd.push(x.price);
+    });
+    return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  }
+  const getCampaignProductPrice = (arr,campaign)=> {
+    let products = [];
+    arr?.forEach((x) => {
+      x.shop_cart_products.forEach(e => {
+        if (e.is_campaign === campaign) {
+          products.push(e)
+        }
+      })
+    })
+    let allProd = []
+    products?.forEach((x) => {
+      allProd.push(get_singleProd_campaign_price_count(x));
+    });
+    return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  }
+  
+  // GET FINAL AMOUNT
+  const final_total_amount = props.campaign ? (
+    getCampaignProductPrice(props.cartList,1) ||
     0
-  ).toFixed(2);
+  ).toFixed(2): (
+    getProductPrice(props.cartList,0) ||
+    0
+  ).toFixed(2)
 
   // SET COUPON NUMBER
   const handleChange = (e) => {
@@ -180,9 +185,7 @@ const PriceDetails = (props) => {
               <p className="mr-3 discount_amount mb-0">Subtotal: </p>{' '}
               <span className="discount_amount">
                 &#2547;{' '}
-                {(getCartProdSubTotal(server_products, props.user) || 0).toFixed(
-                  2
-                )}
+                {final_total_amount}
               </span>
             </div>
             <div className="row no-gutters align-items-center">

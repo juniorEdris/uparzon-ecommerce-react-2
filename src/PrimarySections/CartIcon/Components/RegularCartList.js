@@ -65,7 +65,7 @@ const RegularCartList = (props) => {
     props.user && (await props.getCartItems());
   };
 
-    // get campaign/non-campaign separate amounts
+    // get non-campaign separate amounts
     const non_campaign_prices = () => {
       let allProd = [];
       props.user
@@ -74,7 +74,7 @@ const RegularCartList = (props) => {
         allProd.push(x.price);
       })
       : non_campaign_products?.forEach((x) => {
-        allProd.push(x.unit_price);
+        allProd.push(x.price);
       });
       return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
     };
@@ -319,7 +319,7 @@ const RegularCartList = (props) => {
                           <div className="regular_cart_total_price text-right col-3">
                             <div className="regular_cart_price">
                               &#2547;{' '}
-                              {(item?.unit_price * item.total_quantity).toFixed(
+                              {(item?.price * item.total_quantity).toFixed(
                                 2
                               )}
                             </div>

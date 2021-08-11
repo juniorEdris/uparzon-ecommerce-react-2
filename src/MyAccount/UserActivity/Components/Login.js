@@ -52,7 +52,6 @@ function Login(props) {
               required
             />
             {/* show password required */}
-            {/* <div className="error-handler">{error.message}</div> */}
           </div>
           {props.error.loginError && (
                   <div className="error-handler text-center">

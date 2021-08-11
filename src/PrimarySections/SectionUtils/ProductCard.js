@@ -33,11 +33,12 @@ const ProductCard = (props) => {
         shop_name: props.product?.shop_name || '',
         photo: props.product?.photo,
         name: props.product?.name,
-        unit_price: compaign_price > 0 ? compaign_price : props.product?.price,
+        price: compaign_price > 0 ? compaign_price : props.product?.price,
         total_quantity: 1,
         shop_id: props.product?.shop_id,
         vendor_delivery: props.product?.vendor_delivery,
         is_campaign: compaign_price > 0 ? 1 : 0,
+        campaign_category:props.product?.campaign_category || ''
       };
       await props.addtoCart(data);
     props.user && (await props.getCartItems());
