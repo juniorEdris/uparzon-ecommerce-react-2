@@ -34,7 +34,7 @@ const Details = (props) => {
       photo: props.details?.photo,
       shop_name: props.details?.shop_name || '',
       name: props.details?.name,
-      price: compaign_price > 0 ? compaign_price : props.product?.price,
+      price: props.product?.price,
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
       vendor_delivery: props.details?.vendor_delivery,

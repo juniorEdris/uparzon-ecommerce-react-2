@@ -73,9 +73,11 @@ const CartList = (props) => {
     props.user
     ? server_campaign_products?.forEach((x) => {
       allProd.push(get_singleProd_campaign_price_count(x));
+      console.log('server',get_singleProd_campaign_price_count(x));
     })
     : campaign_products?.forEach((x) => {
       allProd.push(get_singleProd_campaign_price_count(x));
+      console.log('server less',get_singleProd_campaign_price_count(x));
     });
     return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
   };
@@ -112,7 +114,7 @@ const CartList = (props) => {
                           <div className="cart_total_price">
                             <span className="cart_price">
                               &#2547;{' '}
-                              {(item?.price * item.total_quantity).toFixed(2)}
+                              {(get_singleProd_campaign_price(item)).toFixed(2)}
                             </span>
                           </div>
                         </div>
@@ -121,7 +123,7 @@ const CartList = (props) => {
                           <span className="cart_price">
                             Price:{' '}
                             <span className="theme-color">
-                              &#2547; {item?.price}
+                              &#2547; {(get_singleProd_campaign_price(item) * item.total_quantity).toFixed(2)}
                             </span>
                           </span>
                         </div>
@@ -205,8 +207,7 @@ const CartList = (props) => {
                         <span className="cart_price">
                           Price:{' '}
                           <span className="theme-color">
-                            {/* &#2547; {item?.price} */}
-                            &#2547; {get_singleProd_campaign_price(item)}
+                            &#2547; {(get_singleProd_campaign_price(item)).toFixed(2)}
                           </span>
                         </span>
                       </div>

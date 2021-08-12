@@ -33,7 +33,7 @@ const ProductCard = (props) => {
         shop_name: props.product?.shop_name || '',
         photo: props.product?.photo,
         name: props.product?.name,
-        price: compaign_price > 0 ? compaign_price : props.product?.price,
+        price: props.product?.price,
         total_quantity: 1,
         shop_id: props.product?.shop_id,
         vendor_delivery: props.product?.vendor_delivery,
