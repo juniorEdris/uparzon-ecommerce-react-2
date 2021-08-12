@@ -85,7 +85,6 @@ export const get_singleProd_campaign_price = (array) => {
   return compaign_price
 }
 export const get_singleProd_campaign_price_count = (array) => {
-  // console.log('checkout',array);
   let compaign_price = 0;
   if (
     array?.campaign_category !== null &&
@@ -105,4 +104,28 @@ export const get_singleProd_campaign_price_count = (array) => {
     }
   }
   return compaign_price * array.total_quantity
+}
+export const get_wish_singleProd_campaign_price_count = (array) => {
+  console.log(array);
+  let compaign_price = 0;
+  if (
+    array?.campaign_category !== null &&
+    array?.campaign_category &&
+    array?.campaign_category.status === 1
+  ) {
+    if (array.campaign_category.price_in_amount) {
+      compaign_price =
+        Number(array.price) -
+        Number(array.campaign_category.price_in_amount);
+    } else if (array.campaign_category.price_in_percentage) {
+      compaign_price =
+        Number(array.price) -
+        (Number(array.campaign_category.price_in_percentage) *
+          Number(array.price)) /
+          100;
+    }
+  } else {
+    compaign_price = Number(array.price) * array.total_quantity
+  }
+  return compaign_price
 }

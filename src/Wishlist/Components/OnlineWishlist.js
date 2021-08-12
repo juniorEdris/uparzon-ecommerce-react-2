@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { get_singleProd_campaign_price, get_singleProd_campaign_price_count, get_wish_singleProd_campaign_price_count } from '../../PrimarySections/Utility';
 
 export const OnlineWishlist = (props) => {
     const Styles = {
@@ -21,7 +22,7 @@ export const OnlineWishlist = (props) => {
         <tbody>
           {
               props.products?.map((item) => {
-                const {product_id,id,name,slug,photo,unit_price} = item
+                const {product_id,id,name,slug,photo,price} = item
                 return (
                 <tr key={ product_id}>
                     <td style={Styles}>
@@ -53,7 +54,7 @@ export const OnlineWishlist = (props) => {
                               <del>৳{(product?.previous_price).toFixed(2) || 0}</del>
                             </span>
                           )} */}
-                          <span>৳{(unit_price.toFixed(2))}</span>
+                          <span>৳{(get_wish_singleProd_campaign_price_count(item).toFixed(2))}</span>
                         </div>
                       </div>
                     </td>

@@ -28,11 +28,12 @@ const WishList = (props) => {
       photo: details?.photo,
       shop_name: details?.shop_name || '',
       name: details?.name,
-      unit_price: details?.unit_price,
+      price: details?.price,
       shop_id: details?.shop_id,
       vendor_delivery: details?.vendor_delivery,
       is_campaign: details.is_campaign,
-      total_quantity:details.total_quantity,
+      total_quantity: details.total_quantity,
+      campaign_category: details.campaign_category || ''
     };
      // true is passed to send wishlist products to cart using same redux function. 
     await props.addToCart(data, true);
@@ -73,6 +74,14 @@ const WishList = (props) => {
               />
             )  
           ) : (
+            props.loading
+                ?
+                <div className="pl-2 pr-2 pb-2">
+                  <Skeleton width={'100%'} height="100px" className="mb-2" />
+                  <Skeleton width={'100%'} height="100px" className="mb-2" />
+                  <Skeleton width={'100%'} height="100px" className="mb-2" />
+                </div>
+           :                
             !props.wishlist?.length > 0 ? (
               <div className="col-12 p-5 text-center">
               <div className="col-12 mb-2" >

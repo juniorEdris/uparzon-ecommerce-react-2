@@ -53,8 +53,28 @@ const CheckOutBody = (props) => {
   let arr = [];
   let adjusted_amount;
   let rc_adjusted_amount = [];
-  props.cartList.forEach(x => {
-    x.shop_cart_products.forEach(x => {
+     // GET CAMPAIGN PRODUCTS FOR RC ADJUSTED PRICES
+     let server_campaign_products = [];
+     props.cartList?.forEach((e) => {
+       e.shop_cart_products.forEach(e => {
+         if (e.is_campaign !== 0) {
+           server_campaign_products.push(e);
+         }
+       })
+     })   
+   
+     // GET REGULAR PRODUCTS FOR RC ADJUSTED PRICES
+     let server_non_campaign_products = [];
+     props.cartList?.forEach((x) => {
+     x.shop_cart_products.forEach(e => {
+         if (e.is_campaign !== 1) {
+           server_non_campaign_products.push(e)
+         }
+       })
+     })
+  
+    props.campaign ?
+    server_campaign_products.forEach(x => {
       const prod = {
         product_id: x.id,
         color: x.color,
@@ -66,10 +86,28 @@ const CheckOutBody = (props) => {
         size_key: null,
       };
       arr.push(prod);
-    })
     inside_delivery_charge.push(x.vendor_delivery?.inside_deli_charge)
     outside_delivery_charge.push(x.vendor_delivery?.outside_deli_charge);
-  });
+    })
+  
+  :
+  server_non_campaign_products.forEach(x => {
+      const prod = {
+        product_id: x.id,
+        color: x.color,
+        vendor_price: x.vendor_price,
+        size: x.size,
+        price: x.price,
+        size_qty: x.size_qty,
+        qty: x.qty_request_to_buy,
+        size_key: null,
+      };
+      arr.push(prod);
+    inside_delivery_charge.push(x.vendor_delivery?.inside_deli_charge)
+    outside_delivery_charge.push(x.vendor_delivery?.outside_deli_charge);
+    });
+  
+  console.log('array',arr);
   // rc_adjusted_price
   arr.forEach(x => {
     const amount = x.price - x.vendor_price;
@@ -83,28 +121,7 @@ const CheckOutBody = (props) => {
   //   getActiveCartProdSubTotal(props.finalCart),
   //   delivery_location_charge
   // );
-   // GET CAMPAIGN PRODUCTS PRICES
-  let server_campaign_products = [];
-  props.cartList?.forEach((e) => {
-    e.shop_cart_products.forEach(e => {
-      if (e.is_campaign !== 0) {
-        server_campaign_products.push(e);
-      }
-    })
-  })
-  const CampaignPrices = server_campaign_products?.map(prod=>prod.price).reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
-
-  // GET REGULAR PRODUCTS PRICES
-  let server_non_campaign_products = [];
-  props.cartList?.forEach((x) => {
-  x.shop_cart_products.forEach(e => {
-      if (e.is_campaign !== 1) {
-        server_non_campaign_products.push(e)
-      }
-    })
-  })
-  const nonCampaignPrices = server_non_campaign_products?.map(prod=>prod.price).reduce((a, b) => parseInt(a) + parseInt(b), 0);
   return (
     <div className="checkout_body row">
       <div className="col-md-6">

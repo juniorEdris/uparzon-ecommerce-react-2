@@ -17,7 +17,7 @@ const OrderSummary = (props) => {
             <span>Total Orders</span>
           </div>
           <CircleProgress
-            percentage={75}
+            percentage={0}
             strokeWidth={8}
             primaryColor={['#13A7B1', '#13A7B1']}
             secondaryColor={'#D3D3D3'}
@@ -28,7 +28,7 @@ const OrderSummary = (props) => {
             <span>Pending Orders</span>
           </div>
           <CircleProgress
-            percentage={65}
+            percentage={0}
             strokeWidth={8}
             primaryColor={['#13A7B1', '#13A7B1']}
             secondaryColor={'#D3D3D3'}

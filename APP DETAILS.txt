@@ -15,24 +15,44 @@ CSS==================
 }
 
 
-Uparzon ___________________
+Register component ___________________
 
-1. All categores (sub category, child category)
-2. expense categories headline (home page)<<<<<<<<<<<<<<<<<<
-3. Nicher footer upore section a Right banner manually change kora<<<<<<<<<<<<<<
-4. Priority shop, gift cards, uparzon express, uparzon offer,..ai 4 ta akn clickable hobe na...<<<<<<<<<<<<<<<<<<<<
-5. header ar cart icon a click korle user 1, user 2 aigula bad jbe...<<<<<<<<<<<<<<<<<<<<<<
-6. expense categories ar niche main categores gula clickable na..shop page a jai na..<<<<<<<<<<<<<<<<<<<<
-7. Login, Registration full ok korte hobe.<<<<<<<<<<<<<<<<<<<<<
-8. Single product page a left side a category r niche akta choto banner ace oita change kore diben bappy theke nia...<<<<<<<<<<<<<<<<<<<<<<<
-9. Home page ar product line gular right side a choto kore all categories name button ace ...onkgula ace..oigula shob delete kore den...<<<<<<<<<<<<<<
-10. Footer ar upore jai 3 ta categories product show kortache Babies & toys, pet oigula product name line tar por gap ace oita bad diben or uprer gular moto 2 line ar dichen...<<<<<<<<<<<<<<<<<<<<<<<<<
-11. niche footer ar upore app download ar jai banner ta ace ..oita change kore diben manually bappy theke nia ...<<<<<<<<<<<<<<<<<<
-12. campaign page silde a banner ta change korben bappy theke nia ..aktai diben..aktai tkbe akn same bishoi ta 2 ta dekacce...<<<<<<<<<<<<<<
-banner gula bappy theke size diben or hole then change korben....
-
-
-aigula tik korien...kuno ta na bujle amke bolien...bakigula ami check kre dibo....ar shata ahmed api dile cart, user panel oigula o kore falien..
+      {/* <div className="form-group uparzon_input_wrapper">
+        <label htmlFor="phone">Phone</label>
+        <div className="col-12 p-0 d-flex single_input align-items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36.001"
+            height="36.001"
+            viewBox="0 0 36.001 36.001">
+            <path
+              id="Icon_awesome-phone"
+              data-name="Icon awesome-phone"
+              d="M34.692,1.73,27.38.042a1.7,1.7,0,0,0-1.934.977L22.071,8.895a1.683,1.683,0,0,0,.485,1.969l4.261,3.488A26.059,26.059,0,0,1,14.358,26.81L10.87,22.549A1.686,1.686,0,0,0,8.9,22.064L1.027,25.439A1.708,1.708,0,0,0,.042,27.38L1.73,34.692A1.687,1.687,0,0,0,3.375,36,32.621,32.621,0,0,0,36,3.375,1.685,1.685,0,0,0,34.692,1.73Z"
+              transform="translate(0.001 0.001)"
+              fill="#13a7b1"
+            />
+          </svg>
+          <input
+            type="text"
+            className="form-control"
+            id="phone"
+            value={props.register.phone}
+            onChange={handleChange}
+          />
+          {props.error.registerPassError && (
+            <div className="error-handler mb-1">
+              <i class="far fa-times-circle"></i>
+            </div>
+          )}
+        </div>
+        {props.error.registerPhoneError && (
+          <div className="error-handler mb-1">
+            <small>{props.error.registerPhoneError}</small>
+          </div>
+        )}
+      </div> */}
+      
 
 
 

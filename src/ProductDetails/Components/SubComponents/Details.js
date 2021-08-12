@@ -16,7 +16,7 @@ const Details = (props) => {
       photo: props.details?.photo,
       shop_name: props.details?.shop_name || '',
       name: props.details?.name,
-      price: compaign_price > 0 ? compaign_price : props.product?.price,
+      price: props.details?.price,
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
       vendor_delivery: props.details?.vendor_delivery,
@@ -34,11 +34,12 @@ const Details = (props) => {
       photo: props.details?.photo,
       shop_name: props.details?.shop_name || '',
       name: props.details?.name,
-      price: props.product?.price,
+      price: props.details?.price,
       total_quantity: quantity,
       shop_id: props.details?.shop_id,
       vendor_delivery: props.details?.vendor_delivery,
       is_campaign: compaign_price > 0 ? 1 : 0,
+      campaign_category:props.details.campaign_category || ''
     };
     props.addtoWish(data);
   };

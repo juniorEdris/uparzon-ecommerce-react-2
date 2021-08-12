@@ -1,6 +1,7 @@
 import Skeleton from '@yisheng90/react-loading';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { get_singleProd_campaign_price, get_singleProd_campaign_price_count, get_wish_singleProd_campaign_price_count } from '../../PrimarySections/Utility';
 
 const WishlistBody = (props) => {
   const Styles = {
@@ -52,7 +53,7 @@ const WishlistBody = (props) => {
                             <del>৳{product.unit_price?.previous_price || 0}</del>
                           </span>
                         )}
-                        <span>৳{product.unit_price}</span>
+                        <span>৳{get_wish_singleProd_campaign_price_count(product)}</span>
                       </div>
                     </div>
                   </td>

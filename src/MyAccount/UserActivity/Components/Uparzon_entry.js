@@ -69,7 +69,7 @@ export const Uparzon_entry = (props) => {
       .then((res) => {
         if (res.data.status) {
           setLoading(false);
-          setError({ verifyError: res.data.otp });
+          // setError({ verifyError: res.data.otp }); OTP DISCLOSED
           setSection('');
         } else if (!res.data.status) {
           setLoading(false);
@@ -133,7 +133,7 @@ export const Uparzon_entry = (props) => {
       setLoading(true);
       await axios
         .post(
-          `${ENDPOINTS.REGISTER}?mobile=${login.OTPNumber}&password=${register.password}&first_name=${register.first_name}&last_name=${register.last_name}&otp=${otp}`
+          `${ENDPOINTS.REGISTER}?mobile=${login.OTPNumber}&password=${register.password}&first_name=${register.first_name}&last_name=${register.last_name}&otp=${otp}&referBy=${register.refer_code}`
         )
         .then((res) => {
           if (res.data.status) {
