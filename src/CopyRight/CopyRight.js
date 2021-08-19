@@ -3,7 +3,7 @@ import './copyright.css';
 
 export const CopyRight = (props) => {
   return (
-    <div className="">
+    <div className="copyright">
       <div className="container-md-fluid">
         <div className="col-12 footer_payment pt-2 pb-2">
           <img

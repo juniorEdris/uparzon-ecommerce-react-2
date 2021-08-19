@@ -3,3 +3,24 @@
     width: 90px;
     object-fit: contain;
 }
+.invoice_wrapper{
+    font-size: 1.2rem;
+    /* color: var(--dark-color); */
+    color: #6A6A6A;
+}
+/* Footer css here */
+.invoice_total{
+    padding-bottom: 1rem;
+}
+.invoice_total_child{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.invoice_total_border{
+    border-top: 2px solid #414141;
+}
+.signature_section{
+    padding-bottom: 4rem;
+    color: #414141;
+}

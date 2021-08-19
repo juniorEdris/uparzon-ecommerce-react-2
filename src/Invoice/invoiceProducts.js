@@ -1,13 +1,11 @@
-import Skeleton from '@yisheng90/react-loading';
 import { connect } from 'react-redux'
-import { image_u } from '../data';
 import { Truncate } from '../PrimarySections/Utility';
 
 const InvoiceProducts = (props) => {
     let subTotal = () => {
         let allProd = [];
         props.order?.cart?.forEach((x) => {
-          allProd.push(x.price * x.total_quantity);
+          allProd.push(x.price * x.qty);
         });
         return allProd.reduce((a, b) => parseInt(a) + parseInt(b), 0);
       };
@@ -25,80 +23,67 @@ const InvoiceProducts = (props) => {
             <th scope="col"></th>
           </tr>
         </thead>
-        {props.loading ? (
+        
           <tbody>
-            {Array(4)
-              .fill()
-              .map((tr) => (
-                <tr>
-                  <td colSpan={6}>
-                    <Skeleton width={'100%'} height={30} />
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        ) : (
-          <tbody>
-            {/* {props.order?.cart?.map((item) => ( */}
-            {props.order?.map((item) => (
+            {props.order?.cart?.map((item) => (
               <tr className="trow-light" key={item.product_id}>
                 <td>
                   id
                   </td>
                 <td>
-                  <div className="row no-gutters" style={{width:'300px'}}>
+                  <div className="row" style={{width:'300px'}}>
                     <div className="col-3">
-                      <img src={image_u} alt=''/>    
+                      <img src={`https:${item.photo}`} alt={item.name}/>    
                     </div>
                     <div className="col-9">
-                      {Truncate(item.name, 15) || 'Lorem ipsum dolor sit amet consectetur adipisicing elit'}   
+                      {Truncate(item.name, 15) }   
                     </div>
                   </div>
                   </td>
-                <td>{item.total_quantity || 2}</td>
-                <td>BDT {item.price || 450}</td>
+                <td>BDT {item.price}</td>
+                <td>{item.qty}</td>
                 <td>
                   BDT{' '}
                   {
-                  //   (Number(item.price) * Number(item.total_quantity)).toFixed(
-                  //   2
-                  // )
-                   2200}
-                </td>
-                <td>
-                  1550
+                    (Number(item.price) * Number(item.qty)).toFixed(
+                    2
+                    )
+                  }
                 </td>
               </tr>
             ))}
-            <tr className="order_price_card">
-              <td colSpan="3" className="order_price_section">
-                Sub Total
-              </td>
-              <td>BDT {subTotal().toFixed(2)}</td>
-              <td></td>
-            </tr>
-            <tr className="order_price_card">
-              <td colSpan="3" className="order_price_section">
-                Regular (withine 24 hours)
-              </td>
-                <td>BDT {
-                  // Number(props.order?.shipping_cost).toFixed(2) 
-                   0}</td>
-              <td></td>
-            </tr>
-            <tr className="order_price_card">
-              <td colSpan="3" className="order_price_section">
-                Total
-              </td>
-                <td>BDT {
-                  // Number(props.order?.pay_amount).toFixed(2)
-               0}</td>
-              <td></td>
-            </tr>
           </tbody>
-        )}
       </table>
-    </div>
+        </div>
+        <div className={'pb-5'}>
+                <div className="invoice_total text-right row no-gutter">
+                    <div className="col-md-4 col-12"></div>
+                    <div className="col-md-4 col-12"></div>
+                    <div className="invoice_total_child col-md-4 col-12">
+                        <div className="invoice_total_child_body pl-2 pr-2">
+                            <div className="d-flex align-items-center justify-content-between">
+                                <span>Sub total</span>
+                                <span>BDT {Number(subTotal()).toFixed(2)}</span>
+                            </div>
+                            <div className="d-flex align-items-center justify-content-between">
+                                <span>Discount</span>
+                                <span>(-)BDT {Number(props.order?.discount).toFixed(2)}</span>
+                            </div>
+                            <div className="d-flex align-items-center justify-content-between mb-2">
+                                <span>Shipping</span>
+                                <span>(+)BDT {Number(props.order?.shipping_cost).toFixed(2)}</span>
+                            </div>
+                            <div className="invoice_total_border d-flex align-items-center justify-content-between">
+                                <span>Total</span>
+                                <span>BDT {Number(props.order?.pay_amount).toFixed(2)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="signature_section text-center">
+                    <span className=''>"This is computer Generated Invoice. Please Signature it"</span>
+                </div>
+              </div>
         </div>
     )
 }

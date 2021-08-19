@@ -329,5 +329,11 @@
   }
 }
 
-@media (max-width: 767px) {
+@media print {
+  .header,.order-information-heading,.header_nav,.dashSidebar,.cart_icon, .footer, .copyright,.cancel_order_btn,.print-btn-container,.copyright{
+    
+    display: none !important; 
+    
+  } 
+
 }

@@ -1,6 +1,8 @@
 import Axios from 'axios';
-export const DOMAIN = `https://demostore.uparzon.com/`;
-// export const DOMAIN = `https://store.uparzon.com/`;
+// export const PARTNER = `https://demopartner.uparzon.com/`;
+// export const DOMAIN = `https://demostore.uparzon.com/`;
+export const DOMAIN = `https://store.uparzon.com/`;
+export const PARTNER = `https://partner.uparzon.com/`;
 export const api_key = `4e38d8be3269aa17280d0468b89caa4c7d39a699`;
 
 let BaseApi = Axios.create({
@@ -23,11 +25,11 @@ export const ENDPOINTS = {
   PRODUCTDETAILS: `api/uparzonweb/get_product_details?product_id=`,
   SINGLE_BRAND_PRODUCTS: `api/uparzonweb/search_products`,
   CAMPAIGN_PRODUCTS: `api/uparzonweb/search_category_products`,
-  LOGIN: `https://demopartner.uparzon.com/api/partner/loginRequest?api_key=${api_key}`,
-  LOG_OUT: `https://demopartner.uparzon.com/api/partner/logout`,
-  VERIFY_PHONE: `https://demopartner.uparzon.com/api/partner/send-otp`,
-  VERIFY_OTP: `https://demopartner.uparzon.com/api/partner/check-otp`,
-  REGISTER: `https://demopartner.uparzon.com/api/partner/store/register`,
+  LOGIN: `${PARTNER}api/partner/loginRequest?api_key=${api_key}`,
+  LOG_OUT: `${PARTNER}api/partner/logout`,
+  VERIFY_PHONE: `${PARTNER}api/partner/send-otp`,
+  VERIFY_OTP: `${PARTNER}api/partner/check-otp`,
+  REGISTER: `${PARTNER}api/partner/store/register`,
   ADDTOBASKET: `api/user/product/add_to_cart`,
   CART_UPDATE: `api/user/cart_update/`,
   GETCARTITEMS: `api/uparzonapp/user/get_cart_products?api_key=${api_key}`,
@@ -36,7 +38,7 @@ export const ENDPOINTS = {
   PLACE_ORDER: `api/uparzonapp/latest_place_order?api_key=${api_key}`,
   GET_ORDER_LIST: `api/uparzonapp/get_orders?api_key=${api_key}`,
   GET_SINGLE_ORDER: `api/uparzonapp/get_order_details?api_key=${api_key}`,
-  GET_REWARD_CASH: `https://demopartner.uparzon.com/api/partner/store/getBalance`,
+  GET_REWARD_CASH: `${PARTNER}api/partner/store/getBalance`,
   COUPON_TOKEN: `api/uparzonapp/verify_coupon`,
   GET_WISHLIST_ITEM: `api/get_wishlists?api_key=${api_key}`,
   ADD_WISHLIST_ITEM: `api/add_wishlist?api_key=${api_key}`,
