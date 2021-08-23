@@ -39,7 +39,7 @@ const OrderInformation = (props) => {
             )}</p>
             <button type='button' className='btn btn-primary invoice_btn' onClick={generateInvoice}>Generate invoice</button>
         </div>)}
-        <TrackOrder loading={props.loading} order={props.singleorder} />
+        {/* <TrackOrder loading={props.loading} order={props.singleorder} /> */}
         <OrderDetails
           loading={props.loading}
           order={props.singleorder}

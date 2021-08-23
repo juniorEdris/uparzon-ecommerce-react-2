@@ -107,7 +107,6 @@ const CheckOutBody = (props) => {
     outside_delivery_charge.push(x.vendor_delivery?.outside_deli_charge);
     });
   
-  console.log('array',arr);
   // rc_adjusted_price
   arr.forEach(x => {
     const amount = x.price - x.vendor_price;

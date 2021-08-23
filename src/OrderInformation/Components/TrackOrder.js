@@ -17,16 +17,15 @@ const AddressSection = (props) => {
                 <div className="col-features col-12 mb-4 ">
                   <div className="proccess_content col">
                     <div className="mb-2">
-                    {/* <i className="far fa-circle"></i> */}
-                    <i className="fas fa-check-circle"></i>
+                    {props.order.order_status === "pending" || props.order.order_status === "on delivery" || props.order.order_status === "completed" || props.order.order_status === "delivered" || props.order.payment_status === 'Pending' ? <i className="fas fa-check-circle"></i>:<i className="far fa-circle"></i>}
                     </div>
                     <div className="proccess_content_text">
                       <p>
                       Ordered
                       </p>
-
+{/* 
                       <p className='mb-1'>26 April 1997</p>
-                      <p>11:15 AM</p>
+                      <p>11:15 AM</p> */}
 
                     </div>
                   </div>
@@ -34,64 +33,50 @@ const AddressSection = (props) => {
                 <div className="col-features col-12 mb-4 ">
                   <div className="proccess_content col">
                     <div className="mb-2">
-                    {/* <i className="far fa-circle"></i> */}
-                    <i className="fas fa-check-circle"></i>
+                    {props.order.order_status === "pending" || props.order.order_status === "on delivery" || props.order.order_status === "completed" || props.order.order_status === "delivered" || props.order.payment_status === 'Pending' ? <i className="fas fa-check-circle"></i>:<i className="far fa-circle"></i>}
                     </div>
                     <div className="proccess_content_text">
                       <p>
                       Payment
                       </p>
 
-                                <p className='mb-1'>26 April 1997</p>
-                      <p>11:15 AM</p>
-
                     </div>
                   </div>
                 </div>
                 <div className="col-features col-12 mb-4 ">
                   <div className="proccess_content col">
                     <div className="mb-2">
-                    <i className="far fa-circle"></i>
+                    {props.order.order_status === "pending" || props.order.order_status === "on delivery" || props.order.order_status === "completed" || props.order.order_status === "delivered" || props.order.payment_status === 'Pending' ? <i className="fas fa-check-circle"></i>:<i className="far fa-circle"></i>}
                     </div>
                     <div className="proccess_content_text">
                       <p>
                       Proccessing
                       </p>
-
-                                <p className='mb-1'>26 April 1997</p>
-                      <p>11:15 AM</p>
-
                     </div>
                   </div>
                 </div>
                 <div className="col-features col-12 mb-4 ">
                   <div className="proccess_content col">
                     <div className="mb-2">
-                    <i className="far fa-circle"></i>
+                    {props.order.order_status === "pending" || props.order.order_status === "on delivery" || props.order.order_status === "completed" || props.order.order_status === "delivered" || props.order.payment_status === 'Pending' ? <i className="fas fa-check-circle"></i>:<i className="far fa-circle"></i>}
                     </div>
                     <div className="proccess_content_text">
                       <p>
                       Shipped
                       </p>
 
-                                <p className='mb-1'>26 April 1997</p>
-                      <p>11:15 AM</p>
-
                     </div>
                   </div>
                 </div>
                 <div className="col-features col-12 mb-4 ">
                   <div className="proccess_content col">
                     <div className="mb-2">
-                    <i className="far fa-circle"></i>
+                    {props.order.order_status === "pending" || props.order.order_status === "on delivery" || props.order.order_status === "completed" || props.order.order_status === "delivered" || props.order.payment_status === 'Pending' ? <i className="fas fa-check-circle"></i>:<i className="far fa-circle"></i>}
                     </div>
                     <div className="proccess_content_text">
                       <p>
                       Proccessed
                       </p>
-
-                                <p className='mb-1'>26 April 1997</p>
-                      <p>11:15 AM</p>
 
                     </div>
                   </div>

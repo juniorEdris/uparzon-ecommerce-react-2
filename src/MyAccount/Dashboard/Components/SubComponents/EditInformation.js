@@ -9,7 +9,6 @@ import {
 import { GetAreaOption } from '../../../../Redux/Action/GetUserInfoAction';
 
 const EditInformation = (props) => {
-  console.log(props.loading, props.response, props.info);
   const [inputs, setInputs] = useState({
     first_name: '',
     last_name: '',
@@ -22,9 +21,10 @@ const EditInformation = (props) => {
   });
   useEffect(() => {
     setInputs({
-      name: props.info?.name,
-      phone: props.info?.phone,
+      first_name: props.info?.first_name,
+      last_name: props.info?.last_name,
       email: props.info?.email,
+      phone: props.info?.phone || '',
       district: props.info?.district || '',
       area: props.info?.area || '',
       address: props.info?.address,
@@ -127,77 +127,12 @@ const EditInformation = (props) => {
               )}
             </div>
           </div>
-          {/* <div className="form-row">
-            <div className="form-group col-md-6">
-              <label htmlFor="district">District</label>
-              <select
-                id="district"
-                className="form-control form-control-lg"
-                onChange={handleChange}
-                value={inputs.district}
-                defaultValue={inputs.district}>
-                <option selected value="">
-                  Choose...
-                </option>
-                {props.info?.districts_lists?.map((district) => (
-                  <option value={district.id} key={district.name}>
-                    {district.name}
-                  </option>
-                ))}
-              </select>
-              {inputs.district === '' && (
-                <small className="text-danger">
-                  Please provide your discrict name.
-                </small>
-              )}
-            </div>
-            <div className="form-group col-md-6">
-              <label htmlFor="area">Area</label>
-              <select
-                id="area"
-                className="form-control form-control-lg"
-                onChange={handleChange}
-                value={inputs.area}
-                defaultValue={inputs.area}>
-                <option selected value="">
-                  Choose...
-                </option>
-                {props.userArea &&
-                  props.userArea[0]?.areas?.map((area) => (
-                    <option value={area.id} key={area.name}>
-                      {area.name}
-                    </option>
-                  ))}
-              </select>
-              {inputs.area === '' && (
-                <small className="text-danger">
-                  Please provide your area name.
-                </small>
-              )}
-            </div>
-          </div>
-          <div className="form-group">
-            <label htmlFor="address">Address</label>
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              id="address"
-              placeholder="Apartment, studio, or floor"
-              onChange={handleChange}
-              value={inputs.address}
-            />
-            {inputs.address === '' && (
-              <small className="text-danger">
-                Please provide your address.
-              </small>
-            )}
-          </div> */}
           <div className="account_submit_btn">
             <Link
               to="#"
               onClick={submitFrom}
               className={`${
-                inputs.address === '' && 'pointer_disabled'
+                inputs.email === '' && 'pointer_disabled'
               } btn col-12 mt-4`}>
               Update
             </Link>

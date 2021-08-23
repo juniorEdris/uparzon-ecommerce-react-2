@@ -69,7 +69,6 @@ function Login(props) {
               />
             </svg>
           </div>
-            {/* show password required */}
           </div>
           {props.error.loginError && (
                   <div className="error-handler text-center">

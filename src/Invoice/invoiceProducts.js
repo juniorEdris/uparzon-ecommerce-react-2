@@ -15,8 +15,7 @@ const InvoiceProducts = (props) => {
       <table className="table">
         <thead className="thead-primary">
           <tr>
-            <th scope="col">id</th>
-            <th scope="col">Item & Description</th>
+            <th scope="col">Item &#38; Description</th>
             <th scope="col">Rate</th>
             <th scope="col">Quantity</th>
             <th scope="col">Amount</th>
@@ -27,9 +26,6 @@ const InvoiceProducts = (props) => {
           <tbody>
             {props.order?.cart?.map((item) => (
               <tr className="trow-light" key={item.product_id}>
-                <td>
-                  id
-                  </td>
                 <td>
                   <div className="row" style={{width:'300px'}}>
                     <div className="col-3">

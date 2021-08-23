@@ -44,6 +44,7 @@ export const ENDPOINTS = {
   ADD_WISHLIST_ITEM: `api/add_wishlist?api_key=${api_key}`,
   DELETE_WISHLIST_ITEM: `api/remove_wishlist?api_key=${api_key}`,
   WISH_TO_CART: `api/transfer/wishlist-to-cart`,
+  CHANGE_PASSWORD: `${PARTNER}api/partner/changePassword`,
   //
   UPDATE_WISHLIST_ITEM: `api/user/wishlist_update/`,
   USER_INFO: `api/uparzonweb/get_user_info?api_key=${api_key}`,

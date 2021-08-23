@@ -160,7 +160,7 @@ function App(props) {
           </Route>
           <Route path="/more-medicines" component={NeccessaryProducts} />
           <Route path="/blog-details" component={BlogDetails} />
-          {/* <Route path="/blog" component={Blog} />
+           <Route path="/blog" component={Blog} />
           <Route path="/ordersuccess" component={OrderNotification} /> */}
           {/* <Route path="/ordercancel" component={OrderCancel} /> */}
           <Route exact path="*" component={NoRoutes} />

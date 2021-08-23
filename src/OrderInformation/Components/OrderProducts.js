@@ -64,7 +64,7 @@ const OrderProducts = (props) => {
                 <td>
                   <Link
                     to={`/productdetails?product=${item.slug}&id=${item.product_id}`}
-                    className="table_link pointer_none">
+                    className="table_link">
                     View Details
                   </Link>
                 </td>
